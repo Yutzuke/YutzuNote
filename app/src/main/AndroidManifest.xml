@@ -173,5 +173,11 @@
             </intent-filter>
         </service>
 
+
+        <provider
+            android:authorities="it.niedermann.owncloud.notes.providers.AppContentProvider"
+            android:name=".providers.AppContentProvider"
+            android:enabled="true"
+            android:exported="true"/>
     </application>
 </manifest>
