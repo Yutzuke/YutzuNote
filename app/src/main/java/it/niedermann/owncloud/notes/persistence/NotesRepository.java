@@ -70,6 +70,7 @@ import it.niedermann.owncloud.notes.shared.model.ImportStatus;
 import it.niedermann.owncloud.notes.shared.model.NavigationCategory;
 import it.niedermann.owncloud.notes.shared.model.NotesSettings;
 import it.niedermann.owncloud.notes.shared.model.SyncResultStatus;
+import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 import it.niedermann.owncloud.notes.shared.util.ApiVersionUtil;
 import it.niedermann.owncloud.notes.shared.util.NoteUtil;
 import it.niedermann.owncloud.notes.shared.util.SSOUtil;
@@ -815,80 +816,82 @@ public class NotesRepository {
                 syncActive.put(account.getId(), false);
             }
             Log.d(TAG, "Sync requested (" + (onlyLocalChanges ? "onlyLocalChanges" : "full") + "; " + (Boolean.TRUE.equals(syncActive.get(account.getId())) ? "sync active" : "sync NOT active") + ") ...");
-            if (isSyncPossible() && (!Boolean.TRUE.equals(syncActive.get(account.getId())) || onlyLocalChanges)) {
-                syncActive.put(account.getId(), true);
-                try {
-                    Log.d(TAG, "... starting now");
-                    final NotesServerSyncTask syncTask = new NotesServerSyncTask(context, this, account, onlyLocalChanges, apiProvider) {
-                        @Override
-                        void onPreExecute() {
-                            syncStatus.postValue(true);
-                            if (!syncScheduled.containsKey(localAccount.getId()) || syncScheduled.get(localAccount.getId()) == null) {
-                                syncScheduled.put(localAccount.getId(), false);
-                            }
-                            if (!onlyLocalChanges && Boolean.TRUE.equals(syncScheduled.get(localAccount.getId()))) {
-                                syncScheduled.put(localAccount.getId(), false);
-                            }
-                        }
-
-                        @Override
-                        void onPostExecute(SyncResultStatus status) {
-                            for (Throwable e : exceptions) {
-                                Log.e(TAG, e.getMessage(), e);
-                            }
-                            if (!status.pullSuccessful || !status.pushSuccessful) {
-                                syncErrors.postValue(exceptions);
-                            }
-                            syncActive.put(localAccount.getId(), false);
-                            // notify callbacks
-                            if (callbacks.containsKey(localAccount.getId()) && callbacks.get(localAccount.getId()) != null) {
-                                for (ISyncCallback callback : Objects.requireNonNull(callbacks.get(localAccount.getId()))) {
-                                    callback.onFinish();
+            if (AccountSyncUtil.isSyncEnable(context, account)) {
+                if (isSyncPossible() && (!Boolean.TRUE.equals(syncActive.get(account.getId())) || onlyLocalChanges)) {
+                    syncActive.put(account.getId(), true);
+                    try {
+                        Log.d(TAG, "... starting now");
+                        final NotesServerSyncTask syncTask = new NotesServerSyncTask(context, this, account, onlyLocalChanges, apiProvider) {
+                            @Override
+                            void onPreExecute() {
+                                syncStatus.postValue(true);
+                                if (!syncScheduled.containsKey(localAccount.getId()) || syncScheduled.get(localAccount.getId()) == null) {
+                                    syncScheduled.put(localAccount.getId(), false);
+                                }
+                                if (!onlyLocalChanges && Boolean.TRUE.equals(syncScheduled.get(localAccount.getId()))) {
+                                    syncScheduled.put(localAccount.getId(), false);
                                 }
                             }
-                            notifyWidgets();
-                            updateDynamicShortcuts(localAccount.getId());
-                            // start next sync if scheduled meanwhile
-                            if (syncScheduled.containsKey(localAccount.getId()) && syncScheduled.get(localAccount.getId()) != null && Boolean.TRUE.equals(syncScheduled.get(localAccount.getId()))) {
-                                scheduleSync(localAccount, false);
+
+                            @Override
+                            void onPostExecute(SyncResultStatus status) {
+                                for (Throwable e : exceptions) {
+                                    Log.e(TAG, e.getMessage(), e);
+                                }
+                                if (!status.pullSuccessful || !status.pushSuccessful) {
+                                    syncErrors.postValue(exceptions);
+                                }
+                                syncActive.put(localAccount.getId(), false);
+                                // notify callbacks
+                                if (callbacks.containsKey(localAccount.getId()) && callbacks.get(localAccount.getId()) != null) {
+                                    for (ISyncCallback callback : Objects.requireNonNull(callbacks.get(localAccount.getId()))) {
+                                        callback.onFinish();
+                                    }
+                                }
+                                notifyWidgets();
+                                updateDynamicShortcuts(localAccount.getId());
+                                // start next sync if scheduled meanwhile
+                                if (syncScheduled.containsKey(localAccount.getId()) && syncScheduled.get(localAccount.getId()) != null && Boolean.TRUE.equals(syncScheduled.get(localAccount.getId()))) {
+                                    scheduleSync(localAccount, false);
+                                }
+                                syncStatus.postValue(false);
                             }
-                            syncStatus.postValue(false);
+                        };
+                        syncTask.addCallbacks(account, callbacksPush.get(account.getId()));
+                        callbacksPush.put(account.getId(), new ArrayList<>());
+                        if (!onlyLocalChanges) {
+                            syncTask.addCallbacks(account, callbacksPull.get(account.getId()));
+                            callbacksPull.put(account.getId(), new ArrayList<>());
                         }
-                    };
-                    syncTask.addCallbacks(account, callbacksPush.get(account.getId()));
-                    callbacksPush.put(account.getId(), new ArrayList<>());
-                    if (!onlyLocalChanges) {
-                        syncTask.addCallbacks(account, callbacksPull.get(account.getId()));
-                        callbacksPull.put(account.getId(), new ArrayList<>());
+                        syncExecutor.submit(syncTask);
+                    } catch (NextcloudFilesAppAccountNotFoundException e) {
+                        Log.e(TAG, "... Could not find " + SingleSignOnAccount.class.getSimpleName() + " for account name " + account.getAccountName());
+                        e.printStackTrace();
                     }
-                    syncExecutor.submit(syncTask);
-                } catch (NextcloudFilesAppAccountNotFoundException e) {
-                    Log.e(TAG, "... Could not find " + SingleSignOnAccount.class.getSimpleName() + " for account name " + account.getAccountName());
-                    e.printStackTrace();
-                }
-            } else if (!onlyLocalChanges) {
-                Log.d(TAG, "... scheduled");
-                syncScheduled.put(account.getId(), true);
-                if (callbacksPush.containsKey(account.getId()) && callbacksPush.get(account.getId()) != null) {
-                    final var callbacks = callbacksPush.get(account.getId());
-                    if (callbacks != null) {
-                        for (final var callback : callbacks) {
-                            callback.onScheduled();
+                } else if (!onlyLocalChanges) {
+                    Log.d(TAG, "... scheduled");
+                    syncScheduled.put(account.getId(), true);
+                    if (callbacksPush.containsKey(account.getId()) && callbacksPush.get(account.getId()) != null) {
+                        final var callbacks = callbacksPush.get(account.getId());
+                        if (callbacks != null) {
+                            for (final var callback : callbacks) {
+                                callback.onScheduled();
+                            }
+                        } else {
+                            Log.w(TAG, "List of push-callbacks was set for account \"" + account.getAccountName() + "\" but it was null");
                         }
-                    } else {
-                        Log.w(TAG, "List of push-callbacks was set for account \"" + account.getAccountName() + "\" but it was null");
                     }
-                }
-            } else {
-                Log.d(TAG, "... do nothing");
-                if (callbacksPush.containsKey(account.getId()) && callbacksPush.get(account.getId()) != null) {
-                    final var callbacks = callbacksPush.get(account.getId());
-                    if (callbacks != null) {
-                        for (final var callback : callbacks) {
-                            callback.onScheduled();
+                } else {
+                    Log.d(TAG, "... do nothing");
+                    if (callbacksPush.containsKey(account.getId()) && callbacksPush.get(account.getId()) != null) {
+                        final var callbacks = callbacksPush.get(account.getId());
+                        if (callbacks != null) {
+                            for (final var callback : callbacks) {
+                                callback.onScheduled();
+                            }
+                        } else {
+                            Log.w(TAG, "List of push-callbacks was set for account \"" + account.getAccountName() + "\" but it was null");
                         }
-                    } else {
-                        Log.w(TAG, "List of push-callbacks was set for account \"" + account.getAccountName() + "\" but it was null");
                     }
                 }
             }

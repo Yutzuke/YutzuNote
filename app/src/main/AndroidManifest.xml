@@ -4,6 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
 
     <queries>
         <package android:name="com.nextcloud.client" />
@@ -175,7 +177,7 @@
 
 
         <provider
-            android:authorities="it.niedermann.owncloud.notes.providers.AppContentProvider"
+            android:authorities="foundation.e.notes.android.providers.AppContentProvider"
             android:name=".providers.AppContentProvider"
             android:enabled="true"
             android:exported="true"/>
