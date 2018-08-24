@@ -22,8 +22,9 @@ cache:
 
 build:
   stage: build
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
   script:
-  - git submodule update --recursive --init
   - ./gradlew build
   artifacts:
     paths:
