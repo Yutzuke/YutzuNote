@@ -355,4 +355,16 @@
     <string name="progress_import_indeterminate">Importing notes…</string>
     <string name="progress_import">Importing note %1$d of %2$d…</string>
     <string name="account_imported">Account imported.</string>
+    <string name="preferences_app_info_title">Notes information</string>
+    <string name="preferences_app_info">
+        -List, create, edit, share, search and delete notes\n
+        -Share text and links as new note into the app\n
+        -Mark notes as favorite\n
+        -Bulk delete\n
+        -Render MarkDown\n
+        -Translated in many languages</string>
+    <string name="preferences_about_app">Notes is forked from Nextcloud Notes</string>
+    <string name="preferences_privacy_policy">Privacy policy</string>
+    <string name="preferences_service_terms">Terms of service</string>
+    <string name="preferences_authors">Authors</string>
 </resources>
