@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">Note</string>
+    <string name="app_name">Notes</string>
     <string name="app_name_long">Nextcloud Notes</string>
-    <string name="label_all_notes">Tutte le note</string>
-    <string name="label_favorites">Preferite</string>
-    <string name="action_create">Nuova nota</string>
+    <string name="label_all_notes">Tutti gli appunti</string>
+    <string name="label_favorites">Preferiti</string>
+    <string name="action_create">Nuovo appunto</string>
     <string name="welcome_text">Benvenuti in %1$s</string>
     <string name="action_settings">Impostazioni</string>
-    <string name="action_trashbin">Note eliminate</string>
+    <string name="action_trashbin">Appunti eliminati</string>
     <string name="action_search">Cerca</string>
     <string name="action_sorting_method">Metodo di ordinamento</string>
     <string name="simple_cancel">Annulla</string>
@@ -18,89 +17,82 @@
     <string name="action_edit_save">Salva</string>
     <string name="simple_about">Informazioni</string>
     <string name="simple_link">Collegamento</string>
-    <string name="action_note_deleted">Eliminato %1$s</string>
-    <string name="action_note_restored">Ripristinato %1$s</string>
+    <string name="action_note_deleted">Appunto eliminato</string>
+    <string name="action_note_restored">Appunto ripristinato</string>
     <string name="action_undo">Annulla</string>
     <string name="action_uncategorized">Senza categoria</string>
     <string name="menu_delete">Elimina</string>
     <string name="menu_change_category">Categoria</string>
-    <string name="menu_favorite">Preferito</string>
+    <string name="menu_favorite">Preferiti</string>
     <string name="menu_preview">Anteprima</string>
     <string name="menu_share">Condividi</string>
-
     <string name="search_in_category">Cerca in %1$s</string>
     <string name="search_in_all">Cerca tutte le note</string>
-
     <string name="change_category_title">Scegli una categoria</string>
-
     <string name="listview_updated_today">Oggi</string>
     <string name="listview_updated_yesterday">Ieri</string>
     <string name="listview_updated_this_week">Questa settimana</string>
     <string name="listview_updated_last_week">Ultima settimana</string>
     <string name="listview_updated_this_month">Questo mese</string>
     <string name="listview_updated_last_month">Ultimo mese</string>
-
-    <string name="settings_note_mode">Modalità di visualizzazione delle note</string>
-    <string name="settings_theme_title">Tema</string>
-    <string name="settings_font_title">Carattere a spaziatura fissa</string>
-    <string name="settings_font_size">Dimensione carattere</string>
-    <string name="settings_wifi_only">Sincronizza solo con Wi-Fi</string>
     <string name="settings_lock">Blocco applicazione (Beta)</string>
     <string name="settings_lock_summary">Credenziali dispositivo</string>
     <string name="settings_background_sync">Sincronizzazione in background</string>
     <string name="settings_prevent_screen_capture">Impedisci cattura dello schermo</string>
     <string name="settings_gridview">Vista griglia</string>
-    <string name="error_sync">Sincronizzazione non riuscita: %1$s</string>
     <string name="error_synchronization">Sincronizzazione non riuscita</string>
-    <string name="error_no_network">Nessuna connessione di rete</string>
     <string name="error_maintenance_mode">Il server è in modalità di manutenzione</string>
     <string name="error_unknown">Si è verificato un errore sconosciuto.</string>
 
-    <string name="about_version_title">Versione</string>
-    <string name="about_version">Attualmente stai usando %1$s</string>
-    <string name="about_maintainer_title">Responsabile</string>
-    <string name="about_developers_title">Sviluppatori</string>
-    <string name="about_translators_title">Traduttori</string>
-    <string name="about_translators_transifex">Comunità di Nextcloud attiva %1$s</string>
-    <string name="about_testers_title">Tester</string>
-    <string name="about_source_title">Codice sorgente</string>
-    <string name="about_source">Questo progetto è ospitato su GitHub: %1$s</string>
-    <string name="about_issues_title">Problemi</string>
-    <string name="about_issues">Puoi segnalare bug, proporre miglioramenti e richiedere funzionalità tramite il sistema di tracciamento dei problemi di GitHub: %1$s</string>
-    <string name="about_translate_title">Traduci</string>
-    <string name="about_translate">Unisciti al team di Nextcloud su Transifex e aiutaci a tradurre questa applicazione: %1$s</string>
-    <string name="about_app_license_title">Licenza applicazione</string>
-    <string name="about_app_license">Questa applicazione è rilasciata nei termini della licenza GNU GENERAL PUBLIC LICENSE v3+.</string>
-    <string name="about_app_license_button">Visualizza licenza</string>
-    <string name="about_icons_disclaimer_title">Icone</string>
     <string name="about_icons_disclaimer_app_icon">Per l\'icona originale, vedi %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Tutte le altre icone utilizzate da questa applicazione sono %1$s realizzate da Google Inc. e rilasciate nei termini della licenza Apache 2.0.</string>
     <string name="about_icons_disclaimer_mdi">Icone in Material Design</string>
+    <string name="pref_value_lock">Protezione con password</string>
+
+    <!-- Settings -->
+    <string name="settings_note_mode">Modalità di visualizzazione degli appunti</string>
+    <string name="settings_theme_title">Tema scuro</string>
+    <string name="settings_font_title">Carattere a spaziatura fissa</string>
+    <string name="settings_font_size">Dimensione carattere</string>
+    <string name="settings_wifi_only">Sincronizza solo con Wi-Fi</string>
+    <string name="error_sync">Sincronizzazione non riuscita: %1$s</string>
+    <string name="error_no_network">nessuna connessione di rete</string>
+    <string name="about_version_title">Versione</string>
+    <string name="about_version"> Settings </string>
+    <string name="about_maintainer_title">Maintainer</string>
+    <string name="about_developers_title">Sviluppatori</string>
+    <string name="about_translators_title">Traduttori</string>
+    <string name="about_translators_transifex">La comunità Nextcloud su &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;</string>
+    <string name="about_testers_title">Tester</string>
+    <string name="about_source_title">Codice sorgente</string>
+    <string name="about_source"> Settings </string>
+    <string name="about_issues_title">Problemi</string>
+    <string name="about_issues"> Settings </string>
+    <string name="about_translate_title">Traduci</string>
+    <string name="about_translate"> Settings </string>
+    <string name="about_app_license_title">Licenza app</string>
+    <string name="about_app_license">Questa app è rilasciata sotto la licenza GNU GENERAL PUBLIC LICENSE v3+.</string>
+    <string name="about_app_license_button">Visualizza licenza</string>
+    <string name="about_icons_disclaimer_title">Icone</string>
     <string name="about_credits_tab_title">Riconoscimenti</string>
     <string name="about_contribution_tab_title">Contributi</string>
     <string name="about_license_tab_title">Licenza</string>
-
-    <string name="widget_note_list_title">Elenco di note</string>
-    <string name="widget_note_list_placeholder">Nessuna nota</string>
-    <string name="widget_single_note_title">Nota singola</string>
-    <string name="widget_single_note_placeholder_tv">Nota non trovata</string>
+    <string name="widget_note_list_title">Elenco Appunti</string>
+    <string name="widget_note_list_placeholder">Nessun appunto</string>
+    <string name="widget_single_note_title">Appunto singolo</string>
+    <string name="widget_single_note_placeholder_tv">Appunto non trovato</string>
     <string name="widget_not_logged_in">Accedi a Notes prima di utilizzare questo widget</string>
-    <string name="widget_entry_fav_contentDescription">L\'icona a stella è utilizzata per marcare un elemento come preferito</string>
-
-    <string name="activity_select_single_note">Seleziona nota</string>
-
-    <string name="shortcut_create_long">Crea una nuova nota</string>
-
+    <string name="widget_entry_fav_contentDescription">L\'icona stella è utilizzata per evidenziare un elemento come preferito</string>
+    <string name="activity_select_single_note">Seleziona appunto</string>
+    <string name="shortcut_create_long">Crea un nuovo appunto</string>
+    <string name="pref_value_theme_light">Chiaro</string>
+    <string name="pref_value_theme_dark">Scuro</string>
     <string name="pref_value_font_normal">Normale</string>
-    <string name="pref_value_wifi_and_mobile">Sincronizza su Wi-FI e dati mobili</string>
-    <string name="pref_value_lock">Protezione con password</string>
-
+    <string name="pref_value_wifi_and_mobile">Sincronizza con Wi-FI e rete dati</string>
     <string name="simple_error">Errore</string>
     <string name="simple_close">Chiudi</string>
     <string name="simple_copy">Copia</string>
     <string name="simple_exception">Eccezione</string>
-    <string name="pin_to_homescreen">Appunta alla schermata iniziale</string>
-    <string name="note_has_been_deleted">Questa nota è stata eliminata</string>
     <string name="add_account">Aggiungi account</string>
 
     <string name="category_music">Musica</string>
@@ -173,25 +165,23 @@
     <string name="simple_synchronization">Sincronizzazione</string>
     <string name="manage_accounts">Gestisci account</string>
     <string name="action_formatting_help">Formattazione</string>
-
+    <string name="pin_to_homescreen">Allega alla schermata iniziale</string>
+    <string name="note_has_been_deleted">Questo appunto è stato eliminato</string>
     <string-array name="noteMode_entries">
         <item>Apri in modalità modifica</item>
         <item>Apri in modalità anteprima</item>
         <item>Ricorda la mia ultima selezione</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Piccola</item>
         <item>Media</item>
         <item>Grande</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Chiaro</item>
         <item>Scuro</item>
         <item>Predefiniti di sistema</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d selezionato</item>
         <item quantity="many">%d selezionati</item>
