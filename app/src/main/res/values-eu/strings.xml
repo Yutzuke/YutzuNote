@@ -303,4 +303,13 @@
     <string name="preferences_service_terms">Zerbitzu-baldintzak</string>
     <string name="preferences_privacy_policy">Pribatutasun politika</string>
     <string name="preferences_authors">Egileak</string>
+    <string name="sso_announcment_understood">Ulertuta</string>
+    <string name="sso_announcment_more_info">Informazio gehiago</string>
+    <string name="fallback_weblogin_back">Atzera</string>
+    <string name="note_has_been_deleted">Ohar hau ezabatu egin da</string>
+    <string name="error_sync_disabled">Kontu honetarako sinkronizazioa desgaitu da</string>
+    <string name="app_name_long">Nextcloud Oharrak</string>
+    <string name="listview_updated_last_month">Aurreko hilabetea</string>
+    <string name="listview_updated_last_week">Aurreko astea</string>
+    <string name="action_enable_sync">Gaitu</string>
 </resources>
