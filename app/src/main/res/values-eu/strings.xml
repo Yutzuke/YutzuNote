@@ -40,8 +40,6 @@
 
     <string name="settings_note_mode">Erakutsi oharren modua</string>
     <string name="settings_theme_title">Gaia</string>
-    <string name="settings_font_title">Zabalera bakarreko letra mota</string>
-    <string name="settings_font_size">Letra tamaina</string>
     <string name="settings_wifi_only">Sinkronizatu wifi bidez bakarrik</string>
     <string name="settings_lock">Aplikazioen blokeoa (Beta)</string>
     <string name="settings_lock_summary">Gailuaren kredentzialak</string>
@@ -99,7 +97,6 @@
     <string name="simple_close">Itxi</string>
     <string name="simple_copy">Kopiatu</string>
     <string name="simple_exception">Salbuespena</string>
-    <string name="pin_to_homescreen">Hasierako pantailara egokitu</string>
     <string name="note_has_been_deleted">Ohar hau ezabatu da</string>
     <string name="add_account">Gehitu kontua</string>
 
@@ -296,7 +293,14 @@
     <string name="settings_file_suffix_description">Zure Nextcloudeko nota berrien fitxategi-luzapena</string>
     <string name="settings_file_suffix_success">Fitxategi berrien luzapena: %1$s</string>
     <string name="http_status_code">HTTP egoera kodea: %1$d</string>
-    <string name="progress_import_indeterminate">Notak inportatzen...</string>
-    <string name="progress_import">%2$dtik %1$d nota inportatzen...</string>
+    <string name="progress_import_indeterminate">Notak inportatzen…</string>
+    <string name="progress_import">%2$dtik %1$d nota inportatzen…</string>
     <string name="account_imported">Kontua inportatuta.</string>
+    <string name="preferences_app_info_title">Oharrak-i buruzko informazioa</string>
+    <string name="pin_to_homescreen">Gehitu hasierako pantailan</string>
+    <string name="settings_font_size">Letra-tamaina</string>
+    <string name="settings_font_title">Tarte bakarreko letra-tipoa</string>
+    <string name="preferences_service_terms">Zerbitzu-baldintzak</string>
+    <string name="preferences_privacy_policy">Pribatutasun politika</string>
+    <string name="preferences_authors">Egileak</string>
 </resources>
