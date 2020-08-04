@@ -87,7 +87,7 @@
     <string name="shortcut_create_long">Sortu ohar berria</string>
     <string name="pref_value_theme_light">Argia</string>
     <string name="pref_value_theme_dark">Iluna</string>
-    <string name="pref_value_font_normal">Normala</string>
+    <string name="pref_value_font_normal">Arrunta</string>
     <string name="pref_value_wifi_and_mobile">Sinkronizatu wifi eta datu mugikorrekin</string>
     <string name="pref_value_lock">Pasahitz bidezko babesa</string>
 
