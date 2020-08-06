@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Notities</string>
     <string name="app_name_long">Nextcloud Notities</string>
     <string name="label_all_notes">Alle notities</string>
@@ -31,20 +30,13 @@
     <string name="search_in_category">Zoeken in %1$s</string>
     <string name="search_in_all">Zoek in alle notities</string>
 
-    <string name="change_category_title">Een categorie kiezen</string>
-
+    <string name="change_category_title">Kies een categorie</string>
     <string name="listview_updated_today">Vandaag</string>
     <string name="listview_updated_yesterday">Gisteren</string>
     <string name="listview_updated_this_week">Deze week</string>
     <string name="listview_updated_last_week">Vorige week</string>
     <string name="listview_updated_this_month">Deze maand</string>
     <string name="listview_updated_last_month">Vorige maand</string>
-
-    <string name="settings_note_mode">Weergavemodus voor notities</string>
-    <string name="settings_theme_title">Thema</string>
-    <string name="settings_font_title">Monospace lettertype</string>
-    <string name="settings_font_size">Fontgrootte</string>
-    <string name="settings_wifi_only">Alleen met Wi-Fi synchroniseren</string>
     <string name="settings_lock">App slot (Beta)</string>
     <string name="settings_lock_summary">Apparaatinloggegevens</string>
     <string name="settings_background_sync">Achtergrondsynchronisatie</string>
@@ -53,57 +45,47 @@
     <string name="settings_keep_screen_on">Scherm aan laten</string>
     <string name="settings_keep_screen_on_summary">Tijdens het bekijken of bewerken van een notitie</string>
 
-    <string name="error_sync">Synchronisatie mislukt: %1$s</string>
     <string name="error_synchronization">Synchronisatie mislukt</string>
-    <string name="error_no_network">Geen netwerkverbinding</string>
     <string name="error_maintenance_mode">Server in onderhoudsmodus</string>
     <string name="error_unknown">Een onbekende fout trad op.</string>
 
-    <string name="about_version_title">Versie</string>
-    <string name="about_version">Je gebruikt nu %1$s</string>
-    <string name="about_maintainer_title">Projectleider</string>
-    <string name="about_developers_title">Ontwikkelaars</string>
-    <string name="about_translators_title">Vertalers</string>
-    <string name="about_translators_transifex">Nextcloud-gemeenschap op %1$s</string>
-    <string name="about_testers_title">Testers</string>
-    <string name="about_source_title">Broncode</string>
-    <string name="about_source">Dit project wordt gehost op GitHub: %1$s</string>
-    <string name="about_issues_title">Problemen</string>
-    <string name="about_issues">Je kunt bugs rapporteren, verbeteringen voorstellen en functionele aanpassingen aanvragen via de issue-tracker op GitHub: %1$s</string>
-    <string name="about_translate_title">Vertalen</string>
-    <string name="about_translate">Word lid van het Nextcloud-team op Transifex en help ons deze app te vertalen: %1$s </string>
-    <string name="about_app_license_title">App licentie</string>
-    <string name="about_app_license">Deze applicatie valt onder de GNU GENERAL PUBLIC LICENSE v3+.</string>
-    <string name="about_app_license_button">Licentie weergeven</string>
-    <string name="about_icons_disclaimer_title">Pictogrammen</string>
     <string name="about_icons_disclaimer_app_icon">Voor het originele icoon zie %1$s</string>
     <string name="about_icons_disclaimer_mdi_icons">Alle andere pictogrammen in deze app zijn %1$s gemaakt door Google Inc. en zijn gelicenseerd onder de Apache 2.0 Licensie.</string>
     <string name="about_icons_disclaimer_mdi">Material Design iconen</string>
-    <string name="about_credits_tab_title">Verantwoording</string>
+    <string name="settings_note_mode">Weergavemode voor notities</string>
+    <string name="settings_theme_title">Donker thema</string>
+    <string name="settings_font_title">Monospace lettertype</string>
+    <string name="settings_font_size">Fontgrootte</string>
+    <string name="settings_wifi_only">Sync alleen met Wi-Fi</string>
+    <string name="error_sync">Synchronisatie mislukt: %1$s</string>
+    <string name="error_no_network">geen netwerkverbinding</string>
+    <string name="about_version_title">Versie</string>
+    <string name="about_version">Je gebruikt nu &lt;strong&gt;%1$s&lt;/strong&gt;</string>
+    <string name="about_maintainer_title">Beheerder</string>
+    <string name="about_developers_title">Ontwikkelaars</string>
+    <string name="about_translators_title">Vertalers</string>
+    <string name="about_translators_transifex">Nextcloud-gemeenschap op &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;</string>
+    <string name="about_testers_title">Testers</string>
+    <string name="about_source_title">Broncode</string>
+    <string name="about_source">Dit project wordt gehost op GitHub: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues_title">Problemen</string>
+    <string name="about_issues">Je kunt bugs rapporteren, verbeteringen voorstellen en functionele aanpassingen aanvragen via de issue-tracker op GitHub: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate_title">Vertalen</string>
+    <string name="about_translate">Doe mee met het Nextcloud-team op Transifex en help ons deze app te vertalen: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_app_license_title">Applicentie</string>
+    <string name="about_app_license">Deze applicatie valt onder de GNU GENERAL PUBLIC LICENSE v3+.</string>
+    <string name="about_app_license_button">Licentie weergeven</string>
+    <string name="about_icons_disclaimer_title">Pictogrammen</string>
+    <string name="about_credits_tab_title">Credits</string>
     <string name="about_contribution_tab_title">Bijdrage</string>
     <string name="about_license_tab_title">Licentie</string>
-
     <string name="widget_note_list_title">Notitielijst</string>
     <string name="widget_note_list_placeholder">Geen notities</string>
     <string name="widget_single_note_title">Enkele notitie</string>
     <string name="widget_single_note_placeholder_tv">Notitie niet gevonden</string>
     <string name="widget_not_logged_in">Login bij Notities voordat je deze widget gebruikt</string>
-    <string name="widget_entry_fav_contentDescription">\'Ster\'pictogram word gebruikt om object als favoriet te markeren</string>
-
-    <string name="activity_select_single_note">Notitie selecteren</string>
-
-    <string name="shortcut_create_long">Een nieuwe notitie maken</string>
-
-    <string name="pref_value_font_normal">Normaal</string>
-    <string name="pref_value_wifi_and_mobile">Met Wi-Fi en mobiele data synchroniseren</string>
     <string name="pref_value_lock">Wachtwoordbeveiliging</string>
 
-    <string name="simple_error">Fout</string>
-    <string name="simple_close">Sluit</string>
-    <string name="simple_copy">Kopieër</string>
-    <string name="simple_exception">Uitzondering</string>
-    <string name="pin_to_homescreen">Vastzetten op startscherm</string>
-    <string name="note_has_been_deleted">Deze notitie is verwijderd</string>
     <string name="add_account">Account toevoegen</string>
 
     <string name="category_music">Muziek</string>
@@ -177,12 +159,24 @@
     <string name="manage_accounts">Accounts beheren </string>
     <string name="action_formatting_help">Opmaak</string>
 
+    <string name="widget_entry_fav_contentDescription">Sterpictogram gebruikt om object als favoriet te markeren</string>
+    <string name="activity_select_single_note">Selecteer notitie</string>
+    <string name="shortcut_create_long">Maak een nieuwe notitie</string>
+    <string name="pref_value_theme_light">Licht</string>
+    <string name="pref_value_theme_dark">Donker</string>
+    <string name="pref_value_font_normal">Normaal</string>
+    <string name="pref_value_wifi_and_mobile">Sync met Wi-Fi en mobiele data</string>
+    <string name="simple_error">Fout</string>
+    <string name="simple_close">Sluiten</string>
+    <string name="simple_copy">Kopiëren</string>
+    <string name="simple_exception">Uitzondering</string>
+    <string name="pin_to_homescreen">Vastmaken op startscherm</string>
+    <string name="note_has_been_deleted">Deze notitie is verwijderd</string>
     <string-array name="noteMode_entries">
         <item>Open in bewerkingsmodus</item>
         <item>Open in voorbeeldmodus</item>
         <item>Onthoud je laatste selectie</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Klein</item>
         <item>Gemiddeld</item>
@@ -299,7 +293,10 @@
     <string name="settings_file_suffix_description">Bestandsextensies voor nieuwe notities in je Nextcloud</string>
     <string name="settings_file_suffix_success">Nieuwe bestandsachtervoegsel: %1$s</string>
     <string name="http_status_code">HTTP status code: %1$d</string>
-    <string name="progress_import_indeterminate">Notities importeren...</string>
+    <string name="progress_import_indeterminate">Notities importeren…</string>
     <string name="progress_import">Notitie %1$dvan %2$dimporteren</string>
     <string name="account_imported">Account geïmporteerd</string>
+    <string name="preferences_authors">Auteurs</string>
+    <string name="preferences_service_terms">Servicevoorwaarden</string>
+    <string name="preferences_privacy_policy">Privacybeleid</string>
 </resources>
