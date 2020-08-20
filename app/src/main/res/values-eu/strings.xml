@@ -303,4 +303,11 @@
     <string name="note_has_been_deleted">Ohar hau ezabatu egin da</string>
     <string name="listview_updated_last_month">Aurreko hilabetea</string>
     <string name="listview_updated_last_week">Aurreko astea</string>
+    <string name="preferences_about_app">Oharrak Nextcloud Oharrak-en adarkatze bat da</string>
+    <string name="preferences_app_info">-Zerrendatu, sortu, editatu, partekatu, bilatu eta ezabatu oharrak
+\n -Partekatu testuak eta estekak ohar gisa aplikazioan
+\n -Markatu oharrak gogokotzat
+\n -Ezabatze masiboa
+\n -MarkDown errendatzea
+\n -Hizkuntza askotan eskuragarri</string>
 </resources>
