@@ -19,6 +19,7 @@ import android.animation.AnimatorInflater;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
@@ -369,6 +370,7 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
         });
 
         ACCENT_COLOR= fetchAccentColor(this);
+        fabCreate.setBackgroundTintList(ColorStateList.valueOf(darkenColor20(ACCENT_COLOR)));
     }
 
     @Override
@@ -866,6 +868,13 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
         float[] hsv = new float[3];
         android.graphics.Color.colorToHSV(color, hsv);
         hsv[2] *= 0.8f;
+        return android.graphics.Color.HSVToColor(hsv);
+    }
+
+    @ColorInt int darkenColor20(@ColorInt int color) {
+        float[] hsv = new float[3];
+        android.graphics.Color.colorToHSV(color, hsv);
+        hsv[2] *= 0.6f;
         return android.graphics.Color.HSVToColor(hsv);
     }
 }

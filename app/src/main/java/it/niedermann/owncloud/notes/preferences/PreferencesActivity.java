@@ -1,13 +1,19 @@
 package it.niedermann.owncloud.notes.preferences;
 
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
 import it.niedermann.owncloud.notes.LockedActivity;
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.databinding.ActivityPreferencesBinding;
+import it.niedermann.owncloud.notes.main.MainActivity;
 
 public class PreferencesActivity extends LockedActivity {
 
@@ -28,6 +34,29 @@ public class PreferencesActivity extends LockedActivity {
         getSupportFragmentManager().beginTransaction()
                 .replace(R.id.fragment_container_view, new PreferencesFragment())
                 .commit();
+
+        updateAccentColor();
+    }
+
+    private void updateAccentColor(){
+        //change toolbar color
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(MainActivity.ACCENT_COLOR));
+
+        //change status bar color
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(darkenColor(MainActivity.ACCENT_COLOR));
+        }
+    }
+
+    @ColorInt
+    int darkenColor(@ColorInt int color) {
+        float[] hsv = new float[3];
+        android.graphics.Color.colorToHSV(color, hsv);
+        hsv[2] *= 0.8f;
+        return android.graphics.Color.HSVToColor(hsv);
     }
 
     @Override

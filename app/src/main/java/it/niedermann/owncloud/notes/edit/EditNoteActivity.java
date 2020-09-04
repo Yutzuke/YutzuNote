@@ -3,14 +3,18 @@ package it.niedermann.owncloud.notes.edit;
 import static it.niedermann.owncloud.notes.shared.model.ENavigationCategoryType.FAVORITES;
 
 import android.content.Intent;
+import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -92,6 +96,8 @@ public class EditNoteActivity extends LockedActivity implements BaseNoteFragment
 
         setSupportActionBar(binding.toolbar);
         binding.toolbar.setOnClickListener((v) -> fragment.showEditTitleDialog());
+
+        updateAccentColor();
     }
 
     @Override
@@ -315,5 +321,26 @@ public class EditNoteActivity extends LockedActivity implements BaseNoteFragment
     @Override
     public void applyBrand(int mainColor, int textColor) {
         applyBrandToPrimaryToolbar(binding.appBar, binding.toolbar);
+    }
+
+    private void updateAccentColor(){
+        //change toolbar color
+        getSupportActionBar().setBackgroundDrawable(
+                new ColorDrawable(MainActivity.ACCENT_COLOR));
+
+        //change status bar color
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(darkenColor(MainActivity.ACCENT_COLOR));
+        }
+    }
+
+    @ColorInt
+    int darkenColor(@ColorInt int color) {
+        float[] hsv = new float[3];
+        android.graphics.Color.colorToHSV(color, hsv);
+        hsv[2] *= 0.8f;
+        return android.graphics.Color.HSVToColor(hsv);
     }
 }
