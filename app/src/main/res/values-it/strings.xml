@@ -291,7 +291,18 @@
     <string name="settings_file_suffix_description">Estensione del file per le nuove note nel tuo Nextcloud</string>
     <string name="settings_file_suffix_success">Nuovo suffisso file: %1$s</string>
     <string name="http_status_code">Codice di stato HTTP: %1$d</string>
-    <string name="progress_import_indeterminate">Importazione note in corso...</string>
-    <string name="progress_import">Importazione nota %1$d di %2$d ...</string>
+    <string name="progress_import_indeterminate">Importazione note in corso…</string>
+    <string name="progress_import">Importazione nota %1$d di %2$d …</string>
     <string name="account_imported">Account importato</string>
+    <string name="preferences_privacy_policy">Privacy policy</string>
+    <string name="preferences_authors">Autori</string>
+    <string name="preferences_service_terms">Termini di servizio</string>
+    <string name="preferences_about_app">Notes è un fork di Nextcloud notes</string>
+    <string name="preferences_app_info">- Elenca, crea, modifica, condividi, cerca e cancella i tuoi appunti
+\n -Condividi testi e link come nuovi appunti nell\'app
+\n -Evidenzia gli appunti preferiti
+\n -Elimina ciò che non serve
+\n -Puoi evidenziare
+\n -Tradotto in molte lingue</string>
+    <string name="preferences_app_info_title">Informazioni su Notes</string>
 </resources>
