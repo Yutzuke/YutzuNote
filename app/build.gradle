@@ -49,10 +49,15 @@ android {
         disable 'MissingTranslation'
     }
     namespace 'it.niedermann.owncloud.notes'
+
+    aaptOptions {
+        additionalParameters '-I', 'e-ui-sdk.jar'
+    }
 }
 
 dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.6'
+    compileOnly files("../e-ui-sdk.jar")
 
     // Nextcloud SSO
     implementation 'com.github.nextcloud:Android-SingleSignOn:0.6.1'

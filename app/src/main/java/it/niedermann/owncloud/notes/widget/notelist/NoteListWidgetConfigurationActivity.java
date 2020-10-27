@@ -1,17 +1,17 @@
 package it.niedermann.owncloud.notes.widget.notelist;
 
+import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_ALL;
+import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_CATEGORY;
+import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_STARRED;
+import static it.niedermann.owncloud.notes.shared.model.ENavigationCategoryType.RECENT;
+
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
-import android.graphics.drawable.ColorDrawable;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Toast;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -26,18 +26,12 @@ import it.niedermann.owncloud.notes.LockedActivity;
 import it.niedermann.owncloud.notes.NotesApplication;
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.databinding.ActivityNoteListConfigurationBinding;
-import it.niedermann.owncloud.notes.main.MainActivity;
 import it.niedermann.owncloud.notes.main.navigation.NavigationAdapter;
 import it.niedermann.owncloud.notes.main.navigation.NavigationClickListener;
 import it.niedermann.owncloud.notes.main.navigation.NavigationItem;
 import it.niedermann.owncloud.notes.persistence.NotesRepository;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
 import it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData;
-
-import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_ALL;
-import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_CATEGORY;
-import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_STARRED;
-import static it.niedermann.owncloud.notes.shared.model.ENavigationCategoryType.RECENT;
 
 
 public class NoteListWidgetConfigurationActivity extends LockedActivity {
@@ -136,7 +130,8 @@ public class NoteListWidgetConfigurationActivity extends LockedActivity {
         executor.submit(() -> {
             try {
                 this.localAccount = repo.getAccountByName(SingleAccountHelper.getCurrentSingleSignOnAccount(this).name);
-            } catch (NextcloudFilesAppAccountNotFoundException | NoCurrentAccountSelectedException e) {
+            } catch (NextcloudFilesAppAccountNotFoundException |
+                     NoCurrentAccountSelectedException e) {
                 e.printStackTrace();
                 Toast.makeText(this, R.string.widget_not_logged_in, Toast.LENGTH_LONG).show();
                 // TODO Present user with app login screen
@@ -145,32 +140,9 @@ public class NoteListWidgetConfigurationActivity extends LockedActivity {
             }
             runOnUiThread(() -> viewModel.getAdapterCategories(localAccount.getId()).observe(this, (navigationItems) -> adapterCategories.setItems(navigationItems)));
         });
-
-        updateAccentColor();
     }
 
     @Override
     public void applyBrand(int mainColor, int textColor) {
-    }
-
-    private void updateAccentColor(){
-        //change toolbar color
-        getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(MainActivity.ACCENT_COLOR));
-
-        //change status bar color
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(darkenColor(MainActivity.ACCENT_COLOR));
-        }
-    }
-
-    @ColorInt
-    int darkenColor(@ColorInt int color) {
-        float[] hsv = new float[3];
-        android.graphics.Color.colorToHSV(color, hsv);
-        hsv[2] *= 0.8f;
-        return android.graphics.Color.HSVToColor(hsv);
     }
 }

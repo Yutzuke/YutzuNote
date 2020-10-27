@@ -17,28 +17,19 @@ import static it.niedermann.owncloud.notes.shared.util.SSOUtil.askForNewAccount;
 import android.accounts.NetworkErrorException;
 import android.animation.AnimatorInflater;
 import android.app.SearchManager;
-import android.content.Context;
 import android.content.Intent;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.view.ActionMode;
-import androidx.appcompat.view.ContextThemeWrapper;
 import androidx.appcompat.widget.SearchView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
@@ -144,8 +135,6 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
     private ActionMode mActionMode;
 
     boolean canMoveNoteToAnotherAccounts = false;
-
-    public static int ACCENT_COLOR;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -368,9 +357,6 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
                 menuAdapter.updateAccount(this, nextAccount);
             }
         });
-
-        ACCENT_COLOR= fetchAccentColor(this);
-        fabCreate.setBackgroundTintList(ColorStateList.valueOf(darkenColor20(ACCENT_COLOR)));
     }
 
     @Override
@@ -833,48 +819,5 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
         final var categoryLiveData = mainViewModel.setCategory(tracker.getSelection(), category);
         categoryLiveData.observe(this, (next) -> categoryLiveData.removeObservers(this));
         tracker.clearSelection();
-    }
-
-    /*
-     * get Accent color from OS
-     * */
-    private int fetchAccentColor(Context context) {
-
-        TypedValue typedValue = new TypedValue();
-        ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(this,
-                android.R.style.Theme_DeviceDefault);
-        contextThemeWrapper.getTheme().resolveAttribute(android.R.attr.colorAccent,
-                typedValue, true);
-        int color_accent = typedValue.data;
-        Log.e("TAG", "accent Colour  #"+Integer.toHexString(color_accent));
-
-        //change toolbar color
-        getSupportActionBar().setBackgroundDrawable(
-                new ColorDrawable(color_accent));
-
-        //change status bar color
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(darkenColor(color_accent));
-        }
-
-        return color_accent;
-    }
-
-
-    @ColorInt
-    int darkenColor(@ColorInt int color) {
-        float[] hsv = new float[3];
-        android.graphics.Color.colorToHSV(color, hsv);
-        hsv[2] *= 0.8f;
-        return android.graphics.Color.HSVToColor(hsv);
-    }
-
-    @ColorInt int darkenColor20(@ColorInt int color) {
-        float[] hsv = new float[3];
-        android.graphics.Color.colorToHSV(color, hsv);
-        hsv[2] *= 0.6f;
-        return android.graphics.Color.HSVToColor(hsv);
     }
 }
