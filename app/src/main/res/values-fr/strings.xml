@@ -313,4 +313,5 @@
     <string name="preferences_privacy_policy">Politique de confidentialité</string>
     <string name="preferences_service_terms">Conditions d\'utilisation</string>
     <string name="preferences_authors">Auteurs</string>
+    <string name="add_an_account">Ajouter un compte</string>
 </resources>
