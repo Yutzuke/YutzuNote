@@ -294,12 +294,13 @@
     <string name="settings_file_suffix_description">Extension de fichier pour les nouvelles notes dans votre Nextcloud</string>
     <string name="settings_file_suffix_success">Nouveau suffixe de fichier : %1$s</string>
     <string name="http_status_code">État HTTP : %1$d</string>
-    <string name="progress_import_indeterminate">Importation des notes...</string>
-    <string name="progress_import">Importation de la note %1$dsur %2$d...</string>
+    <string name="progress_import_indeterminate">Importation des notes…</string>
+    <string name="progress_import">Importation de la note %1$dsur %2$d…</string>
     <string name="account_imported">Compte importé.</string>
     <!-- Plurals -->
     <plurals name="ab_selected">
         <item quantity="one">%d sélectionné</item>
         <item quantity="other">%d sélectionnés</item>
     </plurals>
+    <string name="preferences_app_info_title">Information sur Note</string>
 </resources>
