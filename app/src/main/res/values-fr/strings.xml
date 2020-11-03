@@ -302,5 +302,5 @@
         <item quantity="one">%d sélectionné</item>
         <item quantity="other">%d sélectionnés</item>
     </plurals>
-    <string name="preferences_app_info_title">Information sur Note</string>
+    <string name="preferences_app_info_title">Informations sur Notes</string>
 </resources>
