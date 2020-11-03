@@ -311,4 +311,5 @@
 \n- Traduite dans de nombreux langages</string>
     <string name="preferences_about_app">Notes est dérivée de Nextcloud Notes</string>
     <string name="preferences_privacy_policy">Politique de confidentialité</string>
+    <string name="preferences_service_terms">Conditions d\'utilisation</string>
 </resources>
