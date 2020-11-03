@@ -303,4 +303,10 @@
         <item quantity="other">%d sélectionnés</item>
     </plurals>
     <string name="preferences_app_info_title">Informations sur Notes</string>
+    <string name="preferences_app_info">- Lister, créer, éditer, partager, rechercher et supprimer des notes
+\n- Partager du texte et des liens comme nouvelle note dans l\'application
+\n- Marquer des notes comme favories
+\n- Suppression en bloc
+\n- Interprète le MarkDown
+\n- Traduite dans de nombreux langages</string>
 </resources>
