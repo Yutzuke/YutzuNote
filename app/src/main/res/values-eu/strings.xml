@@ -297,7 +297,7 @@
     <string name="pin_to_homescreen">Gehitu hasierako pantailan</string>
     <string name="settings_font_size">Letra-tamaina</string>
     <string name="settings_font_title">Tarte bakarreko letra-tipoa</string>
-    <string name="preferences_service_terms">Zerbitzu-baldintzak</string>
+    <string name="preferences_service_terms">Erabilera baldintzak</string>
     <string name="preferences_privacy_policy">Pribatutasun politika</string>
     <string name="preferences_authors">Egileak</string>
     <string name="note_has_been_deleted">Ohar hau ezabatu egin da</string>
