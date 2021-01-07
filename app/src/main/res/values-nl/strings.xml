@@ -7,7 +7,7 @@
     <string name="action_create">Nieuwe notitie</string>
     <string name="welcome_text">Welkom bij %1$s</string>
     <string name="action_settings">Instellingen</string>
-    <string name="action_trashbin">Verwijder notities</string>
+    <string name="action_trashbin">Verwijderde notities</string>
     <string name="action_search">Zoeken</string>
     <string name="action_sorting_method">Sorteer methode</string>
     <string name="simple_cancel">Annuleren</string>
@@ -17,10 +17,10 @@
     <string name="action_edit_save">Opslaan</string>
     <string name="simple_about">Over</string>
     <string name="simple_link">Link</string>
-    <string name="action_note_deleted">Verwijderd %1$s</string>
-    <string name="action_note_restored">Hersteld %1$s</string>
+    <string name="action_note_deleted">Notitie verwijderd</string>
+    <string name="action_note_restored">Notitie hersteld</string>
     <string name="action_undo">Ongedaan maken</string>
-    <string name="action_uncategorized">Niet gecategoriseerd</string>
+    <string name="action_uncategorized">Niet-gecategoriseerd</string>
     <string name="menu_delete">Verwijderen</string>
     <string name="menu_change_category">Categorie</string>
     <string name="menu_favorite">Favoriet</string>
@@ -37,6 +37,7 @@
     <string name="listview_updated_last_week">Vorige week</string>
     <string name="listview_updated_this_month">Deze maand</string>
     <string name="listview_updated_last_month">Vorige maand</string>
+<<<<<<< HEAD
     <string name="settings_lock">App slot (Beta)</string>
     <string name="settings_lock_summary">Apparaatinloggegevens</string>
     <string name="settings_background_sync">Achtergrondsynchronisatie</string>
@@ -53,10 +54,42 @@
     <string name="about_icons_disclaimer_mdi_icons">Alle andere pictogrammen in deze app zijn %1$s gemaakt door Google Inc. en zijn gelicenseerd onder de Apache 2.0 Licensie.</string>
     <string name="about_icons_disclaimer_mdi">Material Design iconen</string>
     <string name="settings_note_mode">Weergavemode voor notities</string>
+=======
+    <!-- Settings -->
+    <string name="settings_server_settings">Account</string>
+    <string name="settings_url">Serveradres</string>
+    <string name="settings_url_check_description">Toont of het adres gepingt kan worden.</string>
+    <string name="settings_url_warn_http">WAARSCHUWING: \"http\" is niet veilig. Gebruik \"https\".</string>
+    <string name="settings_username">Gebruikersnaam</string>
+    <string name="settings_password">Wachtwoord</string>
+    <string name="settings_password_unchanged">Wachtwoord (niet gewijzigd)</string>
+    <string name="settings_password_check_description">Toont of de login-gegevens correct zijn.</string>
+    <string name="settings_submit">Verbinden</string>
+    <string name="settings_submitting">Verbinden …</string>
+    <string name="settings_note_mode">Weergavemodus voor notities</string>
+>>>>>>> 98d8d7f3 (Translated using Weblate (Dutch))
     <string name="settings_theme_title">Donker thema</string>
     <string name="settings_font_title">Monospace lettertype</string>
-    <string name="settings_font_size">Fontgrootte</string>
+    <string name="settings_font_size">Lettertype grootte</string>
     <string name="settings_wifi_only">Sync alleen met Wi-Fi</string>
+<<<<<<< HEAD
+=======
+    <string name="settings_cert_category">Certificaten beheren</string>
+    <string name="settings_cert_trust_system">Vertrouw systeem certificaten</string>
+    <string name="settings_cert_trust_system_on">Systeem en door gebruiker toegevoegde CA\'s worden vertrouwd (aanbevolen)</string>
+    <string name="settings_cert_trust_system_off">Systeem- en door gebruiker toegevoegde CA\'s worden niet vertrouwd</string>
+    <string name="settings_cert_reset">Reset (niet) vertrouwde certificaten</string>
+    <string name="settings_cert_reset_summary">Reset alle geaccepteerde, zelf aangemaakte certificaten</string>
+    <string name="settings_cert_reset_toast">Alle zelf aangemaakte certificaten zijn verwijderd</string>
+    <!-- Certificates -->
+    <string name="certificate_notification_connection_security">Notities -  Connectie veiligheid</string>
+    <string name="trust_certificate_unknown_certificate_found">Notities heeft een onbekend certificaat. Wil je het vertrouwen?</string>
+    <!-- Network -->
+    <string name="network_connecting">Verbinden</string>
+    <string name="network_connected">Verbonden</string>
+    <string name="network_disconnected">Netwerk niet beschikbaar</string>
+    <!-- Error -->
+>>>>>>> 98d8d7f3 (Translated using Weblate (Dutch))
     <string name="error_sync">Synchronisatie mislukt: %1$s</string>
     <string name="error_no_network">geen netwerkverbinding</string>
     <string name="about_version_title">Versie</string>
@@ -72,7 +105,7 @@
     <string name="about_issues">Je kunt bugs rapporteren, verbeteringen voorstellen en functionele aanpassingen aanvragen via de issue-tracker op GitHub: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_translate_title">Vertalen</string>
     <string name="about_translate">Doe mee met het Nextcloud-team op Transifex en help ons deze app te vertalen: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
-    <string name="about_app_license_title">Applicentie</string>
+    <string name="about_app_license_title">App licentie</string>
     <string name="about_app_license">Deze applicatie valt onder de GNU GENERAL PUBLIC LICENSE v3+.</string>
     <string name="about_app_license_button">Licentie weergeven</string>
     <string name="about_icons_disclaimer_title">Pictogrammen</string>
@@ -82,6 +115,7 @@
     <string name="widget_note_list_title">Notitielijst</string>
     <string name="widget_note_list_placeholder">Geen notities</string>
     <string name="widget_single_note_title">Enkele notitie</string>
+<<<<<<< HEAD
     <string name="widget_single_note_placeholder_tv">Notitie niet gevonden</string>
     <string name="widget_not_logged_in">Login bij Notities voordat je deze widget gebruikt</string>
     <string name="pref_value_lock">Wachtwoordbeveiliging</string>
@@ -159,13 +193,18 @@
     <string name="manage_accounts">Accounts beheren </string>
     <string name="action_formatting_help">Opmaak</string>
 
+=======
+    <string name="widget_single_note_placeholder_tv">Notitie niet gevonden</string>
+    <string name="widget_create_note">Maak notitie</string>
+    <string name="widget_not_logged_in">Login bij Notities voordat je deze widget gebruikt a.u.b.</string>
+>>>>>>> 98d8d7f3 (Translated using Weblate (Dutch))
     <string name="widget_entry_fav_contentDescription">Sterpictogram gebruikt om object als favoriet te markeren</string>
     <string name="activity_select_single_note">Selecteer notitie</string>
     <string name="shortcut_create_long">Maak een nieuwe notitie</string>
     <string name="pref_value_theme_light">Licht</string>
     <string name="pref_value_theme_dark">Donker</string>
     <string name="pref_value_font_normal">Normaal</string>
-    <string name="pref_value_wifi_and_mobile">Sync met Wi-Fi en mobiele data</string>
+    <string name="pref_value_wifi_and_mobile">Sync via Wi-Fi en mobiele data</string>
     <string name="simple_error">Fout</string>
     <string name="simple_close">Sluiten</string>
     <string name="simple_copy">Kopiëren</string>
