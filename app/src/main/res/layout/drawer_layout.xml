@@ -35,7 +35,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/drawer_header_height"
                     android:background="?attr/colorAccent"
-                    android:visibility="gone"
                     android:theme="@style/AppTheme">
 
                     <androidx.appcompat.widget.AppCompatImageView
