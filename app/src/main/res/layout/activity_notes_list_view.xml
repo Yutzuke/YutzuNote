@@ -145,5 +145,5 @@
         android:contentDescription="@string/action_create"
         android:title="@string/action_create"
         app:backgroundTint="@color/accent_color"
-        app:srcCompat="@drawable/ic_add_white_24dp" />
+        app:srcCompat="@lineageos.platform:drawable/ic_add" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

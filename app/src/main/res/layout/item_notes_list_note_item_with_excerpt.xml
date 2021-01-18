@@ -45,6 +45,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/menu_favorite"
                 android:padding="@dimen/spacer_2x"
+                app:tint="@color/accent_color"
                 tools:src="@drawable/ic_star_yellow_24dp" />
 
             <androidx.appcompat.widget.AppCompatImageView

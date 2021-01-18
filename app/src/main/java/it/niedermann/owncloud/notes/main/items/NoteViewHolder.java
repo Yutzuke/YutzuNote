@@ -104,7 +104,7 @@ public abstract class NoteViewHolder extends RecyclerView.ViewHolder {
     }
 
     protected void bindFavorite(@NonNull ImageView noteFavorite, boolean isFavorite) {
-        noteFavorite.setImageResource(isFavorite ? R.drawable.ic_star_yellow_24dp : R.drawable.ic_star_border_white_24dp);
+        noteFavorite.setImageResource(isFavorite ? lineageos.platform.R.drawable.ic_star_filled : lineageos.platform.R.drawable.ic_star);
         noteFavorite.setOnClickListener(view -> noteClickListener.onNoteFavoriteClick(getLayoutPosition(), view));
     }
 
