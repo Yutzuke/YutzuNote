@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Notizen</string>
     <string name="app_name_long">Nextcloud Notizen</string>
     <string name="label_all_notes">Alle Notizen</string>
@@ -32,14 +31,12 @@
     <string name="search_in_all">In allen Notizen suchen</string>
 
     <string name="change_category_title">Kategorie auswählen</string>
-
     <string name="listview_updated_today">Heute</string>
     <string name="listview_updated_yesterday">Gestern</string>
     <string name="listview_updated_this_week">Diese Woche</string>
     <string name="listview_updated_last_week">Letzte Woche</string>
     <string name="listview_updated_this_month">Diesen Monat</string>
     <string name="listview_updated_last_month">Letzten Monat</string>
-
     <string name="settings_note_mode">Anzeigemodus für Notizen</string>
     <string name="settings_theme_title">Design</string>
     <string name="settings_font_title">Nichtproportionale Schriftart</string>
@@ -53,47 +50,45 @@
     <string name="settings_keep_screen_on">Bildschirm anlassen</string>
     <string name="settings_keep_screen_on_summary">Beim Betrachten oder Bearbeiten einer Notiz</string>
 
-    <string name="error_sync">Synchronisierung fehlgeschlagen: %1$s</string>
     <string name="error_synchronization">Synchronisierung fehlgeschlagen</string>
-    <string name="error_no_network">Keine Netzwerkverbindung</string>
     <string name="error_maintenance_mode">Server befindet sich im Wartungsmodus</string>
     <string name="error_unknown">Es ist ein unbekannter Fehler aufgetreten.</string>
 
-    <string name="about_version_title">Version</string>
-    <string name="about_version">Sie benutzen aktuell %1$s</string>
-    <string name="about_maintainer_title">Maintainer</string>
-    <string name="about_developers_title">Entwickler</string>
-    <string name="about_translators_title">Übersetzer</string>
-    <string name="about_translators_transifex">Nextcloud-Gemeinschaft auf %1$s</string>
-    <string name="about_testers_title">Tester</string>
-    <string name="about_source_title">Quellcode</string>
-    <string name="about_source">Dieses Projekt wird auf GitHub gehostet: %1$s</string>
-    <string name="about_issues_title">Issues</string>
-    <string name="about_issues">Sie können Fehler, Verbesserungsvorschläge oder Wünsche für neue Funktionen als Issue auf GitHub erfassen: %1$s</string>
-    <string name="about_translate_title">Übersetzen</string>
-    <string name="about_translate">Treten Sie dem Nextcloud-Team bei Transifex bei und helfen Sie uns, diese App zu übersetzen: %1$s</string>
-    <string name="about_app_license_title">App-Lizenz</string>
-    <string name="about_app_license">Diese Applikation ist lizenziert unter der GNU GENERAL PUBLIC LICENSE v3+.</string>
-    <string name="about_app_license_button">Lizenz ansehen</string>
-    <string name="about_icons_disclaimer_title">Symbole</string>
     <string name="about_icons_disclaimer_app_icon">Für das ursprüngliche Symbol siehe %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Alle weiteren Symbole dieser App sind %1$s, erstellt von Google Inc. und unter der Apache 2.0-Lizenz lizenziert.</string>
     <string name="about_icons_disclaimer_mdi">Material Design Icons</string>
-    <string name="about_credits_tab_title">Danksagungen</string>
+    <string name="error_sync">Synchronisation fehlgeschlagen: %1$s</string>
+    <string name="error_no_network">keine Netzwerk-Verbindung</string>
+    <string name="about_version_title">Version</string>
+    <string name="about_version">Sie benutzen gerade &lt;strong&gt;%1$s&lt;/strong&gt;</string>
+    <string name="about_maintainer_title">Maintainer</string>
+    <string name="about_developers_title">Entwickler</string>
+    <string name="about_translators_title">Übersetzer</string>
+    <string name="about_translators_transifex">Nextcloud-Gemeinschaft auf &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;</string>
+    <string name="about_testers_title">Tester</string>
+    <string name="about_source_title">Quellcode</string>
+    <string name="about_source">Dieses Projekt wird auf GitHub verwaltet: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues_title">Tickets</string>
+    <string name="about_issues">Sie können Fehler, Verbesserungsvorschläge oder Wünsche für neue Funktionen im GitHub-Ticket-System erfassen: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate_title">Übersetzen</string>
+    <string name="about_translate">Treten Sie dem Nextcloud-Team auf Transifex bei und helfen Sie uns, diese App zu übersetzen: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_app_license_title">App Lizenz</string>
+    <string name="about_app_license">Diese Applikation ist lizenziert unter der GNU GENERAL PUBLIC LICENSE v3+.</string>
+    <string name="about_app_license_button">Lizenz ansehen</string>
+    <string name="about_icons_disclaimer_title">Icons</string>
+    <string name="about_credits_tab_title">Danke an</string>
     <string name="about_contribution_tab_title">Mitmachen</string>
     <string name="about_license_tab_title">Lizenz</string>
-
     <string name="widget_note_list_title">Liste der Notizen</string>
     <string name="widget_note_list_placeholder">Keine Notizen</string>
     <string name="widget_single_note_title">Eine Notiz</string>
     <string name="widget_single_note_placeholder_tv">Notiz nicht gefunden</string>
     <string name="widget_not_logged_in">Bitte melden Sie sich bei Notes vor Nutzung des Widgets an</string>
     <string name="widget_entry_fav_contentDescription">Das Stern-Symbol markiert den Eintrag als Favorit</string>
-
     <string name="activity_select_single_note">Notiz auswählen</string>
-
     <string name="shortcut_create_long">Neue Notiz erstellen</string>
-
+    <string name="pref_value_theme_light">Hell</string>
+    <string name="pref_value_theme_dark">Dunkel</string>
     <string name="pref_value_font_normal">Normal</string>
     <string name="pref_value_wifi_and_mobile">Über WLAN und mobile Daten synchronisieren</string>
     <string name="pref_value_lock">Passwortschutz</string>
@@ -182,7 +177,6 @@
         <item>Im Vorschaumodus öffnen</item>
         <item>Letzte Auswahl merken</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Klein</item>
         <item>Mittel</item>
@@ -302,4 +296,15 @@
     <string name="progress_import_indeterminate">Importiere Notizen…</string>
     <string name="progress_import">Importiere Notiz %1$d von %2$d…</string>
     <string name="account_imported">Konto importiert.</string>
+    <string name="preferences_app_info_title">Information über Notizen</string>
+    <string name="preferences_authors">Autoren</string>
+    <string name="preferences_service_terms">Nutzungsbedingungen</string>
+    <string name="preferences_privacy_policy">Datenschutz-Bestimmungen</string>
+    <string name="preferences_about_app">Notizen ist eine Abänderung von Nextcloud Notes</string>
+    <string name="preferences_app_info">- Erstellen, Bearbeiten, Teilen, Suchen und Löschen von Notizen
+\n- Teilen von Text und Links als neue Notiz innerhalb der App
+\n- Favoritenmarkierung möglich
+\n- Löschen von mehreren Notizen auf einmal möglich
+\n- Mark Down wird unterstützt
+\n- In viele Sprachen übersetzt</string>
 </resources>
