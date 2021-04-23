@@ -83,6 +83,7 @@
             android:name=".edit.EditNoteActivity"
             android:label="@string/simple_edit"
             android:launchMode="singleTask"
+            android:theme="@style/Preferences"
             android:parentActivityName=".main.MainActivity"
             android:windowSoftInputMode="stateHidden"
             android:exported="true">
@@ -110,6 +111,7 @@
         <activity
             android:name=".about.AboutActivity"
             android:label="@string/simple_about"
+            android:theme="@style/Preferences"
             android:parentActivityName=".main.MainActivity" />
 
         <activity android:name=".widget.singlenote.SingleNoteWidgetConfigurationActivity"

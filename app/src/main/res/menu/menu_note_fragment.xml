@@ -8,6 +8,7 @@
         android:icon="@lineageos.platform:drawable/ic_search"
         android:orderInCategory="50"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:iconTint="@color/accent_color"
         app:showAsAction="ifRoom|collapseActionView" />
 
     <item
@@ -25,14 +26,14 @@
     <item
         android:id="@+id/menu_category"
         android:icon="@drawable/ic_folder_white_24dp"
-        app:iconTint="@android:color/black"
+        app:iconTint="@color/accent_color"
         android:orderInCategory="100"
         android:title="@string/menu_change_category"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_share"
         android:icon="@drawable/ic_share_white_24dp"
-        app:iconTint="@android:color/black"
+        app:iconTint="@color/accent_color"
         android:orderInCategory="100"
         android:title="@string/menu_share"
         app:showAsAction="never" />
@@ -46,7 +47,7 @@
         android:id="@+id/menu_cancel"
         android:icon="@drawable/ic_clear_white_24dp"
         android:orderInCategory="130"
-        app:iconTint="@android:color/black"
+        app:iconTint="@color/accent_color"
         android:title="@android:string/cancel"
         app:showAsAction="never" />
     <item
@@ -54,6 +55,7 @@
         android:icon="@drawable/ic_delete_grey600_24dp"
         android:orderInCategory="140"
         android:title="@string/menu_delete"
+        app:iconTint="@color/accent_color"
         app:showAsAction="never" />
 
 </menu>

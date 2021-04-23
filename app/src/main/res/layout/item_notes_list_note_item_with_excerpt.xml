@@ -111,7 +111,7 @@
                     android:paddingVertical="1dp"
                     android:paddingHorizontal="@dimen/spacer_1x"
                     android:singleLine="true"
-                    android:textColor="?android:textColorPrimary"
+                    android:textColor="@color/color_default_primary_text"
                     android:textSize="@dimen/secondary_font_size"
                     tools:maxLength="15"
                     tools:text="@tools:sample/lorem/random" />

@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacer_2x"
+        android:textColor="@color/color_default_primary_text"
         android:hint="An error appeared."
         tools:ignore="HardcodedText" />
 
@@ -49,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/spacer_2x"
+                android:textColor="@color/color_default_primary_text"
                 android:text="@string/error_dialog_we_need_info"
                 android:textAppearance="?attr/textAppearanceBody2" />
 
@@ -63,6 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/bg_highlighted"
+                    android:textColor="@color/color_default_primary_text"
                     android:padding="@dimen/spacer_1x"
                     android:textIsSelectable="true"
                     android:typeface="monospace"
@@ -80,7 +83,6 @@
         android:weightSum="1.0">
 
         <Button
-            android:background="@color/accent_color"
             android:id="@+id/close"
             style="@style/Widget.Material3.Button.TextButton"
             android:layout_width="wrap_content"
@@ -91,10 +93,9 @@
 
         <Space
             android:layout_width="10dp"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent" />
 
         <Button
-            android:background="@color/accent_color"
             android:id="@+id/copy"
             style="@style/Widget.Material3.Button"
             android:layout_width="wrap_content"

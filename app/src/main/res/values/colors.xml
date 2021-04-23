@@ -3,9 +3,12 @@
     <!-- Colors -->
 
     <color name="primary">@lineageos.platform:color/color_default_primary</color>
+    <color name="primary_dark">@lineageos.platform:color/color_default_primary_dark</color>
     <color name="accent">@lineageos.platform:color/color_default_accent</color>
     <color name="danger">#d40000</color>
     <color name="accent_color">@lineageos.platform:color/color_default_accent</color>
+    <color name="color_default_primary_text">@lineageos.platform:color/color_default_primary_text</color>
+    <color name="color_default_secondary_text">@lineageos.platform:color/color_default_secondary_text</color>
 
     <color name="defaultBrand">@lineageos.platform:color/color_default_accent</color>
 
@@ -13,16 +16,17 @@
     <color name="defaultTextHighlightBackground">#2233334a</color>
 
     <color name="bg_highlighted">@lineageos.platform:color/color_default_background</color>
-    <color name="bg_selected_item">#1A000000</color>
+    <color name="bg_selected_item">@lineageos.platform:color/color_default_foreground</color>
     <color name="bg_normal">@lineageos.platform:color/color_default_background</color>
     <color name="bg_attention">#d40000</color>
     <color name="bg_warning">#ffcc00</color>
-    <color name="fg_default">@lineageos.platform:color/color_default_primary_text</color>
-    <color name="fg_default_selection">#333333</color>
-    <color name="fg_default_low">@lineageos.platform:color/color_default_secondary_text</color>
-    <color name="fg_default_high">#cccccc</color>
+    <color name="fg_default">@lineageos.platform:color/color_default_foreground</color>
+    <color name="fg_default_selection">@lineageos.platform:color/color_default_selector</color>
+    <color name="fg_default_low">@lineageos.platform:color/color_default_foreground</color>
+    <color name="fg_default_high">@lineageos.platform:color/color_default_foreground</color>
     <color name="fg_secondary">#999999</color>
     <color name="fg_contrast">#ffffff</color>
+    <color name="navigation_bar_background_color">@lineageos.platform:color/color_default_primary_dark</color>
 
     <color name="grey600">#757575</color>
     <color name="icon_color_default">@color/grey600</color>
