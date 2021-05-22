@@ -258,7 +258,7 @@
     <string name="progress_import">A importar a nota %1$d de %2$d…</string>
     <string name="account_imported">Conta importada.</string>
     <string name="preferences_authors">Autores</string>
-    <string name="preferences_service_terms">Termos do servizo</string>
+    <string name="preferences_service_terms">Termos de servizo</string>
     <string name="preferences_privacy_policy">Política de privacidade</string>
     <string name="preferences_about_app">As Notas están bifurcadas desde Notas de Nextcloud</string>
     <string name="preferences_app_info">-Facer listas , crear, editar, compartir, buscar e eliminar notas
