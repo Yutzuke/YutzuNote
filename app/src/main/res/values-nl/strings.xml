@@ -299,12 +299,12 @@
     <string name="preferences_authors">Auteurs</string>
     <string name="preferences_service_terms">Servicevoorwaarden</string>
     <string name="preferences_privacy_policy">Privacybeleid</string>
-    <string name="preferences_about_app">Notes is gebaseerd op Nextcloud Notes</string>
-    <string name="preferences_app_info">- Notities maken, maken, bewerken, delen, zoeken en verwijderen
+    <string name="preferences_about_app">Notities is gebaseerd op Nextcloud Notes</string>
+    <string name="preferences_app_info">- Notities maken, bewerken, delen, zoeken en verwijderen
 \n- Deel tekst en links als een nieuwe notitie
 \n- Notities als favoriet markeren
 \n- Bulk verwijderen
 \n- Interpreteert MarkDown
 \n- Vertaald in vele talen</string>
-    <string name="preferences_app_info_title">Notes informatie</string>
+    <string name="preferences_app_info_title">Notities informatie</string>
 </resources>
