@@ -69,7 +69,7 @@
     <string name="about_translate_title">Перевести</string>
     <string name="about_translate">Включайтесь в команду Nextcloud на сайте Transifex и помогайте переводить это приложение: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_app_license_title">Лицензия приложения</string>
-    <string name="about_app_license">Лицензия на программу предоставляется в соответствии с условиями Открытого лицензионного соглашения GNU (GNU GPL) версии 3+.</string>
+    <string name="about_app_license">Лицензия на программу предоставляется в соответствии с условиями GNU GENERAL PUBLIC LICENSE v3+.</string>
     <string name="about_app_license_button">Посмотреть лицензию</string>
     <string name="about_icons_disclaimer_title">Значки</string>
     <string name="about_icons_disclaimer_app_icon">Для просмотра оригинального значка: %1$s.</string>
