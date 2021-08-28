@@ -1,2 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="about_version_title">Tionndadh</string>
+    <string name="settings_password">Facal-faire</string>
+    <string name="Other">Eile</string>
+    <string name="login_with_e_account">Clàraich a-steach le cunntas /e/</string>
+    <string name="add_an_account">Cuir cunntas ris</string>
+    <string name="preferences_authors">Ùghdaran</string>
+    <string name="preferences_service_terms">Teirmichean na seirbheise</string>
+    <string name="preferences_privacy_policy">Poileasaidh prìobhaideachd</string>
+    <string name="preferences_about_app">’S e fork de Nextcloud Notes a th’ ann an aplacaid nan nòtaichean</string>
+    <string name="preferences_app_info">-Seall liosta, cruthaich, deasaich, co-roinn, lorg is sguab às nòtaichean
+\n -Co-roinn teacsa is ceanglaichean ’nan nòtaichean ùra dhan aplacaid
+\n -Dèan annsachdan de nòtaichean
+\n -Sguab às iomadh nòta aig an aon àm
+\n -Reandaraich MarkDown
+\n -Air eadar-theangachadh gu iomadh cànan</string>
+    <string name="preferences_app_info_title">Fiosrachadh mu na nòtaichean</string>
+    <plurals name="ab_selected">
+        <item quantity="one">Chaidh %d a thaghadh</item>
+        <item quantity="two">Chaidh %d a thaghadh</item>
+        <item quantity="few">Chaidh %d a thaghadh</item>
+        <item quantity="other">Chaidh %d a thaghadh</item>
+    </plurals>
+    <string name="sso_announcment_understood">Tha mi agaibh</string>
+    <string name="sso_announcment_more_info">Barrachd fiosrachaidh</string>
+    <string name="sso_announcment_message">Leis an ath-thionndadh mòr, tòisichidh aplacaid nan nòtaichean air sàr-ghleus Single-Sign-On aig Nextcloud a chleachdadh. Cuiridh sin ris an tèarainteachd, an t-seasmhachd ’s a’ chofhurtachd dhut. Dèan cinnteach gun do stàlaich thu tionndadh 3.8.0 de dh’aplacaid nam faidhlichean air a char as sine agus nuair a thèid a chur gu dol a’ chiad turas, tagh an dearbh chunntas a tha thu a’ cleachdadh mu thràth.</string>
+    <string name="sso_announcment_title">Single-Sign-On</string>
+    <string name="fallback_weblogin_back">Till</string>
+    <string name="fallback_weblogin_text">Till gu seann-dòigh a’ chlàraidh a-steach</string>
+    <string name="note_has_been_deleted">Chaidh an nòta a sguabadh às</string>
+    <string name="pin_to_homescreen">Prìnich ris an sgrìn-dhachaigh</string>
+    <string name="copied_to_clipboard">Chaidh lethbhreac a chur air an stòr-bhòrd</string>
+    <string name="simple_exception">Eisgeachd</string>
+    <string name="simple_copy">Dèan lethbhreac</string>
+    <string name="simple_close">Dùin</string>
+    <string name="simple_error">Mearachd</string>
+    <string name="pref_value_wifi_and_mobile">Sioncronaich air WiFi is dàta mobile</string>
+    <string name="pref_value_font_normal">Àbhaisteach</string>
+    <string name="pref_value_theme_dark">Dorcha</string>
+    <string name="pref_value_theme_light">Soilleir</string>
+    <string name="shortcut_create_long">Cruthaich nòta ùr</string>
+    <string name="activity_select_single_note">Tagh nòta</string>
+    <string name="widget_app_launcher_contentDescription">Cuiridh seo an aplacaid gu dol</string>
+    <string name="widget_entry_fav_contentDescription">Comharraichidh ìomhaigheag rionnaige gu bheil nì ’na annsachd</string>
+    <string name="widget_not_logged_in">Clàraich a-steach dha na nòtaichean mus cleachd thu a’ widget seo</string>
+    <string name="widget_create_note">Cruthaich nòta ùr</string>
+    <string name="widget_single_note_placeholder_tv">Cha deach an nòta a lorg</string>
+    <string name="widget_single_note_title">Aon nòta</string>
+    <string name="widget_note_list_placeholder">Gun nòtaichean</string>
+    <string name="widget_note_list_title">Liosta nan nòtaichean</string>
+    <string name="about_license_tab_title">Ceadachas</string>
+    <string name="about_contribution_tab_title">Gabhail pàirt ann</string>
+    <string name="about_credits_tab_title">Urram</string>
+    <string name="about_icons_disclaimer">&lt;p&gt;Chaidh an ìomhaigheag tùsail a dhèanamh le %1$s&lt;/p&gt;&lt;p&gt;’S e ìomhaigheagan &lt;a href=https://materialdesignicons.com/&gt;Material Design Icons&lt;/a&gt; a chaidh a dhèanamh le Google Inc. fo cheadachas Apache 2.0 License a tha sa chòrr dhe na h-ìomhaigheagan a tha ’gan cleachdadh leis an aplacaid seo.&lt;/p&gt;</string>
+    <string name="about_icons_disclaimer_title">Ìomhaigheagan</string>
+    <string name="about_app_license_button">Seall an ceadachas</string>
+    <string name="about_app_license">Tha an aplacaid seo fo cheadachas GNU GENERAL PUBLIC LICENSE v3+.</string>
+    <string name="about_app_license_title">Ceadachas na h-aplacaid</string>
+    <string name="about_translate">Rach an sàs san sgioba Nextcloud air Transifex agus cuidich le eadar-theangachadh na h-aplacaid seo: &lt;a href=%1$s&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate_title">Eadar-theangaich</string>
+    <string name="about_issues">’S urrainn dhut aithris a dhèanamh air bugaichean, leasachaidhean a mholadh agus gleusan iarraidh air traca nam bugaichean air GitHub: &lt;a href=%1$s&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues_title">Bugaichean</string>
+    <string name="about_source">Tha am pròiseact seo ’ga òstadh air GitHub: &lt;a href=%1$s&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_source_title">Bun-tùs</string>
+    <string name="about_testers_title">Luchd-deuchainne</string>
+    <string name="about_translators_transifex">Coimhearsnachd Nextcloud air &lt;a href=%1$s&gt;Transifex&lt;/a&gt;</string>
+    <string name="about_translators_title">Eadar-theangaichean</string>
+    <string name="about_developers_title">Luchd-leasachaidh</string>
+    <string name="about_maintainer_title">Neach-glèidhidh</string>
+    <string name="about_version">Tha thu a’ cleachdadh <strong>%1$s</strong> an-dràsta</string>
+    <string name="snackbar_settings">Roghainnean</string>
+    <string name="error_sync_disabled">Chaidh an sioncronachadh a chur à comas dhan chunntas seo</string>
+    <string name="error_username_password_invalid">Ainm-cleachdaiche no facal-faire ceàrr</string>
+    <string name="error_url_malformed">Seòladh frithealaiche ceàrr</string>
+    <string name="error_server">Tha mearachd aig an URL/fhrithealaiche</string>
+    <string name="error_no_network">chan eil ceangal ris an lìonra</string>
+    <string name="error_io">chaidh an ceangal dhan fhrithealaiche a bhriseadh</string>
+    <string name="error_json">an deach aplacaid nan nòtaichean a ghnìomhachadh air an fhrithealaiche\?</string>
+    <string name="error_invalid_login">Clàradh a-steach mì-dhligheach: %1$s</string>
+    <string name="error_sync">Dh’fhàillig an sioncronachadh: %1$s</string>
+    <string name="network_disconnected">Chan eil lìonra ri làimh</string>
+    <string name="network_connected">Chaidh a cheangal</string>
+    <string name="network_connecting">’Ga cheangal</string>
+    <string name="trust_certificate_unknown_certificate_found">Thachair aplacaid nan nòtaichean ri teisteanas nach aithne dhuinn. A bheil thu airson earbsa a chur ann\?</string>
+    <string name="certificate_notification_connection_security">Nòtaichean – Tèarainteachd a’ cheangail</string>
+    <string name="settings_cert_reset_toast">Chaidh gach teisteanas gnàthaichte fhalamhachadh</string>
+    <string name="settings_cert_reset_summary">Ath-shuidhich earbsa nan teisteanasan gnàthaichte uile</string>
+    <string name="settings_cert_reset">Ath-shuidhich (neo-)earbsachd nan teisteanasan</string>
+    <string name="settings_cert_trust_system_off">Na cuir earbsa ann an ùghdarrasan theisteanasan an t-siostaim no a chaidh a chur ris le cleachdaiche</string>
+    <string name="settings_cert_trust_system_on">Cuir earbsa ann an ùghdarrasan theisteanasan an t-siostaim no a chaidh a chur ris le cleachdaiche (mholamaid seo)</string>
+    <string name="settings_cert_trust_system">Cuir earbsa ann an teisteanasan an t-siostaim</string>
+    <string name="settings_cert_category">Stiùirich na teisteanasan</string>
+    <string name="settings_wifi_only">Na sioncronaich ach air WiFi</string>
+    <string name="settings_font_size">Meud a’ chrutha-chlò</string>
+    <string name="settings_font_title">Cruth-clò aon-leud</string>
+    <string name="settings_theme_title">Ùrlar dorcha</string>
+    <string name="settings_note_mode">Modh sealladh nan nòtaichean</string>
+    <string name="settings_submitting">’Ga cheangal…</string>
+    <string name="settings_submit">Ceangail</string>
+    <string name="settings_password_check_description">Seallaidh seo a bheil an teisteas ceart gus nach eil.</string>
+    <string name="settings_password_unchanged">Facal-faire (gun atharrachadh)</string>
+    <string name="settings_username">Ainm-cleachdaiche</string>
+    <string name="settings_url_warn_http">RABHADH: Chan eil http sàbhailte. Cleachd https na àite.</string>
+    <string name="settings_url_check_description">Seallaidh seo an gabh ping a chur dhan t-seòladh gus nach gabh.</string>
+    <string name="settings_url">Seòladh an fhrithealaiche</string>
+    <string name="settings_server_settings">Atharraich an cunntas</string>
+    <string name="listview_updated_last_month">Am mìos seo chaidh</string>
+    <string name="listview_updated_this_month">Am mìos seo</string>
+    <string name="listview_updated_last_week">An t-seachdain seo chaidh</string>
+    <string name="listview_updated_this_week">An t-seachdain seo</string>
+    <string name="listview_updated_yesterday">An-dè</string>
+    <string name="listview_updated_today">An-diugh</string>
+    <string name="change_category_title">Tagh roinn-seòrsa</string>
+    <string name="menu_about">Mu dhèidhinn</string>
+    <string name="menu_share">Co-roinn</string>
+    <string name="menu_preview">Ro-sheall</string>
+    <string name="menu_favorite">Annsachd</string>
+    <string name="menu_change_category">Roinn-seòrsa</string>
+    <string name="menu_delete">Sguab às</string>
+    <string name="action_enable_sync">Cuir an comas</string>
+    <string name="action_uncategorized">Gun seòrsachadh</string>
+    <string name="action_recent">O chionn goirid</string>
+    <string name="action_drawer_close">dùin an t-seòladaireachd</string>
+    <string name="action_drawer_open">fosgail an t-seòladaireachd</string>
+    <string name="action_undo">Neo-dhèan</string>
+    <string name="action_note_restored">Chaidh an nòta aiseag</string>
+    <string name="action_note_deleted">Chaidh an nòta a sguabadh às</string>
+    <string name="action_select_note">Tagh nòta</string>
+    <string name="simple_italic">Clò Eadailteach</string>
+    <string name="simple_link">Ceangal</string>
+    <string name="simple_bold">Trom</string>
+    <string name="simple_about">Mu dhèidhinn</string>
+    <string name="action_edit_saved">Chaidh a shàbhaladh</string>
+    <string name="action_edit_saving">’Ga shàbhaladh…</string>
+    <string name="action_edit_save">Sàbhail</string>
+    <string name="simple_edit">Deasaich</string>
+    <string name="simple_cancel">Sguir dheth</string>
+    <string name="action_create_save">Sàbhail</string>
+    <string name="action_search">Lorg</string>
+    <string name="action_trashbin">Nòtaichean a chaidh a sguabadh às</string>
+    <string name="action_settings">Roghainnean</string>
+    <string name="action_create">Nòta ùr</string>
+    <string name="label_favorites">Annsachdan</string>
+    <string name="label_all_notes">A h-uile nòta</string>
+    <string name="no_notes">Chan eil nòta ann fhathast</string>
+    <string name="app_name_long">Nòtaichean Nextcloud</string>
+    <string name="app_name">Nòtaichean</string>
+</resources>
