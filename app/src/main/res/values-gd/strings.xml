@@ -11,7 +11,7 @@
 \n -Sguab às iomadh nòta aig an aon àm
 \n -Reandaraich MarkDown
 \n -Air eadar-theangachadh gu iomadh cànan</string>
-    <string name="preferences_app_info_title">Fiosrachadh mu na nòtaichean</string>
+    <string name="preferences_app_info_title">Fiosrachadh mu aplacaid nan nòtaichean</string>
     <plurals name="ab_selected">
         <item quantity="one">Chaidh %d a thaghadh</item>
         <item quantity="two">Chaidh %d a thaghadh</item>
