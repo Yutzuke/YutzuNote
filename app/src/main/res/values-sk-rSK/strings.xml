@@ -6,7 +6,7 @@
     <string name="label_favorites">Obľúbené</string>
     <string name="action_create">Nová poznámka</string>
     <string name="welcome_text">Vitajte v %1$s</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Nastavenia</string>
     <string name="action_trashbin">Zmazané poznámky</string>
     <string name="action_search">Hľadať</string>
     <string name="action_sorting_method">Metóda triedenia</string>
@@ -21,7 +21,7 @@
     <string name="action_note_restored">Obnovené %1$s</string>
     <string name="action_undo">Vrátiť</string>
     <string name="action_uncategorized">Nezaradené</string>
-    <string name="menu_delete">Zmazať</string>
+    <string name="menu_delete">Odstrániť</string>
     <string name="menu_change_category">Kategória</string>
     <string name="menu_favorite">Obľúbené</string>
     <string name="menu_preview">Náhľad</string>
@@ -308,4 +308,7 @@
     <string name="progress_import_indeterminate">Import poznámok…</string>
     <string name="progress_import">Importuje sa poznámka %1$d of %2$d…</string>
     <string name="account_imported">Účet bol importovaný.</string>
+    <string name="preferences_service_terms">Podmienky používania</string>
+    <string name="preferences_privacy_policy">Zásady ochrany osobných údajov</string>
+    <string name="preferences_authors">Autori</string>
 </resources>
