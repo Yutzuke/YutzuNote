@@ -67,7 +67,7 @@
     <string name="about_translators_transifex">Nextcloud-Gemeinschaft auf &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;</string>
     <string name="about_testers_title">Tester</string>
     <string name="about_source_title">Quellcode</string>
-    <string name="about_source">Dieses Projekt wird auf GitHub verwaltet: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_source">Dieses Projekt wird auf GitHub verwaltet: <a href="%1$s">%1$s</a></string>
     <string name="about_issues_title">Tickets</string>
     <string name="about_issues">Sie können Fehler, Verbesserungsvorschläge oder Wünsche für neue Funktionen im GitHub-Ticket-System erfassen: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_translate_title">Übersetzen</string>
