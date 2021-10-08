@@ -305,7 +305,7 @@
     <string name="progress_import">Импортировано заметок %1$d из %2$d…</string>
     <string name="account_imported">Учетная запись импортирована.</string>
     <string name="preferences_authors">Авторы</string>
-    <string name="preferences_service_terms">Условия обслуживания</string>
+    <string name="preferences_service_terms">Условия предоставления услуг</string>
     <string name="preferences_privacy_policy">Политика конфиденциальности</string>
     <string name="preferences_about_app">Заметки являются форком Nextcloud Notes</string>
     <string name="preferences_app_info_title">Информация о заметках</string>
