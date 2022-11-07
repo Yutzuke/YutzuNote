@@ -2,31 +2,31 @@
 <resources>
     <!-- Colors -->
 
-    <color name="primary">@lineageos.platform:color/color_default_primary</color>
-    <color name="primary_dark">@lineageos.platform:color/color_default_primary_dark</color>
-    <color name="accent">@lineageos.platform:color/color_default_accent</color>
+    <color name="primary">@color/e_action_bar</color>
+    <color name="primary_dark">@color/e_action_bar</color>
+    <color name="accent_color">@color/e_accent</color>
+    <color name="accent">@color/e_accent</color>
     <color name="danger">#d40000</color>
-    <color name="accent_color">@lineageos.platform:color/color_default_accent</color>
-    <color name="color_default_primary_text">@lineageos.platform:color/color_default_primary_text</color>
-    <color name="color_default_secondary_text">@lineageos.platform:color/color_default_secondary_text</color>
+    <color name="color_default_primary_text">@color/e_primary_text_color</color>
+    <color name="color_default_secondary_text">@color/e_secondary_text_color</color>
 
-    <color name="defaultBrand">@lineageos.platform:color/color_default_accent</color>
+    <color name="defaultBrand">@color/e_accent</color>
 
     <color name="cursorHandles">#555566</color>
     <color name="defaultTextHighlightBackground">#2233334a</color>
 
-    <color name="bg_highlighted">@lineageos.platform:color/color_default_background</color>
-    <color name="bg_selected_item">@lineageos.platform:color/color_default_foreground</color>
-    <color name="bg_normal">@lineageos.platform:color/color_default_background</color>
+    <color name="bg_highlighted">@android:color/white</color>
+    <color name="bg_selected_item">@color/e_floating_background</color>
+    <color name="bg_normal">@color/e_background</color>
     <color name="bg_attention">#d40000</color>
     <color name="bg_warning">#ffcc00</color>
-    <color name="fg_default">@lineageos.platform:color/color_default_foreground</color>
-    <color name="fg_default_selection">@lineageos.platform:color/color_default_selector</color>
-    <color name="fg_default_low">@lineageos.platform:color/color_default_foreground</color>
-    <color name="fg_default_high">@lineageos.platform:color/color_default_foreground</color>
+    <color name="fg_default">@color/e_floating_background</color>
+    <color name="fg_default_selection">@color/e_alpha_accent</color>
+    <color name="fg_default_low">@color/e_floating_background</color>
+    <color name="fg_default_high">@color/e_floating_background</color>
     <color name="fg_secondary">#999999</color>
     <color name="fg_contrast">#ffffff</color>
-    <color name="navigation_bar_background_color">@lineageos.platform:color/color_default_primary_dark</color>
+    <color name="navigation_bar_background_color">@color/e_action_bar</color>
 
     <color name="grey600">#757575</color>
     <color name="icon_color_default">@color/grey600</color>

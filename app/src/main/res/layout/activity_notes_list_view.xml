@@ -143,6 +143,7 @@
         android:layout_margin="@dimen/spacer_2x"
         android:contentDescription="@string/action_create"
         android:title="@string/action_create"
-        app:backgroundTint="@color/accent_color"
-        app:srcCompat="@lineageos.platform:drawable/ic_add" />
+        app:backgroundTint="@color/e_accent"
+        app:tint="@color/e_background"
+        app:srcCompat="@drawable/ic_add_white_24dp" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

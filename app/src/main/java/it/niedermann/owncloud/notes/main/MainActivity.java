@@ -404,11 +404,11 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
 
         final var toggle = new ActionBarDrawerToggle(this, binding.drawerLayout, activityBinding.homeToolbar, 0, 0);
         binding.drawerLayout.addDrawerListener(toggle);
-        toggle.setHomeAsUpIndicator(lineageos.platform.R.drawable.ic_hamburger);
+        toggle.setHomeAsUpIndicator(R.drawable.e_ic_hamburger);
         toggle.syncState();
 
         if (binding.activityNotesListView.searchToolbar.getNavigationIcon() != null) {
-            binding.activityNotesListView.searchToolbar.getNavigationIcon().setTint(ContextCompat.getColor(this, lineageos.platform.R.color.color_default_accent));
+            binding.activityNotesListView.searchToolbar.getNavigationIcon().setTint(ContextCompat.getColor(this, R.color.e_primary_text_color));
         }
 
         toggle.setToolbarNavigationClickListener(view -> binding.drawerLayout.openDrawer(GravityCompat.START));

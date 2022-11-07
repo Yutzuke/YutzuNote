@@ -28,7 +28,7 @@ public class NavigationAdapter extends RecyclerView.Adapter<NavigationViewHolder
     @ColorInt
     private int mainColor;
     @DrawableRes
-    public static final int ICON_FOLDER = lineageos.platform.R.drawable.ic_folder;
+    public static final int ICON_FOLDER = R.drawable.ic_folder_grey600_24dp;
     @DrawableRes
     public static final int ICON_NOFOLDER = R.drawable.ic_folder_open_grey600_24dp;
     @DrawableRes

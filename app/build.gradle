@@ -50,14 +50,10 @@ android {
     }
     namespace 'it.niedermann.owncloud.notes'
 
-    aaptOptions {
-        additionalParameters '-I', 'e-ui-sdk.jar'
-    }
 }
 
 dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.6'
-    compileOnly files("../e-ui-sdk.jar")
 
     // Nextcloud SSO
     implementation 'com.github.nextcloud:Android-SingleSignOn:0.6.1'
@@ -105,4 +101,5 @@ dependencies {
     testImplementation 'org.robolectric:robolectric:4.9'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'foundation.e:elib:0.0.1-alpha11'
 }

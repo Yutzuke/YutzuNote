@@ -5,6 +5,7 @@
     <item
         android:id="@+id/menu_category"
         android:icon="@drawable/ic_folder_grey600_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="80"
         android:title="@string/menu_change_category"
         app:showAsAction="ifRoom" />
@@ -12,6 +13,7 @@
     <item
         android:id="@+id/menu_share"
         android:icon="@drawable/ic_share_white_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="90"
         android:title="@string/menu_share"
         app:showAsAction="ifRoom" />
@@ -19,6 +21,7 @@
     <item
         android:id="@+id/menu_move"
         android:icon="@drawable/ic_send_grey600_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="100"
         android:title="@string/simple_move"
         app:showAsAction="ifRoom" />
@@ -26,6 +29,7 @@
     <item
         android:id="@+id/menu_delete"
         android:icon="@drawable/ic_delete_grey600_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="110"
         android:title="@string/menu_delete"
         app:showAsAction="ifRoom" />

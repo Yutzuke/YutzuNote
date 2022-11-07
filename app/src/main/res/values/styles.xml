@@ -26,7 +26,7 @@
         <item name="android:textColorPrimary">@color/color_default_primary_text</item>
         <item name="android:textColorSecondary">@color/color_default_secondary_text</item>
         <item name="android:windowBackground">@color/bg_normal</item>
-        <item name="colorControlNormal">@color/accent_color</item>
+        <item name="colorControlNormal">@color/e_icon_color</item>
         <item name="android:navigationBarColor">@color/navigation_bar_background_color</item>
         <item name="android:statusBarColor">@color/navigation_bar_background_color</item>
         <!-- toolbar back button color -->
@@ -37,11 +37,11 @@
 
     <style name="AppTheme.OverFlow">
         <item name="android:src">@drawable/ic_more_24</item>
-        <item name="tint">@color/accent_color</item>
+        <item name="tint">@color/e_icon_color</item>
     </style>
 
     <style name="AppTheme.ActionModeCloseButtonStyle" parent="Widget.AppCompat.Light.ActionButton.CloseMode">
-        <item name="tint">@color/accent_color</item>
+        <item name="tint">@color/e_primary_text_color</item>
     </style>
 
     <style name="AppTheme" parent="BaseTheme">
@@ -64,7 +64,7 @@
     </style>
 
     <style name="Toolbar.Button.Navigation.Tinted" parent="Widget.AppCompat.Toolbar.Button.Navigation">
-        <item name="tint">@color/accent_color</item>
+        <item name="tint">@color/e_primary_text_color</item>
     </style>
 
     <style name="checkboxStyle" parent="Widget.Material3.CompoundButton.CheckBox">
