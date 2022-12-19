@@ -66,6 +66,7 @@
                     android:id="@+id/navigationList"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
                     android:paddingVertical="@dimen/spacer_1x"
                     app:layoutManager="LinearLayoutManager"
                     tools:itemCount="6"
