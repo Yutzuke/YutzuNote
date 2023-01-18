@@ -39,30 +39,6 @@ android {
         }
     }
 
-
-    flavorDimensions "version"
-
-    productFlavors {
-        fdroid {
-            dimension "version"
-        }
-        dev {
-            dimension "version"
-            applicationIdSuffix ".dev"
-        }
-        play {
-            dimension "version"
-        }
-        pfungstadt {
-            dimension "version"
-            applicationIdSuffix ".pfungstadt"
-        }
-        mdm {
-            dimension "version"
-            applicationIdSuffix ".mdm"
-        }
-    }
-
     testOptions {
         unitTests {
             includeAndroidResources true
