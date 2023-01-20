@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primary"
+    android:background="@color/e_background"
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appBar"
+        android:background="@color/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -42,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/fg_default"
+                android:textColor="@color/color_default_primary_text"
                 android:textIsSelectable="true"
                 tools:maxLength="200"
                 tools:text="@tools:sample/lorem/random" />
@@ -61,7 +62,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/fg_default"
+                android:textColor="@color/color_default_primary_text"
                 android:textIsSelectable="true"
                 tools:maxLength="300"
                 tools:text="@tools:sample/lorem/random" />

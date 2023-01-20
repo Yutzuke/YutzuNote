@@ -28,13 +28,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacer_activity_sides"
-            android:background="?attr/colorPrimary"
+            android:background="@color/e_background"
             android:ems="10"
             android:gravity="top"
             android:inputType="textMultiLine|textCapSentences"
             android:lineSpacingMultiplier="@dimen/note_line_spacing"
             android:padding="@dimen/spacer_2x"
-            android:textColor="@color/fg_default"
+            android:textColor="@color/color_default_primary_text"
             tools:text="@tools:sample/lorem/random" />
     </ScrollView>
 

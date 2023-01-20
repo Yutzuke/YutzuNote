@@ -26,7 +26,7 @@
             android:layout_marginBottom="@dimen/spacer_1x"
             android:hyphenationFrequency="full"
             android:textAppearance="?attr/textAppearanceHeadline5"
-            android:textColor="@color/fg_default"
+            android:textColor="@color/color_default_primary_text"
             tools:maxLength="50"
             tools:text="@tools:sample/lorem/random" />
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/spacer_2x"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="@color/fg_default"
+            android:textColor="@color/color_default_secondary_text"
             tools:maxLength="200"
             tools:text="@tools:sample/lorem/random" />
 
@@ -60,7 +60,7 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="@string/menu_favorite"
                     android:padding="@dimen/spacer_2x"
-                    tools:src="@drawable/ic_star_yellow_24dp" />
+                    tools:src="@drawable/ic_star_accent_24dp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/noteStatus"

@@ -3,12 +3,13 @@
 
     <style name="BaseTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
-        <item name="colorPrimaryDark">?android:colorPrimary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/accent</item>
 
         <item name="android:windowLightStatusBar">@bool/isDayMode</item>
         <item name="android:colorControlNormal">?attr/colorAccent</item>
         <item name="android:colorControlActivated">?attr/colorAccent</item>
+        <item name="android:textColor">@color/color_default_primary_text</item>
         <item name="android:textColorLink">?android:colorAccent</item>
         <item name="android:textColorHighlight">@color/defaultTextHighlightBackground</item>
         <item name="windowActionModeOverlay">true</item>
@@ -37,7 +38,6 @@
 
     <style name="AppTheme.OverFlow">
         <item name="android:src">@drawable/ic_more_24</item>
-        <item name="tint">@color/e_icon_color</item>
     </style>
 
     <style name="AppTheme.ActionModeCloseButtonStyle" parent="Widget.AppCompat.Light.ActionButton.CloseMode">
@@ -56,11 +56,6 @@
     <style name="PopupTheme" parent="Theme.Material3.DayNight">
         <item name="colorPrimary">@color/primary</item>
         <item name="checkboxStyle">@style/checkboxStyle</item>
-    </style>
-
-    <style name="Preferences" parent="AppTheme">
-        <item name="android:textColor">@color/color_default_primary_text</item>
-        <item name="android:textColorSecondary">@color/color_default_secondary_text</item>
     </style>
 
     <style name="Toolbar.Button.Navigation.Tinted" parent="Widget.AppCompat.Toolbar.Button.Navigation">

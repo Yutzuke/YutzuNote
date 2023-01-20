@@ -53,8 +53,8 @@ class NavigationViewHolder extends RecyclerView.ViewHolder {
         } else {
             icon.setVisibility(View.GONE);
         }
-        final int textColor = isSelected ? mainColor : ContextCompat.getColor(view.getContext(), R.color.fg_default);
-        int unSelectedIconColor = ContextCompat.getColor(view.getContext(), isSelected ? R.color.accent_color : R.color.drawer_menu_icon_color);
+        final int textColor = isSelected ? mainColor : ContextCompat.getColor(view.getContext(), R.color.color_default_primary_text);
+        int unSelectedIconColor = ContextCompat.getColor(view.getContext(), isSelected ? R.color.accent_color : R.color.icon_color_default);
 
         name.setTextColor(textColor);
         count.setTextColor(textColor);

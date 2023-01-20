@@ -34,7 +34,6 @@ import androidx.appcompat.widget.SearchView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.GravityCompat;
 import androidx.lifecycle.Observer;
@@ -156,10 +155,6 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
         this.listView = binding.activityNotesListView.recyclerView;
 
         gridView = isGridViewEnabled();
-
-        if (!gridView || isDarkThemeActive(this)) {
-            activityBinding.activityNotesListView.setBackgroundColor(ContextCompat.getColor(this, R.color.primary));
-        }
 
         setupToolbars();
         setupNavigationList();
@@ -404,7 +399,7 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
 
         final var toggle = new ActionBarDrawerToggle(this, binding.drawerLayout, activityBinding.homeToolbar, 0, 0);
         binding.drawerLayout.addDrawerListener(toggle);
-        toggle.setHomeAsUpIndicator(R.drawable.e_ic_hamburger);
+        toggle.setHomeAsUpIndicator(R.drawable.ic_hamberger_24dp);
         toggle.syncState();
 
         if (binding.activityNotesListView.searchToolbar.getNavigationIcon() != null) {

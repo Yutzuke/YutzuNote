@@ -19,7 +19,7 @@
         android:foregroundGravity="center_vertical"
         android:paddingStart="@dimen/widget_note_list_inner_padding"
         android:paddingEnd="@dimen/widget_note_list_outer_padding"
-        app:srcCompat="@drawable/ic_star_yellow_24dp" />
+        app:srcCompat="@drawable/ic_star_accent_24dp" />
 
     <TextView
         android:id="@+id/widget_entry_content_tv"
