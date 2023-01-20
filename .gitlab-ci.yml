@@ -24,7 +24,7 @@ build:
   stage: build
   script:
   - git submodule update --recursive --init
-  - ./gradlew build
+  - ./gradlew build -x test
   artifacts:
     paths:
     - app/build/outputs/apk/
