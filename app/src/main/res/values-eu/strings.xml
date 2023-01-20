@@ -34,9 +34,7 @@
     <string name="listview_updated_today">Gaur</string>
     <string name="listview_updated_yesterday">Atzo</string>
     <string name="listview_updated_this_week">Aste honetan</string>
-    <string name="listview_updated_last_week">Joan den astean</string>
     <string name="listview_updated_this_month">Hilabete honetan</string>
-    <string name="listview_updated_last_month">Joan den hilabetean</string>
 
     <string name="settings_note_mode">Erakutsi oharren modua</string>
     <string name="settings_theme_title">Gaia</string>
@@ -97,7 +95,6 @@
     <string name="simple_close">Itxi</string>
     <string name="simple_copy">Kopiatu</string>
     <string name="simple_exception">Salbuespena</string>
-    <string name="note_has_been_deleted">Ohar hau ezabatu da</string>
     <string name="add_account">Gehitu kontua</string>
 
     <string name="category_music">Musika</string>
@@ -303,13 +300,7 @@
     <string name="preferences_service_terms">Zerbitzu-baldintzak</string>
     <string name="preferences_privacy_policy">Pribatutasun politika</string>
     <string name="preferences_authors">Egileak</string>
-    <string name="sso_announcment_understood">Ulertuta</string>
-    <string name="sso_announcment_more_info">Informazio gehiago</string>
-    <string name="fallback_weblogin_back">Atzera</string>
     <string name="note_has_been_deleted">Ohar hau ezabatu egin da</string>
-    <string name="error_sync_disabled">Kontu honetarako sinkronizazioa desgaitu da</string>
-    <string name="app_name_long">Nextcloud Oharrak</string>
     <string name="listview_updated_last_month">Aurreko hilabetea</string>
     <string name="listview_updated_last_week">Aurreko astea</string>
-    <string name="action_enable_sync">Gaitu</string>
 </resources>
