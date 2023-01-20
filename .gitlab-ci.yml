@@ -1,19 +1,20 @@
 image: "registry.gitlab.e.foundation/e/os/docker-android-apps-cicd:latest"
 
 stages:
-- build
+  - update-from-upstream
+  - build
 
 before_script:
-- if [ -d "/srv/userscripts" ]; then cp -R userscripts/* /srv/userscripts ; fi
-- 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
-- eval $(ssh-agent -s)
-- echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
-- mkdir -p ~/.ssh
-- chmod 700 ~/.ssh
-- echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
-- chmod 644 ~/.ssh/known_hosts
-- export GRADLE_USER_HOME=$(pwd)/.gradle
-- chmod +x ./gradlew
+  - if [ -d "/srv/userscripts" ]; then cp -R userscripts/* /srv/userscripts ; fi
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+  - eval $(ssh-agent -s)
+  - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
+  - mkdir -p ~/.ssh
+  - chmod 700 ~/.ssh
+  - echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+  - chmod 644 ~/.ssh/known_hosts
+  - export GRADLE_USER_HOME=$(pwd)/.gradle
+  - chmod +x ./gradlew
 
 cache:
   key: ${CI_PROJECT_ID}
@@ -22,9 +23,66 @@ cache:
 
 build:
   stage: build
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
   script:
-  - git submodule update --recursive --init
-  - ./gradlew build -x test
+    - ./gradlew build -x test
   artifacts:
     paths:
-    - app/build/outputs/apk/
+      - app/build/outputs/apk/
+
+.update-from-upstream:
+  image: registry.gitlab.e.foundation/e/tools/docker-tools:latest
+  stage: update-from-upstream
+  rules:
+    - if: '$CI_PIPELINE_SOURCE == "schedule" && $CI_COMMIT_REF_NAME == $LOCAL_BRANCH'
+  variables:
+    CI_PROJECT_SSH_URL: git@gitlab.e.foundation:$CI_PROJECT_PATH
+    GIT_STRATEGY: none
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apt-get update -y && apt-get install openssh-client -y )'
+    - eval $(ssh-agent -s)
+    - echo "${SSH_E_ROBOT_PRIVATE_KEY}" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - echo "${SSH_KNOWN_HOSTS}" > ~/.ssh/known_hosts
+    - echo "${SSH_KNOWN_HOSTS}"
+    - chmod 644 ~/.ssh/known_hosts
+    - git config --global user.email $GITLAB_USER_EMAIL
+    - git config --global user.name "$GITLAB_USER_NAME"
+    - cd $CI_BUILD_DIR
+    - rm -rf $CI_PROJECT_DIR
+    - git clone $CI_PROJECT_SSH_URL $CI_PROJECT_DIR
+    - cd $CI_PROJECT_DIR
+  script:
+    - git config --global http.sslverify false
+    # update $UPSTREAM_BRANCH & tags
+    - git fetch origin
+    - git checkout $UPSTREAM_BRANCH
+    - git remote add upstream $UPSTREAM_URL
+    - git fetch upstream
+    - git pull upstream $UPSTREAM_DEFAULT_BRANCH
+    - git push origin $UPSTREAM_BRANCH
+    - git push origin --tags
+    # checkout to latest tag commit to $TEMP_LATEST_TAG_BRANCH
+    - git checkout $(git describe --tags --abbrev=0)
+    - git checkout -b $TEMP_LATEST_TAG_BRANCH
+    # merge $LOCAL_BRANCH with $TEMP_LATEST_TAG_BRANCH & push
+    - git checkout $LOCAL_BRANCH
+    - git submodule sync
+    - git submodule update --init --recursive --force
+    - git merge $TEMP_LATEST_TAG_BRANCH
+    - git push origin $LOCAL_BRANCH
+    # remove unwanted local branch & remote
+    - git branch -D $TEMP_LATEST_TAG_BRANCH
+    - git remote remove upstream
+
+
+update-default-branch:
+  extends: .update-from-upstream
+  variables:
+    LOCAL_BRANCH: main
+    UPSTREAM_BRANCH: upstream/master
+    UPSTREAM_DEFAULT_BRANCH: master
+    UPSTREAM_URL: https://github.com/nextcloud/notes-android.git
+    TEMP_LATEST_TAG_BRANCH: latest_upstream_tag_branch
