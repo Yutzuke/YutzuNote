@@ -14,10 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="10dp"
         android:contentDescription="@null"
-        android:scaleX="1.5"
-        android:scaleY="1.5"
-        android:src="@drawable/ic_launcher_foreground"
-        app:tint="@color/fg_default_high" />
+        android:src="@drawable/ic_launcher_foreground_full" />
 
     <TextView
         android:id="@+id/empty_content_view_title"

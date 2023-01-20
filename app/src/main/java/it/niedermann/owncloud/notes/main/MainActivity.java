@@ -609,7 +609,6 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
         // TODO We assume, that the background of the spinner is always white
         activityBinding.swiperefreshlayout.setColorSchemeColors(contrastRatioIsSufficient(Color.WHITE, mainColor) ? mainColor : Color.BLACK);
         binding.appName.setTextColor(textColor);
-        DrawableCompat.setTint(binding.logo.getDrawable(), textColor);
 
         adapter.applyBrand(mainColor, textColor);
         adapterCategories.applyBrand(mainColor, textColor);

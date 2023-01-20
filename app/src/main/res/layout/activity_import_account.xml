@@ -22,7 +22,6 @@
             android:layout_gravity="center"
             android:layout_marginBottom="32dp"
             android:contentDescription="@null"
-            android:tint="@color/fg_secondary"
             app:srcCompat="@drawable/ic_launcher_foreground_full" />
 
         <TextView
