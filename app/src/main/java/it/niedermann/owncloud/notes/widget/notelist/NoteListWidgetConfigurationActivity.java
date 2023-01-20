@@ -1,5 +1,10 @@
 package it.niedermann.owncloud.notes.widget.notelist;
 
+import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_ALL;
+import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_CATEGORY;
+import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_STARRED;
+import static it.niedermann.owncloud.notes.shared.model.ENavigationCategoryType.RECENT;
+
 import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
@@ -27,11 +32,6 @@ import it.niedermann.owncloud.notes.main.navigation.NavigationItem;
 import it.niedermann.owncloud.notes.persistence.NotesRepository;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
 import it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData;
-
-import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_ALL;
-import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_CATEGORY;
-import static it.niedermann.owncloud.notes.persistence.entity.NotesListWidgetData.MODE_DISPLAY_STARRED;
-import static it.niedermann.owncloud.notes.shared.model.ENavigationCategoryType.RECENT;
 
 
 public class NoteListWidgetConfigurationActivity extends LockedActivity {
@@ -130,7 +130,8 @@ public class NoteListWidgetConfigurationActivity extends LockedActivity {
         executor.submit(() -> {
             try {
                 this.localAccount = repo.getAccountByName(SingleAccountHelper.getCurrentSingleSignOnAccount(this).name);
-            } catch (NextcloudFilesAppAccountNotFoundException | NoCurrentAccountSelectedException e) {
+            } catch (NextcloudFilesAppAccountNotFoundException |
+                     NoCurrentAccountSelectedException e) {
                 e.printStackTrace();
                 Toast.makeText(this, R.string.widget_not_logged_in, Toast.LENGTH_LONG).show();
                 // TODO Present user with app login screen

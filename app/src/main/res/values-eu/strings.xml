@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Oharrak</string>
     <string name="app_name_long">Nextcloud Oharrak</string>
     <string name="label_all_notes">Ohar guztiak</string>
@@ -32,18 +31,13 @@
     <string name="search_in_all">Bilatu nota guztiak</string>
 
     <string name="change_category_title">Hautatu kategoria bat</string>
-
     <string name="listview_updated_today">Gaur</string>
     <string name="listview_updated_yesterday">Atzo</string>
     <string name="listview_updated_this_week">Aste honetan</string>
-    <string name="listview_updated_last_week">Joan den astean</string>
     <string name="listview_updated_this_month">Hilabete honetan</string>
-    <string name="listview_updated_last_month">Joan den hilabetean</string>
 
     <string name="settings_note_mode">Erakutsi oharren modua</string>
-    <string name="settings_theme_title">Gaia</string>
-    <string name="settings_font_title">Zabalera bakarreko letra mota</string>
-    <string name="settings_font_size">Letra tamaina</string>
+    <string name="settings_theme_title">Itxura iluna</string>
     <string name="settings_wifi_only">Sinkronizatu wifi bidez bakarrik</string>
     <string name="settings_lock">Aplikazioen blokeoa (Beta)</string>
     <string name="settings_lock_summary">Gailuaren kredentzialak</string>
@@ -53,25 +47,25 @@
     <string name="settings_keep_screen_on">Mantendu pantaila piztuta</string>
     <string name="settings_keep_screen_on_summary">Nota bat ikusi edo editatzean</string>
 
-    <string name="error_sync">Sinkronizazioak huts egin du: %1$s</string>
     <string name="error_synchronization">Sinkronizazioak huts egin du</string>
-    <string name="error_no_network">Ez dago sare konexiorik</string>
     <string name="error_maintenance_mode">Zerbitzaria mantentze moduan dago</string>
     <string name="error_unknown">Errore ezezagun bat gertatu da.</string>
 
+    <string name="error_sync">Sinkronizazioa huts egin du: %1$s</string>
+    <string name="error_no_network">Ez dago sare-konexiorik</string>
     <string name="about_version_title">Bertsioa</string>
-    <string name="about_version">%1$s erabiltzen ari zara</string>
+    <string name="about_version"> &lt;strong&gt;%1$s&lt;/strong&gt; erabiltzen ari zara</string>
     <string name="about_maintainer_title">Mantentzailea</string>
     <string name="about_developers_title">Garatzaileak</string>
     <string name="about_translators_title">Itzultzaileak</string>
-    <string name="about_translators_transifex">%1$s Nextcloud komunitatea</string>
+    <string name="about_translators_transifex">Nextcloud komunitatea &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt; zerbitzuan</string>
     <string name="about_testers_title">Probatzaileak</string>
     <string name="about_source_title">Iturburu-kodea</string>
-    <string name="about_source">Proiektu hau GitHuben ostatatuta dago: %1$s</string>
+    <string name="about_source">Proiektu hau GitHub ostatatuta dago: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_issues_title">Arazoak</string>
-    <string name="about_issues">Akatsen berri eman, hobekuntzak proposatu eta ezaugarri berriak eskatu ditzakezu GitHub arazo kontrolatzailean: %1$s</string>
+    <string name="about_issues">GitHub-en akatsen berri eman dezakezu, hobekuntzak proposatu ditzakezu, eta ezaugarri berriak eskatu ditzakezu hurrengo harian: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_translate_title">Itzuli</string>
-    <string name="about_translate">Elkartu Nextcloud taldera Transifexen eta lagundu app hau itzultzen: %1$s</string>
+    <string name="about_translate">Elkartu Nexcloud taldera Transifex zerbitzuan eta lagundu aplikazio hau itzultzen: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_app_license_title">Aplikazio lizentzia</string>
     <string name="about_app_license">Aplikazio hau GNU GENERAL PUBLIC LICENSE v3+ lizentziapean dago.</string>
     <string name="about_app_license_button">Lizentzia ikusi</string>
@@ -82,19 +76,18 @@
     <string name="about_credits_tab_title">Kredituak</string>
     <string name="about_contribution_tab_title">Kontribuzioak</string>
     <string name="about_license_tab_title">Lizentzia</string>
-
     <string name="widget_note_list_title">Oharren zerrenda</string>
     <string name="widget_note_list_placeholder">Oharrik ez</string>
     <string name="widget_single_note_title">Ohar bakarra</string>
     <string name="widget_single_note_placeholder_tv">Oharra ez da aurkitu</string>
     <string name="widget_not_logged_in">Hasi saioa oharrak aplikazioan trepeta hau erabili aurretik</string>
     <string name="widget_entry_fav_contentDescription">Izarraren ikonoa elementu bat gogoko gisa adierazteko erabiltzen da</string>
-
     <string name="activity_select_single_note">Hautatu oharra</string>
-
+    <!-- Shortcuts -->
     <string name="shortcut_create_long">Sortu ohar berria</string>
-
-    <string name="pref_value_font_normal">Normala</string>
+    <string name="pref_value_theme_light">Argia</string>
+    <string name="pref_value_theme_dark">Iluna</string>
+    <string name="pref_value_font_normal">Arrunta</string>
     <string name="pref_value_wifi_and_mobile">Sinkronizatu wifi eta datu mugikorrekin</string>
     <string name="pref_value_lock">Pasahitz bidezko babesa</string>
 
@@ -102,8 +95,6 @@
     <string name="simple_close">Itxi</string>
     <string name="simple_copy">Kopiatu</string>
     <string name="simple_exception">Salbuespena</string>
-    <string name="pin_to_homescreen">Hasierako pantailara egokitu</string>
-    <string name="note_has_been_deleted">Ohar hau ezabatu da</string>
     <string name="add_account">Gehitu kontua</string>
 
     <string name="category_music">Musika</string>
@@ -299,7 +290,24 @@
     <string name="settings_file_suffix_description">Zure Nextcloudeko nota berrien fitxategi-luzapena</string>
     <string name="settings_file_suffix_success">Fitxategi berrien luzapena: %1$s</string>
     <string name="http_status_code">HTTP egoera kodea: %1$d</string>
-    <string name="progress_import_indeterminate">Notak inportatzen...</string>
-    <string name="progress_import">%2$dtik %1$d nota inportatzen...</string>
+    <string name="progress_import_indeterminate">Notak inportatzen…</string>
+    <string name="progress_import">%2$dtik %1$d nota inportatzen…</string>
     <string name="account_imported">Kontua inportatuta.</string>
+    <string name="preferences_app_info_title">Oharrak-i buruzko informazioa</string>
+    <string name="pin_to_homescreen">Gehitu hasierako pantailan</string>
+    <string name="settings_font_size">Letra-tamaina</string>
+    <string name="settings_font_title">Tarte bakarreko letra-tipoa</string>
+    <string name="preferences_service_terms">Erabilera baldintzak</string>
+    <string name="preferences_privacy_policy">Pribatutasun politika</string>
+    <string name="preferences_authors">Egileak</string>
+    <string name="note_has_been_deleted">Ohar hau ezabatu egin da</string>
+    <string name="listview_updated_last_month">Aurreko hilabetea</string>
+    <string name="listview_updated_last_week">Aurreko astea</string>
+    <string name="preferences_about_app">Oharrak Nextcloud Oharrak-en adarkatze bat da</string>
+    <string name="preferences_app_info">-Zerrendatu, sortu, editatu, partekatu, bilatu eta ezabatu oharrak
+\n -Partekatu testuak eta estekak ohar gisa aplikazioan
+\n -Markatu oharrak gogokotzat
+\n -Ezabatze masiboa
+\n -MarkDown errendatzea
+\n -Hizkuntza askotan eskuragarri</string>
 </resources>

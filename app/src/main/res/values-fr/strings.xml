@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Notes</string>
-    <string name="app_name_long">Nextcloud Notes</string>
+    <string name="app_name_long">Notes Nextcloud</string>
     <string name="label_all_notes">Toutes les notes</string>
     <string name="label_favorites">Favoris</string>
     <string name="action_create">Nouvelle note</string>
     <string name="welcome_text">Bienvenue sur %1$s</string>
-    <string name="action_settings">Paramètres</string>
+    <string name="action_settings">Préférences</string>
     <string name="action_trashbin">Notes supprimées</string>
     <string name="action_search">Rechercher</string>
     <string name="action_sorting_method">Méthode de tri</string>
@@ -31,15 +30,13 @@
     <string name="search_in_category">Rechercher dans %1$s</string>
     <string name="search_in_all">Rechercher dans toutes les notes</string>
 
-    <string name="change_category_title">Sélectionnez une catégorie</string>
-
+    <string name="change_category_title">Choisir une catégorie</string>
     <string name="listview_updated_today">Aujourd\'hui</string>
     <string name="listview_updated_yesterday">Hier</string>
     <string name="listview_updated_this_week">Cette semaine</string>
     <string name="listview_updated_last_week">Semaine dernière</string>
     <string name="listview_updated_this_month">Ce mois-ci</string>
     <string name="listview_updated_last_month">Mois dernier</string>
-
     <string name="settings_note_mode">Mode d\'affichage des notes</string>
     <string name="settings_theme_title">Thème</string>
     <string name="settings_font_title">Texte monospace</string>
@@ -53,47 +50,46 @@
     <string name="settings_keep_screen_on">Laisser l\'écran allumé</string>
     <string name="settings_keep_screen_on_summary">Lors de la visualisation ou l\'édition d\'une note</string>
 
-    <string name="error_sync">Échec de synchronisation : %1$s</string>
     <string name="error_synchronization">Échec de synchronisation</string>
     <string name="error_no_network">Aucune connexion réseau</string>
     <string name="error_maintenance_mode">Le serveur est en mode maintenance</string>
     <string name="error_unknown">Une erreur inconnue est survenue</string>
 
+    <string name="error_sync">Échec de synchronisation : %1$s</string>
     <string name="about_version_title">Version</string>
-    <string name="about_version">Vous utilisez actuellement %1$s</string>
+    <string name="about_version">Vous utilisez actuellement la &lt;strong&gt;%1$s&lt;/strong&gt;</string>
     <string name="about_maintainer_title">Responsable</string>
     <string name="about_developers_title">Développeurs</string>
     <string name="about_translators_title">Traducteurs</string>
-    <string name="about_translators_transifex">Communauté Nextcloud sur %1$s</string>
-    <string name="about_testers_title">Testeurs</string>
-    <string name="about_source_title">Code source</string>
-    <string name="about_source">Ce projet est hébergé sur GitHub : %1$s</string>
-    <string name="about_issues_title">Bugs</string>
-    <string name="about_issues">Vous pouvez signaler des anomalies, suggérer des améliorations et demander de nouvelles fonctionnalités sur GitHub : %1$s</string>
-    <string name="about_translate_title">Traduire</string>
-    <string name="about_translate">Rejoignez l\'équipe Nextcloud sur Transifex et aidez-nous à traduire cette application : %1$s</string>
-    <string name="about_app_license_title">Licence de l\'application</string>
-    <string name="about_app_license">Cette application est licenciée selon les termes de la GNU GENERAL PUBLIC LICENSE v3+.</string>
-    <string name="about_app_license_button">Voir la licence</string>
-    <string name="about_icons_disclaimer_title">Icônes</string>
     <string name="about_icons_disclaimer_app_icon">Pour l’icône originale voir %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Les icônes suivantes utilisées dans cette applications sont %1$s réalisées par Google Inc. et sous licence Apache 2.0.</string>
     <string name="about_icons_disclaimer_mdi">Icônes Material Design</string>
+    <string name="about_translators_transifex">Communauté Nextcloud sur &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;</string>
+    <string name="about_testers_title">Testeurs</string>
+    <string name="about_source_title">Code source</string>
+    <string name="about_source">Ce projet est hébergé sur GitHub : &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues_title">Problèmes</string>
+    <string name="about_issues">Vous pouvez signaler les bugs ainsi que vos propositions ou demandes d\'amélioration dans le gestionnaire de bugs de GitHub : &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate_title">Traduire</string>
+    <string name="about_translate">Rejoignez l\'équipe Nextcloud sur Transifex et aidez-nous à traduire cette application : &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_app_license_title">Licence de l\'App</string>
+    <string name="about_app_license">Cette application est licenciée selon les termes de la GNU GENERAL PUBLIC LICENSE v3+.</string>
+    <string name="about_app_license_button">Voir la licence</string>
+    <string name="about_icons_disclaimer_title">Icônes</string>
     <string name="about_credits_tab_title">Crédits</string>
     <string name="about_contribution_tab_title">Contributions</string>
     <string name="about_license_tab_title">Licence</string>
-
     <string name="widget_note_list_title">Liste des notes</string>
     <string name="widget_note_list_placeholder">Aucune note</string>
     <string name="widget_single_note_title">Une seule note</string>
     <string name="widget_single_note_placeholder_tv">Note non trouvée</string>
     <string name="widget_not_logged_in">Veuillez vous connecter à Notes avant d\'utiliser ce widget</string>
-    <string name="widget_entry_fav_contentDescription">L\'icône étoile sert à marquer un élément comme favori</string>
-
+    <string name="widget_entry_fav_contentDescription">L\'icône étoile est utilisée pour désigner un élément comme favori</string>
     <string name="activity_select_single_note">Choisir une note</string>
-
+    <!-- Shortcuts -->
     <string name="shortcut_create_long">Créer une nouvelle note</string>
-
+    <string name="pref_value_theme_light">Clair</string>
+    <string name="pref_value_theme_dark">Sombre</string>
     <string name="pref_value_font_normal">Normal</string>
     <string name="pref_value_wifi_and_mobile">Synchroniser en Wifi et données mobiles</string>
     <string name="pref_value_lock">Protection par mot de passe</string>
@@ -182,7 +178,6 @@
         <item>Ouvrir en mode aperçu</item>
         <item>Mémoriser ma dernière sélection</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Petit</item>
         <item>Moyen</item>
@@ -195,11 +190,6 @@
         <item>Défaut du système</item>
     </string-array>
 
-    <plurals name="ab_selected">
-        <item quantity="one">%d sélectionné</item>
-        <item quantity="many">%d sélectionné(s)</item>
-        <item quantity="other">%d sélectionné(s)</item>
-    </plurals>
     <plurals name="bulk_notes_deleted">
         <item quantity="one">Une note supprimée</item>
         <item quantity="many">%1$d notes supprimées</item>
@@ -304,7 +294,23 @@
     <string name="settings_file_suffix_description">Extension de fichier pour les nouvelles notes dans votre Nextcloud</string>
     <string name="settings_file_suffix_success">Nouveau suffixe de fichier : %1$s</string>
     <string name="http_status_code">État HTTP : %1$d</string>
-    <string name="progress_import_indeterminate">Importation des notes...</string>
-    <string name="progress_import">Importation de la note %1$dsur %2$d...</string>
+    <string name="progress_import_indeterminate">Importation des notes…</string>
+    <string name="progress_import">Importation de la note %1$dsur %2$d…</string>
     <string name="account_imported">Compte importé.</string>
+    <!-- Plurals -->
+    <plurals name="ab_selected">
+        <item quantity="one">%d sélectionné</item>
+        <item quantity="other">%d sélectionnés</item>
+    </plurals>
+    <string name="preferences_app_info_title">Informations sur Notes</string>
+    <string name="preferences_app_info">- Lister, créer, modifier, partager, rechercher et supprimer des notes
+\n- Partager du texte et des liens comme nouvelle note dans l\'application
+\n- Marquer des notes comme favorites
+\n- Suppression en bloc
+\n- Interprète le MarkDown
+\n- Traduite dans de nombreux langages</string>
+    <string name="preferences_about_app">Notes est dérivée de Nextcloud Notes</string>
+    <string name="preferences_privacy_policy">Politique de confidentialité</string>
+    <string name="preferences_service_terms">Conditions d\'utilisation</string>
+    <string name="preferences_authors">Auteurs</string>
 </resources>

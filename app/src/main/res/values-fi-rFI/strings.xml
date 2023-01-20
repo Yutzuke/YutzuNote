@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Muistiinpanot</string>
     <string name="app_name_long">Nextcloud Notes</string>
     <string name="label_all_notes">Kaikki muistiinpanot</string>
@@ -32,7 +31,6 @@
     <string name="search_in_all">Etsi kaikista muistiinpanoista</string>
 
     <string name="change_category_title">Valitse luokka</string>
-
     <string name="listview_updated_today">Tänään</string>
     <string name="listview_updated_yesterday">Eilen</string>
     <string name="listview_updated_this_week">Tämä viikko</string>
@@ -50,25 +48,25 @@
     <string name="settings_background_sync">Taustasynkronointi</string>
     <string name="settings_prevent_screen_capture">Estä ruudunkaappaus</string>
     <string name="settings_gridview">Ruudukkonäkymä</string>
-    <string name="error_sync">Synkronointi epäonnistui: %1$s</string>
     <string name="error_synchronization">Synkronointi epäonnistui</string>
-    <string name="error_no_network">Ei verkkoyhteyttä</string>
     <string name="error_maintenance_mode">Palvelin on huoltotilassa</string>
     <string name="error_unknown">Tapahtui tuntematon virhe.</string>
 
+    <string name="error_sync">Synkronointi epäonnistui: %1$s</string>
+    <string name="error_no_network">ei verkkoyhteyttä</string>
     <string name="about_version_title">Versio</string>
-    <string name="about_version">Käytössäsi on %1$s</string>
+    <string name="about_version">Käytössäsi on nyt &lt;strong&gt;%1$s&lt;/strong&gt;</string>
     <string name="about_maintainer_title">Ylläpitäjät</string>
     <string name="about_developers_title">Kehittäjät</string>
     <string name="about_translators_title">Kääntäjät</string>
-    <string name="about_translators_transifex">Nextcloud-yhteisö paikassa %1$s</string>
+    <string name="about_translators_transifex">Nextcloud-yhteisö &lt;a href=\"%1$s\"&gt;Transifex-palvelussa&lt;/a&gt;</string>
     <string name="about_testers_title">Testaajat</string>
     <string name="about_source_title">Lähdekoodi</string>
-    <string name="about_source">Tämä projekti on GitHubissa: %1$s</string>
+    <string name="about_source">Tämä projekti toimii GitHubissa: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_issues_title">Ongelmat</string>
     <string name="about_issues">Voit raportoida virheitä ja ehdottaa parannuksia ja uusia tomintoja GitHub:n ongelmien seuraaja toiminnolla: %1$s</string>
     <string name="about_translate_title">Käännä</string>
-    <string name="about_translate">Liity Nextcloud joukkoon Transflex:ssa ja auta meitä tämän sovelluksen käännöstyössä: %1$s</string>
+    <string name="about_translate">Liity Nextcloud-yhteisöön Transifex-palvelussa ja auta meitä kääntämään tämä sovellus: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_app_license_title">Sovelluslisenssi</string>
     <string name="about_app_license">Tämä sovellus on GNU GENERAL PUBLIC LICENSE v3+ -lisensoitu.</string>
     <string name="about_app_license_button">Näytä lisenssi</string>
@@ -79,7 +77,6 @@
     <string name="about_credits_tab_title">Tekijät</string>
     <string name="about_contribution_tab_title">Kontribuutio</string>
     <string name="about_license_tab_title">Lisenssi</string>
-
     <string name="widget_note_list_title">Muistiinpanolista</string>
     <string name="widget_note_list_placeholder">Ei muistiinpanoja</string>
     <string name="widget_single_note_title">Yksittäinen muistiinpano</string>
@@ -89,9 +86,10 @@
 
     <string name="activity_select_single_note">Valitse muistiinpano</string>
 
-    <string name="shortcut_create_long">Luo uusi muistiinpano</string>
-
     <string name="pref_value_font_normal">Normaali</string>
+    <string name="shortcut_create_long">Luo uusi muistiinpano</string>
+    <string name="pref_value_theme_light">Vaalea</string>
+    <string name="pref_value_theme_dark">Tumma</string>
     <string name="pref_value_wifi_and_mobile">Synkronoi wifi- ja mobiilidatayhteydellä</string>
     <string name="pref_value_lock">Salasanasuojaus</string>
 
@@ -292,7 +290,7 @@
     <string name="settings_file_suffix_description">Tiedostopääte uusille Nextcloud-muistiinpanoille</string>
     <string name="settings_file_suffix_success">Uuden tiedoston pääte: %1$s</string>
     <string name="http_status_code">HTTP-tilakoodi: %1$d</string>
-    <string name="progress_import_indeterminate">Tuodaan muistiinpanoja...</string>
+    <string name="progress_import_indeterminate">Tuodaan muistiinpanoja…</string>
     <string name="progress_import">Tuodaan muistiinpanoa %1$d/%2$d…</string>
     <string name="account_imported">Tili tuotu.</string>
 </resources>

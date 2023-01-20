@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Jegyzetek</string>
     <string name="app_name_long">Nextcloud jegyzetek</string>
     <string name="label_all_notes">Minden jegyzet</string>
@@ -32,7 +31,6 @@
     <string name="search_in_all">Keresés minden jegyzetben</string>
 
     <string name="change_category_title">Válasszon kategóriát</string>
-
     <string name="listview_updated_today">Ma</string>
     <string name="listview_updated_yesterday">Tegnap</string>
     <string name="listview_updated_this_week">Ezen a héten</string>
@@ -40,11 +38,8 @@
     <string name="listview_updated_this_month">Ebben a hónapban</string>
     <string name="listview_updated_last_month">Előző hónap</string>
 
-    <string name="settings_note_mode">Jegyzet módok megjelenítés</string>
-    <string name="settings_theme_title">Téma</string>
     <string name="settings_font_title">Fix szélességű betűkészlet</string>
     <string name="settings_font_size">Betűméret</string>
-    <string name="settings_wifi_only">Szinkronizálás csak Wi-Fin</string>
     <string name="settings_lock">Alkalmazás zár (Béta)</string>
     <string name="settings_lock_summary">Eszközhitelesítő-adatok</string>
     <string name="settings_background_sync">Háttér-szinkronizálás</string>
@@ -53,46 +48,44 @@
     <string name="settings_keep_screen_on">Képernyő bekapcsolva tartása</string>
     <string name="settings_keep_screen_on_summary">Jegyzet megtekintése vagy szerkesztése során</string>
 
-    <string name="error_sync">Szinkronizálás sikertelen: %1$s</string>
     <string name="error_synchronization">Szinkronizálás sikertelen</string>
-    <string name="error_no_network">Nincs hálózati kapcsolat</string>
     <string name="error_maintenance_mode">A kiszolgáló karbantartási módban van</string>
     <string name="error_unknown">Ismeretlen hiba történt.</string>
 
-    <string name="about_version_title">Verzió</string>
-    <string name="about_version">Jelenleg ezt a verziót használja: %1$s</string>
-    <string name="about_maintainer_title">Karbantartó</string>
-    <string name="about_developers_title">Fejlesztők</string>
-    <string name="about_translators_title">Fordítók</string>
-    <string name="about_translators_transifex">Nextcloud közösség a %1$s</string>
-    <string name="about_testers_title">Tesztelők</string>
-    <string name="about_source_title">Forráskód</string>
-    <string name="about_source">A projekt a GitHubon található: %1$s</string>
-    <string name="about_issues_title">Hibajegyek</string>
-    <string name="about_issues">Hibákat jelenthet, fejlesztési javaslatokat adhat és funkciókat kérhet a GitHub hibakövetőjében: %1$s</string>
-    <string name="about_translate_title">Fordítás</string>
-    <string name="about_translate">Csatlakozzon a Nextcloud csapathoz a Transifexen, és segítsen az alkalmazás lefordításában: %1$s</string>
-    <string name="about_app_license_title">Alkalmazás licence</string>
-    <string name="about_app_license">Ez az alkalmazás GNU GENERAL PUBLIC LICENSE v3+ alatt kerül közreadásra.</string>
-    <string name="about_app_license_button">Licenc megtekintése</string>
-    <string name="about_icons_disclaimer_title">Ikonok</string>
     <string name="about_icons_disclaimer_app_icon">Az eredeti ikon itt található: %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Az alkalmazás által használt összes többi ikon a Google által készített %1$s része, és azok Apache 2.0 License alatt érhetők el.</string>
     <string name="about_icons_disclaimer_mdi">Material Design ikonok</string>
-    <string name="about_credits_tab_title">Köszönet</string>
+    <string name="settings_note_mode">Jegyzet módok megjelenítés</string>
+    <string name="settings_theme_title">Sötét téma</string>
+    <string name="settings_wifi_only">Szinkronizáció csak Wifin keresztül</string>
+    <string name="error_sync">sikertelen szinkronizálás: %1$s</string>
+    <string name="error_no_network">Nincs hálózati kapcsolat</string>
+    <string name="about_version_title">Verzió</string>
+    <string name="about_version">Jelenleg ezt használod: &lt;strong&gt;%1$s&lt;/strong&gt;</string>
+    <string name="about_maintainer_title">Karbantartó</string>
+    <string name="about_developers_title">Fejlesztők</string>
+    <string name="about_translators_title">Fordítók</string>
+    <string name="about_translators_transifex">Nextcloud közösség a &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;-en</string>
+    <string name="about_testers_title">Tesztelők</string>
+    <string name="about_source_title">Forráskód</string>
+    <string name="about_source">Ez a projek a GitHub-on: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues_title">Esetek</string>
+    <string name="about_issues">Jelenthetsz hibákat, javasolhatsz javításokat, kérhetsz bővítéseket a GitHub esetkezelőjében: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate_title">Fordítás</string>
+    <string name="about_translate">Csatlakozz a Nextcloud csapathoz a Transifex-en és segíts lefordítani az alkalmazást: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_app_license_title">App licensz</string>
+    <string name="about_app_license">Ez az alkalmazás GNU GENERAL PUBLIC LICENSE v3+-al kerül kiadásra.</string>
+    <string name="about_app_license_button">Licensz megtekintése</string>
+    <string name="about_icons_disclaimer_title">Ikonok</string>
+    <string name="about_credits_tab_title">Érdemek</string>
     <string name="about_contribution_tab_title">Közreműködés</string>
     <string name="about_license_tab_title">Licenc</string>
-
-    <string name="widget_note_list_title">Jegyzetlista</string>
+    <string name="widget_note_list_title">Jegyzet lista</string>
     <string name="widget_note_list_placeholder">Nincsenek jegyzetek</string>
     <string name="widget_single_note_title">Egyszeri jegyzet</string>
     <string name="widget_single_note_placeholder_tv">Jegyzet nem található</string>
     <string name="widget_not_logged_in">Jelentkezzen be a Jegyzetekbe mielőtt ezt a modult használná</string>
     <string name="widget_entry_fav_contentDescription">A csillag ikon az elem kedvencként megjelölésére szolgál</string>
-
-    <string name="activity_select_single_note">Válasszon jegyzetet</string>
-
-    <string name="shortcut_create_long">Új jegyzet létrehozása</string>
 
     <string name="pref_value_font_normal">Normál</string>
     <string name="pref_value_wifi_and_mobile">Szinkronizálás Wi-Fin és mobil adatkapcsolaton</string>
@@ -177,6 +170,10 @@
     <string name="manage_accounts">Fiókok kezelése</string>
     <string name="action_formatting_help">Formázás</string>
 
+    <string name="activity_select_single_note">Jegyzet kiválasztása</string>
+    <string name="shortcut_create_long">Új jegyzet létrehozása</string>
+    <string name="pref_value_theme_light">Világos</string>
+    <string name="pref_value_theme_dark">Sötét</string>
     <string-array name="noteMode_entries">
         <item>Megnyitás szerkesztésre</item>
         <item>Megnyitás előnézetre</item>
@@ -194,7 +191,6 @@
         <item>Sötét</item>
         <item>Rendszer alapértelmezése</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d kiválasztva</item>
         <item quantity="other">%d kiválasztva</item>
@@ -302,4 +298,6 @@
     <string name="progress_import_indeterminate">Jegyzetek importálása…</string>
     <string name="progress_import">%1$d. / %2$d jegyzet importálása…</string>
     <string name="account_imported">Fiók importálva.</string>
+    <string name="preferences_service_terms">Szolgáltatás feltételei</string>
+    <string name="preferences_authors">Szerzők</string>
 </resources>

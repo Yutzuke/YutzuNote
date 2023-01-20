@@ -29,7 +29,7 @@
                 android:padding="@dimen/spacer_2x"
                 android:paddingHorizontal="@dimen/spacer_2x"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:textColor="@color/fg_default"
+                android:textColor="@color/color_default_primary_text"
                 android:textIsSelectable="true"
                 tools:text="@tools:sample/lorem/random" />
         </ScrollView>

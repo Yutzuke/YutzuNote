@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Poznámky</string>
     <string name="app_name_long">Nextcloud poznámky</string>
     <string name="label_all_notes">Všetky poznámky</string>
     <string name="label_favorites">Obľúbené</string>
     <string name="action_create">Nová poznámka</string>
     <string name="welcome_text">Vitajte v %1$s</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Nastavenia</string>
     <string name="action_trashbin">Zmazané poznámky</string>
     <string name="action_search">Hľadať</string>
     <string name="action_sorting_method">Metóda triedenia</string>
@@ -22,17 +21,16 @@
     <string name="action_note_restored">Obnovené %1$s</string>
     <string name="action_undo">Vrátiť</string>
     <string name="action_uncategorized">Nezaradené</string>
-    <string name="menu_delete">Zmazať</string>
+    <string name="menu_delete">Odstrániť</string>
     <string name="menu_change_category">Kategória</string>
     <string name="menu_favorite">Obľúbené</string>
     <string name="menu_preview">Náhľad</string>
-    <string name="menu_share">Sprístupniť</string>
 
     <string name="search_in_category">Hľadať v %1$s</string>
     <string name="search_in_all">Hľadať všetky poznámky</string>
 
+    <string name="menu_share">Zdieľať</string>
     <string name="change_category_title">Vybrať kategóriu</string>
-
     <string name="listview_updated_today">Dnes</string>
     <string name="listview_updated_yesterday">Včera</string>
     <string name="listview_updated_this_week">Tento týždeň</string>
@@ -53,25 +51,25 @@
     <string name="settings_keep_screen_on">Ponechať obrazovku zapnutú</string>
     <string name="settings_keep_screen_on_summary">Pri prezeraní alebo úprave poznámky</string>
 
-    <string name="error_sync">Synchronizácia zlyhala: %1$s</string>
     <string name="error_synchronization">Synchronizácia zlyhala</string>
-    <string name="error_no_network">Bez sieťového pripojenia</string>
     <string name="error_maintenance_mode">Server je v móde údržby</string>
     <string name="error_unknown">Vyskytla sa neznáma chyba</string>
 
+    <string name="error_sync">Synchronizácia zlyhala: %1$s</string>
+    <string name="error_no_network">nie je pripojenie k sieti</string>
     <string name="about_version_title">Verzia</string>
-    <string name="about_version">Momentálne používate %1$s</string>
+    <string name="about_version">Momentálne používate &lt;strong&gt;%1$s&lt;/strong&gt;</string>
     <string name="about_maintainer_title">Udržovateľ</string>
     <string name="about_developers_title">Vývojári</string>
     <string name="about_translators_title">Prekladatelia</string>
-    <string name="about_translators_transifex">Nextcloud komunita na %1$s</string>
+    <string name="about_translators_transifex">Nextcloud komunita na &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;</string>
     <string name="about_testers_title">Testeri</string>
     <string name="about_source_title">Zdrojový kód</string>
-    <string name="about_source">Tento projekt sa nachádza na sieti GitHub: %1$s</string>
+    <string name="about_source">Tento projekt je prevádzkovaný na GitHube: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_issues_title">Problémy</string>
-    <string name="about_issues">Hlásenia chýb, návrhy na vylepšenia a požiadavky na funkcie môžete nahlásiť na GitHub: %1$s</string>
+    <string name="about_issues">Návrhy na vylepšenia, požiadavky na nové funkcie a chyby možete nahlásiť na GitHub sledovači problémov: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_translate_title">Preložiť</string>
-    <string name="about_translate">Pripojte sa k tímu Nextcloud na stránke Transifex a pomožte nám s prekladom tejto apky: %1$s</string>
+    <string name="about_translate">Pripojte sa do tímu Nextcloud na stránke Transifex a pomožte nám s prekladom tejto aplikácie: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_app_license_title">Licencia aplikácie</string>
     <string name="about_app_license">Táto aplikácie je licencovaná pod GNU GENERAL PUBLIC LICENSE v3+.</string>
     <string name="about_app_license_button">Zobraziť licenciu</string>
@@ -82,18 +80,17 @@
     <string name="about_credits_tab_title">Zásluhy</string>
     <string name="about_contribution_tab_title">Príspevok</string>
     <string name="about_license_tab_title">Licencia</string>
-
     <string name="widget_note_list_title">Zoznam poznámok</string>
     <string name="widget_note_list_placeholder">Nie sú žiadne poznámky</string>
     <string name="widget_single_note_title">Jedna poznámka</string>
     <string name="widget_single_note_placeholder_tv">Poznámky sa nenašli</string>
     <string name="widget_not_logged_in">Prihláste sa prosím do Poznámok skôr než začnete používať tento widget</string>
     <string name="widget_entry_fav_contentDescription">Ikona hviezdičky označuje položku ako obľúbenú</string>
-
     <string name="activity_select_single_note">Vybrať poznámku</string>
-
+    <!-- Shortcuts -->
     <string name="shortcut_create_long">Vytvoriť novú poznámku</string>
-
+    <string name="pref_value_theme_light">Svetlý</string>
+    <string name="pref_value_theme_dark">Tmavý</string>
     <string name="pref_value_font_normal">Normálne</string>
     <string name="pref_value_wifi_and_mobile">Synchronizovať na Wi-Fi a mobilných dátach</string>
     <string name="pref_value_lock">Ochrana heslom</string>
@@ -182,7 +179,6 @@
         <item>Otvoriť v režime ukážky</item>
         <item>Zapamätať si môj posledný výber</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Malá</item>
         <item>Stredná</item>
@@ -312,4 +308,7 @@
     <string name="progress_import_indeterminate">Import poznámok…</string>
     <string name="progress_import">Importuje sa poznámka %1$d of %2$d…</string>
     <string name="account_imported">Účet bol importovaný.</string>
+    <string name="preferences_service_terms">Podmienky používania</string>
+    <string name="preferences_privacy_policy">Zásady ochrany osobných údajov</string>
+    <string name="preferences_authors">Autori</string>
 </resources>

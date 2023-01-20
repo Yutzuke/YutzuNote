@@ -36,6 +36,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|end"
         android:layout_marginStart="@dimen/spacer_2x"
-        android:textColor="@color/fg_default"
+        android:textColor="@color/color_default_secondary_text"
         tools:text="23" />
 </LinearLayout>

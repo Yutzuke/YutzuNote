@@ -45,7 +45,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/menu_favorite"
                 android:padding="@dimen/spacer_2x"
-                tools:src="@drawable/ic_star_yellow_24dp" />
+                tools:src="@drawable/ic_star_accent_24dp" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/noteStatus"
@@ -110,7 +110,7 @@
                     android:paddingVertical="1dp"
                     android:paddingHorizontal="@dimen/spacer_1x"
                     android:singleLine="true"
-                    android:textColor="?android:textColorPrimary"
+                    android:textColor="@color/color_default_primary_text"
                     android:textSize="@dimen/secondary_font_size"
                     tools:maxLength="15"
                     tools:text="@tools:sample/lorem/random" />

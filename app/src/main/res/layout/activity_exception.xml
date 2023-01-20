@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/colorPrimary"
+    android:background="@color/e_background"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
@@ -22,6 +22,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/spacer_2x"
+        android:textColor="@color/color_default_primary_text"
         android:hint="An error appeared."
         tools:ignore="HardcodedText" />
 
@@ -49,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/spacer_2x"
+                android:textColor="@color/color_default_primary_text"
                 android:text="@string/error_dialog_we_need_info"
                 android:textAppearance="?attr/textAppearanceBody2" />
 
@@ -63,6 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/bg_highlighted"
+                    android:textColor="@color/color_default_primary_text"
                     android:padding="@dimen/spacer_1x"
                     android:textIsSelectable="true"
                     android:typeface="monospace"
@@ -87,6 +90,10 @@
             android:layout_weight=".5"
             android:text="@string/simple_close"
             android:textColor="@color/defaultBrand" />
+
+        <Space
+            android:layout_width="10dp"
+            android:layout_height="match_parent" />
 
         <Button
             android:id="@+id/copy"

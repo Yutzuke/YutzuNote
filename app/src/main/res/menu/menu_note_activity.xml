@@ -6,11 +6,13 @@
         android:icon="@drawable/ic_eye_grey600_24dp"
         android:orderInCategory="60"
         android:title="@string/menu_preview"
+        app:iconTint="@color/e_icon_color"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_edit"
         android:icon="@drawable/ic_edit_grey600_24dp"
         android:orderInCategory="60"
         android:title="@string/simple_edit"
+        app:iconTint="@color/e_icon_color"
         app:showAsAction="ifRoom" />
 </menu>

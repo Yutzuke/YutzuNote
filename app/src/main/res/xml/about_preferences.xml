@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="notes_info"
+        android:summary="@string/preferences_app_info"
+        android:title="@string/preferences_app_info_title" />
+
+    <Preference
+        android:key="build_version"
+        android:title="@string/about_version_title">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://gitlab.e.foundation/e/apps/Notes/-/releases" />
+    </Preference>
+
+    <Preference
+        android:key="about_app"
+        android:title="@string/preferences_about_app">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://github.com/stefan-niedermann/nextcloud-notes" />
+    </Preference>
+
+    <Preference android:title="@string/about_license_tab_title">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://gitlab.e.foundation/e/apps/Notes/-/blob/master/LICENSE" />
+    </Preference>
+
+    <Preference android:title="@string/preferences_authors">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://gitlab.e.foundation/e/apps/Notes/-/blob/master/AUTHORS" />
+    </Preference>
+
+    <Preference android:title="@string/about_source_title">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://gitlab.e.foundation/e/apps/Notes" />
+    </Preference>
+
+    <Preference android:title="@string/preferences_privacy_policy">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://e.foundation/legal-notice-privacy/" />
+    </Preference>
+
+    <Preference android:title="@string/preferences_service_terms">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:data="https://e.foundation/legal-notice-privacy/" />
+    </Preference>
+
+</PreferenceScreen>

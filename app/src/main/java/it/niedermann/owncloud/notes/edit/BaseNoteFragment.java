@@ -201,7 +201,7 @@ public abstract class BaseNoteFragment extends BrandedFragment implements Catego
     }
 
     private void prepareFavoriteOption(MenuItem item) {
-        item.setIcon(note.getFavorite() ? R.drawable.ic_star_white_24dp : R.drawable.ic_star_border_white_24dp);
+        item.setIcon(note.getFavorite() ? R.drawable.ic_star_accent_24dp : R.drawable.ic_star_border_accent_24dp);
         item.setChecked(note.getFavorite());
         tintMenuIcon(item, colorAccent);
     }
@@ -252,7 +252,7 @@ public abstract class BaseNoteFragment extends BrandedFragment implements Catego
                 if (ShortcutManagerCompat.isRequestPinShortcutSupported(context)) {
                     final var pinShortcutInfo = new ShortcutInfoCompat.Builder(context, String.valueOf(note.getId()))
                             .setShortLabel(note.getTitle())
-                            .setIcon(IconCompat.createWithResource(context.getApplicationContext(), TRUE.equals(note.getFavorite()) ? R.drawable.ic_star_yellow_24dp : R.drawable.ic_star_grey_ccc_24dp))
+                            .setIcon(IconCompat.createWithResource(context.getApplicationContext(), TRUE.equals(note.getFavorite()) ? R.drawable.ic_star_accent_24dp : R.drawable.ic_star_border_accent_24dp))
                             .setIntent(new Intent(getActivity(), EditNoteActivity.class).putExtra(EditNoteActivity.PARAM_NOTE_ID, note.getId()).setAction(ACTION_SHORTCUT))
                             .build();
 

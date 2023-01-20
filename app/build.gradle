@@ -11,8 +11,8 @@ android {
     }
 
     defaultConfig {
-        applicationId "it.niedermann.owncloud.notes"
-        minSdkVersion 23
+        applicationId "foundation.e.notes"
+        minSdkVersion 24
         targetSdkVersion 33
         versionCode 3007001
         versionName "3.7.1"
@@ -39,30 +39,6 @@ android {
         }
     }
 
-
-    flavorDimensions "version"
-
-    productFlavors {
-        fdroid {
-            dimension "version"
-        }
-        dev {
-            dimension "version"
-            applicationIdSuffix ".dev"
-        }
-        play {
-            dimension "version"
-        }
-        pfungstadt {
-            dimension "version"
-            applicationIdSuffix ".pfungstadt"
-        }
-        mdm {
-            dimension "version"
-            applicationIdSuffix ".mdm"
-        }
-    }
-
     testOptions {
         unitTests {
             includeAndroidResources true
@@ -73,6 +49,7 @@ android {
         disable 'MissingTranslation'
     }
     namespace 'it.niedermann.owncloud.notes'
+
 }
 
 dependencies {
@@ -124,4 +101,5 @@ dependencies {
     testImplementation 'org.robolectric:robolectric:4.9'
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'foundation.e:elib:0.0.1-alpha11'
 }

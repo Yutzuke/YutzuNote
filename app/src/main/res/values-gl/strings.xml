@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Notas</string>
     <string name="app_name_long">Notas do Nextcloud</string>
     <string name="label_all_notes">Todas as notas</string>
     <string name="label_favorites">Favoritas</string>
     <string name="action_create">Nova nota</string>
     <string name="welcome_text">Dámoslle a benvida a %1$s</string>
-    <string name="action_settings">Axustes</string>
+    <string name="action_settings">Configuración</string>
     <string name="action_trashbin">Notas eliminadas</string>
     <string name="action_search">Buscar</string>
     <string name="action_sorting_method">Método de ordenación</string>
@@ -18,8 +17,8 @@
     <string name="action_edit_save">Gardar</string>
     <string name="simple_about">Sobre</string>
     <string name="simple_link">Ligazón</string>
-    <string name="action_note_deleted">Eliminouse %1$s</string>
-    <string name="action_note_restored">Restaurouse %1$s</string>
+    <string name="action_note_deleted">A nota foi eliminada</string>
+    <string name="action_note_restored">A nota foi restaurada</string>
     <string name="action_undo">Desfacer</string>
     <string name="action_uncategorized">Sen categorizar</string>
     <string name="menu_delete">Eliminar</string>
@@ -32,63 +31,63 @@
     <string name="search_in_all">Buscar todas as notas</string>
 
     <string name="change_category_title">Escolla unha categoría</string>
-
     <string name="listview_updated_today">Hoxe</string>
     <string name="listview_updated_yesterday">Onte</string>
     <string name="listview_updated_this_week">Esta semana</string>
     <string name="listview_updated_last_week">A semana pasada</string>
     <string name="listview_updated_this_month">Este mes</string>
     <string name="listview_updated_last_month">O mes pasado</string>
-
     <string name="settings_note_mode">Modo de vista das notas</string>
     <string name="settings_theme_title">Tema</string>
     <string name="settings_font_title">Letra monoespazada</string>
     <string name="settings_font_size">Tamaño da letra</string>
-    <string name="settings_wifi_only">Sincronizar só con wifi</string>
     <string name="settings_lock">Bloqueo de aplis (beta)</string>
     <string name="settings_lock_summary">Credenciais do dispositivo</string>
     <string name="settings_background_sync">Sincronización do traballo en segundo plano</string>
     <string name="settings_prevent_screen_capture">Evitar a captura da pantalla</string>
     <string name="settings_gridview">Ver como grella</string>
-    <string name="error_sync">Produciuse un fallo na sincronización: %1$s</string>
     <string name="error_synchronization">Produciuse un fallo na sincronización</string>
-    <string name="error_no_network">Sen conexión de rede</string>
     <string name="error_maintenance_mode">Servidor en modo mantemento</string>
     <string name="error_unknown">Produciuse un erro descoñecido.</string>
 
-    <string name="about_version_title">Versión</string>
-    <string name="about_version">Agora está a empregar %1$s</string>
-    <string name="about_maintainer_title">Mantedor</string>
-    <string name="about_developers_title">Desenvolvedores</string>
-    <string name="about_translators_title">Tradutores</string>
-    <string name="about_translators_transifex">Comunidade Nextcloud en %1$s</string>
-    <string name="about_testers_title">Probadores</string>
-    <string name="about_source_title">Código fonte</string>
-    <string name="about_source">Este proxecto está aloxado en GitHub: %1$s</string>
-    <string name="about_issues_title">Incidencias</string>
-    <string name="about_issues">Vostede pode informar de fallos, propoñer melloras e solicitar funcionalidades na ferramenta de seguimento de erros do GitHub: %1$s</string>
-    <string name="about_translate_title">Traducir</string>
-    <string name="about_translate">Únase ao equipo Nextcloud en Transifex e axúdenos a traducir esta aplicación: %1$s</string>
-    <string name="about_app_license_title">Licenza da apli</string>
-    <string name="about_app_license">Esta apli está licenciada baixo a LICENZA XERAL PUBLICA GNU v3+.</string>
-    <string name="about_app_license_button">Ver a licenza</string>
-    <string name="about_icons_disclaimer_title">Iconas</string>
     <string name="about_icons_disclaimer_app_icon">Para a icona orixinal, vexa %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Todas as iconas usadas nesta aplicación son %1$s feitas por Google Inc. e licenciadas baixo unha Licenza Apache 2.0.</string>
     <string name="about_icons_disclaimer_mdi">Iconas Material Desig</string>
-    <string name="about_credits_tab_title">Recoñecementos</string>
+
+    <string name="settings_wifi_only">Sincronizar só con WiFi</string>
+    <string name="error_sync">Produciuse un fallo na sincronización: %1$s</string>
+    <string name="error_no_network">sen conexión de rede</string>
+    <string name="about_version_title">Versión</string>
+    <string name="about_version"> Settings </string>
+    <string name="about_maintainer_title">Mantedor</string>
+    <string name="about_developers_title">Desenvolvedores</string>
+    <string name="about_translators_title">Tradutores</string>
+    <string name="about_translators_transifex">A comunidade de Nextcloud en &lt;a href=\\"%1$s\\"&gt;Transifex&lt;/a&gt;</string>
+    <string name="about_testers_title">Probadores</string>
+    <string name="about_source_title">Código fonte</string>
+    <string name="about_source">Este proxecto está en GitHub: &lt;a href=\\%1$s\\&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues_title">Problemas</string>
+    <string name="about_issues">Vostede pode informar de fallos, propoñer melloras e solicitar funcionalidades na ferramenta de seguimento de erros do GitHub: &lt;a href=\\"%1$s\\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate_title">Traducir</string>
+    <string name="about_translate">Únase ao equipo Nextcloud en Transifex e axúdenos a traducir este aplicativo: &lt;a href=\\%1$s\\&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_app_license_title">Licenza do aplicativo</string>
+    <string name="about_app_license">Este aplicativo está baixo a LICENZA XERAL PUBLICA GNU v3+.</string>
+    <string name="about_app_license_button">Ver a licenza</string>
+    <string name="about_icons_disclaimer_title">Iconas</string>
+    <string name="about_credits_tab_title">Créditos</string>
     <string name="about_contribution_tab_title">Colaboración</string>
     <string name="about_license_tab_title">Licenza</string>
-
     <string name="widget_note_list_title">Lista de notas</string>
     <string name="widget_note_list_placeholder">Non hai notas</string>
     <string name="widget_single_note_title">Nota única</string>
     <string name="widget_single_note_placeholder_tv">Non se atopou a nota</string>
     <string name="widget_not_logged_in">Acceda a Notas antes de empregar este trebello</string>
+    <string name="widget_entry_fav_contentDescription">A icona de estrela emprégase para indicar que o elemento é un favorito</string>
     <string name="activity_select_single_note">Seleccionar unha nota</string>
-
+    <!-- Shortcuts -->
     <string name="shortcut_create_long">Crear unha nota nova</string>
-
+    <string name="pref_value_theme_light">Claro</string>
+    <string name="pref_value_theme_dark">Escuro</string>
     <string name="pref_value_font_normal">Normal</string>
     <string name="pref_value_wifi_and_mobile">Sincronización con wifi e con datos móbiles</string>
     <string name="pref_value_lock">Protección por contrasinal</string>
@@ -97,8 +96,6 @@
     <string name="simple_close">Pechar</string>
     <string name="simple_copy">Copiar</string>
     <string name="simple_exception">Excepción</string>
-    <string name="pin_to_homescreen">Ancorar na pantalla de inicio</string>
-    <string name="note_has_been_deleted">Esta nota foi eliminada</string>
     <string name="add_account">Engadir unha conta</string>
 
     <string name="category_music">Música</string>
@@ -155,12 +152,13 @@
     <string name="manage_accounts">Xestionar contas</string>
     <string name="action_formatting_help">Formatado</string>
 
+    <string name="pin_to_homescreen">Fixar na pantalla de inicio</string>
+    <string name="note_has_been_deleted">Esta nota foi eliminada</string>
     <string-array name="noteMode_entries">
         <item>Abrir en modo de edición</item>
         <item>Abrir en modo de vista previa</item>
         <item>Lembrar a miña última selección</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Pequena</item>
         <item>Mediana</item>
@@ -256,7 +254,18 @@
     <string name="simple_next">Seguinte</string>
     <string name="simple_prev">Anterior</string>
     <string name="simple_backup">Copia de seguridade</string>
-    <string name="progress_import_indeterminate">A importar notas...</string>
-    <string name="progress_import">A importar a nota %1$d de %2$d...</string>
+    <string name="progress_import_indeterminate">A importar notas…</string>
+    <string name="progress_import">A importar a nota %1$d de %2$d…</string>
     <string name="account_imported">Conta importada.</string>
+    <string name="preferences_authors">Autores</string>
+    <string name="preferences_service_terms">Termos de servizo</string>
+    <string name="preferences_privacy_policy">Política de privacidade</string>
+    <string name="preferences_about_app">As Notas están bifurcadas desde Notas de Nextcloud</string>
+    <string name="preferences_app_info">-Facer listas , crear, editar, compartir, buscar e eliminar notas
+\n-Compartir texto e ligazóns como nova nota dentro do aplicativo
+\n-Marcar notas como favoritas
+\n-Eliminación masiva
+\n-Producir unha redución
+\n-Traducir a moitas linguas</string>
+    <string name="preferences_app_info_title">Información de notas</string>
 </resources>

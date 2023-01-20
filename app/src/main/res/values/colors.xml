@@ -2,33 +2,40 @@
 <resources>
     <!-- Colors -->
 
-    <color name="primary">#ffffff</color>
-    <color name="accent">#121212</color>
+    <color name="primary">@color/e_action_bar</color>
+    <color name="primary_dark">@color/e_action_bar</color>
+    <color name="accent_color">@color/e_accent</color>
+    <color name="accent">@color/e_accent</color>
     <color name="danger">#d40000</color>
+    <color name="color_default_primary_text">@color/e_primary_text_color</color>
+    <color name="color_default_secondary_text">@color/e_secondary_text_color</color>
 
-    <color name="defaultBrand">#0082C9</color>
+    <color name="defaultBrand">@color/e_accent</color>
 
     <color name="cursorHandles">#555566</color>
     <color name="defaultTextHighlightBackground">#2233334a</color>
 
-    <color name="bg_highlighted">#eee</color>
-    <color name="bg_normal">@color/primary</color>
+    <color name="bg_highlighted">@android:color/white</color>
+    <color name="bg_selected_item">@color/e_floating_background</color>
+    <color name="bg_normal">@color/e_background</color>
     <color name="bg_attention">#d40000</color>
     <color name="bg_warning">#ffcc00</color>
-    <color name="fg_default">#000000</color>
-    <color name="fg_default_selection">#333333</color>
-    <color name="fg_default_low">#666666</color>
-    <color name="fg_default_high">#cccccc</color>
+    <color name="fg_default">@color/e_floating_background</color>
+    <color name="fg_default_selection">@color/e_alpha_accent</color>
+    <color name="fg_default_low">@color/color_default_secondary_text</color>
+    <color name="fg_default_high">@color/color_default_primary_text</color>
     <color name="fg_secondary">#999999</color>
     <color name="fg_contrast">#ffffff</color>
+    <color name="navigation_bar_background_color">@color/e_action_bar</color>
 
     <color name="grey600">#757575</color>
-    <color name="icon_color_default">@color/grey600</color>
+    <color name="icon_color_default">@color/e_icon_color</color>
+    <color name="drawer_menu_icon_color">#7A7A7A</color>
 
     <color name="category_background">@color/bg_normal</color>
     <color name="category_border">@color/defaultBrand</color>
 
-    <color name="appbar">@android:color/white</color>
+    <color name="appbar">@color/primary_dark</color>
 
     <color name="widget_background">#ddffffff</color>
     <color name="widget_foreground">#222222</color>

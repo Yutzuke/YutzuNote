@@ -19,7 +19,7 @@
         android:foregroundGravity="center_vertical"
         android:paddingStart="@dimen/widget_note_list_inner_padding"
         android:paddingEnd="@dimen/widget_note_list_outer_padding"
-        app:srcCompat="@drawable/ic_star_yellow_24dp" />
+        app:srcCompat="@drawable/ic_star_accent_24dp" />
 
     <TextView
         android:id="@+id/widget_entry_content_tv"
@@ -27,12 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
+        android:textColor="@color/color_default_primary_text"
         android:ellipsize="end"
         android:gravity="center_vertical"
         android:lines="1"
         android:paddingStart="@dimen/widget_note_list_inner_padding"
         android:paddingEnd="@dimen/widget_note_list_outer_padding"
-        android:textColor="@color/widget_foreground"
         android:textSize="14sp"
         tools:text="@tools:sample/lorem/random" />
 

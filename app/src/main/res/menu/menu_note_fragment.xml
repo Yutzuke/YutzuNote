@@ -6,6 +6,7 @@
         android:id="@+id/search"
         android:title="@string/action_search"
         android:icon="@drawable/ic_search_grey600_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="50"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="ifRoom|collapseActionView" />
@@ -13,6 +14,7 @@
     <item
         android:id="@+id/menu_favorite"
         android:orderInCategory="80"
+        app:iconTint="@color/e_icon_color"
         android:title="@string/menu_favorite"
         android:checkable="true"
         app:showAsAction="ifRoom" />
@@ -24,31 +26,36 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_category"
-        android:icon="@drawable/ic_folder_white_24dp"
+        android:icon="@drawable/ic_folder_grey_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="100"
         android:title="@string/menu_change_category"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/menu_share"
-        android:icon="@drawable/ic_share_white_24dp"
+        android:icon="@drawable/ic_share_grey_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="100"
         android:title="@string/menu_share"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_move"
         android:icon="@drawable/ic_send_grey600_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="120"
         android:title="@string/simple_move"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_cancel"
-        android:icon="@drawable/ic_clear_white_24dp"
+        android:icon="@drawable/ic_clear_grey_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="130"
         android:title="@android:string/cancel"
         app:showAsAction="never" />
     <item
         android:id="@+id/menu_delete"
         android:icon="@drawable/ic_delete_grey600_24dp"
+        app:iconTint="@color/e_icon_color"
         android:orderInCategory="140"
         android:title="@string/menu_delete"
         app:showAsAction="never" />

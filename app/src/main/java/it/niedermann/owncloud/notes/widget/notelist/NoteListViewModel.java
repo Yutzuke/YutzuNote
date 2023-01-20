@@ -46,7 +46,7 @@ public class NoteListViewModel extends AndroidViewModel {
 
                             final var items = new ArrayList<NavigationItem>(fromDatabase.size() + 3);
                             items.add(new NavigationItem(MainActivity.ADAPTER_KEY_RECENT, getApplication().getString(R.string.label_all_notes), count, R.drawable.ic_access_time_grey600_24dp, RECENT));
-                            items.add(new NavigationItem(MainActivity.ADAPTER_KEY_STARRED, getApplication().getString(R.string.label_favorites), favoritesCount, R.drawable.ic_star_yellow_24dp, FAVORITES));
+                            items.add(new NavigationItem(MainActivity.ADAPTER_KEY_STARRED, getApplication().getString(R.string.label_favorites), favoritesCount, R.drawable.ic_star_grey_24dp, FAVORITES));
 
                             if (categories.size() > 2 && categories.get(2).label.isEmpty()) {
                                 items.add(new NavigationItem(MainActivity.ADAPTER_KEY_UNCATEGORIZED, "", null, NavigationAdapter.ICON_NOFOLDER));

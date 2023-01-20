@@ -1,15 +1,11 @@
 package it.niedermann.owncloud.notes.preferences;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 
 import androidx.annotation.ColorInt;
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.preference.ListPreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
@@ -84,15 +80,6 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Bra
         } else {
             Log.e(TAG, "Could not find \"" + getString(R.string.pref_key_lock) + "\"-preference.");
         }
-
-        final var themePref = findPreference(getString(R.string.pref_key_theme));
-        assert themePref != null;
-        themePref.setOnPreferenceChangeListener((preference, newValue) -> {
-            NotesApplication.setAppTheme(DarkModeSetting.valueOf((String) newValue));
-            viewModel.resultCode$.setValue(Activity.RESULT_OK);
-            ActivityCompat.recreate(requireActivity());
-            return true;
-        });
 
         wifiOnlyPref = findPreference(getString(R.string.pref_key_wifi_only));
         assert wifiOnlyPref != null;

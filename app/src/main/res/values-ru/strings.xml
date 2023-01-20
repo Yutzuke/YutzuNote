@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Заметки</string>
     <string name="app_name_long">Заметки для Nextcloud</string>
     <string name="label_all_notes">Все заметки</string>
@@ -32,13 +31,10 @@
     <string name="search_in_all">Поиск всех заметок</string>
 
     <string name="change_category_title">Выберите категорию</string>
-
     <string name="listview_updated_today">Сегодня</string>
     <string name="listview_updated_yesterday">Вчера</string>
     <string name="listview_updated_this_week">На этой неделе</string>
-    <string name="listview_updated_last_week">За последнюю неделю</string>
     <string name="listview_updated_this_month">Этот месяц</string>
-    <string name="listview_updated_last_month">За последний месяц</string>
 
     <string name="settings_note_mode">Режим показа заметок</string>
     <string name="settings_theme_title">Тема</string>
@@ -53,27 +49,27 @@
     <string name="settings_keep_screen_on">Держите экран включенным</string>
     <string name="settings_keep_screen_on_summary">При просмотре или редактировании заметки</string>
 
-    <string name="error_sync">Сбой синхронизации: %1$s</string>
     <string name="error_synchronization">Сбой синхронизации</string>
-    <string name="error_no_network">Нет подключения к сети</string>
     <string name="error_maintenance_mode">Сервер в режиме обслуживания</string>
     <string name="error_unknown">Произошла неизвестная ошибка.</string>
 
+    <string name="error_sync">Синхронизация не удалась: %1$s</string>
+    <string name="error_no_network">нет подключения к сети</string>
     <string name="about_version_title">Версия</string>
-    <string name="about_version">В данный момент вы используете %1$s</string>
-    <string name="about_maintainer_title">Сопроводитель</string>
+    <string name="about_version">Вы используете &lt;strong&gt;%1$s&lt;/strong&gt;</string>
+    <string name="about_maintainer_title">Сопровождающий</string>
     <string name="about_developers_title">Разработчики</string>
     <string name="about_translators_title">Переводчики</string>
-    <string name="about_translators_transifex">Сообщество Nextcloud на сайте %1$s</string>
-    <string name="about_testers_title">Тестировщики</string>
+    <string name="about_translators_transifex">Сообщество Nextcloud на &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;</string>
+    <string name="about_testers_title">Тестеры</string>
     <string name="about_source_title">Исходный код</string>
-    <string name="about_source">Расположение проекта на GitHub: %1$s</string>
-    <string name="about_issues_title">Тикеты</string>
-    <string name="about_issues">Вы можете сообщить об ошибках, ваших пожеланиях, как можно улучшить продукт, в специальном разделе GitHub: %1$s</string>
+    <string name="about_source">Этот проект размещён на GitHub: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues_title">Проблемы</string>
+    <string name="about_issues">Вы можете сообщить об ошибках, внести предложения об улучшениях и пожеланиях в системе тикетов GitHub: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_translate_title">Перевести</string>
-    <string name="about_translate">Присоединяйтесь к команде Nextcloud на Transifex и помогите нам перевести это приложение: %1$s</string>
+    <string name="about_translate">Включайтесь в команду Nextcloud на сайте Transifex и помогайте переводить это приложение: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_app_license_title">Лицензия приложения</string>
-    <string name="about_app_license">Лицензия на программу предоставляется в соответствии с условиями Открытого лицензионного соглашения GNU (GNU GPL) версии 3+.</string>
+    <string name="about_app_license">Лицензия на программу предоставляется в соответствии с условиями GNU GENERAL PUBLIC LICENSE v3+.</string>
     <string name="about_app_license_button">Посмотреть лицензию</string>
     <string name="about_icons_disclaimer_title">Значки</string>
     <string name="about_icons_disclaimer_app_icon">Для просмотра оригинального значка: %1$s.</string>
@@ -82,18 +78,16 @@
     <string name="about_credits_tab_title">Сообщество</string>
     <string name="about_contribution_tab_title">Участие</string>
     <string name="about_license_tab_title">Лицензия</string>
-
     <string name="widget_note_list_title">Список заметок</string>
     <string name="widget_note_list_placeholder">Заметок нет</string>
     <string name="widget_single_note_title">Одна заметка</string>
     <string name="widget_single_note_placeholder_tv">Заметка не найдена</string>
     <string name="widget_not_logged_in">Для использования виджета необходимо выполнить вход в приложении «Заметки»</string>
-    <string name="widget_entry_fav_contentDescription">Значок звездочки используется для обозначения элемента как избранного</string>
-
+    <string name="widget_entry_fav_contentDescription">Используйте звёздочку для исключения заметки из избранного</string>
     <string name="activity_select_single_note">Выберите заметку</string>
-
     <string name="shortcut_create_long">Создать новую заметку</string>
-
+    <string name="pref_value_theme_light">Светлая</string>
+    <string name="pref_value_theme_dark">Тёмная</string>
     <string name="pref_value_font_normal">Обычный</string>
     <string name="pref_value_wifi_and_mobile">Синхр. по Wi-Fi и мобильной связи</string>
     <string name="pref_value_lock">Защита паролем</string>
@@ -182,7 +176,6 @@
         <item>Открывать в режиме просмотра</item>
         <item>Запоминать выбранный режим</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Маленький</item>
         <item>Средний</item>
@@ -199,7 +192,6 @@
         <item quantity="one">%d выбран</item>
         <item quantity="few">%d выбрано</item>
         <item quantity="many">%d выбрано</item>
-        <item quantity="other">%d выбрано</item>
     </plurals>
     <plurals name="bulk_notes_deleted">
         <item quantity="one">Удалить заметку</item>
@@ -309,7 +301,20 @@
     <string name="settings_file_suffix_description">Расширение файла для новых заметок в вашей учётной записи Nextcloud</string>
     <string name="settings_file_suffix_success">Новый суффикс файла: %1$s</string>
     <string name="http_status_code">Код состояния HTTP: %1$d</string>
-    <string name="progress_import_indeterminate">Импорт заметок...</string>
-    <string name="progress_import">Импортировано заметок %1$d из %2$d...</string>
+    <string name="progress_import_indeterminate">Импорт заметок…</string>
+    <string name="progress_import">Импортировано заметок %1$d из %2$d…</string>
     <string name="account_imported">Учетная запись импортирована.</string>
+    <string name="preferences_authors">Авторы</string>
+    <string name="preferences_service_terms">Условия предоставления услуг</string>
+    <string name="preferences_privacy_policy">Политика конфиденциальности</string>
+    <string name="preferences_about_app">Заметки являются форком Nextcloud Notes</string>
+    <string name="preferences_app_info_title">Информация о заметках</string>
+    <string name="listview_updated_last_month">Последний месяц</string>
+    <string name="listview_updated_last_week">Последняя неделя</string>
+    <string name="preferences_app_info">- Группировать, создавать, редактировать, делиться, искать и удалять заметки
+\n - Делиться текстом и ссылками как новой заметкой внутри приложения
+\n - Помечать заметки как избранное
+\n - Массовое удаление
+\n - Рендеринг MarkDown
+\n - Переведено на многие языки</string>
 </resources>

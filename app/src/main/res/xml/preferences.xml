@@ -25,16 +25,6 @@
         app:layout="@layout/item_preference_category"
         app:title="@string/appearance_and_behavior">
 
-        <ListPreference
-            android:defaultValue="@string/pref_value_theme_system_default"
-            android:entries="@array/darkmode_entries"
-            android:entryValues="@array/darkMode_values"
-            android:icon="@drawable/ic_brightness_2_grey_24dp"
-            android:key="@string/pref_key_theme"
-            android:layout="@layout/item_pref"
-            android:summary="%s"
-            android:title="@string/settings_theme_title" />
-
         <it.niedermann.owncloud.notes.branding.BrandedSwitchPreference
             android:icon="@drawable/ic_baseline_dashboard_24"
             android:key="@string/pref_key_gridview"
