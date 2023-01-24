@@ -17,8 +17,8 @@
     <string name="action_edit_save">Opslaan</string>
     <string name="simple_about">Over</string>
     <string name="simple_link">Link</string>
-    <string name="action_note_deleted">Notitie verwijderd</string>
-    <string name="action_note_restored">Notitie hersteld</string>
+    <string name="action_note_deleted">%1$s verwijderd</string>
+    <string name="action_note_restored">%1$s hersteld</string>
     <string name="action_undo">Ongedaan maken</string>
     <string name="action_uncategorized">Niet-gecategoriseerd</string>
     <string name="menu_delete">Verwijderen</string>
@@ -26,10 +26,8 @@
     <string name="menu_favorite">Favoriet</string>
     <string name="menu_preview">Voorbeeldweergave</string>
     <string name="menu_share">Delen</string>
-
     <string name="search_in_category">Zoeken in %1$s</string>
     <string name="search_in_all">Zoek in alle notities</string>
-
     <string name="change_category_title">Kies een categorie</string>
     <string name="listview_updated_today">Vandaag</string>
     <string name="listview_updated_yesterday">Gisteren</string>
@@ -44,12 +42,10 @@
     <string name="settings_gridview">Rasterweergave</string>
     <string name="settings_keep_screen_on">Scherm aan laten</string>
     <string name="settings_keep_screen_on_summary">Tijdens het bekijken of bewerken van een notitie</string>
-
     <string name="error_synchronization">Synchronisatie mislukt</string>
     <string name="error_maintenance_mode">Server in onderhoudsmodus</string>
     <string name="error_unknown">Een onbekende fout trad op.</string>
-
-    <string name="about_icons_disclaimer_app_icon">Voor het originele icoon zie %1$s</string>
+    <string name="about_icons_disclaimer_app_icon">Voor het originele icoon zie %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Alle andere pictogrammen in deze app zijn %1$s gemaakt door Google Inc. en zijn gelicenseerd onder de Apache 2.0 Licensie.</string>
     <string name="about_icons_disclaimer_mdi">Material Design iconen</string>
     <string name="settings_note_mode">Weergavemodus voor notities</string>
@@ -83,9 +79,7 @@
     <string name="widget_note_list_placeholder">Geen notities</string>
     <string name="widget_single_note_title">Enkele notitie</string>
     <string name="pref_value_lock">Wachtwoordbeveiliging</string>
-
     <string name="add_account">Account toevoegen</string>
-
     <string name="category_music">Muziek</string>
     <string name="category_movies">Films</string>
     <string name="category_movie">Film</string>
@@ -117,7 +111,6 @@
     <string name="category_present">Cadeau</string>
     <!-- Like a gift -->
     <string name="category_presents">Cadeaus</string>
-
     <string name="account_already_imported">Account is al geïmporteerd</string>
     <string name="no_notes_yet">Nog geen notities</string>
     <string name="no_notes_yet_description">Druk op de + knop om een nieuwe notitie te maken</string>
@@ -156,9 +149,8 @@
     <string name="simple_synchronization">Synchronisatie</string>
     <string name="manage_accounts">Accounts beheren </string>
     <string name="action_formatting_help">Opmaak</string>
-
     <string name="widget_single_note_placeholder_tv">Notitie niet gevonden</string>
-    <string name="widget_not_logged_in">Login bij Notities voordat je deze widget gebruikt a.u.b.</string>
+    <string name="widget_not_logged_in">Log a.u.b in bij Notities voordat je deze widget gebruikt</string>
     <string name="widget_entry_fav_contentDescription">Sterpictogram gebruikt om object als favoriet te markeren</string>
     <string name="activity_select_single_note">Selecteer notitie</string>
     <string name="shortcut_create_long">Maak een nieuwe notitie</string>
@@ -182,13 +174,11 @@
         <item>Gemiddeld</item>
         <item>Groot</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Licht</item>
         <item>Donker</item>
         <item>Systeemstandaard</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d geselecteerd</item>
         <item quantity="other">%d geselecteerd</item>
@@ -205,7 +195,6 @@
         <item quantity="one">Inhoud van %1$d notitie delen</item>
         <item quantity="other">Inhoud van %1$d notities delen</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -215,10 +204,8 @@
     <string name="formatting_help_cbf_title">Opmaat context gebaseerd</string>
     <string name="formatting_help_cbf_body_1">Het ontwerpdoel van de Notes-app is om een afleidingsvrij hulpmiddel te bieden. Maar je kunt altijd je teksten opmaken met Markdown. Voor verschillende van de onderstaande voorbeelden kunt je snelcodes gebruiken, zodat je notities kunt opmaken zonder de onderstaande codes in te typen.</string>
     <string name="formatting_help_cbf_body_2">Selecteer gewoon een tekstbereik of tik op een willekeurige positie op je cursor en je krijgt een pop-upmenu met naast de standaardvermeldingen %1$s, %2$s, %3$s ook meldingen zoals %4$s of %5$s.</string>
-
     <string name="formatting_help_text_title">Tekst</string>
     <string name="formatting_help_text_body">Het is met Markdown makkelijk om sommige woorden %1$svergedrukt%1$s en andere woorden %2$scursief%2$s te maken. Je kunt enkele woorden %3$sdoorhalen%3$s en zelfs een [link to Nextcloud](https://nextcloud.com).</string>
-
     <string name="formatting_help_lists_title">Lijsten</string>
     <string name="formatting_help_lists_body_1">Soms wil je een genummerde lijst:</string>
     <string name="formatting_help_lists_body_2">Een</string>
@@ -229,12 +216,10 @@
     <string name="formatting_help_lists_body_7">En als je subpunten hebt, plaats dan twee spaties voor het streepje of de ster:</string>
     <string name="formatting_help_lists_body_8">Vind dit leuk</string>
     <string name="formatting_help_lists_body_9">En dit</string>
-
     <string name="formatting_help_checkboxes_title">Aanvinkvakjes</string>
     <string name="formatting_help_checkboxes_body_1">Gebruik een lijst gevolgd door haakjes om een aanvinkvakje te maken</string>
     <string name="formatting_help_checkboxes_body_2">Object 1</string>
     <string name="formatting_help_checkboxes_body_3">Object 2</string>
-
     <string name="formatting_help_structured_documents_title">Gestructureerde documenten</string>
     <string name="formatting_help_structured_documents_body_1">Soms is het handig om verschillende niveaus van koppen te hebben om documenten te structureren. Begin regels met een %1$s om koppen te maken. Meerdere %2$s op regel geven kleinere kopformaten aan.</string>
     <string name="formatting_help_structured_documents_body_2">Dit is een derde niveau kop</string>
@@ -242,23 +227,19 @@
     <string name="formatting_help_structured_documents_body_4">Als je iemand wil citeren, gebruik het %1$s teken voor de regel:</string>
     <string name="formatting_help_structured_documents_body_5">Verbeelding is belangrijker dan kennis. Kennis is beperkt. Verbeelding omsluit de wereld.</string>
     <string name="formatting_help_structured_documents_body_6">- Albert Einstein</string>
-
     <string name="formatting_help_code_title">Code</string>
     <string name="formatting_help_code_body_1">Er zijn veel verschillende manieren om code te markeren met Markdown. Als je inline codeblokken hebt, bed ze dan in m.b.v. backticks:</string>
     <string name="formatting_help_code_body_2">Markdown ondersteunt ook iets dat \"code fencing\" wordt genoemd, wat meerdere regels mogelijk maakt zonder inspringen:</string>
     <string name="formatting_help_code_body_3">En als je syntaxisaccentuering wilt gebruiken, neemt dan deze taal op:</string>
-
     <string name="formatting_help_tables_title">Tabellen</string>
     <!-- Column header of a sample table -->
     <string name="formatting_help_tables_column">Kolom %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">Waarde %1d</string>
-
     <string name="formatting_help_images_body_1">Links moeten ofwel volledige URL\'s zijn die beginnen met een protocol en domein of absolute paden die beginnen met een %1$s teken.</string>
     <string name="formatting_help_images_body_2">Gebruik escape-tekens in de afbeeldings-URL om te voldoen aan het Markdown-formaat. Dit betekent bijvoorbeeld spaties vervangen door %1$sin de URL.</string>
     <string name="formatting_help_images_title">Afbeeldingen</string>
     <string name="formatting_help_images_alt">Leuke afbeelding</string>
-
     <string name="simple_other">Ander</string>
     <string name="sort_last_modified">Op wijzigingsdatum sorteren</string>
     <string name="sort_alphabetically">Op alfabet sorteren</string>
@@ -275,10 +256,8 @@
         <item quantity="other">Als je het %1$s account verwijdert, worden ook %2$d onherstelbare  niet-gesynchroniseerde wijzigingen verwijderd.</item>
     </plurals>
     <string name="remove_account">Verwijder %1$s</string>
-
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Je moet verbonden zijn met het Internet om een account toe te voegen.</string>
     <string name="settings_notes_path">Instellen map</string>
-
     <string name="simple_next">Volgende</string>
     <string name="simple_prev">Vorige</string>
     <string name="simple_backup">Back-up</string>
@@ -294,8 +273,8 @@
     <string name="settings_file_suffix_success">Nieuwe bestandsachtervoegsel: %1$s</string>
     <string name="http_status_code">HTTP status code: %1$d</string>
     <string name="progress_import_indeterminate">Notities importeren…</string>
-    <string name="progress_import">Notitie %1$dvan %2$dimporteren</string>
-    <string name="account_imported">Account geïmporteerd</string>
+    <string name="progress_import">Importeren notitie %1$d van %2$d…</string>
+    <string name="account_imported">Account geïmporteerd.</string>
     <string name="preferences_authors">Auteurs</string>
     <string name="preferences_service_terms">Servicevoorwaarden</string>
     <string name="preferences_privacy_policy">Privacybeleid</string>
