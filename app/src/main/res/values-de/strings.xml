@@ -26,10 +26,8 @@
     <string name="menu_favorite">Favorit</string>
     <string name="menu_preview">Vorschau</string>
     <string name="menu_share">Teilen</string>
-
     <string name="search_in_category">Suche in %1$s</string>
     <string name="search_in_all">In allen Notizen suchen</string>
-
     <string name="change_category_title">Kategorie auswählen</string>
     <string name="listview_updated_today">Heute</string>
     <string name="listview_updated_yesterday">Gestern</string>
@@ -38,7 +36,7 @@
     <string name="listview_updated_this_month">Diesen Monat</string>
     <string name="listview_updated_last_month">Letzten Monat</string>
     <string name="settings_note_mode">Anzeigemodus für Notizen</string>
-    <string name="settings_theme_title">Design</string>
+    <string name="settings_theme_title">Thema</string>
     <string name="settings_font_title">Nichtproportionale Schriftart</string>
     <string name="settings_font_size">Schriftgröße</string>
     <string name="settings_wifi_only">Nur über WLAN synchronisieren</string>
@@ -49,11 +47,9 @@
     <string name="settings_gridview">Kachelansicht</string>
     <string name="settings_keep_screen_on">Bildschirm anlassen</string>
     <string name="settings_keep_screen_on_summary">Beim Betrachten oder Bearbeiten einer Notiz</string>
-
     <string name="error_synchronization">Synchronisierung fehlgeschlagen</string>
     <string name="error_maintenance_mode">Server befindet sich im Wartungsmodus</string>
     <string name="error_unknown">Es ist ein unbekannter Fehler aufgetreten.</string>
-
     <string name="about_icons_disclaimer_app_icon">Für das ursprüngliche Symbol siehe %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Alle weiteren Symbole dieser App sind %1$s, erstellt von Google Inc. und unter der Apache 2.0-Lizenz lizenziert.</string>
     <string name="about_icons_disclaimer_mdi">Material Design Icons</string>
@@ -92,7 +88,6 @@
     <string name="pref_value_font_normal">Normal</string>
     <string name="pref_value_wifi_and_mobile">Über WLAN und mobile Daten synchronisieren</string>
     <string name="pref_value_lock">Passwortschutz</string>
-
     <string name="simple_error">Fehler</string>
     <string name="simple_close">Schließen</string>
     <string name="simple_copy">Kopieren</string>
@@ -100,7 +95,6 @@
     <string name="pin_to_homescreen">An Startbildschirm anheften</string>
     <string name="note_has_been_deleted">Diese Notiz wurde gelöscht</string>
     <string name="add_account">Konto hinzufügen</string>
-
     <string name="category_music">Musik</string>
     <string name="category_movies">Filme</string>
     <string name="category_movie">Film</string>
@@ -132,7 +126,6 @@
     <string name="category_present">Geschenk</string>
     <!-- Like a gift -->
     <string name="category_presents">Geschenke</string>
-
     <string name="account_already_imported">Konto wurde bereits importiert</string>
     <string name="no_notes_yet">Noch keine Notizen vorhanden</string>
     <string name="no_notes_yet_description">Drücke den \"+\"-Knopf um eine neue Notiz zu erstellen</string>
@@ -171,7 +164,6 @@
     <string name="simple_synchronization">Synchronisierung</string>
     <string name="manage_accounts">Konten verwalten</string>
     <string name="action_formatting_help">Formatierung</string>
-
     <string-array name="noteMode_entries">
         <item>Im Bearbeitungsmodus öffnen</item>
         <item>Im Vorschaumodus öffnen</item>
@@ -182,13 +174,11 @@
         <item>Mittel</item>
         <item>Groß</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Hell</item>
         <item>Dunkel</item>
         <item>Systemstandard</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d ausgewählt</item>
         <item quantity="other">%d ausgewählt</item>
@@ -205,7 +195,6 @@
         <item quantity="one">Inhalt von %1$d Notiz teilen</item>
         <item quantity="other">Inhalt von %1$d Notizen teilen</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -215,10 +204,8 @@
     <string name="formatting_help_cbf_title">Kontextbasierte Formatierung</string>
     <string name="formatting_help_cbf_body_1">Ein wichtiges Designziel der Notes-App ist die Bereitstellung eines ablenkungsfreien Werkzeugs. Sie können Ihre Texte mit Markdown formatieren. Für verschiedene der unten genannten Beispiele können Sie Verknüpfungen verwenden, um Ihre Notizen zu formatieren, ohne die folgenden Codes eingeben zu müssen.</string>
     <string name="formatting_help_cbf_body_2">Wählen Sie einfach einen Textbereich aus oder tippen Sie an einer beliebigen Stelle auf den Cursor und Sie erhalten ein Popup-Menü, das neben den Standardeinträgen %1$s, %2$s, %3$s auch Einträge wie %4$s oder %5$s enthält.</string>
-
     <string name="formatting_help_text_title">Text</string>
     <string name="formatting_help_text_body">Es ist sehr einfach, einige Wörter %1$sfett%1$s und andere Wörter %2$skursiv%2$s mit Markdown zu versehen. Sie können einige Wörter %3$sdurchstreichen%3$s und sogar zu Nextcloud [verlinken](https://nextcloud.com).</string>
-
     <string name="formatting_help_lists_title">Listen</string>
     <string name="formatting_help_lists_body_1">Manchmal werden nummerierte Listen benötigt:</string>
     <string name="formatting_help_lists_body_2">Eins</string>
@@ -229,12 +216,10 @@
     <string name="formatting_help_lists_body_7">Und wenn Sie Unterpunkte haben, setzen Sie zwei Leerzeichen vor den Bindestrich oder Stern:</string>
     <string name="formatting_help_lists_body_8">Wie dieses</string>
     <string name="formatting_help_lists_body_9">Und dies</string>
-
     <string name="formatting_help_checkboxes_title">Kontrollkästchen</string>
     <string name="formatting_help_checkboxes_body_1">Verwenden Sie zum Erstellen eines Kontrollkästchens eine Liste gefolgt von eckigen Klammern</string>
     <string name="formatting_help_checkboxes_body_2">Punkt 1</string>
     <string name="formatting_help_checkboxes_body_3">Punkt 2</string>
-
     <string name="formatting_help_structured_documents_title">Strukturierte Dokumente</string>
     <string name="formatting_help_structured_documents_body_1">Manchmal ist es nützlich, verschiedene Ebenen von Überschriften zu haben, um Ihre Dokumente zu strukturieren. Beginnen Sie Zeilen mit %1$s, um Überschriften zu erstellen. Mehrere %2$s in einer Reihe kennzeichnen kleinere Überschriftengrößen.</string>
     <string name="formatting_help_structured_documents_body_2">Dies ist eine Überschrift der dritten Stufe</string>
@@ -242,23 +227,19 @@
     <string name="formatting_help_structured_documents_body_4">Wenn Sie jemanden zitieren möchten, verwenden Sie das %1$s-Zeichen vor der Zeile:</string>
     <string name="formatting_help_structured_documents_body_5">Fantasie ist wichtiger als Wissen. Das Wissen ist begrenzt. Fantasie umgibt die Welt.</string>
     <string name="formatting_help_structured_documents_body_6">- Albert Einstein</string>
-
     <string name="formatting_help_code_title">Quelltext</string>
     <string name="formatting_help_code_body_1">Es gibt viele verschiedene Möglichkeiten, Text mit Markdown zu formatieren. Wenn Sie Inline-Codeblöcke haben, betten Sie diese in Backticks ein:</string>
     <string name="formatting_help_code_body_2">Markdown unterstützt auch das sogenannte Code-Fencing, das mehrere Zeilen ohne Einrückung zulässt:</string>
     <string name="formatting_help_code_body_3">Wenn Sie die Syntaxhervorhebung verwenden möchten, geben Sie folgendes ein:</string>
-
     <string name="formatting_help_tables_title">Tabellen</string>
     <!-- Column header of a sample table -->
     <string name="formatting_help_tables_column">Spalte %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">Wert %1d</string>
-
     <string name="formatting_help_images_body_1">Links müssen entweder vollständige URLs sein, die mit einem Protokoll und einer Domäne beginnen, oder absolute Pfade, die mit einem %1$s-Zeichen beginnen.</string>
     <string name="formatting_help_images_body_2">Um dem Markdown-Format zu entsprechen, verwenden Sie bitte Escape-Zeichen in der Bild-URL. Ersetzen Sie also z.B. Leerzeichen in der URL durch %1$s.</string>
     <string name="formatting_help_images_title">Bilder</string>
     <string name="formatting_help_images_alt">Ausgefallenes Bild</string>
-
     <string name="simple_other">Andere</string>
     <string name="sort_last_modified">Nach Änderungsdatum sortieren</string>
     <string name="sort_alphabetically">Alphabetisch sortieren</string>
@@ -275,10 +256,8 @@
         <item quantity="other">Beim Entfernen des Kontos %1$s werden auch %2$d unsynchronisierte Änderungen unwiderruflich gelöscht werden.</item>
     </plurals>
     <string name="remove_account">%1$s entfernen</string>
-
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Sie müssen mit dem Internet verbunden sein, um ein Konto hinzufügen zu können.</string>
     <string name="settings_notes_path">Ordner festlegen</string>
-
     <string name="simple_next">Weiter</string>
     <string name="simple_prev">Vorheriges</string>
     <string name="simple_backup">Sicherung</string>
