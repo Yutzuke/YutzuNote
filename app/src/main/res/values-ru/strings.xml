@@ -26,16 +26,13 @@
     <string name="menu_favorite">Избранное</string>
     <string name="menu_preview">Предпросмотр</string>
     <string name="menu_share">Поделиться</string>
-
     <string name="search_in_category">Поиск в %1$s</string>
     <string name="search_in_all">Поиск всех заметок</string>
-
     <string name="change_category_title">Выберите категорию</string>
     <string name="listview_updated_today">Сегодня</string>
     <string name="listview_updated_yesterday">Вчера</string>
     <string name="listview_updated_this_week">На этой неделе</string>
     <string name="listview_updated_this_month">Этот месяц</string>
-
     <string name="settings_note_mode">Режим показа заметок</string>
     <string name="settings_theme_title">Тема</string>
     <string name="settings_font_title">Моноширинный шрифт</string>
@@ -48,11 +45,9 @@
     <string name="settings_gridview">Вид сеткой</string>
     <string name="settings_keep_screen_on">Держите экран включенным</string>
     <string name="settings_keep_screen_on_summary">При просмотре или редактировании заметки</string>
-
     <string name="error_synchronization">Сбой синхронизации</string>
     <string name="error_maintenance_mode">Сервер в режиме обслуживания</string>
     <string name="error_unknown">Произошла неизвестная ошибка.</string>
-
     <string name="error_sync">Синхронизация не удалась: %1$s</string>
     <string name="error_no_network">нет подключения к сети</string>
     <string name="about_version_title">Версия</string>
@@ -91,7 +86,6 @@
     <string name="pref_value_font_normal">Обычный</string>
     <string name="pref_value_wifi_and_mobile">Синхр. по Wi-Fi и мобильной связи</string>
     <string name="pref_value_lock">Защита паролем</string>
-
     <string name="simple_error">Ошибка</string>
     <string name="simple_close">Закрыть</string>
     <string name="simple_copy">Копировать</string>
@@ -99,7 +93,6 @@
     <string name="pin_to_homescreen">Введите PIN-код для домашнего экрана</string>
     <string name="note_has_been_deleted">Запись была удалена</string>
     <string name="add_account">Добавить аккаунт</string>
-
     <string name="category_music">Музыка</string>
     <string name="category_movies">Фильмы</string>
     <string name="category_movie">Фильм</string>
@@ -131,7 +124,6 @@
     <string name="category_present">Презентация</string>
     <!-- Like a gift -->
     <string name="category_presents">Презентации</string>
-
     <string name="account_already_imported">Учётная запись уже импортирована</string>
     <string name="no_notes_yet">Нет ни одной заметки</string>
     <string name="no_notes_yet_description">Для создания заметки нажмите +</string>
@@ -170,7 +162,6 @@
     <string name="simple_synchronization">Синхронизация</string>
     <string name="manage_accounts">Управление аккаунтами</string>
     <string name="action_formatting_help">Форматирование</string>
-
     <string-array name="noteMode_entries">
         <item>Открывать в режиме правки</item>
         <item>Открывать в режиме просмотра</item>
@@ -181,13 +172,11 @@
         <item>Средний</item>
         <item>Большой</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Светлая</item>
         <item>Тёмная</item>
         <item>Как в системе</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d выбран</item>
         <item quantity="few">%d выбрано</item>
@@ -211,7 +200,6 @@
         <item quantity="many">Поделиться содержимым %1$d заметок</item>
         <item quantity="other">Поделиться содержимым %1$d заметок</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -221,10 +209,8 @@
     <string name="formatting_help_cbf_title">Контекстное форматирование</string>
     <string name="formatting_help_cbf_body_1">Главная цель разработки приложения Notes - получить инструмент для быстрого создания заметок по текущим делам. Вы можете отформатировать текст, применяя синтаксис Markdown. Для приведенных ниже примеров удобно использовать клавиши быстрого доступа, что позволит выполнять форматирование ваших заметки без ввода самих символов форматирования.</string>
     <string name="formatting_help_cbf_body_2">Выберите блок текста или нажмите на курсор в любом месте, и появится всплывающее меню, содержащее рядом с записями по умолчанию 1 %1$s, 2 %2$s, 3 %3$s такие записи, как 4 %4$s или 5 %5$s.</string>
-
     <string name="formatting_help_text_title">Текст</string>
     <string name="formatting_help_text_body">С помощью Markdown очень легко выполнить написание одних слов %1$sжирным шрифтом%1$s, а других - %2$sкурсивом%2$s. Вы также можете %3$sперечеркнуть%3$s слова или даже вставить ссылку, например, на [Nextcloud](https://nextcloud.com).</string>
-
     <string name="formatting_help_lists_title">Списки</string>
     <string name="formatting_help_lists_body_1">Иногда вам требуются нумерованные списки:</string>
     <string name="formatting_help_lists_body_2">Один</string>
@@ -235,12 +221,10 @@
     <string name="formatting_help_lists_body_7">А если Вы создаёте подпункты, поставьте два пробела перед тире или звездочкой:</string>
     <string name="formatting_help_lists_body_8">Нравится это</string>
     <string name="formatting_help_lists_body_9">И это</string>
-
     <string name="formatting_help_checkboxes_title">Несколько из списка</string>
     <string name="formatting_help_checkboxes_body_1">Чтобы создать чекбокс, используйте список, заключенный в скобки</string>
     <string name="formatting_help_checkboxes_body_2">Пункт 1</string>
     <string name="formatting_help_checkboxes_body_3">Пункт 2</string>
-
     <string name="formatting_help_structured_documents_title">Структурированные документы </string>
     <string name="formatting_help_structured_documents_body_1">Иногда при разбиении документа на разделы удобно применять заголовки разных уровней. Для создания заголовка начните строку с символа %1$s. Каждое последующее добавление символа %2$s понижает уровень заголовка.</string>
     <string name="formatting_help_structured_documents_body_2">Это заголовок третьего уровня</string>
@@ -248,23 +232,19 @@
     <string name="formatting_help_structured_documents_body_4">Если Вы хотите вставить цитату, начните строку с символа %1$s:</string>
     <string name="formatting_help_structured_documents_body_5">Воображение важнее знаний. Знания ограничены. Воображение охватывает весь мир.</string>
     <string name="formatting_help_structured_documents_body_6">- Альберт Эйнштейн</string>
-
     <string name="formatting_help_code_title">Код</string>
     <string name="formatting_help_code_body_1">В Markdown существует несколько способов выделить блок исходного кода. Если Вы хотите создать встроенный блок, заключите код в обратные кавычки:</string>
     <string name="formatting_help_code_body_2">В Markdown также поддерживается так называемый обособленный блок кода, который содержит несколько строк без абзацного отступа:</string>
     <string name="formatting_help_code_body_3">А если Вы хотите включить подсветку синтаксиса, укажите язык:</string>
-
     <string name="formatting_help_tables_title">Таблицы</string>
     <!-- Column header of a sample table -->
     <string name="formatting_help_tables_column">Столбец %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">Значение %1d</string>
-
     <string name="formatting_help_images_body_1">Ссылки должны быть либо полными URL, начинающимися с протокола и домена, либо абсолютными путями, начинающимися с %1$s символа.</string>
     <string name="formatting_help_images_body_2">Чтобы соответствовать формату Markdown, пожалуйста, используйте в URL-адресе исключающие символы. Это означает, например, заменить пробелы на %1$s в URL.</string>
     <string name="formatting_help_images_title">Изображения</string>
     <string name="formatting_help_images_alt">Красивое изображение</string>
-
     <string name="simple_other">Другой</string>
     <string name="sort_last_modified">Сортировать по дате изменения</string>
     <string name="sort_alphabetically">Сортировать по алфавиту</string>
@@ -283,10 +263,8 @@
         <item quantity="other">Удаление аккаунта %1$s также приведёт к удалению текущих необратимых %2$d несинхронизированных изменений.</item>
     </plurals>
     <string name="remove_account">Удалить %1$s</string>
-
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Вы должны быть подключены к сети интернет для того, чтобы добавить аккаунт.</string>
     <string name="settings_notes_path">Указать папку</string>
-
     <string name="simple_next">Вперёд</string>
     <string name="simple_prev">Назад</string>
     <string name="simple_backup">Резервное копирование</string>
