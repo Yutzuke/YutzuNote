@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Muistiinpanot</string>
-    <string name="app_name_long">Nextcloud Notes</string>
+    <string name="app_name_long">Nextcloud muistiinpanot</string>
     <string name="label_all_notes">Kaikki muistiinpanot</string>
     <string name="label_favorites">Suosikit</string>
     <string name="action_create">Uusi muistiinpano</string>
@@ -26,22 +26,19 @@
     <string name="menu_favorite">Suosikki</string>
     <string name="menu_preview">Esikatselu</string>
     <string name="menu_share">Jaa</string>
-
     <string name="search_in_category">Etsi luokasta %1$s</string>
     <string name="search_in_all">Etsi kaikista muistiinpanoista</string>
-
     <string name="change_category_title">Valitse luokka</string>
     <string name="listview_updated_today">Tänään</string>
     <string name="listview_updated_yesterday">Eilen</string>
     <string name="listview_updated_this_week">Tämä viikko</string>
-    <string name="listview_updated_last_week">Viime viikolla</string>
+    <string name="listview_updated_last_week">Viime viikko</string>
     <string name="listview_updated_this_month">Tämä kuukausi</string>
-    <string name="listview_updated_last_month">Viime kuussa</string>
-
+    <string name="listview_updated_last_month">Viime kuukausi</string>
     <string name="settings_note_mode">Muistiinpanojen esitystapa</string>
     <string name="settings_theme_title">Teema</string>
     <string name="settings_font_title">Tasalevyinen fontti</string>
-    <string name="settings_font_size">Fontin koko</string>
+    <string name="settings_font_size">Fonttikoko</string>
     <string name="settings_wifi_only">Synkronoi vain wifi-yhteydellä</string>
     <string name="settings_lock">Sovelluksen lukitus (Beta)</string>
     <string name="settings_lock_summary">Laitteen valtuudet</string>
@@ -51,7 +48,6 @@
     <string name="error_synchronization">Synkronointi epäonnistui</string>
     <string name="error_maintenance_mode">Palvelin on huoltotilassa</string>
     <string name="error_unknown">Tapahtui tuntematon virhe.</string>
-
     <string name="error_sync">Synkronointi epäonnistui: %1$s</string>
     <string name="error_no_network">ei verkkoyhteyttä</string>
     <string name="about_version_title">Versio</string>
@@ -75,32 +71,28 @@
     <string name="about_icons_disclaimer_mdi_icons">Kaikki muut tämän sovelluksen kuvakkeet on %1$s tehnyt Google Inc. ja ne on lisensoitu Apache 2.0 lisenssillä.</string>
     <string name="about_icons_disclaimer_mdi">Material Design-kuvakkeet</string>
     <string name="about_credits_tab_title">Tekijät</string>
-    <string name="about_contribution_tab_title">Kontribuutio</string>
+    <string name="about_contribution_tab_title">Osallistuminen</string>
     <string name="about_license_tab_title">Lisenssi</string>
     <string name="widget_note_list_title">Muistiinpanolista</string>
     <string name="widget_note_list_placeholder">Ei muistiinpanoja</string>
     <string name="widget_single_note_title">Yksittäinen muistiinpano</string>
     <string name="widget_single_note_placeholder_tv">Muistiinpanoa ei löytynyt</string>
-    <string name="widget_not_logged_in">Kirjaudu Notes sovellukseen ennen kuin käytät pienoissovellusta</string>
+    <string name="widget_not_logged_in">Kirjaudu sisään Muistiinpanoihin ennen tämän widgetin käyttöä</string>
     <string name="widget_entry_fav_contentDescription">Tähtikuvaketta käytetään suosikin ilmaisemiseen</string>
-
     <string name="activity_select_single_note">Valitse muistiinpano</string>
-
     <string name="pref_value_font_normal">Normaali</string>
     <string name="shortcut_create_long">Luo uusi muistiinpano</string>
     <string name="pref_value_theme_light">Vaalea</string>
     <string name="pref_value_theme_dark">Tumma</string>
     <string name="pref_value_wifi_and_mobile">Synkronoi wifi- ja mobiilidatayhteydellä</string>
     <string name="pref_value_lock">Salasanasuojaus</string>
-
     <string name="simple_error">Virhe</string>
     <string name="simple_close">Sulje</string>
     <string name="simple_copy">Kopioi</string>
     <string name="simple_exception">Poikkeus</string>
-    <string name="pin_to_homescreen">Kiinnitä kotinäyttöön</string>
+    <string name="pin_to_homescreen">Kiinnitä aloitusnäytölle</string>
     <string name="note_has_been_deleted">Tämä muistiinpano on poistettu</string>
     <string name="add_account">Lisää tili</string>
-
     <string name="category_music">Musiikki</string>
     <string name="category_movies">Elokuvat</string>
     <string name="category_movie">Elokuva</string>
@@ -131,7 +123,6 @@
     <string name="category_present">Lahja</string>
     <!-- Like a gift -->
     <string name="category_presents">Lahjat</string>
-
     <string name="account_already_imported">Tili on jo tuotu</string>
     <string name="no_notes_yet">Ei muistiinpanoja</string>
     <string name="no_notes_yet_description">Paina + luodaksesi uuden muistiinpanon</string>
@@ -170,28 +161,24 @@
     <string name="simple_synchronization">Synkronointi</string>
     <string name="manage_accounts">Tilien hallinta</string>
     <string name="action_formatting_help">Muotoilu</string>
-
     <string-array name="noteMode_entries">
         <item>Avaa muokkaustilassa</item>
         <item>Avaa esikatselutilassa</item>
         <item>Muista viimeisin valintani</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Pieni</item>
         <item>Normaali</item>
         <item>Suuri</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Vaalea</item>
         <item>Tumma</item>
         <item>Järjestelmän oletus</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d valittu</item>
-        <item quantity="other">%d valittu</item>
+        <item quantity="other">%d valitut</item>
     </plurals>
     <plurals name="bulk_notes_deleted">
         <item quantity="one">Poistettu muistiinpano</item>
@@ -205,7 +192,6 @@
         <item quantity="one">Jaa %1$d muistiinpanon sisältö</item>
         <item quantity="other">Jaa %1$d muistiinpanon sisältö</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -215,10 +201,8 @@
     <string name="formatting_help_cbf_title">Kontekstiin perustuva muotoilu</string>
     <string name="formatting_help_cbf_body_1">Muistiinpanosovelluksen päätavoitteena on tarjota häiriötön työkalu. Voit silti muotoilla tekstiä Markdown-syntaksilla. Moniin alla mainittuihin esimerkkeihin on pikanäppäimet, jotta voit kirjoittaa muistiinpanoja ilman muotoilumerkkien kirjoittamista.</string>
     <string name="formatting_help_cbf_body_2">Valitse vain teksti tai näpäytä mitä tahansa kohtaa ruudulta ja ponnahdusvalikko aukeaa. Valikossa on oletusvalintojen %1$s, %2$sja %3$s lisäksi pikavalintoja kuten %4$s ja %5$s.</string>
-
     <string name="formatting_help_text_title">Teksti</string>
     <string name="formatting_help_text_body">On todella helppoa %1$slihavoida%1$s ja %2$skursivoida%2$s sanoja Markdownilla. Voit %3$syliviivata%3$s sanoja ja jopa [linkata Nextcloudiin](https://nextcloud.com).</string>
-
     <string name="formatting_help_lists_title">Luettelot</string>
     <string name="formatting_help_lists_body_1">Joskus saatat haluta numeroituja luetteloita:</string>
     <string name="formatting_help_lists_body_2">Yksi</string>
@@ -229,12 +213,10 @@
     <string name="formatting_help_lists_body_7">Ja jos haluat alakohtia, lisää kaksi välilyöntiä ennen viivaa tai tähteä:</string>
     <string name="formatting_help_lists_body_8">Kuten näin</string>
     <string name="formatting_help_lists_body_9">Tai näin</string>
-
     <string name="formatting_help_checkboxes_title">Valintaruudut</string>
     <string name="formatting_help_checkboxes_body_1">Luodaksesi valintaruudun, käytä listaa hakasuluilla</string>
     <string name="formatting_help_checkboxes_body_2">Tietue 1</string>
     <string name="formatting_help_checkboxes_body_3">Tietue 2</string>
-
     <string name="formatting_help_structured_documents_title">Rakenteelliset asiakirjat</string>
     <string name="formatting_help_structured_documents_body_1">Joskus on kätevää luoda eri tason otsikoita dokumentin rakenteen jäsentämiseen. Aloita rivit %1$s-merkillä luodaksesi otsikoita. Useampi %2$s rivillä merkitsee pienempää otsikkokokoa.</string>
     <string name="formatting_help_structured_documents_body_2">Tämä on kolmannen tason otsikko</string>
@@ -242,18 +224,15 @@
     <string name="formatting_help_structured_documents_body_4">Jos haluat lisätä lainauksen, käytä %1$s-merkkiä rivin alussa ennen riviä:</string>
     <string name="formatting_help_structured_documents_body_5">Mielikuvitus on tärkeämpää kuin tieto. Tieto on rajallista. Mielikuvitus ympäröi maailman.</string>
     <string name="formatting_help_structured_documents_body_6">- Albert Einstein</string>
-
     <string name="formatting_help_code_title">Koodi</string>
     <string name="formatting_help_code_body_1">Markdownilla voit muotoilla koodia monella eri tavalla. Rivillä olevan koodin voi sisällyttää gravis-merkkien väliin:</string>
     <string name="formatting_help_code_body_2">Markdown tukee myös koodin aitaamista, jolla useamman rivin koodi näytetään sisentämättömänä:</string>
     <string name="formatting_help_code_body_3">Ja jos haluat käyttää syntaksin korostusta, sisällytä ohjelmointikieli:</string>
-
     <string name="formatting_help_tables_title">Taulukot</string>
     <!-- Column header of a sample table -->
     <string name="formatting_help_tables_column">Sarake %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">Arvo %1d</string>
-
     <string name="formatting_help_images_body_1">Linkkien tulee olla joko kokonaisia, protokollalla ja domainilla alkavia URL-osotteita tai absoluuttisia polkuja alkaen %1$s-merkillä.</string>
     <string name="formatting_help_images_title">Kuvat</string>
     <string name="simple_other">Muu</string>
@@ -272,10 +251,8 @@
         <item quantity="other">Tilin %1$s poistamalla poistetaan myös %2$d synkronoimatonta muutosta, joita ei voida jälkeenpäin palauttaa.</item>
     </plurals>
     <string name="remove_account">Poista %1$s</string>
-
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Sinun tulee olla yhteydessä internetiin, jotta voit lisätä tilin.</string>
     <string name="settings_notes_path">Aseta kansio</string>
-
     <string name="simple_next">Seuraava</string>
     <string name="simple_prev">Edellinen</string>
     <string name="simple_backup">Varmuuskopioi</string>
@@ -293,4 +270,15 @@
     <string name="progress_import_indeterminate">Tuodaan muistiinpanoja…</string>
     <string name="progress_import">Tuodaan muistiinpanoa %1$d/%2$d…</string>
     <string name="account_imported">Tili tuotu.</string>
+    <string name="preferences_authors">Tekijät</string>
+    <string name="preferences_service_terms">Palveluehdot</string>
+    <string name="preferences_privacy_policy">Tietosuojakäytäntö</string>
+    <string name="preferences_about_app">Muistiinpanot on haarautunut Nextcloud Notesista</string>
+    <string name="preferences_app_info">-Luetteloi, luo, muokkaa, jaa, etsi ja poista muistiinpanoja
+\n -Jaa tekstiä ja linkkejä uutena muistiinpanona sovellukseen
+\n -Merkitse muistiinpanoja suosikeiksi
+\n -Joukkopoista
+\n -Renderöi MarkDown
+\n -Käännetty monille kielille</string>
+    <string name="preferences_app_info_title">Muistiinpanot tietoja</string>
 </resources>
