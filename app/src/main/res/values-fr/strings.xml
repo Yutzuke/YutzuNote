@@ -6,7 +6,7 @@
     <string name="label_favorites">Favoris</string>
     <string name="action_create">Nouvelle note</string>
     <string name="welcome_text">Bienvenue sur %1$s</string>
-    <string name="action_settings">Préférences</string>
+    <string name="action_settings">Paramètres</string>
     <string name="action_trashbin">Notes supprimées</string>
     <string name="action_search">Rechercher</string>
     <string name="action_sorting_method">Méthode de tri</string>
@@ -26,10 +26,8 @@
     <string name="menu_favorite">Favoris</string>
     <string name="menu_preview">Aperçu</string>
     <string name="menu_share">Partager</string>
-
     <string name="search_in_category">Rechercher dans %1$s</string>
     <string name="search_in_all">Rechercher dans toutes les notes</string>
-
     <string name="change_category_title">Choisir une catégorie</string>
     <string name="listview_updated_today">Aujourd\'hui</string>
     <string name="listview_updated_yesterday">Hier</string>
@@ -49,12 +47,10 @@
     <string name="settings_gridview">Affichage grille</string>
     <string name="settings_keep_screen_on">Laisser l\'écran allumé</string>
     <string name="settings_keep_screen_on_summary">Lors de la visualisation ou l\'édition d\'une note</string>
-
     <string name="error_synchronization">Échec de synchronisation</string>
     <string name="error_no_network">Aucune connexion réseau</string>
     <string name="error_maintenance_mode">Le serveur est en mode maintenance</string>
     <string name="error_unknown">Une erreur inconnue est survenue</string>
-
     <string name="error_sync">Échec de synchronisation : %1$s</string>
     <string name="about_version_title">Version</string>
     <string name="about_version">Vous utilisez actuellement la &lt;strong&gt;%1$s&lt;/strong&gt;</string>
@@ -93,7 +89,6 @@
     <string name="pref_value_font_normal">Normal</string>
     <string name="pref_value_wifi_and_mobile">Synchroniser en Wifi et données mobiles</string>
     <string name="pref_value_lock">Protection par mot de passe</string>
-
     <string name="simple_error">Erreur</string>
     <string name="simple_close">Fermer</string>
     <string name="simple_copy">Copier</string>
@@ -101,7 +96,6 @@
     <string name="pin_to_homescreen">Épingler sur la page d’accueil</string>
     <string name="note_has_been_deleted">Cette note a été supprimée</string>
     <string name="add_account">Ajouter un compte</string>
-
     <string name="category_music">Musique</string>
     <string name="category_movies">Films</string>
     <string name="category_movie">Film</string>
@@ -133,7 +127,6 @@
     <string name="category_present">Cadeau</string>
     <!-- Like a gift -->
     <string name="category_presents">Cadeaux</string>
-
     <string name="account_already_imported">Ce compte a déjà été importé</string>
     <string name="no_notes_yet">Aucune note pour l\'instant</string>
     <string name="no_notes_yet_description">Créez une nouvelle note avec le bouton +</string>
@@ -172,7 +165,6 @@
     <string name="simple_synchronization">Synchronisation</string>
     <string name="manage_accounts">Gérer les comptes</string>
     <string name="action_formatting_help">Formatage</string>
-
     <string-array name="noteMode_entries">
         <item>Ouvrir en mode édition</item>
         <item>Ouvrir en mode aperçu</item>
@@ -183,13 +175,11 @@
         <item>Moyen</item>
         <item>Grand</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Clair</item>
         <item>Sombre</item>
         <item>Défaut du système</item>
     </string-array>
-
     <plurals name="bulk_notes_deleted">
         <item quantity="one">Une note supprimée</item>
         <item quantity="many">%1$d notes supprimées</item>
@@ -205,7 +195,6 @@
         <item quantity="many">Partager le contenu de %1$d notes</item>
         <item quantity="other">Partager le contenu de %1$d notes</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -215,10 +204,8 @@
     <string name="formatting_help_cbf_title">Mise en forme contextuelle</string>
     <string name="formatting_help_cbf_body_1">Un but majeur de l\'app Notes est de fournir une application de note sans distraction, bien que vous puissiez formater vos textes avec Markdown. Pour les divers exemples mentionnés ci-dessous, vous pouvez utiliser des raccourcis afin de pouvoir formater vos notes sans taper les codes ci-dessous. </string>
     <string name="formatting_help_cbf_body_2">Sélectionner simplement une partie du texte ou taper sur votre curseur à n\'importe quelle position et vous aurez un menu popup qui contient à coté des entrées par défaut %1$s, %2$s, %3$s des entrées comme %4$s ou %5$s.</string>
-
     <string name="formatting_help_text_title">Texte</string>
     <string name="formatting_help_text_body">Il est très facile de mettre des mots en %1$sgras%1$s et d\'autres en %2$sitalique%2$s avec Markdown. Vous pouvez %3$sbarrer%3$s quelques mots et même créer un [lien vers Nextcloud](https://nextcloud.com).</string>
-
     <string name="formatting_help_lists_title">Listes</string>
     <string name="formatting_help_lists_body_1">Parfois, vous voulez des listes numérotées :</string>
     <string name="formatting_help_lists_body_2">Un</string>
@@ -229,12 +216,10 @@
     <string name="formatting_help_lists_body_7">Et si vous avez des sous-points, placez deux espaces avant le tiret ou l\'étoile :</string>
     <string name="formatting_help_lists_body_8">Comme celà</string>
     <string name="formatting_help_lists_body_9">Et celà</string>
-
     <string name="formatting_help_checkboxes_title">Case à cocher</string>
     <string name="formatting_help_checkboxes_body_1">Pour créer une case à cocher, utilisez une liste suivie de crochets.</string>
     <string name="formatting_help_checkboxes_body_2">Élément 1</string>
     <string name="formatting_help_checkboxes_body_3">Élément 2</string>
-
     <string name="formatting_help_structured_documents_title">Documents structurés</string>
     <string name="formatting_help_structured_documents_body_1">Parfois, il est pratique d\'avoir différents niveaux de titres pour structurer votre document. Démarrer des lignes avec un %1$s pour créer des titres. Plusieurs %2$s à la suite, signifie un titre plus petit.</string>
     <string name="formatting_help_structured_documents_body_2">Ceci est un titre de troisième niveau</string>
@@ -242,23 +227,19 @@
     <string name="formatting_help_structured_documents_body_4">Si vous souhaitez citer quelqu\'un, utilisez le caractère %1$s avant la ligne :</string>
     <string name="formatting_help_structured_documents_body_5">L\'imagination est plus importante que la connaissance. La connaissance est limitée. L\'imagination encercle le monde.</string>
     <string name="formatting_help_structured_documents_body_6">- Albert Einstein</string>
-
     <string name="formatting_help_code_title">Code</string>
     <string name="formatting_help_code_body_1">Il existe de nombreuses façons différentes de styliser du code avec Markdown. Si vous avez des blocs de code, enveloppez-les dans des accents grave:</string>
     <string name="formatting_help_code_body_2">Markdown supporte aussi quelque chose appelé \"code fencing\", qui permet plusieurs lignes sans indentation.</string>
     <string name="formatting_help_code_body_3">Et si vous voulez utiliser la coloration syntaxique, incluez le langage.</string>
-
     <string name="formatting_help_tables_title">Tableaux</string>
     <!-- Column header of a sample table -->
     <string name="formatting_help_tables_column">Colonne %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">Valeur %1d</string>
-
     <string name="formatting_help_images_body_1">Les liens doivent être des URL complètes commençant par un protocole et un domaine ou des chemins absolus commençant par un caractère %1$s.</string>
     <string name="formatting_help_images_body_2">Afin de se conformer au format Markdown, veuillez utiliser des caractères d’échappement dans l’URL de l’image. Cela signifie par exemple, remplacer les espaces par %1$sdans l’URL.</string>
     <string name="formatting_help_images_title">Images</string>
     <string name="formatting_help_images_alt">Image retouchée</string>
-
     <string name="simple_other">Divers</string>
     <string name="sort_last_modified">Tirer par date de dernière modification</string>
     <string name="sort_alphabetically">Trier alphabétiquement</string>
@@ -276,10 +257,8 @@
         <item quantity="other">Supprimer le compte %1$s supprimera aussi définitivement  %2$d changements non-synchronisés.</item>
     </plurals>
     <string name="remove_account">Supprimer %1$s</string>
-
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Vous devez être connecté à internet pour ajouter un compte.</string>
     <string name="settings_notes_path">Paramétrer un dossier</string>
-
     <string name="simple_next">Suivant</string>
     <string name="simple_prev">Précédent</string>
     <string name="simple_backup">Sauvegarde</string>
