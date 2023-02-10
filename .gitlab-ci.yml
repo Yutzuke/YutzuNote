@@ -83,6 +83,6 @@ update-default-branch:
   variables:
     LOCAL_BRANCH: main
     UPSTREAM_BRANCH: upstream/master
-    UPSTREAM_DEFAULT_BRANCH: master
+    UPSTREAM_DEFAULT_BRANCH: main
     UPSTREAM_URL: https://github.com/nextcloud/notes-android.git
     TEMP_LATEST_TAG_BRANCH: latest_upstream_tag_branch
