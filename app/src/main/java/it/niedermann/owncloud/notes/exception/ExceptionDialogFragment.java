@@ -57,7 +57,7 @@ public class ExceptionDialogFragment extends AppCompatDialogFragment {
 
         final var adapter = new TipsAdapter((actionIntent) -> requireActivity().startActivity(actionIntent));
 
-        final String debugInfos = ExceptionUtil.INSTANCE.getDebugInfos(requireContext(), throwables, "PROD");
+        final String debugInfos = ExceptionUtil.INSTANCE.getDebugInfos(requireContext(), throwables, "ACCOUNT_MANAGER");
 
         binding.tips.setAdapter(adapter);
         binding.stacktrace.setText(debugInfos);

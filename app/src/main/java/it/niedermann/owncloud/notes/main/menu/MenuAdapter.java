@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.nextcloud.android.sso.Constants;
 import com.nextcloud.android.sso.helper.VersionCheckHelper;
+import com.nextcloud.android.sso.model.FilesAppType;
 
 import it.niedermann.owncloud.notes.FormattingHelpActivity;
 import it.niedermann.owncloud.notes.R;
@@ -66,26 +67,12 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
 
     @NonNull
     private static Intent generateTrashbinIntent(@NonNull Context context, @NonNull Account account) {
-        // https://github.com/nextcloud/android/pull/8405#issuecomment-852966877
-        final int minVersionCode = 30170090;
-        try {
-            if (VersionCheckHelper.getNextcloudFilesVersionCode(context, true) > minVersionCode) {
-                return generateTrashbinAppIntent(context, account, true);
-            } else if (VersionCheckHelper.getNextcloudFilesVersionCode(context, false) > minVersionCode) {
-                return generateTrashbinAppIntent(context, account, false);
-            } else {
-                // Files app is too old to be able to switch the account when launching the TrashbinActivity
-                return generateTrashbinWebIntent(account);
-            }
-        } catch (PackageManager.NameNotFoundException | SecurityException e) {
-            e.printStackTrace();
-            return generateTrashbinWebIntent(account);
-        }
+        return generateTrashbinWebIntent(account);
     }
 
     private static Intent generateTrashbinAppIntent(@NonNull Context context, @NonNull Account account, boolean prod) throws PackageManager.NameNotFoundException {
         final var packageManager = context.getPackageManager();
-        final String packageName = prod ? Constants.PACKAGE_NAME_PROD : Constants.PACKAGE_NAME_DEV;
+        final String packageName = prod ? FilesAppType.ACCOUNT_MANAGER.packageId : FilesAppType.DEV.packageId;
         final var intent = new Intent();
         intent.setClassName(packageName, "com.owncloud.android.ui.trashbin.TrashbinActivity");
         if (packageManager.resolveActivity(intent, 0) != null) {

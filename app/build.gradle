@@ -56,12 +56,19 @@ dependencies {
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.6'
 
     // Nextcloud SSO
-    implementation 'com.github.nextcloud:Android-SingleSignOn:0.6.1'
-    implementation 'com.github.stefan-niedermann:android-commons:0.2.7'
-    implementation 'com.github.stefan-niedermann.nextcloud-commons:sso-glide:1.6.4'
-    implementation 'com.github.stefan-niedermann.nextcloud-commons:exception:1.6.4'
+    implementation 'foundation.e.lib:Android-SingleSignOn:1.0.2-alpha'
+    implementation ('com.github.stefan-niedermann:android-commons:0.2.7') {
+        exclude group: 'com.github.nextcloud', module: 'Android-SingleSignOn'
+    }
+    implementation ('com.github.stefan-niedermann.nextcloud-commons:sso-glide:1.6.4') {
+        exclude group: 'com.github.nextcloud', module: 'Android-SingleSignOn'
+    }
+    implementation ('com.github.stefan-niedermann.nextcloud-commons:exception:1.6.4') {
+        exclude group: 'com.github.nextcloud', module: 'Android-SingleSignOn'
+    }
     implementation('com.github.stefan-niedermann.nextcloud-commons:markdown:1.6.4') {
         exclude group: 'org.jetbrains', module: 'annotations-java5'
+        exclude group: 'com.github.nextcloud', module: 'Android-SingleSignOn'
     }
 
     // Glide

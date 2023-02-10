@@ -38,7 +38,7 @@ public class ExceptionActivity extends AppCompatActivity {
         }
 
         final var adapter = new TipsAdapter(this::startActivity);
-        final String debugInfos = ExceptionUtil.INSTANCE.getDebugInfos(this, throwable, "PROD");
+        final String debugInfos = ExceptionUtil.INSTANCE.getDebugInfos(this, throwable, "ACCOUNT_MANAGER");
 
         binding.tips.setAdapter(adapter);
         binding.tips.setNestedScrollingEnabled(false);
