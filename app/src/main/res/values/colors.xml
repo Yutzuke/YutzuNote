@@ -37,6 +37,6 @@
 
     <color name="appbar">@color/primary_dark</color>
 
-    <color name="widget_background">#ddffffff</color>
-    <color name="widget_foreground">#222222</color>
+    <color name="widget_background">@color/e_background</color>
+    <color name="widget_foreground">@color/e_primary_text_color</color>
 </resources>
