@@ -20,7 +20,7 @@
         android:gravity="center"
         android:padding="@dimen/spacer_1x"
         android:text="@string/widget_single_note_placeholder_tv"
-        android:textColor="@color/color_default_primary_text"
+        android:textColor="@color/widget_foreground"
         android:textAlignment="center" />
 
 </RelativeLayout>
