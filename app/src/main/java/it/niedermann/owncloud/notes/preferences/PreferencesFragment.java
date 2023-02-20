@@ -2,7 +2,7 @@ package it.niedermann.owncloud.notes.preferences;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
+import trikita.log.Log;
 
 import androidx.annotation.ColorInt;
 import androidx.lifecycle.ViewModelProvider;

@@ -2,7 +2,7 @@ package it.niedermann.owncloud.notes.shared.util;
 
 import android.app.KeyguardManager;
 import android.content.Context;
-import android.util.Log;
+import trikita.log.Log;
 
 /**
  * Utility class with methods for handling device credentials.

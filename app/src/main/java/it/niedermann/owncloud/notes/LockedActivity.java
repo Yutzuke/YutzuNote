@@ -4,7 +4,7 @@ import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import trikita.log.Log;
 import android.view.WindowManager;
 
 import androidx.annotation.Nullable;

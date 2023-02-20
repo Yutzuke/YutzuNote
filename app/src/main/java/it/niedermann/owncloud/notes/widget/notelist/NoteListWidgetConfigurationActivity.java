@@ -9,7 +9,7 @@ import android.app.Activity;
 import android.appwidget.AppWidgetManager;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import trikita.log.Log;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;

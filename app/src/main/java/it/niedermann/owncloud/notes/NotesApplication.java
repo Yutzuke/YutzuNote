@@ -4,7 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.util.Log;
+import trikita.log.Log;
 
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.preference.PreferenceManager;
@@ -28,6 +28,8 @@ public class NotesApplication extends Application {
         final var prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         lockedPreference = prefs.getBoolean(getString(R.string.pref_key_lock), false);
         isGridViewEnabled = getDefaultSharedPreferences(this).getBoolean(getString(R.string.pref_key_gridview), false);
+
+        setLogLevel();
         super.onCreate();
     }
 
@@ -79,5 +81,11 @@ public class NotesApplication extends Application {
 
     public static void updateLastInteraction() {
         lastInteraction = System.currentTimeMillis();
+    }
+
+    private void setLogLevel() {
+        if (!BuildConfig.DEBUG) {
+            Log.level(Log.E);
+        }
     }
 }

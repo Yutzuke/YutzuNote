@@ -23,7 +23,7 @@ import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+import trikita.log.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
