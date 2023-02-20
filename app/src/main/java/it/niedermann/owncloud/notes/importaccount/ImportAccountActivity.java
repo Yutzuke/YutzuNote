@@ -3,7 +3,7 @@ package it.niedermann.owncloud.notes.importaccount;
 import android.accounts.NetworkErrorException;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
+import trikita.log.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;

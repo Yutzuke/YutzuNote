@@ -3,7 +3,7 @@ package it.niedermann.owncloud.notes.main.items.list;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Canvas;
-import android.util.Log;
+import trikita.log.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;

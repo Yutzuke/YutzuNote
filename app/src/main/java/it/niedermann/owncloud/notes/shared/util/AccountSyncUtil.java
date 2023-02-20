@@ -19,7 +19,7 @@ package it.niedermann.owncloud.notes.shared.util;
 import android.accounts.AccountManager;
 import android.content.ContentResolver;
 import android.content.Context;
-import android.util.Log;
+import trikita.log.Log;
 
 import it.niedermann.owncloud.notes.persistence.entity.Account;
 

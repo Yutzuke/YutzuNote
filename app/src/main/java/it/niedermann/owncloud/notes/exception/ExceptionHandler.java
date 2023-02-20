@@ -1,7 +1,7 @@
 package it.niedermann.owncloud.notes.exception;
 
 import android.app.Activity;
-import android.util.Log;
+import trikita.log.Log;
 
 import androidx.annotation.NonNull;
 

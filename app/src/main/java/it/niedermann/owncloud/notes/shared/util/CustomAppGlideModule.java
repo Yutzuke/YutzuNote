@@ -1,7 +1,7 @@
 package it.niedermann.owncloud.notes.shared.util;
 
 import android.content.Context;
-import android.util.Log;
+import trikita.log.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.UiThread;

@@ -1,7 +1,7 @@
 package it.niedermann.owncloud.notes.widget.notelist;
 
 import android.app.Application;
-import android.util.Log;
+import trikita.log.Log;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;

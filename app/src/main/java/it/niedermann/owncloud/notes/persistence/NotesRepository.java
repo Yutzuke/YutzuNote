@@ -21,7 +21,7 @@ import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
 import android.net.ConnectivityManager;
 import android.text.TextUtils;
-import android.util.Log;
+import trikita.log.Log;
 
 import androidx.annotation.AnyThread;
 import androidx.annotation.ColorInt;

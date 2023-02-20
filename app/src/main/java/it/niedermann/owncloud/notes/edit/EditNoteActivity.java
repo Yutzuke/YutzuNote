@@ -5,7 +5,7 @@ import static it.niedermann.owncloud.notes.shared.model.ENavigationCategoryType.
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Log;
+import trikita.log.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;

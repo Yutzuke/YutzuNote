@@ -20,7 +20,7 @@ import android.accounts.AccountManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
+import trikita.log.Log;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

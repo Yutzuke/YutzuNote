@@ -1,7 +1,7 @@
 package it.niedermann.owncloud.notes.persistence;
 
 import android.content.Context;
-import android.util.Log;
+import trikita.log.Log;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;

@@ -20,7 +20,7 @@ import android.accounts.NetworkErrorException;
 import android.app.Application;
 import android.content.Context;
 import android.text.TextUtils;
-import android.util.Log;
+import trikita.log.Log;
 import android.util.Pair;
 
 import androidx.annotation.MainThread;

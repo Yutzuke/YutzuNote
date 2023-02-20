@@ -9,7 +9,7 @@ import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Layout;
 import android.text.method.LinkMovementMethod;
-import android.util.Log;
+import trikita.log.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
