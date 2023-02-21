@@ -595,7 +595,6 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
     @Override
     public void applyBrand(int mainColor, int textColor) {
         applyBrandToPrimaryToolbar(activityBinding.appBar, activityBinding.searchToolbar);
-        applyBrandToFAB(mainColor, textColor, activityBinding.fabCreate);
 
         binding.headerView.setBackgroundColor(mainColor);
         binding.appName.setTextColor(textColor);
