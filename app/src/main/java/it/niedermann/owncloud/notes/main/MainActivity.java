@@ -167,7 +167,10 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
 
         mainViewModel.getAccounts$().observe(this, (accounts) -> {
             if (accounts.isEmpty() || importMurenaAccountViewModel.shouldLoadMurenaAccount(accounts)) {
-                startActivityForResult(new Intent(this, ImportAccountActivity.class), ImportAccountActivity.REQUEST_CODE_IMPORT_ACCOUNT);
+                Intent intent = new Intent(this, ImportAccountActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
             } else {
                 executor.submit(() -> {
                     try {

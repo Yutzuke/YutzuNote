@@ -3,6 +3,8 @@ package it.niedermann.owncloud.notes.importaccount;
 import android.accounts.NetworkErrorException;
 import android.content.Intent;
 import android.os.Bundle;
+
+import it.niedermann.owncloud.notes.main.MainActivity;
 import trikita.log.Log;
 import android.view.View;
 
@@ -118,6 +120,9 @@ public class ImportAccountActivity extends AppCompatActivity {
                                     Log.i(TAG, capabilities.toString());
                                     BrandingUtil.saveBrandColors(ImportAccountActivity.this, capabilities.getColor(), capabilities.getTextColor());
                                     setResult(RESULT_OK);
+                                    Intent intent = new Intent(ImportAccountActivity.this, MainActivity.class);
+                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
                                     finish();
                                 });
                                 SyncWorker.update(ImportAccountActivity.this, PreferenceManager.getDefaultSharedPreferences(ImportAccountActivity.this)
