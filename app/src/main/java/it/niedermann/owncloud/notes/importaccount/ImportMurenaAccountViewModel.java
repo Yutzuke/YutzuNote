@@ -23,6 +23,7 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
 import java.util.List;
+import java.util.Objects;
 
 import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 
@@ -53,5 +54,15 @@ public class ImportMurenaAccountViewModel extends AndroidViewModel {
 
     public Account getMurenaAccount() {
         return account;
+    }
+
+    public boolean shouldLoadMurenaAccount(List<it.niedermann.owncloud.notes.persistence.entity.Account> noteAccounts) {
+        if (!isMurenaAccountPresent()) {
+            return false;
+        }
+
+        return noteAccounts.stream()
+                .filter(Objects::nonNull)
+                .noneMatch(noteAccount -> noteAccount.getAccountName().equals(account.name));
     }
 }
