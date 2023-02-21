@@ -14,7 +14,9 @@ import androidx.preference.PreferenceManager;
 import com.nextcloud.android.sso.AccountImporter;
 import com.nextcloud.android.sso.exceptions.AccountImportCancelledException;
 import com.nextcloud.android.sso.exceptions.AndroidGetAccountsPermissionNotGranted;
+import com.nextcloud.android.sso.exceptions.NextcloudFilesAppAccountPermissionNotGrantedException;
 import com.nextcloud.android.sso.exceptions.NextcloudFilesAppNotInstalledException;
+import com.nextcloud.android.sso.exceptions.NextcloudFilesAppNotSupportedException;
 import com.nextcloud.android.sso.exceptions.NextcloudHttpRequestFailedException;
 import com.nextcloud.android.sso.exceptions.UnknownErrorException;
 import com.nextcloud.android.sso.helper.SingleAccountHelper;
@@ -44,6 +46,8 @@ public class ImportAccountActivity extends AppCompatActivity {
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
 
     private ImportAccountViewModel importAccountViewModel;
+    private ImportMurenaAccountViewModel importMurenaAccountViewModel;
+
     private ActivityImportAccountBinding binding;
 
     @Override
@@ -54,6 +58,7 @@ public class ImportAccountActivity extends AppCompatActivity {
 
         binding = ActivityImportAccountBinding.inflate(getLayoutInflater());
         importAccountViewModel = new ViewModelProvider(this).get(ImportAccountViewModel.class);
+        importMurenaAccountViewModel = new ViewModelProvider(this).get(ImportMurenaAccountViewModel.class);
 
         setContentView(binding.getRoot());
 
@@ -75,6 +80,8 @@ public class ImportAccountActivity extends AppCompatActivity {
                 AccountImporter.requestAndroidAccountPermissionsAndPickAccount(this);
             }
         });
+
+        handleAutoMurenaAccountSetup();
     }
 
     @Override
@@ -177,5 +184,32 @@ public class ImportAccountActivity extends AppCompatActivity {
             binding.progressCircular.setVisibility(View.GONE);
             binding.progressText.setVisibility(View.GONE);
         });
+    }
+
+    private void handleAutoMurenaAccountSetup() {
+        if (importMurenaAccountViewModel.isMurenaAccountPresent()) {
+            binding.addButton.setEnabled(false);
+            binding.addButton.setVisibility(View.INVISIBLE);
+            binding.status.setVisibility(View.GONE);
+
+            pickMurenaAccount();
+        }
+    }
+
+    private void pickMurenaAccount() {
+        try {
+            AccountImporter.pickAccount(this, importMurenaAccountViewModel.getMurenaAccount());
+        } catch (NextcloudFilesAppNotInstalledException |
+                 NextcloudFilesAppNotSupportedException e) {
+            UiExceptionManager.showDialogForException(this, e);
+            Log.w(TAG, "=============================================================");
+            Log.w(TAG, "Nextcloud app is not installed. Cannot choose account");
+            e.printStackTrace();
+        } catch (AndroidGetAccountsPermissionNotGranted |
+                 NextcloudFilesAppAccountPermissionNotGrantedException e) {
+            binding.addButton.setEnabled(true);
+            binding.addButton.setVisibility(View.VISIBLE);
+            AccountImporter.requestAndroidAccountPermissionsAndPickAccount(this);
+        }
     }
 }
