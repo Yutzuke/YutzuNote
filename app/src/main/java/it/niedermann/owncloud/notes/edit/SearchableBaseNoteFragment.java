@@ -295,7 +295,5 @@ public abstract class SearchableBaseNoteFragment extends BaseNoteFragment {
     public void applyBrand(int mainColor, int textColor) {
         this.mainColor = mainColor;
         this.textColor = textColor;
-        BrandedActivity.applyBrandToFAB(mainColor, textColor, getSearchPrevButton());
-        BrandedActivity.applyBrandToFAB(mainColor, textColor, getSearchNextButton());
     }
 }

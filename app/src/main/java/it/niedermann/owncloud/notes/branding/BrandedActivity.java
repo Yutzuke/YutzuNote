@@ -25,11 +25,6 @@ public abstract class BrandedActivity extends AppCompatActivity implements Brand
     @ColorInt
     protected int colorAccent;
 
-    public static void applyBrandToFAB(@ColorInt int mainColor, @ColorInt int textColor, @NonNull FloatingActionButton fab) {
-        fab.setSupportBackgroundTintList(ColorStateList.valueOf(mainColor));
-        fab.setColorFilter(textColor);
-    }
-
     @Override
     protected void onStart() {
         super.onStart();

@@ -60,6 +60,7 @@ public class ImportAccountActivity extends AppCompatActivity {
         binding.welcomeText.setText(getString(R.string.welcome_text, getString(R.string.app_name)));
         binding.addButton.setOnClickListener((v) -> {
             binding.addButton.setEnabled(false);
+            binding.addButton.setVisibility(View.INVISIBLE);
             binding.status.setVisibility(View.GONE);
             try {
                 AccountImporter.pickNewAccount(this);
@@ -70,6 +71,7 @@ public class ImportAccountActivity extends AppCompatActivity {
                 e.printStackTrace();
             } catch (AndroidGetAccountsPermissionNotGranted e) {
                 binding.addButton.setEnabled(true);
+                binding.addButton.setVisibility(View.VISIBLE);
                 AccountImporter.requestAndroidAccountPermissionsAndPickAccount(this);
             }
         });
@@ -171,6 +173,7 @@ public class ImportAccountActivity extends AppCompatActivity {
     private void restoreCleanState() {
         runOnUiThread(() -> {
             binding.addButton.setEnabled(true);
+            binding.addButton.setVisibility(View.VISIBLE);
             binding.progressCircular.setVisibility(View.GONE);
             binding.progressText.setVisibility(View.GONE);
         });
