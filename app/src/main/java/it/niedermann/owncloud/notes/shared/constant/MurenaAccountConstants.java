@@ -20,7 +20,4 @@ public final class MurenaAccountConstants {
 
     public static final String MURENA_ACCOUNT_TYPE = "e.foundation.webdav.eelo";
     public static final String NOTES_CONTENT_AUTHORITY = "foundation.e.notes.android.providers.AppContentProvider";
-
-    private MurenaAccountConstants() {
-    }
 }

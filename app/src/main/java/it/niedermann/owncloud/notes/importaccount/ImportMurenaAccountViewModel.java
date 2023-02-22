@@ -37,14 +37,16 @@ public class ImportMurenaAccountViewModel extends AndroidViewModel {
     }
 
     private void retrieveAccount() {
-        List<Account> accounts = AccountSyncUtil.getMuenaAccounts(getApplication());
+        List<Account> accounts = AccountSyncUtil.getMurenaAccounts(getApplication());
 
         if (accounts.isEmpty()) {
             return;
         }
 
-        if (AccountSyncUtil.isSyncEnable(accounts.get(0))) {
-            account = accounts.get(0); // retrieve the first account, as we have policy that one murena account per device
+        Account murenaAccount = accounts.get(0); // retrieve the first account, as we have policy that one murena account per device
+
+        if (AccountSyncUtil.isSyncEnable(murenaAccount)) {
+            account = murenaAccount;
         }
     }
 

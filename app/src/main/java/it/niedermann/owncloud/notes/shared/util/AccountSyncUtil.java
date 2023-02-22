@@ -44,7 +44,7 @@ public final class AccountSyncUtil {
 
     public static boolean isSyncEnable(Context context, Account account) {
         try {
-            List<android.accounts.Account> murenaAccounts = getMuenaAccounts(context);
+            List<android.accounts.Account> murenaAccounts = getMurenaAccounts(context);
 
             for (android.accounts.Account murenaAccount : murenaAccounts) {
                 if (account.getAccountName().equals(murenaAccount.name)) {
@@ -58,7 +58,7 @@ public final class AccountSyncUtil {
         return true;
     }
 
-    public static List<android.accounts.Account> getMuenaAccounts(Context context) {
+    public static List<android.accounts.Account> getMurenaAccounts(Context context) {
         AccountManager accountManager = AccountManager.get(context);
         return Arrays.stream(accountManager.getAccountsByType(MurenaAccountConstants.MURENA_ACCOUNT_TYPE))
                 .filter(Objects::nonNull)
