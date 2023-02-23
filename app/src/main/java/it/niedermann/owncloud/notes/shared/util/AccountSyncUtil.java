@@ -19,33 +19,32 @@ package it.niedermann.owncloud.notes.shared.util;
 import android.accounts.AccountManager;
 import android.content.ContentResolver;
 import android.content.Context;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+
+import it.niedermann.owncloud.notes.shared.constant.MurenaAccountConstants;
 import trikita.log.Log;
 
 import it.niedermann.owncloud.notes.persistence.entity.Account;
 
-public class AccountSyncUtil {
+public final class AccountSyncUtil {
 
     private static final String TAG = AccountSyncUtil.class.getSimpleName();
-    private static final String murena_account_type = "e.foundation.webdav.eelo";
-    private static final String notes_content_authority = "foundation.e.notes.android.providers.AppContentProvider";
 
     private AccountSyncUtil() {
         throw new UnsupportedOperationException("Do not instantiate this util class.");
     }
 
-    private static android.accounts.Account[] getMurenaAccountsOnDevice(AccountManager accountManager) {
-        return accountManager.getAccountsByType(murena_account_type);
-    }
-
-    private static boolean isSyncEnable(android.accounts.Account account) {
-        return ContentResolver.getMasterSyncAutomatically() && ContentResolver.getSyncAutomatically(account, notes_content_authority);
+    public static boolean isSyncEnable(android.accounts.Account account) {
+        return ContentResolver.getMasterSyncAutomatically() && ContentResolver.getSyncAutomatically(account, MurenaAccountConstants.NOTES_CONTENT_AUTHORITY);
     }
 
     public static boolean isSyncEnable(Context context, Account account) {
-        AccountManager accountManager = AccountManager.get(context);
-
         try {
-            android.accounts.Account[] murenaAccounts = getMurenaAccountsOnDevice(accountManager);
+            List<android.accounts.Account> murenaAccounts = getMurenaAccounts(context);
 
             for (android.accounts.Account murenaAccount : murenaAccounts) {
                 if (account.getAccountName().equals(murenaAccount.name)) {
@@ -59,4 +58,10 @@ public class AccountSyncUtil {
         return true;
     }
 
+    public static List<android.accounts.Account> getMurenaAccounts(Context context) {
+        AccountManager accountManager = AccountManager.get(context);
+        return Arrays.stream(accountManager.getAccountsByType(MurenaAccountConstants.MURENA_ACCOUNT_TYPE))
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
+    }
 }

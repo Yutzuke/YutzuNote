@@ -23,6 +23,8 @@ import android.graphics.PorterDuff;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
+
+import it.niedermann.owncloud.notes.importaccount.ImportMurenaAccountViewModel;
 import trikita.log.Log;
 import android.view.View;
 
@@ -107,6 +109,8 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
     protected final ExecutorService executor = Executors.newCachedThreadPool();
 
     protected MainViewModel mainViewModel;
+
+    private ImportMurenaAccountViewModel importMurenaAccountViewModel;
     private CategoryViewModel categoryViewModel;
 
     private boolean gridView = true;
@@ -142,6 +146,7 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
         super.onCreate(savedInstanceState);
 
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
+        importMurenaAccountViewModel = new ViewModelProvider(this).get(ImportMurenaAccountViewModel.class);
         categoryViewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
         CapabilitiesWorker.update(this);
         binding = DrawerLayoutBinding.inflate(getLayoutInflater());
@@ -160,9 +165,12 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
         setupNavigationList();
         setupNotesList();
 
-        mainViewModel.getAccountsCount().observe(this, (count) -> {
-            if (count == 0) {
-                startActivityForResult(new Intent(this, ImportAccountActivity.class), ImportAccountActivity.REQUEST_CODE_IMPORT_ACCOUNT);
+        mainViewModel.getAccounts$().observe(this, (accounts) -> {
+            if (accounts.isEmpty() || importMurenaAccountViewModel.shouldLoadMurenaAccount(accounts)) {
+                Intent intent = new Intent(this, ImportAccountActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+                finish();
             } else {
                 executor.submit(() -> {
                     try {

@@ -603,8 +603,8 @@ public class MainViewModel extends AndroidViewModel {
         return repo.getLocalModifiedNotes(accountId);
     }
 
-    public LiveData<Integer> getAccountsCount() {
-        return repo.countAccounts$();
+    public LiveData<List<Account>> getAccounts$() {
+        return repo.getAccounts$();
     }
 
     @WorkerThread
