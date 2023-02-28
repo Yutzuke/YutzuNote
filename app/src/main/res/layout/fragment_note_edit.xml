@@ -50,7 +50,8 @@
         android:visibility="gone"
         app:backgroundTint="@color/defaultBrand"
         app:srcCompat="@drawable/ic_keyboard_arrow_up_white_24dp"
-        android:tint="@color/e_background"
+        app:shapeAppearanceOverlay="@style/floatingActionButtonStyle"
+        app:tint="@color/e_background"
         tools:visibility="visible" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -63,6 +64,8 @@
         android:contentDescription="@string/simple_next"
         android:visibility="gone"
         app:backgroundTint="@color/defaultBrand"
+        app:shapeAppearanceOverlay="@style/floatingActionButtonStyle"
+        app:tint="@color/e_background"
         app:srcCompat="@drawable/ic_keyboard_arrow_down_white_24dp"
         tools:visibility="visible" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

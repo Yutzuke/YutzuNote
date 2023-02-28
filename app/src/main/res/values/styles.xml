@@ -111,4 +111,9 @@
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground_full</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
+
+    <style name="floatingActionButtonStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
 </resources>
