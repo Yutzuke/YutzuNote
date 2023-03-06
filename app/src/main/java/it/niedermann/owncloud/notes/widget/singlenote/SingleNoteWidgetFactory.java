@@ -51,6 +51,7 @@ public class SingleNoteWidgetFactory implements RemoteViewsService.RemoteViewsFa
                 Log.e(TAG, "Error: note not found");
             }
         } else {
+            note = null;
             Log.w(TAG, "Widget with ID " + appWidgetId + " seems to be not configured yet.");
         }
     }

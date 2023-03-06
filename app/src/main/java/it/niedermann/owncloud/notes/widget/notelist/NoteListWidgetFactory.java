@@ -58,6 +58,11 @@ public class NoteListWidgetFactory implements RemoteViewsService.RemoteViewsFact
         dbNotes.clear();
         try {
             data = repo.getNoteListWidgetData(appWidgetId);
+
+            if (data == null) {
+                return;
+            }
+
             Log.v(TAG, "--- data - " + data);
             switch (data.getMode()) {
                 case MODE_DISPLAY_ALL:
@@ -87,11 +92,19 @@ public class NoteListWidgetFactory implements RemoteViewsService.RemoteViewsFact
 
     @Override
     public int getCount() {
+        if (data == null) {
+            return 0;
+        }
+
         return dbNotes.size() + 1;
     }
 
     @Override
     public RemoteViews getViewAt(int position) {
+        if (data == null) {
+            return null;
+        }
+
         final RemoteViews note_content;
 
         if (position == 0) {
