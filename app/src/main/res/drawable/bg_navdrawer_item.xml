@@ -3,32 +3,25 @@
     android:color="?colorControlHighlight">
 
     <item
-        android:id="@android:id/mask"
-        android:left="@dimen/spacer_1x"
-        android:right="@dimen/spacer_1x">
+        android:id="@android:id/mask">
 
         <shape android:shape="rectangle">
             <!-- value of color is irrelevant, but solid needs to be defined for mask to work -->
             <solid android:color="@color/bg_highlighted" />
-            <corners android:radius="@dimen/spacer_5x" />
         </shape>
     </item>
 
-    <item
-        android:left="@dimen/spacer_1x"
-        android:right="@dimen/spacer_1x">
+    <item>
 
         <selector>
             <item android:state_selected="true">
                 <shape android:shape="rectangle">
-                    <corners android:radius="@dimen/spacer_5x" />
-                    <solid android:color="@color/bg_highlighted" />
+                    <solid android:color="@color/e_alpha_accent" />
                 </shape>
             </item>
 
             <item>
                 <shape android:shape="rectangle">
-                    <corners android:radius="@dimen/spacer_5x" />
                 </shape>
             </item>
         </selector>

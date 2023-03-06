@@ -606,10 +606,8 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
 
         binding.headerView.setBackgroundColor(mainColor);
         binding.appName.setTextColor(textColor);
-        activityBinding.progressCircular.getIndeterminateDrawable().setColorFilter(getSecondaryForegroundColorDependingOnTheme(this, mainColor), PorterDuff.Mode.SRC_IN);
 
         // TODO We assume, that the background of the spinner is always white
-        activityBinding.swiperefreshlayout.setColorSchemeColors(contrastRatioIsSufficient(Color.WHITE, mainColor) ? mainColor : Color.BLACK);
         binding.appName.setTextColor(textColor);
 
         adapter.applyBrand(mainColor, textColor);

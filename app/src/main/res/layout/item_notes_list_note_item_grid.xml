@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:focusable="true"
-    app:cardBackgroundColor="@color/appbar"
+    app:cardBackgroundColor="@color/e_background"
     app:cardCornerRadius="@dimen/spacer_1x">
 
     <LinearLayout
@@ -60,7 +60,7 @@
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:contentDescription="@string/menu_favorite"
                     android:padding="@dimen/spacer_2x"
-                    tools:src="@drawable/ic_star_accent_24dp" />
+                    tools:src="@drawable/ic_star_golden_24dp" />
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/noteStatus"
@@ -70,7 +70,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginEnd="4dp"
                     android:baseline="14dp"
-                    app:srcCompat="@drawable/ic_sync_blue_18dp" />
+                    app:srcCompat="@drawable/ic_sync_18dp" />
             </FrameLayout>
 
             <FrameLayout
@@ -87,9 +87,9 @@
                     android:layout_marginEnd="@dimen/spacer_2x"
                     android:ellipsize="middle"
                     android:padding="@dimen/spacer_1hx"
-                    android:textColor="?android:textColorPrimary"
+                    android:textColor="@color/e_background"
                     android:textSize="@dimen/secondary_font_size"
-                    app:chipBackgroundColor="@color/primary"
+                    app:chipBackgroundColor="@color/defaultBrand"
                     app:chipEndPadding="@dimen/spacer_1x"
                     app:chipMinHeight="0dp"
                     app:chipStartPadding="@dimen/spacer_1x"

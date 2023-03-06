@@ -1,8 +1,6 @@
 package it.niedermann.owncloud.notes.main.items;
 
 import android.content.Context;
-import android.content.res.ColorStateList;
-import android.graphics.Color;
 import android.text.SpannableString;
 import android.text.TextUtils;
 import android.text.style.BackgroundColorSpan;
@@ -17,17 +15,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.content.ContextCompat;
-import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.selection.ItemDetailsLookup;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.chip.Chip;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import it.niedermann.android.util.ColorUtil;
-import it.niedermann.owncloud.notes.NotesApplication;
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.branding.BrandingUtil;
 import it.niedermann.owncloud.notes.persistence.entity.Note;
@@ -36,7 +29,6 @@ import it.niedermann.owncloud.notes.shared.model.NoteClickListener;
 
 import static android.view.View.INVISIBLE;
 import static android.view.View.VISIBLE;
-import static it.niedermann.owncloud.notes.shared.util.NotesColorUtil.contrastRatioIsSufficient;
 
 public abstract class NoteViewHolder extends RecyclerView.ViewHolder {
     @NonNull
@@ -56,55 +48,15 @@ public abstract class NoteViewHolder extends RecyclerView.ViewHolder {
 
     protected void bindStatus(AppCompatImageView noteStatus, DBStatus status, int mainColor) {
         noteStatus.setVisibility(DBStatus.VOID.equals(status) ? INVISIBLE : VISIBLE);
-        DrawableCompat.setTint(noteStatus.getDrawable(), BrandingUtil.getSecondaryForegroundColorDependingOnTheme(noteStatus.getContext(), mainColor));
     }
 
     protected void bindCategory(@NonNull Context context, @NonNull TextView noteCategory, boolean showCategory, @NonNull String category, int mainColor) {
-        final boolean isDarkThemeActive = NotesApplication.isDarkThemeActive(context);
         noteCategory.setVisibility(showCategory && !category.isEmpty() ? View.VISIBLE : View.GONE);
         noteCategory.setText(category);
-
-        @ColorInt final int categoryForeground;
-        @ColorInt final int categoryBackground;
-
-        if (isDarkThemeActive) {
-            if (ColorUtil.INSTANCE.isColorDark(mainColor)) {
-                if (contrastRatioIsSufficient(mainColor, Color.BLACK)) {
-                    categoryBackground = mainColor;
-                    categoryForeground = Color.WHITE;
-                } else {
-                    categoryBackground = Color.WHITE;
-                    categoryForeground = mainColor;
-                }
-            } else {
-                categoryBackground = mainColor;
-                categoryForeground = Color.BLACK;
-            }
-        } else {
-            categoryForeground = Color.BLACK;
-            if (ColorUtil.INSTANCE.isColorDark(mainColor) || contrastRatioIsSufficient(mainColor, Color.WHITE)) {
-                categoryBackground = mainColor;
-            } else {
-                categoryBackground = Color.BLACK;
-            }
-        }
-
-        noteCategory.setTextColor(categoryForeground);
-        if (noteCategory instanceof Chip) {
-            final Chip chip = (Chip) noteCategory;
-            chip.setChipStrokeColor(ColorStateList.valueOf(categoryBackground));
-            if(isDarkThemeActive) {
-                chip.setChipBackgroundColor(ColorStateList.valueOf(categoryBackground));
-            } else {
-                chip.setChipBackgroundColorResource(R.color.grid_item_background_selector);
-            }
-        } else {
-            DrawableCompat.setTint(noteCategory.getBackground(), categoryBackground);
-        }
     }
 
     protected void bindFavorite(@NonNull ImageView noteFavorite, boolean isFavorite) {
-        noteFavorite.setImageResource(isFavorite ? R.drawable.ic_star_accent_24dp : R.drawable.ic_star_border_accent_24dp);
+        noteFavorite.setImageResource(isFavorite ? R.drawable.ic_star_golden_24dp : R.drawable.ic_star_border_24dp);
         noteFavorite.setOnClickListener(view -> noteClickListener.onNoteFavoriteClick(getLayoutPosition(), view));
     }
 

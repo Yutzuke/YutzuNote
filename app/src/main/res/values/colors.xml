@@ -15,7 +15,7 @@
     <color name="cursorHandles">#555566</color>
     <color name="defaultTextHighlightBackground">#2233334a</color>
 
-    <color name="bg_highlighted">@android:color/white</color>
+    <color name="bg_highlighted">#eaf5ff</color>
     <color name="bg_selected_item">@color/e_floating_background</color>
     <color name="bg_normal">@color/e_background</color>
     <color name="bg_attention">#d40000</color>
@@ -39,4 +39,6 @@
 
     <color name="widget_background">@color/e_background</color>
     <color name="widget_foreground">@color/e_primary_text_color</color>
+
+    <color name="color_star_fill">#FFC300</color>
 </resources>
