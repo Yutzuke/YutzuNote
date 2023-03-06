@@ -227,6 +227,7 @@ public class NotesRepository {
         }
 
         db.getAccountDao().deleteAccount(account);
+        notifyWidgets();
     }
 
     public Account getAccountByName(String accountName) {
