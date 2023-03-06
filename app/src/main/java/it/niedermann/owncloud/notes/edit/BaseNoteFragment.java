@@ -9,7 +9,6 @@ import static it.niedermann.owncloud.notes.shared.util.WidgetUtil.pendingIntentF
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import trikita.log.Log;
@@ -20,10 +19,8 @@ import android.view.View;
 import android.widget.ScrollView;
 
 import androidx.annotation.CallSuper;
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.core.content.pm.ShortcutInfoCompat;
 import androidx.core.content.pm.ShortcutManagerCompat;
 import androidx.core.graphics.drawable.IconCompat;
@@ -37,7 +34,6 @@ import java.util.Calendar;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import it.niedermann.android.util.ColorUtil;
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.accountpicker.AccountPickerDialogFragment;
 import it.niedermann.owncloud.notes.branding.BrandedFragment;
@@ -53,7 +49,6 @@ import it.niedermann.owncloud.notes.shared.model.DBStatus;
 import it.niedermann.owncloud.notes.shared.model.ISyncCallback;
 import it.niedermann.owncloud.notes.shared.util.ApiVersionUtil;
 import it.niedermann.owncloud.notes.shared.util.NoteUtil;
-import it.niedermann.owncloud.notes.shared.util.NotesColorUtil;
 import it.niedermann.owncloud.notes.shared.util.ShareUtil;
 
 public abstract class BaseNoteFragment extends BrandedFragment implements CategoryDialogListener, EditTitleListener {
@@ -201,7 +196,7 @@ public abstract class BaseNoteFragment extends BrandedFragment implements Catego
     }
 
     private void prepareFavoriteOption(MenuItem item) {
-        item.setIcon(note.getFavorite() ? R.drawable.ic_star_accent_24dp : R.drawable.ic_star_border_accent_24dp);
+        item.setIcon(note.getFavorite() ? R.drawable.ic_star_golden_24dp : R.drawable.ic_star_border_24dp);
         item.setChecked(note.getFavorite());
         tintMenuIcon(item, colorAccent);
     }
@@ -252,7 +247,7 @@ public abstract class BaseNoteFragment extends BrandedFragment implements Catego
                 if (ShortcutManagerCompat.isRequestPinShortcutSupported(context)) {
                     final var pinShortcutInfo = new ShortcutInfoCompat.Builder(context, String.valueOf(note.getId()))
                             .setShortLabel(note.getTitle())
-                            .setIcon(IconCompat.createWithResource(context.getApplicationContext(), TRUE.equals(note.getFavorite()) ? R.drawable.ic_star_accent_24dp : R.drawable.ic_star_border_accent_24dp))
+                            .setIcon(IconCompat.createWithResource(context.getApplicationContext(), TRUE.equals(note.getFavorite()) ? R.drawable.ic_star_golden_24dp : R.drawable.ic_star_border_24dp))
                             .setIntent(new Intent(getActivity(), EditNoteActivity.class).putExtra(EditNoteActivity.PARAM_NOTE_ID, note.getId()).setAction(ACTION_SHORTCUT))
                             .build();
 

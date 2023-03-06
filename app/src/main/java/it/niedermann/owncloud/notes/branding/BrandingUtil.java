@@ -83,9 +83,7 @@ public class BrandingUtil {
 
     @ColorInt
     public static int readBrandMainColor(@NonNull Context context) {
-        final var sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
-        Log.v(TAG, "--- Read: shared_preference_theme_main");
-        return sharedPreferences.getInt(pref_key_branding_main, context.getApplicationContext().getResources().getColor(R.color.defaultBrand));
+        return ContextCompat.getColor(context, R.color.defaultBrand);
     }
 
     @ColorInt
@@ -162,21 +160,9 @@ public class BrandingUtil {
     }
 
     public static void tintMenuIcon(@NonNull MenuItem menuItem, @ColorInt int color) {
-        var drawable = menuItem.getIcon();
-        if (drawable != null) {
-            drawable = DrawableCompat.wrap(drawable);
-            DrawableCompat.setTint(drawable, color);
-            menuItem.setIcon(drawable);
-        }
     }
 
     public static void applyBrandToLayerDrawable(@NonNull LayerDrawable check, @IdRes int areaToColor, @ColorInt int mainColor) {
-        final var drawable = check.findDrawableByLayerId(areaToColor);
-        if (drawable == null) {
-            Log.e(TAG, "Could not find areaToColor (" + areaToColor + "). Cannot apply brand.");
-        } else {
-            DrawableCompat.setTint(drawable, mainColor);
-        }
     }
 
     @ColorInt

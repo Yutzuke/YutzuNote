@@ -147,8 +147,8 @@ public class NoteListWidgetFactory implements RemoteViewsService.RemoteViewsFact
             note_content.setOnClickFillInIntent(R.id.widget_note_list_entry, fillInIntent);
             note_content.setTextViewText(R.id.widget_entry_content_tv, note.getTitle());
             note_content.setImageViewResource(R.id.widget_entry_fav_icon, note.getFavorite()
-                    ? R.drawable.ic_star_accent_24dp
-                    : R.drawable.ic_star_border_accent_24dp);
+                    ? R.drawable.ic_star_golden_24dp
+                    : R.drawable.ic_star_border_24dp);
         }
 
         return note_content;

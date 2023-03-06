@@ -3,13 +3,11 @@ package it.niedermann.owncloud.notes.main.navigation;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.ColorInt;
 import androidx.annotation.DrawableRes;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -28,20 +26,20 @@ public class NavigationAdapter extends RecyclerView.Adapter<NavigationViewHolder
     @ColorInt
     private int mainColor;
     @DrawableRes
-    public static final int ICON_FOLDER = R.drawable.ic_folder_grey600_24dp;
+    public static final int ICON_FOLDER = R.drawable.ic_folder_24dp;
     @DrawableRes
-    public static final int ICON_NOFOLDER = R.drawable.ic_folder_open_grey600_24dp;
+    public static final int ICON_NOFOLDER = R.drawable.ic_folder_open_24dp;
     @DrawableRes
-    public static final int ICON_SUB_FOLDER = R.drawable.ic_folder_grey600_18dp;
+    public static final int ICON_SUB_FOLDER = R.drawable.ic_folder_18dp;
     @DrawableRes
-    public static final int ICON_MULTIPLE = R.drawable.ic_create_new_folder_grey600_24dp;
+    public static final int ICON_MULTIPLE = R.drawable.ic_create_new_folder_24dp;
     @DrawableRes
-    public static final int ICON_MULTIPLE_OPEN = R.drawable.ic_folder_grey600_24dp;
+    public static final int ICON_MULTIPLE_OPEN = R.drawable.ic_folder_24dp;
     @DrawableRes
-    public static final int ICON_SUB_MULTIPLE = R.drawable.ic_create_new_folder_grey600_18dp;
+    public static final int ICON_SUB_MULTIPLE = R.drawable.ic_create_new_folder_18dp;
 
     public void applyBrand(int mainColor, int textColor) {
-        this.mainColor = BrandingUtil.getSecondaryForegroundColorDependingOnTheme(context, mainColor);
+        this.mainColor = BrandingUtil.readBrandMainColor(context);
         notifyDataSetChanged();
     }
 
@@ -53,7 +51,7 @@ public class NavigationAdapter extends RecyclerView.Adapter<NavigationViewHolder
 
     public NavigationAdapter(@NonNull Context context, @NonNull NavigationClickListener navigationClickListener) {
         this.context = context;
-        this.mainColor = BrandingUtil.getSecondaryForegroundColorDependingOnTheme(context, BrandingUtil.readBrandMainColor(context));
+        this.mainColor = BrandingUtil.readBrandMainColor(context);
         this.navigationClickListener = navigationClickListener;
     }
 

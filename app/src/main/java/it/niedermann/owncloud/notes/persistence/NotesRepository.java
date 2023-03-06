@@ -596,7 +596,7 @@ public class NotesRepository {
 
                                 newShortcuts.add(new ShortcutInfo.Builder(this.context, note.getId() + "")
                                         .setShortLabel(note.getTitle() + "")
-                                        .setIcon(Icon.createWithResource(this.context, note.getFavorite() ? R.drawable.ic_star_accent_24dp : R.drawable.ic_star_border_accent_24dp))
+                                        .setIcon(Icon.createWithResource(this.context, note.getFavorite() ? R.drawable.ic_star_golden_24dp : R.drawable.ic_star_border_24dp))
                                         .setIntent(intent)
                                         .build());
                             } else {

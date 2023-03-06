@@ -46,7 +46,7 @@
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="@string/menu_favorite"
                 android:padding="@dimen/spacer_2x"
-                tools:src="@drawable/ic_star_accent_24dp" />
+                tools:src="@drawable/ic_star_golden_24dp" />
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/noteStatus"
@@ -56,7 +56,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="4dp"
                 android:baseline="14dp"
-                app:srcCompat="@drawable/ic_sync_blue_18dp" />
+                app:srcCompat="@drawable/ic_sync_18dp" />
         </FrameLayout>
 
         <TextView
@@ -84,7 +84,7 @@
             android:paddingHorizontal="@dimen/spacer_1x"
             android:paddingBottom="1dp"
             android:singleLine="true"
-            android:textColor="?android:textColorPrimary"
+            android:textColor="@color/e_background"
             android:textSize="@dimen/secondary_font_size"
             tools:maxLength="15"
             tools:text="@tools:sample/lorem/random" />

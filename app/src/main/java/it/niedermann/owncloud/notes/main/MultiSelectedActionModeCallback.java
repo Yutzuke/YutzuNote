@@ -81,14 +81,6 @@ public class MultiSelectedActionModeCallback implements Callback {
         // inflate contextual menu
         mode.getMenuInflater().inflate(R.menu.menu_list_context_multiple, menu);
         menu.findItem(R.id.menu_move).setVisible(canMoveNoteToAnotherAccounts);
-        for (int i = 0; i < menu.size(); i++) {
-            var drawable = menu.getItem(i).getIcon();
-            if (drawable != null) {
-                drawable = DrawableCompat.wrap(drawable);
-                DrawableCompat.setTint(drawable, colorAccent);
-                menu.getItem(i).setIcon(drawable);
-            }
-        }
         return true;
     }
 
