@@ -175,6 +175,8 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
                 executor.submit(() -> {
                     try {
                         final var account = mainViewModel.getLocalAccountByAccountName(SingleAccountHelper.getCurrentSingleSignOnAccount(getApplicationContext()).name);
+                        mainViewModel.migrateOldNotes(account);
+
                         runOnUiThread(() -> mainViewModel.postCurrentAccount(account));
                     } catch (NextcloudFilesAppAccountNotFoundException e) {
                         // Verbose log output for https://github.com/stefan-niedermann/nextcloud-notes/issues/1256

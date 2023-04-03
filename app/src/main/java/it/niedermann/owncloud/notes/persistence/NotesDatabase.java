@@ -1,7 +1,6 @@
 package it.niedermann.owncloud.notes.persistence;
 
 import android.content.Context;
-import trikita.log.Log;
 
 import androidx.annotation.NonNull;
 import androidx.room.Database;
@@ -9,6 +8,8 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 import androidx.sqlite.db.SupportSQLiteDatabase;
+
+import java.util.List;
 
 import it.niedermann.owncloud.notes.persistence.dao.AccountDao;
 import it.niedermann.owncloud.notes.persistence.dao.CategoryOptionsDao;
@@ -35,6 +36,7 @@ import it.niedermann.owncloud.notes.persistence.migration.Migration_20_21;
 import it.niedermann.owncloud.notes.persistence.migration.Migration_21_22;
 import it.niedermann.owncloud.notes.persistence.migration.Migration_22_23;
 import it.niedermann.owncloud.notes.persistence.migration.Migration_9_10;
+import trikita.log.Log;
 
 @Database(
         entities = {
@@ -61,9 +63,9 @@ public abstract class NotesDatabase extends RoomDatabase {
 
     private static NotesDatabase create(final Context context) {
         return Room.databaseBuilder(
-                context,
-                NotesDatabase.class,
-                NOTES_DB_NAME)
+                        context,
+                        NotesDatabase.class,
+                        NOTES_DB_NAME)
                 .addMigrations(
                         new Migration_9_10(), // v2.0.0
                         new Migration_10_11(context),
@@ -105,4 +107,17 @@ public abstract class NotesDatabase extends RoomDatabase {
     public abstract WidgetSingleNoteDao getWidgetSingleNoteDao();
 
     public abstract WidgetNotesListDao getWidgetNotesListDao();
+
+    /**
+     * retrieve notes from old `NOTES` table for migration.
+     * If we try to follow the *ROOM way* (entity, dao) for `NOTES` table, the existing data will be removed.
+     * So we have to retrieve old entries via raw sql commands.
+     *
+     * <a href="https://gitlab.e.foundation/e/os/backlog/-/issues/1147">Check for more details</a>
+     * @return list of old notes entries
+     */
+    @NonNull
+    public List<OldNote> getNotesFromOldTable() {
+        return OldNoteRetriever.getNotesFromOldTable(this);
+    }
 }
