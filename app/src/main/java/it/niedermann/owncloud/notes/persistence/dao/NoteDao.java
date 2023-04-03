@@ -193,4 +193,7 @@ public interface NoteDao {
 
     @Query("SELECT COUNT(*) FROM NOTE WHERE STATUS != '' AND accountId = :accountId")
     Long countUnsynchronizedNotes(long accountId);
+
+    @Query("SELECT COUNT(*) FROM NOTE WHERE title = :title AND content = :content")
+    Long countByTitleAndContent(String title, String content);
 }

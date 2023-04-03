@@ -1,6 +1,7 @@
 package it.niedermann.owncloud.notes.shared.model;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 /**
  * Helps to distinguish between different local change types for Server Synchronization.
@@ -36,5 +37,19 @@ public enum DBStatus {
 
     DBStatus(@NonNull String title) {
         this.title = title;
+    }
+
+    /**
+     * Parse a String an get the appropriate DBStatus enum element.
+     *
+     * @param str The String containing the DBStatus identifier.
+     * @return The DBStatus fitting to the String.
+     */
+    public static DBStatus parse(@Nullable String str) {
+        if (str == null || str.isEmpty()) {
+            return DBStatus.VOID;
+        }
+
+        return DBStatus.valueOf(str);
     }
 }

@@ -21,6 +21,7 @@ import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
 import android.net.ConnectivityManager;
 import android.text.TextUtils;
+
 import trikita.log.Log;
 
 import androidx.annotation.AnyThread;
@@ -78,6 +79,8 @@ import retrofit2.Call;
 
 @SuppressWarnings("UnusedReturnValue")
 public class NotesRepository {
+
+    private static final String PREF_KEY_MIGRATION_DONE = "old_note_migration_done";
 
     private static final String TAG = NotesRepository.class.getSimpleName();
 
@@ -958,5 +961,69 @@ public class NotesRepository {
 
     public void updateDisplayName(long id, @Nullable String displayName) {
         db.getAccountDao().updateDisplayName(id, displayName);
+    }
+
+    /**
+     * migrate old notes to latest note table.
+     * if the migration is already done, skip.
+     * link the provided account to the migrated notes, as old notes don't have account entry to them.
+     *
+     *  * <a href="https://gitlab.e.foundation/e/os/backlog/-/issues/1147">Check for more details</a>.
+     * @param accountId which will be used to link migrated notes to account
+     */
+    @AnyThread
+    public void migrateOldNotesIfPossible(long accountId) {
+        if (isMigrationDone()) {
+            return;
+        }
+
+        migrateOldNotes(accountId);
+    }
+
+    private void migrateOldNotes(long accountId) {
+        try {
+            executor.submit(() -> {
+                List<OldNote> oldNotes = db.getNotesFromOldTable();
+                if (oldNotes.isEmpty()) {
+                    updatePrefOnMigrationDone();
+                    return;
+                }
+
+                for (OldNote oldNote : oldNotes) {
+                    if (oldNote == null || isNoteAlreadyExistsInNewTable(oldNote)) {
+                        continue;
+                    }
+
+                    addNewNote(accountId, oldNote);
+                }
+
+                updatePrefOnMigrationDone();
+            });
+        } catch (Exception e) {
+            Log.e(TAG, "An exception has been caught", e);
+        }
+    }
+
+    private boolean isNoteAlreadyExistsInNewTable(@NonNull OldNote oldNote) {
+        return db.getNoteDao().countByTitleAndContent(oldNote.getTitle(), oldNote.getContent()) > 0;
+    }
+
+    private void addNewNote(long accountId, @NonNull OldNote oldNote) {
+        Note newNote = new Note(oldNote.getRemoteId(), oldNote.getModified(), oldNote.getTitle(), oldNote.getContent(), oldNote.getCategory(), oldNote.getFavorite(), oldNote.getETag());
+        newNote.setStatus(oldNote.getStatus());
+        newNote.setAccountId(accountId);
+        db.getNoteDao().addNote(newNote);
+    }
+
+    private boolean isMigrationDone() {
+        final var sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+        return sharedPreferences.getBoolean(PREF_KEY_MIGRATION_DONE, false);
+    }
+
+    private void updatePrefOnMigrationDone() {
+        final var sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+        sharedPreferences.edit()
+                .putBoolean(PREF_KEY_MIGRATION_DONE, true)
+                .apply();
     }
 }

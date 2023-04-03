@@ -663,4 +663,9 @@ public class MainViewModel extends AndroidViewModel {
         final var lower = input.toLowerCase(Locale.ROOT);
         return lower.contains("failed to connect") && lower.contains("network is unreachable");
     }
+
+    public void migrateOldNotes(@NonNull Account account) {
+        repo.migrateOldNotesIfPossible(account.getId());
+    }
+
 }
