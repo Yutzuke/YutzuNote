@@ -20,7 +20,6 @@ import android.accounts.NetworkErrorException;
 import android.app.Application;
 import android.content.Context;
 import android.text.TextUtils;
-import trikita.log.Log;
 import android.util.Pair;
 
 import androidx.annotation.MainThread;
@@ -66,6 +65,7 @@ import it.niedermann.owncloud.notes.shared.model.IResponseCallback;
 import it.niedermann.owncloud.notes.shared.model.ImportStatus;
 import it.niedermann.owncloud.notes.shared.model.Item;
 import it.niedermann.owncloud.notes.shared.model.NavigationCategory;
+import trikita.log.Log;
 
 public class MainViewModel extends AndroidViewModel {
 
@@ -667,5 +667,4 @@ public class MainViewModel extends AndroidViewModel {
     public void migrateOldNotes(@NonNull Account account) {
         repo.migrateOldNotesIfPossible(account.getId());
     }
-
 }

@@ -205,6 +205,8 @@ abstract class NotesServerSyncTask extends Thread {
     private boolean pullRemoteChanges() {
         Log.d(TAG, "pullRemoteChanges() for account " + localAccount.getAccountName());
         try {
+            repo.removeDuplicateRemoteIds();
+
             final var idMap = repo.getIdMap(localAccount.getId());
 
             // FIXME re-reading the localAccount is only a workaround for a not-up-to-date eTag in localAccount.
