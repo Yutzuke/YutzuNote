@@ -138,6 +138,9 @@ public interface NoteDao {
     @Query("SELECT id, remoteId, 0 as accountId, '' as title, 0 as favorite, '' as excerpt, 0 as modified, '' as eTag, 0 as status, '' as category, '' as content, 0 as scrollY  FROM NOTE WHERE accountId = :accountId AND status != 'LOCAL_DELETED' AND remoteId IS NOT NULL")
     List<Note> getRemoteIdAndId(long accountId);
 
+    @Query("SELECT * FROM NOTE WHERE accountId = :accountId AND status != 'LOCAL_DELETED' AND remoteId IS NOT NULL")
+    List<Note> getActiveNoteList(long accountId);
+
     /**
      * Get a single {@link Note} by {@link Note#remoteId} (aka. Nextcloud file id)
      *
@@ -194,6 +197,6 @@ public interface NoteDao {
     @Query("SELECT COUNT(*) FROM NOTE WHERE STATUS != '' AND accountId = :accountId")
     Long countUnsynchronizedNotes(long accountId);
 
-    @Query("SELECT COUNT(*) FROM NOTE WHERE title = :title AND content = :content")
-    Long countByTitleAndContent(String title, String content);
+    @Query("SELECT COUNT(*) FROM NOTE WHERE (title = :title AND content = :content) OR remoteId = :remoteId")
+    Long countByTitleAndContent(String title, String content, long remoteId);
 }

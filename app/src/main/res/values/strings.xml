@@ -367,4 +367,6 @@
     <string name="preferences_privacy_policy">Privacy policy</string>
     <string name="preferences_service_terms">Terms of service</string>
     <string name="preferences_authors">Authors</string>
+    <string name="conflict_note_detected"># We faced a conflict between your notes. Please choose the proper one.</string>
+    <string name="conflicted_note_content_title">\n\n***Note %1$d (Last modified: %2$s):***\n</string>
 </resources>

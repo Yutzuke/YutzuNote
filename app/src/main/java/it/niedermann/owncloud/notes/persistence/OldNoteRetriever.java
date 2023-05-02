@@ -70,8 +70,8 @@ public final class OldNoteRetriever {
     private static boolean isOldNoteTableExists(@NonNull SupportSQLiteDatabase supportSQLiteDatabase) {
        final Cursor tableExistCursor = supportSQLiteDatabase.query("SELECT name FROM sqlite_master WHERE type='table' AND name='" + OLD_NOTES_TABLE_NAME + "'");
        final boolean tableExists = tableExistCursor.moveToNext();
-        tableExistCursor.close();
-        return tableExists;
+       tableExistCursor.close();
+       return tableExists;
     }
 
     @NonNull

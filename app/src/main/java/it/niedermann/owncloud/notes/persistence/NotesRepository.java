@@ -4,6 +4,7 @@ import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.O;
 import static androidx.lifecycle.Transformations.distinctUntilChanged;
 import static androidx.lifecycle.Transformations.map;
+import static java.util.stream.Collectors.groupingBy;
 import static java.util.stream.Collectors.toMap;
 import static it.niedermann.owncloud.notes.edit.EditNoteActivity.ACTION_SHORTCUT;
 import static it.niedermann.owncloud.notes.shared.util.NoteUtil.generateNoteExcerpt;
@@ -43,9 +44,11 @@ import com.nextcloud.android.sso.model.SingleSignOnAccount;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -81,6 +84,7 @@ import retrofit2.Call;
 public class NotesRepository {
 
     private static final String PREF_KEY_MIGRATION_DONE = "old_note_migration_done";
+    private static final String PREF_KEY_REMOTE_CONFLICT_RESOLVED = "remote_conflict_resolved";
 
     private static final String TAG = NotesRepository.class.getSimpleName();
 
@@ -463,6 +467,15 @@ public class NotesRepository {
                 .getRemoteIdAndId(accountId)
                 .stream()
                 .collect(toMap(Note::getRemoteId, Note::getId));
+    }
+
+    @NonNull
+    @WorkerThread
+    public Map<Long, List<Note>> getNoteMapByRemoteId(long accountId) {
+        return db.getNoteDao()
+                .getActiveNoteList(accountId)
+                .stream()
+                .collect(groupingBy(Note::getRemoteId));
     }
 
     @AnyThread
@@ -1005,7 +1018,7 @@ public class NotesRepository {
     }
 
     private boolean isNoteAlreadyExistsInNewTable(@NonNull OldNote oldNote) {
-        return db.getNoteDao().countByTitleAndContent(oldNote.getTitle(), oldNote.getContent()) > 0;
+        return db.getNoteDao().countByTitleAndContent(oldNote.getTitle(), oldNote.getContent(), oldNote.getRemoteId()) > 0;
     }
 
     private void addNewNote(long accountId, @NonNull OldNote oldNote) {
@@ -1025,5 +1038,115 @@ public class NotesRepository {
         sharedPreferences.edit()
                 .putBoolean(PREF_KEY_MIGRATION_DONE, true)
                 .apply();
+    }
+
+    private boolean isRemoteIdConflictResolved() {
+        final var sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+        return sharedPreferences.getBoolean(PREF_KEY_REMOTE_CONFLICT_RESOLVED, false);
+    }
+
+    private void setRemoteIdConflictResolved() {
+        final var sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+        sharedPreferences.edit()
+                .putBoolean(PREF_KEY_REMOTE_CONFLICT_RESOLVED, true)
+                .apply();
+    }
+
+    @WorkerThread
+    public void removeDuplicateRemoteIds() {
+        if (isRemoteIdConflictResolved()) {
+            return;
+        }
+
+        List<Account> accounts = getAccounts();
+
+        for (Account account : accounts) {
+            if (account == null) {
+                continue;
+            }
+
+            removeDuplicateNotesForAccount(account);
+        }
+
+        setRemoteIdConflictResolved();
+    }
+
+    @WorkerThread
+    private void removeDuplicateNotesForAccount(@NonNull Account account) {
+        Map<Long, List<Note>> noteMap = getNoteMapByRemoteId(account.getId());
+
+        for (Map.Entry<Long, List<Note>> mapEntry : noteMap.entrySet()) {
+            if (doNotHaveDuplicateNote(mapEntry)) {
+                continue;
+            }
+
+            removeConflictedNotes(mapEntry.getValue());
+        }
+    }
+
+    private boolean doNotHaveDuplicateNote(@NonNull Map.Entry<Long, List<Note>> mapEntry) {
+        return mapEntry.getValue().size() <= 1;
+    }
+
+    /*
+    * Preserve the first note & remove the duplicates.
+    * If notes have different content texts, concat them in the preserve note, so user will not loss any content.
+     */
+    @WorkerThread
+    private void removeConflictedNotes(@NonNull List<Note> noteList) {
+        Note preservedNote = noteList.get(0);
+
+        Set<String> contentSet = new HashSet<>();
+        contentSet.add(preservedNote.getContent());
+
+        int contentCounter = 1;
+
+        for (int i = 1; i < noteList.size(); i++) {
+            Note note = noteList.get(i);
+
+            db.getNoteDao().deleteByNoteId(note.getId(), note.getStatus());
+
+            if (contentSet.contains(note.getContent())) {
+                continue;
+            }
+
+            contentSet.add(note.getContent());
+            contentCounter = updatePreservedNoteContent(contentCounter, preservedNote, note);
+        }
+
+        updateNoteForConflict(contentCounter - 1, preservedNote);
+    }
+
+    private int updatePreservedNoteContent(int position, @NonNull Note preservedNote, @NonNull Note note) {
+        String content = getPreviousContentForConflict(position, preservedNote);
+        content += getConflictedContent(++position, note);
+        preservedNote.setContent(content);
+        return position;
+    }
+
+    @NonNull
+    private String getConflictedContent(int position, @NonNull Note note) {
+        String modified = note.getModified().getTime().toString();
+        return context.getString(R.string.conflicted_note_content_title, position, modified)
+                + note.getContent();
+    }
+
+    @NonNull
+    private String getPreviousContentForConflict(int position, @NonNull Note note) {
+        if (position > 1) {
+            return note.getContent();
+        }
+
+        return context.getString(R.string.conflict_note_detected)
+                + getConflictedContent(position, note);
+    }
+
+    @WorkerThread
+    private void updateNoteForConflict(int numberOfConflicts, @NonNull Note note) {
+        if (numberOfConflicts > 0) {
+            note.setStatus(DBStatus.LOCAL_EDITED);
+            note.setModified(Calendar.getInstance());
+            db.getNoteDao().updateNote(note);
+        }
     }
 }
