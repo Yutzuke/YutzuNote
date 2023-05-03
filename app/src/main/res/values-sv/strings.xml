@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Anteckningar</string>
     <string name="app_name_long">Nextcloud anteckningar</string>
     <string name="label_all_notes">Alla anteckningar</string>
@@ -27,19 +26,15 @@
     <string name="menu_favorite">Favorit</string>
     <string name="menu_preview">Förhandsvisning</string>
     <string name="menu_share">Dela</string>
-
     <string name="search_in_category">Sök i %1$s</string>
     <string name="search_in_all">Sök alla anteckningar</string>
-
     <string name="change_category_title">Välj en kategori</string>
-
     <string name="listview_updated_today">Idag</string>
     <string name="listview_updated_yesterday">Igår</string>
     <string name="listview_updated_this_week">Denna vecka</string>
     <string name="listview_updated_last_week">Förra veckan</string>
     <string name="listview_updated_this_month">Denna månad</string>
     <string name="listview_updated_last_month">Förra månaden</string>
-
     <string name="settings_note_mode">Visningsläge för anteckningar</string>
     <string name="settings_theme_title">Tema</string>
     <string name="settings_font_title">Monospace font</string>
@@ -55,7 +50,6 @@
     <string name="error_no_network">Ingen nätverksanslutning</string>
     <string name="error_maintenance_mode">Servern står i underhållsläge</string>
     <string name="error_unknown">Ett okänt fel uppstod.</string>
-
     <string name="about_version_title">Version</string>
     <string name="about_version">Du använder %1$s för närvarande</string>
     <string name="about_maintainer_title">Underhållare</string>
@@ -70,31 +64,26 @@
     <string name="about_translate_title">Översätt</string>
     <string name="about_translate">Gå med i Nextcloud-gruppen på Transifex och hjälp oss översätta denna app: %1$s</string>
     <string name="about_app_license_title">Applicens</string>
-    <string name="about_app_license">Denna app är licensierad under GNU GENERAL PUBLIC LICENSE v3+</string>
+    <string name="about_app_license">Denna app är licensierad under GNU GENERAL PUBLIC LICENSE v3+.</string>
     <string name="about_app_license_button">Visa licens</string>
     <string name="about_icons_disclaimer_title">Ikoner</string>
-    <string name="about_icons_disclaimer_app_icon">Se %1$sför originalikonen</string>
+    <string name="about_icons_disclaimer_app_icon">Se %1$s för originalikonen.</string>
     <string name="about_icons_disclaimer_mdi_icons">Alla ytterligare ikoner som används i appen är %1$s från Google Inc. och licensierade under Apache 2.0-licensen.</string>
     <string name="about_icons_disclaimer_mdi">Ikoner i Material Design</string>
     <string name="about_credits_tab_title">Upphovsmän</string>
     <string name="about_contribution_tab_title">Medverkan</string>
     <string name="about_license_tab_title">Licens</string>
-
     <string name="widget_note_list_title">Anteckningslista</string>
     <string name="widget_note_list_placeholder">Inga anteckningar</string>
     <string name="widget_single_note_title">Enstaka anteckning</string>
     <string name="widget_single_note_placeholder_tv">Anteckning hittades inte</string>
     <string name="widget_not_logged_in">Vänligen logga in i Anteckningar innan denna används</string>
     <string name="widget_entry_fav_contentDescription">Stjärnan används för att markera ett objekt som favorit</string>
-
     <string name="activity_select_single_note">Välj anteckning</string>
-
     <string name="shortcut_create_long">Skapa en ny anteckning</string>
-
     <string name="pref_value_font_normal">Normal</string>
     <string name="pref_value_wifi_and_mobile">Synkronisera med Wi-Fi och mobildata</string>
     <string name="pref_value_lock">Lösenordsskydd</string>
-
     <string name="simple_error">Fel</string>
     <string name="simple_close">Stäng</string>
     <string name="simple_copy">Kopiera</string>
@@ -102,7 +91,6 @@
     <string name="pin_to_homescreen">Fäst på hemskärmen</string>
     <string name="note_has_been_deleted">Denna anteckning har raderats</string>
     <string name="add_account">Lägg till konto</string>
-
     <string name="category_music">Musik</string>
     <string name="category_movies">Filmer</string>
     <string name="category_movie">Film</string>
@@ -132,7 +120,6 @@
     <string name="category_present">Present</string>
     <!-- Like a gift -->
     <string name="category_presents">Presenter</string>
-
     <string name="account_already_imported">Kontot har redan importerats</string>
     <string name="no_notes_yet">Inga anteckningar än</string>
     <string name="no_notes_yet_description">Tryck på + knappen för att skapa en ny anteckning</string>
@@ -146,8 +133,8 @@
     <string name="error_dialog_title">Å nej - Vad händer nu?🙁</string>
     <string name="error_dialog_tip_token_mismatch_retry">Försök med att Tvinga appen att stänga och återstarta. En felaktig anslutning till Nextcloud-appen kan ha förekommit.</string>
     <string name="error_dialog_tip_token_mismatch_clear_storage">Om problemet kvarstår, prova med att rensa lagringen på både appen Nextcloud och Nextcloud Notes.</string>
-    <string name="error_dialog_tip_clear_storage">Du kan tömma lagringsminnet genom att öppna appinfo och välja Lagring  → Tömma minne. ⚠️ Varning! Åtgärden tar bort anteckning som ännu inte synkroniserats.</string>
-    <string name="error_dialog_tip_files_outdated">Din Nextcloud-app verkar utdaterad. Besök Play Butiken eller F-Droid för att hämta senaste versionen</string>
+    <string name="error_dialog_tip_clear_storage">Du kan tömma lagringsminnet genom att öppna appinfo och välja Lagring → Tömma minne. ⚠️ Varning! Åtgärden raderar anteckning som ännu inte synkroniserats.</string>
+    <string name="error_dialog_tip_files_outdated">Din Nextcloud-app verkar utdaterad. Besök Play Butiken eller F-Droid för att hämta senaste versionen.</string>
     <string name="error_dialog_tip_files_force_stop">Något verkar vara fel med din Nextcloud-app. Försök att tvångsavsluta både Nextcloud- och Nextcloud Notes-apparna.</string>
     <string name="error_dialog_tip_files_delete_storage">Om tvångsavslutning ej hjälper kan du försöka rensa datan på båda appar.</string>
     <string name="error_dialog_timeout_instance">Din server svarade inte inom den angivna tiden. Kontrollera att den fungerar normalt.</string>
@@ -169,25 +156,21 @@
     <string name="simple_synchronization">Synkronisering</string>
     <string name="manage_accounts">Hantera konton</string>
     <string name="action_formatting_help">Formatering</string>
-
     <string-array name="noteMode_entries">
         <item>Öppna i redigera-läge</item>
         <item>Öppna i förhandsvisningsläge</item>
         <item>Kom ihåg mitt sista val</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Liten</item>
         <item>Medium</item>
         <item>Stor</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Ljust</item>
         <item>Mörkt</item>
         <item>Systemstandard</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d vald</item>
         <item quantity="other">%d valda</item>
@@ -204,7 +187,6 @@
         <item quantity="one">Dela innehållet i %1$d anteckning</item>
         <item quantity="other">Dela innehållet i %1$d anteckningar</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -223,25 +205,21 @@
     <string name="formatting_help_lists_body_7">Sätt två mellanslag framför tankesträcket eller stjärnan om du vill ha underpunkter:</string>
     <string name="formatting_help_lists_body_8">Så här</string>
     <string name="formatting_help_lists_body_9">Och så här</string>
-
     <string name="formatting_help_checkboxes_title">Bockrutefråga</string>
     <string name="formatting_help_checkboxes_body_1">Använd en lista följt av hakparenteset för att skapa en kryssruta</string>
     <string name="formatting_help_checkboxes_body_2">Punkt 1</string>
     <string name="formatting_help_checkboxes_body_3">Punkt 2</string>
-
     <string name="formatting_help_structured_documents_title">Strukturerat dokument</string>
     <string name="formatting_help_structured_documents_body_1">Ibland är det användbart att ha olika nivåer på rubriker för att strukturera dina dokument. Inled raden med %1$s för att skapa rukbriker. Flera %2$s i rad innebär mindre rubrikstorlekar.</string>
     <string name="formatting_help_structured_documents_body_2">Detta är en rubrik på tredje nivån</string>
-    <string name="formatting_help_structured_documents_body_3">Den kan använda en %1$s ända upp till %2$s sex för olika rubrikstorlekar</string>
+    <string name="formatting_help_structured_documents_body_3">Den kan använda en %1$s ända upp till %2$s sex för olika rubrikstorlekar.</string>
     <string name="formatting_help_structured_documents_body_4">Om du vill citera någon kan du använda %1$s-tecknet framför raden: </string>
     <string name="formatting_help_structured_documents_body_5">Fantasi är viktigare än kunskap. Kunskap är begränsad. Fantasi omsluter världen.</string>
     <string name="formatting_help_structured_documents_body_6">- Albert Einstein</string>
-
     <string name="formatting_help_code_title">Kod</string>
     <string name="formatting_help_code_body_1">Det finns många olika sätt att utforma kod med Markdown. Om du har infällda kodblock, omge dem med backticks:</string>
     <string name="formatting_help_code_body_2">Markdown stödjer också något som kallas för kodavgränsning, vilket tillåter flera rader utan indentering:</string>
     <string name="formatting_help_code_body_3">Och om du vill använda syntaxmarkering kan du inkludera språket:</string>
-
     <string name="formatting_help_tables_title">Tabeller</string>
     <string name="formatting_help_images_title">Bilder</string>
     <string name="simple_other">Övrigt</string>
@@ -256,4 +234,4 @@
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Du måste vara ansluten till internet för att lägga till ett konto.</string>
     <string name="simple_next">Nästa</string>
     <string name="simple_prev">Föregående</string>
-    </resources>
+</resources>
