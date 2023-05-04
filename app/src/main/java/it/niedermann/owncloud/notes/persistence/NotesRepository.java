@@ -84,7 +84,7 @@ import retrofit2.Call;
 public class NotesRepository {
 
     private static final String PREF_KEY_MIGRATION_DONE = "old_note_migration_done";
-    private static final String PREF_KEY_REMOTE_CONFLICT_RESOLVED = "remote_conflict_resolved";
+    private static final String PREF_KEY_REMOTE_CONFLICT_RESOLVED = "remote_conflict_resolved_1";
 
     private static final String TAG = NotesRepository.class.getSimpleName();
 
@@ -1114,7 +1114,7 @@ public class NotesRepository {
             contentCounter = updatePreservedNoteContent(contentCounter, preservedNote, note);
         }
 
-        updateNoteForConflict(contentCounter - 1, preservedNote);
+        createNewNoteForConflict(contentCounter - 1, preservedNote);
     }
 
     private int updatePreservedNoteContent(int position, @NonNull Note preservedNote, @NonNull Note note) {
@@ -1142,11 +1142,14 @@ public class NotesRepository {
     }
 
     @WorkerThread
-    private void updateNoteForConflict(int numberOfConflicts, @NonNull Note note) {
-        if (numberOfConflicts > 0) {
-            note.setStatus(DBStatus.LOCAL_EDITED);
-            note.setModified(Calendar.getInstance());
-            db.getNoteDao().updateNote(note);
+    private void createNewNoteForConflict(int numberOfConflicts, @NonNull Note note) {
+        if (numberOfConflicts <= 0) {
+            return;
         }
+
+        final Note newNote = new Note(null, Calendar.getInstance(), note.getTitle(), note.getContent(), note.getCategory(), note.getFavorite(), null);
+        newNote.setStatus(DBStatus.LOCAL_EDITED);
+        newNote.setAccountId(note.getAccountId());
+        db.getNoteDao().addNote(newNote);
     }
 }
