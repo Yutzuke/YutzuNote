@@ -63,11 +63,11 @@
     <string name="about_translators_transifex">Nextcloud-Gemeinschaft auf &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;</string>
     <string name="about_testers_title">Tester</string>
     <string name="about_source_title">Quellcode</string>
-    <string name="about_source">Dieses Projekt wird auf GitHub gepflegt: <a href="%1$s">%1$s</a></string>
+    <string name="about_source">Dieses Projekt wird auf GitHub gepflegt: %1$s</string>
     <string name="about_issues_title">Tickets</string>
-    <string name="about_issues">Sie können Fehler, Verbesserungsvorschläge oder Wünsche für neue Funktionen im GitHub-Ticket-System erfassen: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues">Sie können Fehler, Verbesserungsvorschläge oder Wünsche für neue Funktionen im GitHub-Ticket-System erfassen: %1$s</string>
     <string name="about_translate_title">Übersetzen</string>
-    <string name="about_translate">Treten Sie dem Nextcloud-Team auf Transifex bei und helfen Sie uns, diese App zu übersetzen: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate">Treten Sie dem Nextcloud-Team auf Transifex bei und helfen Sie uns, diese App zu übersetzen: %1$s</string>
     <string name="about_app_license_title">App Lizenz</string>
     <string name="about_app_license">Diese Applikation ist lizenziert unter der GNU GENERAL PUBLIC LICENSE v3+.</string>
     <string name="about_app_license_button">Lizenz ansehen</string>
@@ -286,4 +286,9 @@
 \n- Löschen von mehreren Notizen auf einmal möglich
 \n- MarkDown wird unterstützt
 \n- In viele Sprachen übersetzt</string>
+    <string name="conflicted_note_content_title">"
+\n
+\n***Notiz %1$d (Zuletzt verändert: %2$s):***
+\n"</string>
+    <string name="conflict_note_detected"># Es gibt einen Konflikt zwischen Ihren bestehenden Notizen. Bitte wählen Sie die richtige aus.</string>
 </resources>
