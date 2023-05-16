@@ -175,4 +175,24 @@
     <string name="account_imported">Aðgangur fluttur inn.</string>
     <string name="preferences_privacy_policy">Persónuverndarstefna</string>
     <string name="preferences_service_terms">Þjónustuskilmálar</string>
+    <string name="settings_lock">Forritslæsing (beta-prófun)</string>
+    <string name="settings_prevent_screen_capture">Koma í veg fyrir upptöku af skjá</string>
+    <string name="settings_keep_screen_on_summary">Þegar minnispunktur er skoðaður eða honum breytt</string>
+    <string name="category_todos">Verkefnalistar</string>
+    <string name="about_icons_disclaimer_app_icon">Vegna upprunalegrar táknmyndar ættirðu að skoða %1$s.</string>
+    <string name="about_icons_disclaimer_mdi_icons">Allar aðrar táknmyndir eru gerðar af Google Inc. %1$s og útgefnar samkvæmt Apache 2.0 hugbúnaðarleyfinu.</string>
+    <string name="widget_single_note_placeholder_tv">Minnispunktur fannst ekki</string>
+    <string name="widget_not_logged_in">Skráðu þig inn í minnispunktaforritið áður en þú notar þennan viðmótshluta</string>
+    <string name="widget_entry_fav_contentDescription">Stjörnutáknið er notað til að sýna að atriði sé eftirlæti</string>
+    <string name="shortcut_create_long">Búa til nýjan minnispunkt</string>
+    <string name="category_present">Glaðningur</string>
+    <string name="category_presents">Glaðningar</string>
+    <string name="shared_text_empty">Deildur texti var tómur</string>
+    <string name="formatting_help_cbf_title">Samhengisháð forsníðing</string>
+    <string name="formatting_help_lists_body_1">Stundum viltu fá tölusetta lista:</string>
+    <string name="formatting_help_lists_body_5">Stundum viltu fá lista með áherslupunktum:</string>
+    <string name="formatting_help_lists_body_6">Byrjaðu línu á bandstriki</string>
+    <string name="formatting_help_checkboxes_title">Hakreitir</string>
+    <string name="append_to_note">Bæta neðan á minnispunkt</string>
+    <string name="change_note_title">Breyta titli minnispunkts</string>
 </resources>
