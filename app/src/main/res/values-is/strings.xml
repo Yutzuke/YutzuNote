@@ -243,4 +243,6 @@
 \n
 \n***Minnispunktur %1$d (síðast breytt: %2$s):***
 \n"</string>
+    <string name="formatting_help_cbf_body_1">Aðalmarkmið hönnunar Notes-minnispunktaforritsins er að búa til verkfæri án óþarfa truflana. Samt þannig að þú getir sniðið textann þinn með Markdown. Fyrir mörg af þeim dæmum sem sjást hér fyrir neðan, geturðu notað flýtilykla til að sníða minnispunktana þina, þannig að þú þurfir ekki að setja inn alla kóðanahér að neðan.</string>
+    <string name="formatting_help_cbf_body_2">Þú einfaldlega velur textahluta eða bankar á bendilinn hvar sem er og þú munt sjá sprettvalmynd which sem inniheldur næst sjálfgefnu færslunum %1$s, %2$s, %3$s færslur eins og %4$s eða %5$s.</string>
 </resources>
