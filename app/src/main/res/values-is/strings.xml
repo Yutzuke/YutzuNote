@@ -19,7 +19,7 @@
     <string name="label_all_notes">Allir minnispunktar</string>
     <string name="label_favorites">Eftirlæti</string>
     <string name="action_create">Nýr minnispunktur</string>
-    <string name="welcome_text">Velkomin í %s</string>
+    <string name="welcome_text">Velkomin í %1$s</string>
     <string name="action_settings">Stillingar</string>
     <string name="action_trashbin">Eyddir minnispunktar</string>
     <string name="action_search">Leita</string>
@@ -228,4 +228,19 @@
     <string name="progress_import">Flyt inn minnispunkt %1$d af %2$d…</string>
     <string name="preferences_app_info_title">Upplýsingar um minnispunkta</string>
     <string name="preferences_about_app">Minnispunktar/Notes er kvíslað frá Nextcloud Notes</string>
+    <string name="formatting_help_code_body_1">Það eru margar mismunandi leiðir til að stílsetja kóða með Markdown. Ef þú ert með innfelldar kóðablokkir, skaltu setja öfugar broddkommur (backticks) utan um þær:</string>
+    <string name="formatting_help_code_body_2">Markdown styður einnig nokkuð sem er kallað kóðamörk (code fencing), sem gerir kleift að setja inn margar línur án inndráttar:</string>
+    <string name="formatting_help_images_body_1">Tenglar þurfa annað hvort að vera fullar URL-slóðir sem byrja á samskiptamáta og léni, eða algildar slóðir sem byrja á %1$s stafnum.</string>
+    <string name="formatting_help_images_body_2">Til að gæta samræmis við Markdown-sniðið, skaltu nota lausnarstafi (escape characters) í slíð myndarinnar. Þetta þýðir meðal annars að skipta þarf bilum út fyrir %1$s í slóðinni.</string>
+    <string name="preferences_app_info">-Gerðu lista, búðu til, breyttu, deildu, leitaðu og eyddu minnispunktum
+\n -Deildu textum og tenglum sem nýjum minnispunkti í forritinu
+\n -Merktu minnispunkta sem eftirlæti
+\n -Magneyðing
+\n -Myndgerir MarkDown
+\n -Þýtt á mörg tungumál</string>
+    <string name="conflict_note_detected"># Við fundum árekstra á milli minnispunktanna þinna. Veldu þann rétta.</string>
+    <string name="conflicted_note_content_title">"
+\n
+\n***Minnispunktur %1$d (síðast breytt: %2$s):***
+\n"</string>
 </resources>
