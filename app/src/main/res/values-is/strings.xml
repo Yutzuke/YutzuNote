@@ -245,4 +245,12 @@
 \n"</string>
     <string name="formatting_help_cbf_body_1">Aðalmarkmið hönnunar Notes-minnispunktaforritsins er að búa til verkfæri án óþarfa truflana. Samt þannig að þú getir sniðið textann þinn með Markdown. Fyrir mörg af þeim dæmum sem sjást hér fyrir neðan, geturðu notað flýtilykla til að sníða minnispunktana þina, þannig að þú þurfir ekki að setja inn alla kóðanahér að neðan.</string>
     <string name="formatting_help_cbf_body_2">Þú einfaldlega velur textahluta eða bankar á bendilinn hvar sem er og þú munt sjá sprettvalmynd which sem inniheldur næst sjálfgefnu færslunum %1$s, %2$s, %3$s færslur eins og %4$s eða %5$s.</string>
+    <string name="error_dialog_tip_token_mismatch_clear_storage">Ef vandamálið er viðvarandi, skaltu reyna að hreinsa geymslurými beggja forritanna, Nextcloud og Nextcloud Notes, til að leysa málið.</string>
+    <string name="error_dialog_tip_files_outdated">Nextcloud-forritið þitt lítur út fyrir að vera úrelt. Farðu inn á Play Store eða F-Droid til að sækja nýjustu útgáfuna.</string>
+    <string name="error_dialog_tip_disable_battery_optimizations">Gerðu allar bestanir á rafhlöðunotkun óvirkar fyrir Nextcloud og Notes-forritið.</string>
+    <string name="error_dialog_min_version">Minnispunktaforritið Notes á Android krefst þess að Nextcloud- forritið á Android sé að minnsta kosti af útgáfu 3.18.</string>
+    <string name="formatting_help_structured_documents_body_3">Þú getur notað allt frá einu %1$s og upp að sex %2$s six fyrir mismunandi stig fyrirsagna.</string>
+    <string name="formatting_help_structured_documents_body_4">Ef þú ætlar að vitna í einhvern, skaltu nota %1$s staf fremst í línunni:</string>
+    <string name="formatting_help_structured_documents_body_5">Ímyndunarafl er mikilvægara en þekking. Þekking er takmörkuð. Ímyndunaraflið er allsstaðar í heiminum.</string>
+    <string name="formatting_help_structured_documents_body_1">Stundum kemur sér vel að hafa mismunandi stig fyrirsagna til að skipuleggja efni skjala. Byrjaðu línur á %1$s til að búa til fyrirsögn. Mörg %2$s í röð skilgreina minni fyrirsagnir af lægri stigum.</string>
 </resources>
