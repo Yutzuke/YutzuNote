@@ -195,4 +195,37 @@
     <string name="formatting_help_checkboxes_title">Hakreitir</string>
     <string name="append_to_note">Bæta neðan á minnispunkt</string>
     <string name="change_note_title">Breyta titli minnispunkts</string>
+    <string name="error_dialog_check_server_logs">Það er vandamál með Nextcloud-uppsetninguna þína. Athugaðu atvikaskrár netþjónsins..</string>
+    <string name="error_dialog_we_need_info">Við þurfum eftirfarandi tæknilegar upplýsingar til að geta aðstoðað þig:</string>
+    <string name="error_dialog_server_app_enabled">Gakktu úr skugga um að þú hafir sett upp og virkjað Notes-forritið á netþjóninum þínum.</string>
+    <plurals name="bulk_notes_restored">
+        <item quantity="one">Endurheimti einn minnispunkt</item>
+        <item quantity="other">Endurheimti %1$d minnispunkta</item>
+    </plurals>
+    <plurals name="share_multiple">
+        <item quantity="one">Deila efni úr %1$d minnispunkti</item>
+        <item quantity="other">Deila efni úr %1$d minnispunktum</item>
+    </plurals>
+    <string name="formatting_help_text_body">Það er mjög auðvelt að gera sum orð %1$sfeitletruð%1$s og önnur orð %2$siskáletruð%2$s með Markdown. Þú getur líka %3$sgegnumstrikað%3$s orð og jafnvel [tengt í Nextcloud](https://nextcloud.com).</string>
+    <string name="formatting_help_lists_body_7">Ob ef þú ert með undirpunkta, skaltu setja tvö bil á undan bandstriki eða stjörnu:</string>
+    <string name="formatting_help_checkboxes_body_1">Til að búa til hakreiti skaltu nota lista með hornklofum á eftir</string>
+    <string name="formatting_help_structured_documents_title">Skipulögð skjöl</string>
+    <string name="formatting_help_structured_documents_body_2">Þetta er þriðja-stigs fyrirsögn</string>
+    <string name="formatting_help_code_body_3">Og ef þú vilt nota málfræðilitun (syntax highlighting) skaltu hafa með forritunarmálið:</string>
+    <string name="formatting_help_images_alt">Skrautleg mynd</string>
+    <string name="no_other_accounts">Þú hefur enn ekki skráð neina aðra aðganga.</string>
+    <string name="context_based_formatting">Sprettgluggi fyrir samhengisháða forsníðingu</string>
+    <plurals name="remove_account_message">
+        <item quantity="one">Sé aðgangurinn %1$s fjarlægður, verður einni ósamstilltri breytingu einnig eytt óafturkræft.</item>
+        <item quantity="other">Sé aðgangurinn %1$s fjarlægður, verður %2$d ósamstilltum breytingum einnig eytt óafturkræft.</item>
+    </plurals>
+    <string name="backup">Við greindum óendurkræft ástand forritsins. Taktu afrit af ósamstilltu breytingunum þínum og hreinsaðu geymslurými minnispunktaforritsins.</string>
+    <string name="settings_notes_path_description">Mappa til að geyma minnispunktana þína á Nextcloud-svæðinu þínu</string>
+    <string name="settings_notes_path_success">Mappa undir nýja minnispunkta: %1$s</string>
+    <string name="settings_file_suffix_description">Skráarending fyrir nýja minnispunkta á Nextcloud-svæðinu þínu</string>
+    <string name="settings_file_suffix_success">Skráarending nýrra skráa: %1$s</string>
+    <string name="http_status_code">HTTP-stöðukóði: %1$d</string>
+    <string name="progress_import">Flyt inn minnispunkt %1$d af %2$d…</string>
+    <string name="preferences_app_info_title">Upplýsingar um minnispunkta</string>
+    <string name="preferences_about_app">Minnispunktar/Notes er kvíslað frá Nextcloud Notes</string>
 </resources>
