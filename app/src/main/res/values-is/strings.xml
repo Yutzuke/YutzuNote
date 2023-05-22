@@ -98,7 +98,7 @@
     <string name="simple_exception">Undantekning</string>
     <string name="pin_to_homescreen">Festa á heimaskjá</string>
     <string name="note_has_been_deleted">Þessum minnispunkti hefur verið eytt</string>
-    <string name="add_account">Bæta við notandaaðgangi</string>
+    <string name="add_account">Bæta við reikningi</string>
     <string name="category_music">Tónlist</string>
     <string name="category_movies">Kvikmyndir</string>
     <string name="category_key">Lykill</string>
@@ -259,4 +259,8 @@
     <string name="error_dialog_tip_files_delete_storage">Ef þvinguð stöðvun leysir ekki vandamálið, skaltu reyna að hreinsa geymslurými beggja forritanna.</string>
     <string name="error_dialog_timeout_toggle">Athugaðu netsambandið þitt. Stundum getur hjálpað að víxla af farsímagögnum og/eða Wi-Fi og síðan aftur á.</string>
     <string name="error_dialog_check_maintenance">Athugaðu hvort Nextcloud-þjónninn þinn sé nokkuð núna í viðhaldsham.</string>
+    <string name="error_dialog_redirect">Þjónninn þinn svaraði með HTTP 302 stöðukóðae, sem bendir til að þú hafir ekki sett Notes minnispunktaforritið upp á netþjóninum eða að eitthvað sé vanstillt. Þetta getur komið til vegna sérsniðinna skipana í .htaccess-skrá eða vegna Nextcloud-forrita á borð við OID Client.</string>
+    <string name="error_dialog_timeout_instance">Netþjónninn svaraði ekki innan tímamarka. Athugaðu hvort hann sé að starfa eðlilega.</string>
+    <string name="error_dialog_check_server">Svarið frá netþjóninum var ekki rétt. Athugaðu hvort þú getur komist í minnispunktana þína í gegnum vefviðmótið.</string>
+    <string name="error_dialog_insufficient_storage">Nextcloud-netþjónninn þinn á ekkert laust geymslupláss eftir. Eyddu einhverjum skrám til að geta samstillt breytingar á tækinu yfir í skýið.</string>
 </resources>
