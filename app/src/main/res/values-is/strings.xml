@@ -253,4 +253,10 @@
     <string name="formatting_help_structured_documents_body_4">Ef þú ætlar að vitna í einhvern, skaltu nota %1$s staf fremst í línunni:</string>
     <string name="formatting_help_structured_documents_body_5">Ímyndunarafl er mikilvægara en þekking. Þekking er takmörkuð. Ímyndunaraflið er allsstaðar í heiminum.</string>
     <string name="formatting_help_structured_documents_body_1">Stundum kemur sér vel að hafa mismunandi stig fyrirsagna til að skipuleggja efni skjala. Byrjaðu línur á %1$s til að búa til fyrirsögn. Mörg %2$s í röð skilgreina minni fyrirsagnir af lægri stigum.</string>
+    <string name="error_dialog_tip_token_mismatch_retry">Prófaðu að þvinga lokun á forritinu og endurræsa það síðan, Mögulega hefur verið röng tenging við Nextcloud-forritið.</string>
+    <string name="error_dialog_tip_clear_storage">Þú getur hreinsað geymslurýmið með því að opna upplýsingar forritsins og velja Geymslurými → Hreinsa geymslurými. ⚠️ Aðvörun: Þetta mun eyða þeim minnispunktum sem ekki hafa verið samstilltir!</string>
+    <string name="error_dialog_tip_files_force_stop">Eitthvað virðist vera í ólagi með Nextcloud-forritið þitt. Reyndu að þvinga fram stöðvun beggja forritanna, Nextcloud og Nextcloud Notes.</string>
+    <string name="error_dialog_tip_files_delete_storage">Ef þvinguð stöðvun leysir ekki vandamálið, skaltu reyna að hreinsa geymslurými beggja forritanna.</string>
+    <string name="error_dialog_timeout_toggle">Athugaðu netsambandið þitt. Stundum getur hjálpað að víxla af farsímagögnum og/eða Wi-Fi og síðan aftur á.</string>
+    <string name="error_dialog_check_maintenance">Athugaðu hvort Nextcloud-þjónninn þinn sé nokkuð núna í viðhaldsham.</string>
 </resources>
