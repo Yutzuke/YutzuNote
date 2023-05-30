@@ -234,4 +234,7 @@
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Du måste vara ansluten till internet för att lägga till ett konto.</string>
     <string name="simple_next">Nästa</string>
     <string name="simple_prev">Föregående</string>
+    <string name="preferences_service_terms">Användarvillkor</string>
+    <string name="preferences_authors">Upphovsmän</string>
+    <string name="preferences_privacy_policy">Integritetspolicy</string>
 </resources>
