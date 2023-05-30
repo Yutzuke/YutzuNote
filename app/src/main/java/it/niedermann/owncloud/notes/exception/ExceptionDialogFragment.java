@@ -6,12 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatDialogFragment;
 import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import java.io.PrintWriter;
+import java.io.StringWriter;
 import java.util.ArrayList;
 
 import it.niedermann.android.util.ClipboardUtil;
@@ -20,6 +24,7 @@ import it.niedermann.owncloud.notes.BuildConfig;
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.databinding.DialogExceptionBinding;
 import it.niedermann.owncloud.notes.exception.tips.TipsAdapter;
+import trikita.log.Log;
 
 public class ExceptionDialogFragment extends AppCompatDialogFragment {
 
@@ -32,6 +37,10 @@ public class ExceptionDialogFragment extends AppCompatDialogFragment {
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        setupThrowable();
+    }
+
+    private void setupThrowable() {
         final var args = getArguments();
         if (args != null) {
             final var throwablesArgument = args.getSerializable(KEY_THROWABLES);
@@ -88,5 +97,29 @@ public class ExceptionDialogFragment extends AppCompatDialogFragment {
         final var fragment = new ExceptionDialogFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void show(@NonNull FragmentManager manager, @Nullable String tag) {
+        if (manager.isDestroyed() || !manager.isStateSaved()) {
+            Log.e("ExceptionDialog can't be shown as the state is lost. The cause:\n\n" + getStackStrace());
+            return;
+        }
+
+        super.show(manager, tag);
+    }
+
+    @NonNull
+    private String getStackStrace() {
+        setupThrowable();
+        final StringBuilder builder = new StringBuilder();
+
+        for (Throwable throwable : throwables) {
+            final StringWriter sw = new StringWriter();
+            throwable.printStackTrace(new PrintWriter(sw));
+            builder.append("\n\n").append(sw);
+        }
+
+        return builder.toString();
     }
 }
