@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Rect;
+import android.net.Uri;
 import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
@@ -26,6 +27,7 @@ import java.util.stream.Stream;
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.main.navigation.NavigationAdapter;
 import it.niedermann.owncloud.notes.main.navigation.NavigationItem;
+import it.niedermann.owncloud.notes.persistence.entity.Account;
 import it.niedermann.owncloud.notes.persistence.entity.CategoryWithNotesCount;
 
 public class DisplayUtils {
@@ -101,5 +103,10 @@ public class DisplayUtils {
         parentView.getWindowVisibleDisplayFrame(rect);
         final int heightDiff = parentView.getRootView().getHeight() - (rect.bottom - rect.top);
         return heightDiff >= estimatedKeyboardHeight;
+    }
+
+    @NonNull
+    public static String getAvatarUrl(@NonNull Account account) {
+        return account.getUrl() + "/index.php/avatar/" + Uri.encode(account.getUserName()) + "/64";
     }
 }
