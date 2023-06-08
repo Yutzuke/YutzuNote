@@ -22,6 +22,7 @@ import it.niedermann.owncloud.notes.databinding.DialogAccountSwitcherBinding;
 import it.niedermann.owncloud.notes.manageaccounts.ManageAccountsActivity;
 import it.niedermann.owncloud.notes.persistence.NotesRepository;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
+import it.niedermann.owncloud.notes.shared.util.DisplayUtils;
 
 /**
  * Displays all available {@link Account} entries and provides basic operations for them, like adding or switching
@@ -67,7 +68,7 @@ public class AccountSwitcherDialog extends BrandedDialogFragment {
             binding.accountName.setText(currentLocalAccount.getDisplayName());
             binding.accountHost.setText(Uri.parse(currentLocalAccount.getUrl()).getHost());
             Glide.with(requireContext())
-                    .load(currentLocalAccount.getUrl() + "/index.php/avatar/" + Uri.encode(currentLocalAccount.getUserName()) + "/64")
+                    .load(DisplayUtils.getAvatarUrl(currentLocalAccount))
                     .error(R.drawable.ic_account_circle_grey_24dp)
                     .apply(RequestOptions.circleCropTransform())
                     .into(binding.currentAccountItemAvatar);

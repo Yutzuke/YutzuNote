@@ -92,6 +92,7 @@ import it.niedermann.owncloud.notes.shared.model.IResponseCallback;
 import it.niedermann.owncloud.notes.shared.model.NavigationCategory;
 import it.niedermann.owncloud.notes.shared.model.NoteClickListener;
 import it.niedermann.owncloud.notes.shared.util.CustomAppGlideModule;
+import it.niedermann.owncloud.notes.shared.util.DisplayUtils;
 import it.niedermann.owncloud.notes.shared.util.NoteUtil;
 import it.niedermann.owncloud.notes.shared.util.ShareUtil;
 import trikita.log.Log;
@@ -307,7 +308,7 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
             fabCreate.hide();
             Glide
                     .with(this)
-                    .load(nextAccount.getUrl() + "/index.php/avatar/" + Uri.encode(nextAccount.getUserName()) + "/64")
+                    .load(DisplayUtils.getAvatarUrl(nextAccount))
                     .placeholder(R.drawable.ic_account_circle_grey_24dp)
                     .error(R.drawable.ic_account_circle_grey_24dp)
                     .apply(RequestOptions.circleCropTransform())

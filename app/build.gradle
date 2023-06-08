@@ -60,9 +60,6 @@ dependencies {
     implementation ('com.github.stefan-niedermann:android-commons:0.2.7') {
         exclude group: 'com.github.nextcloud', module: 'Android-SingleSignOn'
     }
-    implementation ('com.github.stefan-niedermann.nextcloud-commons:sso-glide:1.6.4') {
-        exclude group: 'com.github.nextcloud', module: 'Android-SingleSignOn'
-    }
     implementation ('com.github.stefan-niedermann.nextcloud-commons:exception:1.6.4') {
         exclude group: 'com.github.nextcloud', module: 'Android-SingleSignOn'
     }
