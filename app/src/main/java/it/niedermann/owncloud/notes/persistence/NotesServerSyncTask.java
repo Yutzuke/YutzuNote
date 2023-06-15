@@ -1,12 +1,18 @@
 package it.niedermann.owncloud.notes.persistence;
 
+import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
+import static java.net.HttpURLConnection.HTTP_NOT_MODIFIED;
+import static java.net.HttpURLConnection.HTTP_UNAVAILABLE;
+import static it.niedermann.owncloud.notes.shared.model.DBStatus.LOCAL_DELETED;
+import static it.niedermann.owncloud.notes.shared.util.NoteUtil.generateNoteExcerpt;
+
 import android.content.Context;
-import trikita.log.Log;
+import android.os.DeadObjectException;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.nextcloud.android.sso.AccountImporter;
-import com.nextcloud.android.sso.api.ParsedResponse;
 import com.nextcloud.android.sso.exceptions.NextcloudApiNotRespondingException;
 import com.nextcloud.android.sso.exceptions.NextcloudFilesAppAccountNotFoundException;
 import com.nextcloud.android.sso.exceptions.NextcloudHttpRequestFailedException;
@@ -20,7 +26,6 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import it.niedermann.owncloud.notes.BuildConfig;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
@@ -30,18 +35,12 @@ import it.niedermann.owncloud.notes.shared.model.DBStatus;
 import it.niedermann.owncloud.notes.shared.model.ISyncCallback;
 import it.niedermann.owncloud.notes.shared.model.SyncResultStatus;
 import it.niedermann.owncloud.notes.shared.util.ApiVersionUtil;
-import retrofit2.Response;
-
-import static it.niedermann.owncloud.notes.shared.model.DBStatus.LOCAL_DELETED;
-import static it.niedermann.owncloud.notes.shared.util.NoteUtil.generateNoteExcerpt;
-import static java.net.HttpURLConnection.HTTP_NOT_FOUND;
-import static java.net.HttpURLConnection.HTTP_NOT_MODIFIED;
-import static java.net.HttpURLConnection.HTTP_UNAVAILABLE;
+import trikita.log.Log;
 
 
 /**
  * {@link NotesServerSyncTask} is a {@link Thread} which performs the synchronization in a background thread.
- * Synchronization consists of two parts: {@link #pushLocalChanges()} and {@link #pullRemoteChanges}.
+ * Synchronization consists of two parts: {@link #pushLocalChanges(SyncResultStatus)} and {@link #pullRemoteChanges}.
  */
 abstract class NotesServerSyncTask extends Thread {
 
@@ -68,6 +67,9 @@ abstract class NotesServerSyncTask extends Thread {
     @NonNull
     protected final ArrayList<Throwable> exceptions = new ArrayList<>();
 
+    private static final int RETRY_LIMIT = 3;
+    private int retryCount = 0;
+
     NotesServerSyncTask(@NonNull Context context, @NonNull NotesRepository repo, @NonNull Account localAccount, boolean onlyLocalChanges, @NonNull ApiProvider apiProvider) throws NextcloudFilesAppAccountNotFoundException {
         super(TAG);
         this.context = context;
@@ -91,7 +93,13 @@ abstract class NotesServerSyncTask extends Thread {
         Log.i(TAG, "STARTING SYNCHRONIZATION");
 
         final var status = new SyncResultStatus();
-        status.pushSuccessful = pushLocalChanges();
+        pushLocalChanges(status);
+
+        if (status.retrySync) {
+            retry();
+            return;
+        }
+
         if (!onlyLocalChanges) {
             status.pullSuccessful = pullRemoteChanges();
         }
@@ -101,6 +109,11 @@ abstract class NotesServerSyncTask extends Thread {
         onPostExecute(status);
     }
 
+    private void retry() {
+        apiProvider.invalidateAPICache(ssoAccount);
+        run();
+    }
+
     abstract void onPreExecute();
 
     abstract void onPostExecute(SyncResultStatus status);
@@ -108,15 +121,16 @@ abstract class NotesServerSyncTask extends Thread {
     /**
      * Push local changes: for each locally created/edited/deleted Note, use NotesClient in order to push the changed to the server.
      */
-    private boolean pushLocalChanges() {
+    private void pushLocalChanges(@NonNull SyncResultStatus status) {
         Log.d(TAG, "pushLocalChanges()");
 
         boolean success = true;
+        boolean retrySync = false;
         final var notes = repo.getLocalModifiedNotes(localAccount.getId());
         for (Note note : notes) {
             Log.d(TAG, "   Process Local Note: " + (BuildConfig.DEBUG ? note : note.getTitle()));
             try {
-                Note remoteNote;
+                Note remoteNote = null;
                 switch (note.getStatus()) {
                     case LOCAL_EDITED:
                         Log.v(TAG, "   ...create/edit");
@@ -139,10 +153,10 @@ abstract class NotesServerSyncTask extends Thread {
                                         throw new Exception("Server returned null after recreating \"" + note.getTitle() + "\" (#" + note.getId() + ")");
                                     }
                                 } else {
-                                    throw new Exception(createResponse.message());
+                                    handleException(createResponse.message());
                                 }
                             } else {
-                                throw new Exception(editResponse.message());
+                                handleException(editResponse.message());
                             }
                         } else {
                             Log.v(TAG, "   ...Note does not have a remoteId yet → create");
@@ -155,7 +169,7 @@ abstract class NotesServerSyncTask extends Thread {
                                 }
                                 repo.updateRemoteId(note.getId(), remoteNote.getRemoteId());
                             } else {
-                                throw new Exception(createResponse.message());
+                                handleException(createResponse.message());
                             }
                         }
                         // Please note, that db.updateNote() realized an optimistic conflict resolution, which is required for parallel changes of this Note from the UI.
@@ -171,7 +185,7 @@ abstract class NotesServerSyncTask extends Thread {
                                 if (deleteResponse.code() == HTTP_NOT_FOUND) {
                                     Log.v(TAG, "   ...delete (note has already been deleted remotely)");
                                 } else {
-                                    throw new Exception(deleteResponse.message());
+                                    handleException(deleteResponse.message());
                                 }
                             }
                         }
@@ -188,6 +202,13 @@ abstract class NotesServerSyncTask extends Thread {
                     exceptions.add(e);
                     success = false;
                 }
+            } catch (DeadObjectException e) {
+                Log.e(TAG, e.getMessage(), e);
+                success = false;
+                retrySync = shouldRetry();
+                if (!retrySync) {
+                    exceptions.add(e);
+                }
             } catch (Exception e) {
                 if (e instanceof TokenMismatchException) {
                     apiProvider.invalidateAPICache(ssoAccount);
@@ -196,7 +217,26 @@ abstract class NotesServerSyncTask extends Thread {
                 success = false;
             }
         }
-        return success;
+
+        status.pushSuccessful = success;
+        status.retrySync = retrySync;
+    }
+
+   private boolean shouldRetry() {
+        retryCount++;
+        return (retryCount < RETRY_LIMIT) && !apiProvider.isConnected(ssoAccount);
+   }
+
+    /**
+     * Sometimes AIDL service can be stopped on the middle of the operation. In that case, DeadObjectException can be thrown.
+     * We want to retry if that happened. This method pull out the specific exception to handle that.
+     */
+    private void handleException(@Nullable String message) throws Exception {
+        if (message == null || !message.contains("DeadObjectException")) {
+            throw new Exception(message);
+        }
+
+        throw new DeadObjectException(message);
     }
 
     /**

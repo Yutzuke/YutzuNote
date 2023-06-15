@@ -77,6 +77,15 @@ public class ApiProvider {
         return notesAPI;
     }
 
+    public boolean isConnected(@NonNull SingleSignOnAccount ssoAccount) {
+        if (!API_CACHE.containsKey(ssoAccount.name)) {
+            return false;
+        }
+
+        NextcloudAPI ncApi = API_CACHE.get(ssoAccount.name);
+        return ncApi.isConnected();
+    }
+
     private synchronized NextcloudAPI getNextcloudAPI(@NonNull Context context, @NonNull SingleSignOnAccount ssoAccount) {
         if (API_CACHE.containsKey(ssoAccount.name)) {
             return API_CACHE.get(ssoAccount.name);
