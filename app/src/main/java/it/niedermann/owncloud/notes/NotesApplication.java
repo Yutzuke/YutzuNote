@@ -27,7 +27,7 @@ public class NotesApplication extends Application {
         setAppTheme(getAppTheme(getApplicationContext()));
         final var prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
         lockedPreference = prefs.getBoolean(getString(R.string.pref_key_lock), false);
-        isGridViewEnabled = getDefaultSharedPreferences(this).getBoolean(getString(R.string.pref_key_gridview), false);
+        isGridViewEnabled = getDefaultSharedPreferences(this).getBoolean(getString(R.string.pref_key_gridview), true);
 
         setLogLevel();
         super.onCreate();

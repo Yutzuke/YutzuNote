@@ -29,6 +29,7 @@
             android:icon="@drawable/ic_baseline_dashboard_24"
             android:key="@string/pref_key_gridview"
             android:layout="@layout/item_pref"
+            android:defaultValue="true"
             android:title="@string/settings_gridview" />
 
         <it.niedermann.owncloud.notes.branding.BrandedSwitchPreference
