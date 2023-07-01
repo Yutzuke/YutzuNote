@@ -237,4 +237,30 @@
     <string name="preferences_service_terms">Användarvillkor</string>
     <string name="preferences_authors">Upphovsmän</string>
     <string name="preferences_privacy_policy">Integritetspolicy</string>
+    <string name="category_recipe">Recept</string>
+    <string name="appearance_and_behavior">Utseende och beteende</string>
+    <string name="formatting_help_tables_column">Kolumn %1d</string>
+    <string name="formatting_help_tables_value">Värde %1d</string>
+    <string name="formatting_help_images_alt">Tjusig bild</string>
+    <string name="no_account_configured_yet">Inget konto är konfigurerat än</string>
+    <string name="remove_account">Ta bort %1$s</string>
+    <string name="settings_notes_path">Ställ in mapp</string>
+    <string name="simple_backup">Säkerhetskopia</string>
+    <string name="settings_file_suffix">Filändelse</string>
+    <string name="settings_file_suffix_description">Filändelse för nya anteckningar i Nextcloud</string>
+    <string name="progress_import_indeterminate">Importerar anteckningar …</string>
+    <string name="progress_import">Importerar anteckning %1$d av %2$d …</string>
+    <string name="preferences_about_app">Anteckningar är avgrenad från Nexcloud Anteckningar</string>
+    <string name="conflict_note_detected"># Vi upptäckte en konflikt mellan dina anteckningar. Välj den korrekta.</string>
+    <string name="conflicted_note_content_title">"
+\n
+\n***Anteckning %1$d (Senast ändrad: %2$s):***
+\n"</string>
+    <string name="settings_keep_screen_on">Behåll skärmen på</string>
+    <string name="settings_keep_screen_on_summary">När du läser eller redigerar en anteckning</string>
+    <string name="category_todos">Uppgifter</string>
+    <string name="formatting_help_codefence_outer" translateable="false">````</string>
+    <string name="formatting_help_text_body">Det är väldigt lätt att göra vissa ord %1$sfeta%1$s och andra ord %2$skursiverade%2$s med Markdown. Du kan göra vissa ord %3$sgenomstrukna%3$s och till och med [länka till Nextcloud](https://nextcloud.com).</string>
+    <string name="settings_notes_path_success">Mapp för nya anteckningar: %1$s</string>
+    <string name="account_imported">Konto importerat.</string>
 </resources>
