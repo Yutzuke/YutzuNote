@@ -38,7 +38,7 @@ public class ApiProvider {
 
     private static final ApiProvider INSTANCE = new ApiProvider();
 
-    private static final String API_ENDPOINT_OCS = "/ocs/v1.php/cloud/";
+    private static final String API_ENDPOINT_OCS = "/ocs/v2.php/cloud/";
 
     private static final Map<String, NextcloudAPI> API_CACHE = new ConcurrentHashMap<>();
 
