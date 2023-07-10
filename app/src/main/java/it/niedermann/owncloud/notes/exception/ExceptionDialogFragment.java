@@ -101,12 +101,16 @@ public class ExceptionDialogFragment extends AppCompatDialogFragment {
 
     @Override
     public void show(@NonNull FragmentManager manager, @Nullable String tag) {
-        if (manager.isDestroyed() || !manager.isStateSaved()) {
-            Log.e("ExceptionDialog can't be shown as the state is lost. The cause:\n\n" + getStackStrace());
-            return;
-        }
+        try {
+            if (manager.isDestroyed() || !manager.isStateSaved()) {
+                Log.e("ExceptionDialog can't be shown as the state is lost. The cause:\n\n" + getStackStrace());
+                return;
+            }
 
-        super.show(manager, tag);
+            super.show(manager, tag);
+        } catch (IllegalStateException e) {
+            Log.e("ExceptionDialog can't be shown as the state is lost. The cause:\n\n" + getStackStrace());
+        }
     }
 
     @NonNull
