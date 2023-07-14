@@ -336,6 +336,8 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
                                     .setAnchorView(binding.activityNotesListView.fabCreate)
                                     .show();
                         }
+
+                        swipeRefreshLayout.setRefreshing(false);
                     });
                 }
             });
@@ -376,6 +378,8 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
                         @Override
                         public void onError(@NonNull Throwable t) {
                             t.printStackTrace();
+
+                            runOnUiThread(() -> swipeRefreshLayout.setRefreshing(false));
                         }
                     });
                 }

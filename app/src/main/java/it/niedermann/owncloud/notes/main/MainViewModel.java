@@ -386,6 +386,7 @@ public class MainViewModel extends AndroidViewModel {
             @Override
             public void onSuccess(Void v) {
                 Log.i(TAG, "[synchronizeCapabilitiesAndNotes] Synchronize notes for " + localAccount.getAccountName());
+                repo.updateSyncStatus(true);
                 synchronizeNotes(localAccount, callback);
             }
 
