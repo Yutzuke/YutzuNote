@@ -819,6 +819,10 @@ public class NotesRepository {
         }
     }
 
+    public void updateSyncStatus(boolean status) {
+        syncStatus.postValue(status);
+    }
+
     /**
      * Schedules a synchronization and start it directly, if the network is connected and no
      * synchronization is currently running.
@@ -828,10 +832,9 @@ public class NotesRepository {
     public synchronized void scheduleSync(@Nullable Account account, boolean onlyLocalChanges) {
         if (account == null) {
             Log.i(TAG, SingleSignOnAccount.class.getSimpleName() + " is null. Is this a local account?");
+            syncStatus.postValue(false);
         } else {
-            if (syncActive.get(account.getId()) == null) {
-                syncActive.put(account.getId(), false);
-            }
+            syncActive.putIfAbsent(account.getId(), false);
             Log.d(TAG, "Sync requested (" + (onlyLocalChanges ? "onlyLocalChanges" : "full") + "; " + (Boolean.TRUE.equals(syncActive.get(account.getId())) ? "sync active" : "sync NOT active") + ") ...");
             if (AccountSyncUtil.isSyncEnable(context, account)) {
                 if (isSyncPossible() && (!Boolean.TRUE.equals(syncActive.get(account.getId())) || onlyLocalChanges)) {
@@ -841,7 +844,6 @@ public class NotesRepository {
                         final NotesServerSyncTask syncTask = new NotesServerSyncTask(context, this, account, onlyLocalChanges, apiProvider) {
                             @Override
                             void onPreExecute() {
-                                syncStatus.postValue(true);
                                 if (!syncScheduled.containsKey(localAccount.getId()) || syncScheduled.get(localAccount.getId()) == null) {
                                     syncScheduled.put(localAccount.getId(), false);
                                 }
@@ -884,6 +886,7 @@ public class NotesRepository {
                     } catch (NextcloudFilesAppAccountNotFoundException e) {
                         Log.e(TAG, "... Could not find " + SingleSignOnAccount.class.getSimpleName() + " for account name " + account.getAccountName());
                         e.printStackTrace();
+                        syncStatus.postValue(false);
                     }
                 } else if (!onlyLocalChanges) {
                     Log.d(TAG, "... scheduled");
@@ -898,6 +901,8 @@ public class NotesRepository {
                             Log.w(TAG, "List of push-callbacks was set for account \"" + account.getAccountName() + "\" but it was null");
                         }
                     }
+
+                    syncStatus.postValue(false);
                 } else {
                     Log.d(TAG, "... do nothing");
                     if (callbacksPush.containsKey(account.getId()) && callbacksPush.get(account.getId()) != null) {
@@ -910,8 +915,14 @@ public class NotesRepository {
                             Log.w(TAG, "List of push-callbacks was set for account \"" + account.getAccountName() + "\" but it was null");
                         }
                     }
+
+                    syncStatus.postValue(false);
                 }
+
+                return;
             }
+
+            syncStatus.postValue(false);
         }
     }
 
