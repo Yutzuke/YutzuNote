@@ -20,6 +20,8 @@ import android.accounts.AccountManager;
 import android.content.ContentResolver;
 import android.content.Context;
 
+import androidx.annotation.NonNull;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -63,5 +65,11 @@ public final class AccountSyncUtil {
         return Arrays.stream(accountManager.getAccountsByType(MurenaAccountConstants.MURENA_ACCOUNT_TYPE))
                 .filter(Objects::nonNull)
                 .collect(Collectors.toList());
+    }
+
+    public static boolean isMurenaAccount(@NonNull Context context, @NonNull String accountName) {
+        return getMurenaAccounts(context)
+                .stream()
+                .anyMatch(account -> accountName.equals(account.name));
     }
 }

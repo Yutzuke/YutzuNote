@@ -19,6 +19,7 @@ import com.bumptech.glide.request.RequestOptions;
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.databinding.ItemAccountChooseBinding;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
+import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 import it.niedermann.owncloud.notes.shared.util.DisplayUtils;
 
 public class ManageAccountViewHolder extends RecyclerView.ViewHolder {
@@ -56,6 +57,10 @@ public class ManageAccountViewHolder extends RecyclerView.ViewHolder {
 
             if (preferredApiVersion == null || !preferredApiVersion.supportsNotesPathChange()) {
                 popup.getMenu().removeItem(popup.getMenu().findItem(R.id.notes_path).getItemId());
+            }
+
+            if (AccountSyncUtil.isMurenaAccount(itemView.getContext(), localAccount.getAccountName())) {
+                popup.getMenu().removeItem(popup.getMenu().findItem(R.id.delete).getItemId());
             }
 
             popup.setOnMenuItemClickListener(item -> {
