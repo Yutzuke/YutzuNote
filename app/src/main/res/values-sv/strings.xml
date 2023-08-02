@@ -263,4 +263,24 @@
     <string name="formatting_help_text_body">Det är väldigt lätt att göra vissa ord %1$sfeta%1$s och andra ord %2$skursiverade%2$s med Markdown. Du kan göra vissa ord %3$sgenomstrukna%3$s och till och med [länka till Nextcloud](https://nextcloud.com).</string>
     <string name="settings_notes_path_success">Mapp för nya anteckningar: %1$s</string>
     <string name="account_imported">Konto importerat.</string>
+    <string name="error_dialog_min_version">Androidappen Anteckningar kräver att Androidappen Nextcloud är minst på version 3.18.</string>
+    <string name="formatting_help_images_body_1">Länkar måste vara antingen kompletta URL:er som börjar med ett protokoll och domän eller en absolut sökväg som startar med tecknet %1$s.</string>
+    <string name="formatting_help_images_body_2">Använd avbrottstecken i en bilds URL för att anpassa den till Markdown-formatet. Till exempel ska mellanslag ersätts med %1$s i URL:en.</string>
+    <string name="context_based_formatting">Sammanhangsbaserad formatteringspopup</string>
+    <string name="backup">Vi upptäckte ett oåterkalleligt tillstånd för appen. Säkerhetskopiera dina osynkroniserade ändringar och rensa lagringsplatsen för Anteckningsappen.</string>
+    <string name="settings_notes_path_description">Mapp för att lagra dina anteckningar i din Nextcloud</string>
+    <string name="settings_file_suffix_success">Ny filändelse: %1$s</string>
+    <string name="http_status_code">HTTP-statuskod: %1$d</string>
+    <string name="preferences_app_info_title">Information om Anteckningar</string>
+    <string name="preferences_app_info">- Lista, skapa, redigera, dela, sök och radera anteckningar
+\n - Dela text och länkar som ny anteckning till appen
+\n - Markera anteckningar som favoriter
+\n - Massradering
+\n - Rendera Markdown
+\n - Översatt till många språk</string>
+    <plurals name="remove_account_message">
+        <item quantity="one">Om du tar bort kontot %1$s kommer en osynkroniserad ändring att oåterkalleligen raderas.</item>
+        <item quantity="other">Om du tar bort kontot %1$s kommer %2$d osynkroniserade ändringar att oåterkalleligen raderas.</item>
+    </plurals>
+    <string name="formatting_help_cbf_body_2">Markera ett textområde eller tryck på markören vid valfri position och du kommer få upp en popup-meny med innehåll, intill standardposterna %1$s, %2$s, %3$s, likt posterna %4$s eller %5$s.</string>
 </resources>
