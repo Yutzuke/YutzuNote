@@ -292,4 +292,9 @@
     <string name="preferences_app_info_title">Informazioni su Notes</string>
     <string name="settings_keep_screen_on_summary">Mentre visualizzo o modifico una nota</string>
     <string name="settings_keep_screen_on">Mantieni lo schermo acceso</string>
+    <string name="conflicted_note_content_title">"
+\n
+\n***Nota %1$d (Ultima modifica: %2$s):***
+\n"</string>
+    <string name="conflict_note_detected"># Abbiamo riscontrato un conflitto tra le tue note. Scegli quella corretta.</string>
 </resources>
