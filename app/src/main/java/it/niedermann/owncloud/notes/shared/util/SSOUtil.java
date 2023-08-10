@@ -49,4 +49,21 @@ public class SSOUtil {
             return false;
         }
     }
+
+    /**
+     * Murena account's userId is set same as it's email address (passed by accountManager app).
+     * For old accounts (@e.email) userId = email.
+     * For new accounts (@murena.io) userId is first part of email (ex: for email abc@murena.io, userId is abc).
+     * For api requests, we needed to pass the actual userId. This method remove the unwanted part (@murena.io) from the userId
+     */
+    @NonNull
+    public static String sanitizeUserId(@NonNull String userId) {
+        final String murenaMailEndPart = "@murena.io";
+
+        if (!userId.endsWith(murenaMailEndPart)) {
+            return userId;
+        }
+
+        return userId.split(murenaMailEndPart)[0];
+    }
 }

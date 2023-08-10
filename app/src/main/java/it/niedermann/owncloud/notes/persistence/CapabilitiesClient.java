@@ -9,6 +9,7 @@ import androidx.annotation.WorkerThread;
 import com.nextcloud.android.sso.model.SingleSignOnAccount;
 
 import it.niedermann.owncloud.notes.shared.model.Capabilities;
+import it.niedermann.owncloud.notes.shared.util.SSOUtil;
 import trikita.log.Log;
 
 @WorkerThread
@@ -46,7 +47,7 @@ public class CapabilitiesClient {
     public static String getDisplayName(@NonNull Context context, @NonNull SingleSignOnAccount ssoAccount, @NonNull ApiProvider apiProvider) {
         final var ocsAPI = apiProvider.getOcsAPI(context, ssoAccount);
         try {
-            final var userResponse = ocsAPI.getUser(sanitizeUserId(ssoAccount.userId)).execute();
+            final var userResponse = ocsAPI.getUser(SSOUtil.sanitizeUserId(ssoAccount.userId)).execute();
             if (userResponse.isSuccessful()) {
                 final var ocsResponse = userResponse.body();
                 if (ocsResponse != null) {
@@ -61,22 +62,5 @@ public class CapabilitiesClient {
             t.printStackTrace();
         }
         return null;
-    }
-
-    /**
-     * Murena account's userId is set same as it's email address (passed by accountManager app).
-     * For old accounts (@e.email) userId = email.
-     * For new accounts (@murena.io) userId is first part of email (ex: for email abc@murena.io, userId is abc).
-     * For api requests, we needed to pass the actual userId. This method remove the unwanted part (@murena.io) from the userId
-     */
-    @NonNull
-    private static String sanitizeUserId(@NonNull String userId) {
-        final String murenaMailEndPart = "@murena.io";
-
-        if (!userId.endsWith(murenaMailEndPart)) {
-            return userId;
-        }
-
-        return userId.split(murenaMailEndPart)[0];
     }
 }

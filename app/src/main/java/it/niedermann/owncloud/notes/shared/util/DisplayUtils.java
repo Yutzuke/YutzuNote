@@ -107,6 +107,6 @@ public class DisplayUtils {
 
     @NonNull
     public static String getAvatarUrl(@NonNull Account account) {
-        return account.getUrl() + "/index.php/avatar/" + Uri.encode(account.getUserName()) + "/64";
+        return account.getUrl() + "/index.php/avatar/" + Uri.encode(SSOUtil.sanitizeUserId(account.getUserName())) + "/64";
     }
 }
