@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Нотатки</string>
     <string name="app_name_long">Нотатки для Nextcloud</string>
     <string name="label_all_notes">Усі нотатки</string>
@@ -27,19 +26,15 @@
     <string name="menu_favorite">Улюблений</string>
     <string name="menu_preview">Перегляд</string>
     <string name="menu_share">Спільний доступ</string>
-
     <string name="search_in_category">Шукати в %1$s</string>
     <string name="search_in_all">Шукати всі нотатки</string>
-
     <string name="change_category_title">Оберіть категорію</string>
-
     <string name="listview_updated_today">Сьогодні</string>
     <string name="listview_updated_yesterday">Вчора</string>
     <string name="listview_updated_this_week">Цього тижня</string>
     <string name="listview_updated_last_week">Минулого тижня</string>
     <string name="listview_updated_this_month">Цього місяця</string>
     <string name="listview_updated_last_month">Минулого місяця</string>
-
     <string name="settings_note_mode">Показувати нотатки</string>
     <string name="settings_theme_title">Тема</string>
     <string name="settings_font_title">Моноширинний шрифт</string>
@@ -52,13 +47,11 @@
     <string name="settings_gridview">Упорядкування у формі сітки</string>
     <string name="settings_keep_screen_on">Тримати екран увімкненим</string>
     <string name="settings_keep_screen_on_summary">Під час перегляду або редагування нотатки</string>
-
     <string name="error_sync">Синхронізація не вдалася: %1$s</string>
     <string name="error_synchronization">Синхронізація не вдалася</string>
     <string name="error_no_network">Відсутнє підключення до мережі</string>
     <string name="error_maintenance_mode">Сервер у режимі обслуговування</string>
     <string name="error_unknown">Сталася невідома помилка.</string>
-
     <string name="about_version_title">Версія</string>
     <string name="about_version">Ви використовуєте %1$s</string>
     <string name="about_maintainer_title">Утримувач</string>
@@ -82,22 +75,17 @@
     <string name="about_credits_tab_title">Подяки</string>
     <string name="about_contribution_tab_title">Внесок</string>
     <string name="about_license_tab_title">Ліцензія</string>
-
     <string name="widget_note_list_title">Перелік нотаток</string>
     <string name="widget_note_list_placeholder">Нотатки відсутні</string>
     <string name="widget_single_note_title">Одна нотатка</string>
     <string name="widget_single_note_placeholder_tv">Нотатку не знайдено</string>
     <string name="widget_not_logged_in">Будь ласка, увійдіть до Нотаток перед використанням цього віджету</string>
     <string name="widget_entry_fav_contentDescription">Значок зірки використовується для позначення елемента як улюбленого</string>
-
     <string name="activity_select_single_note">Оберіть нотатку</string>
-
     <string name="shortcut_create_long">Створити нову нотатку</string>
-
     <string name="pref_value_font_normal">Звичайно</string>
     <string name="pref_value_wifi_and_mobile">Синхронізувати по Wi-Fi та мобільним даним</string>
     <string name="pref_value_lock">Захист паролем</string>
-
     <string name="simple_error">Помилка</string>
     <string name="simple_close">Закрити</string>
     <string name="simple_copy">Копіювати</string>
@@ -105,7 +93,6 @@
     <string name="pin_to_homescreen">Закріпити на головному екрані</string>
     <string name="note_has_been_deleted">Цю нотатку було вилучено</string>
     <string name="add_account">Додати обліковий запис</string>
-
     <string name="category_music">Музика</string>
     <string name="category_movies">Відео</string>
     <string name="category_movie">Фільм</string>
@@ -137,7 +124,6 @@
     <string name="category_present">Презентувати</string>
     <!-- Like a gift -->
     <string name="category_presents">Подарунки</string>
-
     <string name="account_already_imported">Обліковий запис вже імпортовано</string>
     <string name="no_notes_yet">Нотатки поки відсутні</string>
     <string name="no_notes_yet_description">Натисніть кнопку \"+\", щоб створити нову нотатку</string>
@@ -176,25 +162,21 @@
     <string name="simple_synchronization">Синхронізація</string>
     <string name="manage_accounts">Облікові записи</string>
     <string name="action_formatting_help">Форматування</string>
-
     <string-array name="noteMode_entries">
         <item>Відкривати у режимі редагування</item>
         <item>Відкривати у режимі перегляду</item>
         <item>Запам\'ятовувати останній вибір</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Малий</item>
         <item>Середній</item>
         <item>Великий</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Світла</item>
         <item>Темна</item>
         <item>Системна</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d обрано</item>
         <item quantity="few">%d обрано</item>
@@ -219,7 +201,6 @@
         <item quantity="many">Поділитися вмістом %1$d нотаток</item>
         <item quantity="other">Поділитися вмістом %1$d нотаток</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -229,10 +210,8 @@
     <string name="formatting_help_cbf_title">Контекстне форматування</string>
     <string name="formatting_help_cbf_body_1">Головною метою програми Нотатки є надання інструменту, що не відволікає увагу. Хоча ви зможете форматувати свої тексти за допомогою Markdown. Для різних із наведених нижче прикладів ви можете використовувати ярлики, щоб форматувати нотатки, не вводячи коди нижче.</string>
     <string name="formatting_help_cbf_body_2">Просто виберіть діапазон тексту або натисніть на курсор у будь-якій позиції, і ви отримаєте спливаюче меню, де поряд із типовими елементами %1$s, %2$s, %3$s містяться елементи на зразок %4$s або %5$s.</string>
-
     <string name="formatting_help_text_title">Текст</string>
     <string name="formatting_help_text_body">За допомогою Markdown дуже легко зробити деякі слова %1$sжирними%1$s, а інші слова %2$sкурсивом%2$s. Ви можете %3$sперекреслити%3$s деякі слова та навіть [послатися до Nextcloud](https://nextcloud.com).</string>
-
     <string name="formatting_help_lists_title">Списки</string>
     <string name="formatting_help_lists_body_1">Іноді вам потрібні нумеровані списки:</string>
     <string name="formatting_help_lists_body_2">Один</string>
@@ -243,12 +222,10 @@
     <string name="formatting_help_lists_body_7">А якщо у вас є підпункти, поставте два пробіли перед тире або зірочку:</string>
     <string name="formatting_help_lists_body_8">Ось так</string>
     <string name="formatting_help_lists_body_9">І так</string>
-
     <string name="formatting_help_checkboxes_title">Прапорці</string>
     <string name="formatting_help_checkboxes_body_1">Щоб створити прапорець, використовуйте список, за яким слідують дужки</string>
     <string name="formatting_help_checkboxes_body_2">Пункт 1</string>
     <string name="formatting_help_checkboxes_body_3">Пункт 2</string>
-
     <string name="formatting_help_structured_documents_title">Структуровані документи</string>
     <string name="formatting_help_structured_documents_body_1">Іноді корисно мати різні рівні заголовків для структурування документів. Почніть рядки з %1$s, щоб створити заголовки. Кілька %2$s поспіль позначають менші розміри заголовків.</string>
     <string name="formatting_help_structured_documents_body_2">Це заголовок третього рівня</string>
@@ -256,23 +233,19 @@
     <string name="formatting_help_structured_documents_body_4">Якщо ви хочете процитувати когось, використовуйте символ %1$s перед рядком:</string>
     <string name="formatting_help_structured_documents_body_5">Уява важливіша за знання. Знання обмежене. Уява охоплює весь світ.</string>
     <string name="formatting_help_structured_documents_body_6">- Альберт Ейнштейн</string>
-
     <string name="formatting_help_code_title">Код</string>
     <string name="formatting_help_code_body_1">Існує багато різних способів стилізувати код за допомогою Markdown. Якщо у вас є вбудовані блоки коду, оберніть їх у зворотні позначки:</string>
     <string name="formatting_help_code_body_2">Markdown також підтримує те, що називається огородженням коду, що дозволяє використовувати кілька рядків без відступу:</string>
     <string name="formatting_help_code_body_3">А якщо ви хочете використовувати підсвічування синтаксису, додайте назву мови:</string>
-
     <string name="formatting_help_tables_title">Таблиці</string>
     <!-- Column header of a sample table -->
     <string name="formatting_help_tables_column">Колонка %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">Значення %1d</string>
-
     <string name="formatting_help_images_body_1">Посилання мають бути або повними URL-адресами, що починаються з протоколу та домену, або абсолютними шляхами, що починаються з символу %1$s.</string>
     <string name="formatting_help_images_body_2">Щоб відповідати формату Markdown, будь ласка, використовуйте escape-символи в URL-адресі зображення. Це означає, наприклад, замінити пробіли на %1$s в URL-адресі.</string>
     <string name="formatting_help_images_title">Зображення</string>
     <string name="formatting_help_images_alt">Чудове зображення</string>
-
     <string name="simple_other">Інший</string>
     <string name="sort_last_modified">Впорядкувати за датою зміни</string>
     <string name="sort_alphabetically">Впорядкувати за абеткою</string>
@@ -291,10 +264,8 @@
         <item quantity="other">Видалення облікового запису %1$s також призведе до видалення невідновних %2$d несинхронізованих змін.</item>
     </plurals>
     <string name="remove_account">Вилучити %1$s</string>
-
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Для додавання облікового запису потрібне з\'єднання з мережею.</string>
     <string name="settings_notes_path">Встановити каталог</string>
-
     <string name="simple_next">Далі</string>
     <string name="simple_prev">Назад</string>
     <string name="simple_backup">Резервне копіювання</string>
@@ -312,4 +283,5 @@
     <string name="progress_import_indeterminate">Імпортування нотаток...</string>
     <string name="progress_import">Імпортування нотатки %1$d з %2$d...</string>
     <string name="account_imported">Обліковий запис імпортовано.</string>
+    <string name="preferences_authors">Автори</string>
 </resources>
