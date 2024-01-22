@@ -285,4 +285,18 @@
     <string name="account_imported">Обліковий запис імпортовано.</string>
     <string name="preferences_authors">Автори</string>
     <string name="preferences_app_info_title">Інформація про нотатки</string>
+    <string name="preferences_about_app">Notes - це форк від Nextcloud Notes</string>
+    <string name="conflicted_note_content_title">"
+\n
+\n***Нотатка %1$d (Останній раз змінено: %2$s):***
+\n"</string>
+    <string name="preferences_service_terms">Умови користування послугами</string>
+    <string name="preferences_privacy_policy">Політика конфіденційності</string>
+    <string name="conflict_note_detected"># Ми зіткнулися з конфліктом між вашими записами. Будь ласка, виберіть правильну.</string>
+    <string name="preferences_app_info">-Переглядайте, створюйте, редагуйте, діліться, шукайте та видаляйте нотатки
+\n -Діліться текстом і посиланнями як новими нотатками в застосунку
+\n -Позначайте нотатки як улюблені
+\n -Масове видалення
+\n -Відображення MarkDown
+\n -Перекладено багатьма мовами</string>
 </resources>
