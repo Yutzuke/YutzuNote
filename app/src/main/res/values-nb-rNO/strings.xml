@@ -210,4 +210,5 @@
     <string name="simple_next">Neste</string>
     <string name="simple_prev">Forrige</string>
     <string name="simple_backup">Sikkerhetskopi</string>
+    <string name="preferences_authors">Utviklere</string>
 </resources>
