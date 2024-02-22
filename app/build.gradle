@@ -67,10 +67,13 @@ dependencies {
         exclude group: 'org.jetbrains', module: 'annotations-java5'
         exclude group: 'com.github.nextcloud', module: 'Android-SingleSignOn'
     }
+    implementation ('com.github.stefan-niedermann.nextcloud-commons:sso-glide:2.1.0') {
+        exclude group: 'com.github.nextcloud', module: 'Android-SingleSignOn'
+    }
 
     // Glide
-    implementation 'com.github.bumptech.glide:glide:4.14.2'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.14.2'
+    implementation 'com.github.bumptech.glide:glide:4.16.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
 
     // Android X
     implementation 'androidx.appcompat:appcompat:1.5.1'

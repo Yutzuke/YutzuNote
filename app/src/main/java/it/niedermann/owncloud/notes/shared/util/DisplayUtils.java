@@ -24,6 +24,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import it.niedermann.nextcloud.sso.glide.SingleSignOnUrl;
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.main.navigation.NavigationAdapter;
 import it.niedermann.owncloud.notes.main.navigation.NavigationItem;
@@ -31,6 +32,14 @@ import it.niedermann.owncloud.notes.persistence.entity.Account;
 import it.niedermann.owncloud.notes.persistence.entity.CategoryWithNotesCount;
 
 public class DisplayUtils {
+
+    private static final String AVATAR_URL_MID_PART = "/index.php/avatar/";
+
+    // added dummy query `dummy`, to resolve https://gitlab.e.foundation/e/backlog/-/issues/6839.
+    // NC glide lib pass kotlin.collection.emptyList which fails to convert to java.collection
+    // *
+    // 64 means that we want the 64px X 64px image.
+    private static final String AVATAR_URL_END_PART = "/64?dummy=1";
 
     private static final Map<Integer, Collection<Integer>> SPECIAL_CATEGORY_REPLACEMENTS = Map.of(
             R.drawable.ic_library_music_grey600_24dp, singletonList(R.string.category_music),
@@ -106,7 +115,8 @@ public class DisplayUtils {
     }
 
     @NonNull
-    public static String getAvatarUrl(@NonNull Account account) {
-        return account.getUrl() + "/index.php/avatar/" + Uri.encode(SSOUtil.sanitizeUserId(account.getUserName())) + "/64";
+    public static SingleSignOnUrl getAvatarUrl(@NonNull Account account) {
+        return new SingleSignOnUrl(account.getAccountName(), account.getUrl() + AVATAR_URL_MID_PART +
+                Uri.encode(SSOUtil.sanitizeUserId(account.getUserName())) + AVATAR_URL_END_PART);
     }
 }
