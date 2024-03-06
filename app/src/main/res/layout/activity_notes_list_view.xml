@@ -75,7 +75,7 @@
                                 android:background="?attr/selectableItemBackgroundBorderless"
                                 android:paddingVertical="@dimen/spacer_2x"
                                 android:tooltipText="@string/manage_accounts"
-                                app:srcCompat="@drawable/ic_account_circle_grey_24dp"
+                                app:srcCompat="@drawable/ic_account_circle_grey_32dp"
                                 tools:targetApi="o" />
                         </LinearLayout>
                     </androidx.appcompat.widget.Toolbar>

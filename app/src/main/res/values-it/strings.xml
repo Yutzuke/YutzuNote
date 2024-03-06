@@ -297,4 +297,8 @@
 \n***Nota %1$d (Ultima modifica: %2$s):***
 \n"</string>
     <string name="conflict_note_detected"># Abbiamo riscontrato un conflitto tra le tue note. Scegli quella corretta.</string>
+
+    <string name="use_local_notes">USA NOTE IN LOCALE</string>
+    <string name="or">o</string>
+    <string name="welcome_details">Scegli se sincronizzare le note con un account Murena già esistente o conservarle in locale sul tuo device (non sincronizzate).</string>
 </resources>

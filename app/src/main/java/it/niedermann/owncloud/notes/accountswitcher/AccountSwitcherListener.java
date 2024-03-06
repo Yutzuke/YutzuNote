@@ -5,7 +5,9 @@ import androidx.annotation.NonNull;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
 
 public interface AccountSwitcherListener {
-    void addAccount();
+    void onAddAccountButtonClick();
 
     void onAccountChosen(@NonNull Account localAccount);
+
+    void onAddLocalAccountButtonClick();
 }

@@ -180,6 +180,11 @@ public class NotesRepository {
         if (account == null) {
             callback.onError(new Exception("Could not read created account."));
         } else {
+            if (AccountSyncUtil.isLocalAccount(context, account)) {
+                callback.onSuccess(account);
+                return new MutableLiveData<>(new ImportStatus());
+            }
+
             if (isSyncPossible()) {
                 syncActive.put(account.getId(), true);
                 try {
@@ -422,7 +427,8 @@ public class NotesRepository {
     @NonNull
     @MainThread
     public LiveData<Note> addNoteAndSync(Account account, Note note) {
-        final var entity = new Note(0, null, note.getModified(), note.getTitle(), note.getContent(), note.getCategory(), note.getFavorite(), note.getETag(), DBStatus.LOCAL_EDITED, account.getId(), generateNoteExcerpt(note.getContent(), note.getTitle()), 0);
+        final var status = getModifiedNoteStatus(account);
+        final var entity = new Note(0, null, note.getModified(), note.getTitle(), note.getContent(), note.getCategory(), note.getFavorite(), note.getETag(), status, account.getId(), generateNoteExcerpt(note.getContent(), note.getTitle()), 0);
         final var ret = new MutableLiveData<Note>();
         executor.submit(() -> ret.postValue(addNote(account.getId(), entity)));
         return map(ret, newNote -> {
@@ -432,6 +438,10 @@ public class NotesRepository {
         });
     }
 
+    private DBStatus getModifiedNoteStatus(Account account) {
+        final var isLocalAccount = AccountSyncUtil.isLocalAccount(context, account);
+        return isLocalAccount ? DBStatus.VOID : DBStatus.LOCAL_EDITED;
+    }
     /**
      * Inserts a note directly into the Database.
      * Excerpt will be generated, {@link DBStatus#LOCAL_EDITED} will be applied in case the note has
@@ -451,7 +461,8 @@ public class NotesRepository {
     @MainThread
     public LiveData<Note> moveNoteToAnotherAccount(Account account, @NonNull Note note) {
         final var fullNote = new Note(null, note.getModified(), note.getTitle(), note.getContent(), note.getCategory(), note.getFavorite(), null);
-        fullNote.setStatus(DBStatus.LOCAL_EDITED);
+        final var status = getModifiedNoteStatus(account);
+        fullNote.setStatus(status);
         deleteNoteAndSync(account, note.getId());
         return addNoteAndSync(account, fullNote);
     }
@@ -481,7 +492,8 @@ public class NotesRepository {
     @AnyThread
     public void toggleFavoriteAndSync(Account account, long noteId) {
         executor.submit(() -> {
-            db.getNoteDao().toggleFavorite(noteId);
+            final var status = getModifiedNoteStatus(account);
+            db.getNoteDao().toggleFavorite(noteId, status);
             scheduleSync(account, true);
         });
     }
@@ -498,7 +510,8 @@ public class NotesRepository {
     @AnyThread
     public void setCategory(@NonNull Account account, long noteId, @NonNull String category) {
         executor.submit(() -> {
-            db.getNoteDao().updateStatus(noteId, DBStatus.LOCAL_EDITED);
+            final var status = getModifiedNoteStatus(account);
+            db.getNoteDao().updateStatus(noteId, status);
             db.getNoteDao().updateCategory(noteId, category);
             scheduleSync(account, true);
         });
@@ -516,12 +529,13 @@ public class NotesRepository {
      */
     @WorkerThread
     public Note updateNoteAndSync(@NonNull Account localAccount, @NonNull Note oldNote, @Nullable String newContent, @Nullable String newTitle, @Nullable ISyncCallback callback) {
+        final var status = getModifiedNoteStatus(localAccount);
         final Note newNote;
         // Re-read the up to date remoteId from the database because the UI might not have the state after synchronization yet
         // https://github.com/stefan-niedermann/nextcloud-notes/issues/1198
         @Nullable final Long remoteId = db.getNoteDao().getRemoteId(oldNote.getId());
         if (newContent == null) {
-            newNote = new Note(oldNote.getId(), remoteId, oldNote.getModified(), oldNote.getTitle(), oldNote.getContent(), oldNote.getCategory(), oldNote.getFavorite(), oldNote.getETag(), DBStatus.LOCAL_EDITED, localAccount.getId(), oldNote.getExcerpt(), oldNote.getScrollY());
+            newNote = new Note(oldNote.getId(), remoteId, oldNote.getModified(), oldNote.getTitle(), oldNote.getContent(), oldNote.getCategory(), oldNote.getFavorite(), oldNote.getETag(), status, localAccount.getId(), oldNote.getExcerpt(), oldNote.getScrollY());
         } else {
             final String title;
             if (newTitle != null) {
@@ -535,7 +549,7 @@ public class NotesRepository {
                     title = oldNote.getTitle();
                 }
             }
-            newNote = new Note(oldNote.getId(), remoteId, Calendar.getInstance(), title, newContent, oldNote.getCategory(), oldNote.getFavorite(), oldNote.getETag(), DBStatus.LOCAL_EDITED, localAccount.getId(), generateNoteExcerpt(newContent, title), oldNote.getScrollY());
+            newNote = new Note(oldNote.getId(), remoteId, Calendar.getInstance(), title, newContent, oldNote.getCategory(), oldNote.getFavorite(), oldNote.getETag(), status, localAccount.getId(), generateNoteExcerpt(newContent, title), oldNote.getScrollY());
         }
         int rows = db.getNoteDao().updateNote(newNote);
         // if data was changed, set new status and schedule sync (with callback); otherwise invoke callback directly.
@@ -830,8 +844,8 @@ public class NotesRepository {
      * @param onlyLocalChanges Whether to only push local changes to the server or to also load the whole list of notes from the server.
      */
     public synchronized void scheduleSync(@Nullable Account account, boolean onlyLocalChanges) {
-        if (account == null) {
-            Log.i(TAG, SingleSignOnAccount.class.getSimpleName() + " is null. Is this a local account?");
+        if (account == null || AccountSyncUtil.isLocalAccount(context, account)) {
+            Log.i(TAG, SingleSignOnAccount.class.getSimpleName() + " is null or local account.");
             syncStatus.postValue(false);
         } else {
             syncActive.putIfAbsent(account.getId(), false);

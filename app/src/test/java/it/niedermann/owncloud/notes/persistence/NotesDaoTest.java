@@ -187,11 +187,11 @@ public class NotesDaoTest {
     public void toggleFavorite() {
         final var note = new Note(1, 1L, Calendar.getInstance(), "My-Title", "My-Content", "", false, "1", LOCAL_DELETED, account.getId(), "", 0);
         db.getNoteDao().addNote(note);
-        db.getNoteDao().toggleFavorite(note.getId());
+        db.getNoteDao().toggleFavorite(note.getId(), LOCAL_EDITED);
         assertTrue(db.getNoteDao().getNoteById(note.getId()).getFavorite());
-        db.getNoteDao().toggleFavorite(note.getId());
+        db.getNoteDao().toggleFavorite(note.getId(), LOCAL_EDITED);
         assertFalse(db.getNoteDao().getNoteById(note.getId()).getFavorite());
-        db.getNoteDao().toggleFavorite(note.getId());
+        db.getNoteDao().toggleFavorite(note.getId(), LOCAL_EDITED);
         assertTrue(db.getNoteDao().getNoteById(note.getId()).getFavorite());
     }
 

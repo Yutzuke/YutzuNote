@@ -292,4 +292,8 @@
     <string name="preferences_privacy_policy">Politique de confidentialité</string>
     <string name="preferences_service_terms">Conditions d\'utilisation</string>
     <string name="preferences_authors">Auteurs</string>
+
+    <string name="use_local_notes">Utiliser des notes locales</string>
+    <string name="or">ou</string>
+    <string name="welcome_details">Choisissez entre synchroniser vos notes avec un compte cloud Murena ou stocker vos notes localement sur votre appareil (pas de synchronisation).</string>
 </resources>

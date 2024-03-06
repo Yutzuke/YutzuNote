@@ -16,42 +16,87 @@
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="96dp"
-            android:layout_above="@+id/welcome_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="150dp"
+            android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginBottom="32dp"
+            android:background="@drawable/bg_rounded_corner"
+            android:clipToOutline="true"
             android:contentDescription="@null"
-            app:srcCompat="@drawable/ic_launcher_foreground_full" />
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/ic_launcher_foreground_full"
+            tools:targetApi="s" />
 
         <TextView
             android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/image"
+            android:layout_marginBottom="8dp"
+            android:textSize="24sp"
+            tools:text="Welcome to Notes" />
+
+        <TextView
+            android:id="@+id/welcome_detail_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/welcome_text"
             android:layout_centerVertical="true"
             android:layout_marginBottom="48dp"
             android:gravity="center_horizontal"
-            android:textSize="24sp"
-            tools:text="Welcome to Nextcloud Notes" />
+            android:layout_marginHorizontal="24dp"
+            android:textColor="@color/e_secondary_text_color"
+            android:textSize="14sp"
+            android:text="@string/welcome_details" />
 
         <Button
             android:id="@+id/add_button"
             style="@style/Widget.Material3.Button.ElevatedButton"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/welcome_text"
+            android:layout_below="@id/welcome_detail_text"
             android:layout_centerHorizontal="true"
             android:paddingHorizontal="32dp"
-            android:paddingVertical="@dimen/spacer_3x"
+            android:paddingVertical="14dp"
             android:text="@string/choose_account"
-            app:backgroundTint="@color/defaultBrand" />
+            android:textAllCaps="true"
+            app:backgroundTint="@color/defaultBrand"
+            app:cornerRadius="4dp" />
+
+        <TextView
+            android:id="@+id/text_or"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/add_button"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="4dp"
+            android:text="@string/or"
+            android:textColor="@color/e_secondary_text_color"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/add_local_button"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text_or"
+            android:layout_centerHorizontal="true"
+            android:paddingHorizontal="32dp"
+            android:paddingVertical="14dp"
+            android:text="@string/use_local_notes"
+            android:textAllCaps="true"
+            android:textColor="@color/accent_color"
+            app:cornerRadius="4dp"
+            app:strokeColor="@color/accent_color" />
 
         <TextView
             android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/add_button"
+            android:layout_below="@id/add_local_button"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="32dp"
             android:gravity="center_horizontal"
@@ -65,7 +110,7 @@
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/add_button"
+            android:layout_below="@id/add_local_button"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/spacer_5x"
             android:indeterminate="true"

@@ -161,8 +161,8 @@ public interface NoteDao {
     @Query("SELECT * FROM NOTE WHERE status != 'LOCAL_DELETED' AND accountId = :accountId ORDER BY modified DESC LIMIT 4")
     List<Note> getRecentNotes(long accountId);
 
-    @Query("UPDATE NOTE SET status = 'LOCAL_EDITED', favorite = ((favorite | 1) - (favorite & 1)) WHERE id = :id")
-    void toggleFavorite(long id);
+    @Query("UPDATE NOTE SET status = :status, favorite = ((favorite | 1) - (favorite & 1)) WHERE id = :id")
+    void toggleFavorite(long id, DBStatus status);
 
     @Query("UPDATE NOTE SET remoteId = :remoteId WHERE id = :id")
     void updateRemoteId(long id, Long remoteId);

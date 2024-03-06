@@ -14,7 +14,7 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-package it.niedermann.owncloud.notes.importaccount;
+package it.niedermann.owncloud.notes.shared.account;
 
 import android.accounts.Account;
 import android.app.Application;

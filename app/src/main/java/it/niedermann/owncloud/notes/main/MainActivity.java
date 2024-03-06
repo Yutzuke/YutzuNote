@@ -31,6 +31,7 @@ import androidx.core.splashscreen.SplashScreen;
 import androidx.core.view.GravityCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.preference.PreferenceManager;
 import androidx.recyclerview.selection.SelectionTracker;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,6 +51,7 @@ import com.nextcloud.android.sso.exceptions.NoCurrentAccountSelectedException;
 import com.nextcloud.android.sso.exceptions.TokenMismatchException;
 import com.nextcloud.android.sso.exceptions.UnknownErrorException;
 import com.nextcloud.android.sso.helper.SingleAccountHelper;
+import com.nextcloud.android.sso.model.SingleSignOnAccount;
 
 import java.net.HttpURLConnection;
 import java.util.LinkedList;
@@ -67,11 +69,9 @@ import it.niedermann.owncloud.notes.databinding.ActivityNotesListViewBinding;
 import it.niedermann.owncloud.notes.databinding.DrawerLayoutBinding;
 import it.niedermann.owncloud.notes.edit.EditNoteActivity;
 import it.niedermann.owncloud.notes.edit.category.CategoryDialogFragment;
-import it.niedermann.owncloud.notes.edit.category.CategoryViewModel;
 import it.niedermann.owncloud.notes.exception.ExceptionDialogFragment;
 import it.niedermann.owncloud.notes.exception.IntendedOfflineException;
 import it.niedermann.owncloud.notes.importaccount.ImportAccountActivity;
-import it.niedermann.owncloud.notes.importaccount.ImportMurenaAccountViewModel;
 import it.niedermann.owncloud.notes.main.items.ItemAdapter;
 import it.niedermann.owncloud.notes.main.items.grid.GridItemDecoration;
 import it.niedermann.owncloud.notes.main.items.list.NotesListViewItemTouchHelper;
@@ -84,8 +84,12 @@ import it.niedermann.owncloud.notes.main.navigation.NavigationItem;
 import it.niedermann.owncloud.notes.persistence.ApiProvider;
 import it.niedermann.owncloud.notes.persistence.CapabilitiesClient;
 import it.niedermann.owncloud.notes.persistence.CapabilitiesWorker;
+import it.niedermann.owncloud.notes.persistence.SyncWorker;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
 import it.niedermann.owncloud.notes.persistence.entity.Note;
+import it.niedermann.owncloud.notes.shared.account.ImportMurenaAccountViewModel;
+import it.niedermann.owncloud.notes.shared.account.LocalAccountBundle;
+import it.niedermann.owncloud.notes.shared.account.LocalAccountViewModel;
 import it.niedermann.owncloud.notes.shared.model.CategorySortingMethod;
 import it.niedermann.owncloud.notes.shared.model.IResponseCallback;
 import it.niedermann.owncloud.notes.shared.model.NavigationCategory;
@@ -105,7 +109,7 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
     protected MainViewModel mainViewModel;
 
     private ImportMurenaAccountViewModel importMurenaAccountViewModel;
-    private CategoryViewModel categoryViewModel;
+    private LocalAccountViewModel localAccountViewModel;
 
     private boolean gridView = true;
 
@@ -141,7 +145,7 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
 
         mainViewModel = new ViewModelProvider(this).get(MainViewModel.class);
         importMurenaAccountViewModel = new ViewModelProvider(this).get(ImportMurenaAccountViewModel.class);
-        categoryViewModel = new ViewModelProvider(this).get(CategoryViewModel.class);
+        localAccountViewModel = new ViewModelProvider(this).get(LocalAccountViewModel.class);
         CapabilitiesWorker.update(this);
         binding = DrawerLayoutBinding.inflate(getLayoutInflater());
         activityBinding = ActivityNotesListViewBinding.bind(binding.activityNotesListView.getRoot());
@@ -308,8 +312,8 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
             Glide
                     .with(this)
                     .load(DisplayUtils.getAvatarUrl(nextAccount))
-                    .placeholder(R.drawable.ic_account_circle_grey_24dp)
-                    .error(R.drawable.ic_account_circle_grey_24dp)
+                    .placeholder(R.drawable.ic_account_circle_grey_32dp)
+                    .error(R.drawable.ic_account_circle_grey_32dp)
                     .apply(RequestOptions.circleCropTransform())
                     .into(activityBinding.launchAccountSwitcher);
 
@@ -482,6 +486,7 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
                     @Override
                     public void onSuccess(Void v) {
                         Log.d(TAG, "Successfully synchronized capabilities and notes for " + currentAccount.getAccountName());
+                        runOnUiThread(() -> swipeRefreshLayout.setRefreshing(false));
                     }
 
                     @Override
@@ -704,6 +709,9 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
                                                 importSnackbar.setAction(R.string.simple_switch, (v) -> mainViewModel.postCurrentAccount(mainViewModel.getLocalAccountByAccountName(ssoAccount.name)));
                                             });
                                             Log.i(TAG, capabilities.toString());
+                                            SyncWorker.update(MainActivity.this, PreferenceManager.getDefaultSharedPreferences(MainActivity.this)
+                                                    .getBoolean(getString(R.string.pref_key_background_sync), true));
+
                                         });
                                     }
 
@@ -799,8 +807,33 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
     }
 
     @Override
-    public void addAccount() {
+    public void onAddAccountButtonClick() {
         askForNewAccount(this);
+    }
+
+    @Override
+    public void onAddLocalAccountButtonClick() {
+        localAccountViewModel.logInToLocalAccount(new IResponseCallback<>() {
+            @Override
+            public void onSuccess(@NonNull LocalAccountBundle result) {
+                runOnUiThread(() -> {
+                    showAccountImportedSnackBar(result.getSingleSignOnAccount());
+                });
+            }
+
+            @Override
+            public void onError(@NonNull Throwable throwable) {
+                runOnUiThread(() -> ExceptionDialogFragment.newInstance(throwable).show(getSupportFragmentManager(), ExceptionDialogFragment.class.getSimpleName()));
+            }
+        });
+    }
+
+    private void showAccountImportedSnackBar(SingleSignOnAccount account) {
+        final var importSnackBar = BrandedSnackbar.make(coordinatorLayout, R.string.progress_import_indeterminate, Snackbar.LENGTH_INDEFINITE)
+                .setAnchorView(binding.activityNotesListView.fabCreate);
+        importSnackBar.setText(R.string.account_imported);
+        importSnackBar.setAction(R.string.simple_switch, (v) -> mainViewModel.postCurrentAccount(mainViewModel.getLocalAccountByAccountName(account.name)));
+        importSnackBar.show();
     }
 
     @Override

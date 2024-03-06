@@ -25,8 +25,8 @@ public class AccountChooserViewHolder extends RecyclerView.ViewHolder {
         Glide
                 .with(binding.accountItemAvatar.getContext())
                 .load(DisplayUtils.getAvatarUrl(localAccount))
-                .placeholder(R.drawable.ic_account_circle_grey_24dp)
-                .error(R.drawable.ic_account_circle_grey_24dp)
+                .placeholder(R.drawable.ic_account_circle_grey_32dp)
+                .error(R.drawable.ic_account_circle_grey_32dp)
                 .apply(RequestOptions.circleCropTransform())
                 .into(binding.accountItemAvatar);
 

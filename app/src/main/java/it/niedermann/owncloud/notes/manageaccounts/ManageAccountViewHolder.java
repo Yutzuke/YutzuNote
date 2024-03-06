@@ -6,7 +6,6 @@ import static it.niedermann.owncloud.notes.branding.BrandingUtil.applyBrandToLay
 import static it.niedermann.owncloud.notes.shared.util.ApiVersionUtil.getPreferredApiVersion;
 
 import android.graphics.drawable.LayerDrawable;
-import android.net.Uri;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -37,10 +36,10 @@ public class ManageAccountViewHolder extends RecyclerView.ViewHolder {
             boolean isCurrentAccount
     ) {
         binding.accountName.setText(localAccount.getUserName());
-        binding.accountHost.setText(Uri.parse(localAccount.getUrl()).getHost());
+        DisplayUtils.setHost(localAccount, binding.accountHost);
         Glide.with(itemView.getContext())
                 .load(DisplayUtils.getAvatarUrl(localAccount))
-                .error(R.drawable.ic_account_circle_grey_24dp)
+                .error(R.drawable.ic_account_circle_grey_32dp)
                 .apply(RequestOptions.circleCropTransform())
                 .into(binding.accountItemAvatar);
         itemView.setOnClickListener((v) -> callback.onSelect(localAccount));
@@ -51,11 +50,13 @@ public class ManageAccountViewHolder extends RecyclerView.ViewHolder {
 
             final var preferredApiVersion = getPreferredApiVersion(localAccount.getApiVersion());
 
-            if (preferredApiVersion == null || !preferredApiVersion.supportsFileSuffixChange()) {
+            boolean isDeviceLocalAccount =  AccountSyncUtil.isLocalAccount(itemView.getContext(), localAccount);
+
+            if (preferredApiVersion == null || !preferredApiVersion.supportsFileSuffixChange() || isDeviceLocalAccount) {
                 popup.getMenu().removeItem(popup.getMenu().findItem(R.id.file_suffix).getItemId());
             }
 
-            if (preferredApiVersion == null || !preferredApiVersion.supportsNotesPathChange()) {
+            if (preferredApiVersion == null || !preferredApiVersion.supportsNotesPathChange() || isDeviceLocalAccount) {
                 popup.getMenu().removeItem(popup.getMenu().findItem(R.id.notes_path).getItemId());
             }
 
