@@ -15,12 +15,16 @@ import com.nextcloud.android.sso.Constants;
 import com.nextcloud.android.sso.helper.VersionCheckHelper;
 import com.nextcloud.android.sso.model.FilesAppType;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import it.niedermann.owncloud.notes.FormattingHelpActivity;
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.about.AboutActivity;
 import it.niedermann.owncloud.notes.databinding.ItemNavigationBinding;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
 import it.niedermann.owncloud.notes.preferences.PreferencesActivity;
+import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 
 public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
 
@@ -30,12 +34,18 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuViewHolder> {
     private final Consumer<MenuItem> onClick;
 
     public MenuAdapter(@NonNull Context context, @NonNull Account account, int settingsRequestCode, @NonNull Consumer<MenuItem> onClick) {
-        this.menuItems = new MenuItem[]{
-                new MenuItem(new Intent(context, FormattingHelpActivity.class), R.string.action_formatting_help, R.drawable.ic_baseline_help_outline_24),
-                new MenuItem(generateTrashbinIntent(context, account), R.string.action_trashbin, R.drawable.ic_delete_grey600_24dp),
-                new MenuItem(new Intent(context, PreferencesActivity.class), settingsRequestCode, R.string.action_settings, R.drawable.ic_settings_grey600_24dp),
-                new MenuItem(new Intent(context, AboutActivity.class), R.string.simple_about, R.drawable.ic_info_outline_grey600_24dp)
-        };
+        List<MenuItem> menuList = new ArrayList<>();
+        menuList.add(new MenuItem(new Intent(context, FormattingHelpActivity.class), R.string.action_formatting_help, R.drawable.ic_baseline_help_outline_24));
+
+        if (!AccountSyncUtil.isLocalAccount(context, account)) {
+            menuList.add(new MenuItem(generateTrashbinIntent(context, account), R.string.action_trashbin, R.drawable.ic_delete_grey600_24dp));
+        }
+
+        menuList.add(new MenuItem(new Intent(context, PreferencesActivity.class), settingsRequestCode, R.string.action_settings, R.drawable.ic_settings_grey600_24dp));
+        menuList.add(new MenuItem(new Intent(context, AboutActivity.class), R.string.simple_about, R.drawable.ic_info_outline_grey600_24dp));
+
+        this.menuItems = menuList.toArray(new MenuItem[0]);
+
         this.onClick = onClick;
         setHasStableIds(true);
     }

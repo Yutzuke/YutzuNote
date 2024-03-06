@@ -1,6 +1,8 @@
 package it.niedermann.owncloud.notes.persistence;
 
 import android.content.Context;
+
+import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 import trikita.log.Log;
 
 import androidx.annotation.NonNull;
@@ -15,6 +17,7 @@ import androidx.work.WorkerParameters;
 import java.util.Objects;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
+import java.util.stream.Collectors;
 
 public class SyncWorker extends Worker {
 
@@ -33,7 +36,10 @@ public class SyncWorker extends Worker {
     @Override
     public Result doWork() {
         final var repo = NotesRepository.getInstance(getApplicationContext());
-        final var accounts = repo.getAccounts();
+        final var accounts = repo.getAccounts()
+                .stream().filter(account -> !AccountSyncUtil.isLocalAccount(getApplicationContext(), account))
+                .collect(Collectors.toList());
+
         final var latch = new CountDownLatch(accounts.size());
 
         for (final var account : accounts) {

@@ -6,8 +6,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.LayerDrawable;
-import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
@@ -16,12 +16,16 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 import it.niedermann.owncloud.notes.R;
 import it.niedermann.owncloud.notes.branding.BrandedDialogFragment;
 import it.niedermann.owncloud.notes.databinding.DialogAccountSwitcherBinding;
 import it.niedermann.owncloud.notes.manageaccounts.ManageAccountsActivity;
 import it.niedermann.owncloud.notes.persistence.NotesRepository;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
+import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 import it.niedermann.owncloud.notes.shared.util.DisplayUtils;
 
 /**
@@ -66,10 +70,10 @@ public class AccountSwitcherDialog extends BrandedDialogFragment {
             account$.removeObservers(requireActivity());
 
             binding.accountName.setText(currentLocalAccount.getDisplayName());
-            binding.accountHost.setText(Uri.parse(currentLocalAccount.getUrl()).getHost());
+            DisplayUtils.setHost(currentLocalAccount, binding.accountHost);
             Glide.with(requireContext())
                     .load(DisplayUtils.getAvatarUrl(currentLocalAccount))
-                    .error(R.drawable.ic_account_circle_grey_24dp)
+                    .error(R.drawable.ic_account_circle_grey_32dp)
                     .apply(RequestOptions.circleCropTransform())
                     .into(binding.currentAccountItemAvatar);
             binding.accountLayout.setOnClickListener((v) -> dismiss());
@@ -82,18 +86,14 @@ public class AccountSwitcherDialog extends BrandedDialogFragment {
             final var localAccounts$ = repo.getAccounts$();
             localAccounts$.observe(requireActivity(), (localAccounts) -> {
                 localAccounts$.removeObservers(requireActivity());
-                for (final var localAccount : localAccounts) {
-                    if (localAccount.getId() == currentLocalAccount.getId()) {
-                        localAccounts.remove(localAccount);
-                        break;
-                    }
-                }
-                adapter.setLocalAccounts(localAccounts);
+
+                setAdapterList(currentLocalAccount, adapter, localAccounts);
+                setAddLocalAccountButtonVisibility(localAccounts);
             });
         });
 
         binding.addAccount.setOnClickListener((v) -> {
-            accountSwitcherListener.addAccount();
+            accountSwitcherListener.onAddAccountButtonClick();
             dismiss();
         });
 
@@ -102,9 +102,27 @@ public class AccountSwitcherDialog extends BrandedDialogFragment {
             dismiss();
         });
 
+        binding.addLocalAccount.setOnClickListener(view -> {
+            accountSwitcherListener.onAddLocalAccountButtonClick();
+            dismiss();
+        });
+
         return new MaterialAlertDialogBuilder(requireContext())
                 .setView(binding.getRoot())
                 .create();
+    }
+
+    private void setAddLocalAccountButtonVisibility(List<Account> localAccounts) {
+        final boolean isDeviceLocalAccountPresent = localAccounts.stream()
+                .anyMatch(account -> AccountSyncUtil.isLocalAccount(requireContext(), account));
+        binding.addLocalAccount.setVisibility(isDeviceLocalAccountPresent ? View.GONE : View.VISIBLE);
+    }
+
+    private void setAdapterList(Account currentLocalAccount, AccountSwitcherAdapter adapter, List<Account> localAccounts) {
+        final List<Account> adapterAccounts = localAccounts.stream()
+                .filter(account -> account.getId() != currentLocalAccount.getId())
+                .collect(Collectors.toList());
+        adapter.setLocalAccounts(adapterAccounts);
     }
 
     public static DialogFragment newInstance(long currentAccountId) {

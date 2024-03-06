@@ -23,7 +23,7 @@
             android:contentDescription="@null"
             android:focusable="false"
             android:scaleType="center"
-            app:srcCompat="@drawable/ic_account_circle_grey_24dp" />
+            app:srcCompat="@drawable/ic_account_circle_grey_32dp" />
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/currentAccountIndicator"

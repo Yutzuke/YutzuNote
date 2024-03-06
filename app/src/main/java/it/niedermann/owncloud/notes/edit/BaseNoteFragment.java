@@ -1,7 +1,6 @@
 package it.niedermann.owncloud.notes.edit;
 
 import static java.lang.Boolean.TRUE;
-import static it.niedermann.owncloud.notes.NotesApplication.isDarkThemeActive;
 import static it.niedermann.owncloud.notes.branding.BrandingUtil.tintMenuIcon;
 import static it.niedermann.owncloud.notes.edit.EditNoteActivity.ACTION_SHORTCUT;
 import static it.niedermann.owncloud.notes.shared.util.WidgetUtil.pendingIntentFlagCompat;
@@ -11,7 +10,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import trikita.log.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -47,9 +45,11 @@ import it.niedermann.owncloud.notes.persistence.entity.Note;
 import it.niedermann.owncloud.notes.shared.model.ApiVersion;
 import it.niedermann.owncloud.notes.shared.model.DBStatus;
 import it.niedermann.owncloud.notes.shared.model.ISyncCallback;
+import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 import it.niedermann.owncloud.notes.shared.util.ApiVersionUtil;
 import it.niedermann.owncloud.notes.shared.util.NoteUtil;
 import it.niedermann.owncloud.notes.shared.util.ShareUtil;
+import trikita.log.Log;
 
 public abstract class BaseNoteFragment extends BrandedFragment implements CategoryDialogListener, EditTitleListener {
 
@@ -121,7 +121,8 @@ public abstract class BaseNoteFragment extends BrandedFragment implements Catego
                                 requireActivity().invalidateOptionsMenu();
                             }
                         } else {
-                            paramNote.setStatus(DBStatus.LOCAL_EDITED);
+                            final var status = AccountSyncUtil.isLocalAccount(requireContext(), localAccount) ? DBStatus.VOID : DBStatus.LOCAL_EDITED;
+                            paramNote.setStatus(status);
                             note = repo.addNote(localAccount.getId(), paramNote);
                             originalNote = null;
                             requireActivity().runOnUiThread(() -> onNoteLoaded(note));

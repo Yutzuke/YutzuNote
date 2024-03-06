@@ -13,6 +13,7 @@ import android.os.Build;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.WindowInsets;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.core.view.ViewCompat;
@@ -118,5 +119,15 @@ public class DisplayUtils {
     public static SingleSignOnUrl getAvatarUrl(@NonNull Account account) {
         return new SingleSignOnUrl(account.getAccountName(), account.getUrl() + AVATAR_URL_MID_PART +
                 Uri.encode(SSOUtil.sanitizeUserId(account.getUserName())) + AVATAR_URL_END_PART);
+    }
+
+    public static void setHost(@NonNull Account account, @NonNull TextView textView) {
+        if (account.getUrl().trim().isEmpty()) {
+            textView.setVisibility(View.GONE);
+            return;
+        }
+
+        textView.setVisibility(View.VISIBLE);
+        textView.setText(Uri.parse(account.getUrl()).getHost());
     }
 }

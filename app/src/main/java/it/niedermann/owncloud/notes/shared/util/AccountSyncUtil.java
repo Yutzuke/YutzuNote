@@ -22,6 +22,10 @@ import android.content.Context;
 
 import androidx.annotation.NonNull;
 
+import com.nextcloud.android.sso.exceptions.NextcloudFilesAppAccountNotFoundException;
+import com.nextcloud.android.sso.helper.SingleAccountHelper;
+import com.nextcloud.android.sso.model.SingleSignOnAccount;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -71,5 +75,19 @@ public final class AccountSyncUtil {
         return getMurenaAccounts(context)
                 .stream()
                 .anyMatch(account -> accountName.equals(account.name));
+    }
+
+    public static boolean isLocalAccount(@NonNull Context context, @NonNull Account account) {
+        try {
+            return SingleAccountHelper.isLocalAccount(context, account.getAccountName());
+        } catch (NextcloudFilesAppAccountNotFoundException e) {
+            Log.e(TAG, "Failed to check is local account or not", e);
+        }
+
+        return false;
+    }
+
+    public static boolean isLocalAccount(@NonNull SingleSignOnAccount account) {
+        return SingleAccountHelper.isLocalAccount(account);
     }
 }

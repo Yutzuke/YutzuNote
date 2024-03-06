@@ -1,6 +1,5 @@
 package it.niedermann.owncloud.notes.accountswitcher;
 
-import android.net.Uri;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -26,11 +25,11 @@ public class AccountSwitcherViewHolder extends RecyclerView.ViewHolder {
 
     public void bind(@NonNull Account localAccount, @NonNull Consumer<Account> onAccountClick) {
         binding.accountName.setText(localAccount.getDisplayName());
-        binding.accountHost.setText(Uri.parse(localAccount.getUrl()).getHost());
+        DisplayUtils.setHost(localAccount, binding.accountHost);
         Glide.with(itemView.getContext())
                 .load(DisplayUtils.getAvatarUrl(localAccount))
-                .placeholder(R.drawable.ic_account_circle_grey_24dp)
-                .error(R.drawable.ic_account_circle_grey_24dp)
+                .placeholder(R.drawable.ic_account_circle_grey_32dp)
+                .error(R.drawable.ic_account_circle_grey_32dp)
                 .apply(RequestOptions.circleCropTransform())
                 .into(binding.accountItemAvatar);
         itemView.setOnClickListener((v) -> onAccountClick.accept(localAccount));

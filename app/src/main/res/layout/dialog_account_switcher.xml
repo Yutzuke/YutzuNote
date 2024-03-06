@@ -24,7 +24,7 @@
             android:contentDescription="@null"
             android:focusable="false"
             android:scaleType="center"
-            app:srcCompat="@drawable/ic_account_circle_grey_24dp" />
+            app:srcCompat="@drawable/ic_account_circle_grey_32dp" />
 
         <LinearLayout
             android:layout_width="0dp"
@@ -105,6 +105,35 @@
             android:ellipsize="middle"
             android:singleLine="true"
             android:text="@string/add_account"
+            android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
+            android:textColor="?android:textColorPrimary" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/add_local_account"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/selectableItemBackground"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacer_1x">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="@dimen/spacer_activity_sides"
+            android:contentDescription="@null"
+            android:focusable="false"
+            android:scaleType="center"
+            app:srcCompat="@drawable/ic_phone_android_24dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="@dimen/spacer_2x"
+            android:ellipsize="middle"
+            android:singleLine="true"
+            android:text="@string/use_local_notes"
             android:textAppearance="@style/TextAppearance.AppCompat.Widget.TextView.SpinnerItem"
             android:textColor="?android:textColorPrimary" />
     </LinearLayout>

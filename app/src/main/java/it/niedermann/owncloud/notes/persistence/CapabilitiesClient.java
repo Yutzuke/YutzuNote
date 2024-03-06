@@ -9,6 +9,7 @@ import androidx.annotation.WorkerThread;
 import com.nextcloud.android.sso.model.SingleSignOnAccount;
 
 import it.niedermann.owncloud.notes.shared.model.Capabilities;
+import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 import it.niedermann.owncloud.notes.shared.util.SSOUtil;
 import trikita.log.Log;
 
@@ -21,6 +22,10 @@ public class CapabilitiesClient {
 
     @WorkerThread
     public static Capabilities getCapabilities(@NonNull Context context, @NonNull SingleSignOnAccount ssoAccount, @Nullable String lastETag, @NonNull ApiProvider apiProvider) throws Throwable {
+        if (AccountSyncUtil.isLocalAccount(ssoAccount)) {
+            return new Capabilities();
+        }
+
         final var ocsAPI = apiProvider.getOcsAPI(context, ssoAccount);
         try {
             final var response = ocsAPI.getCapabilities(lastETag).blockingSingle();
@@ -45,6 +50,10 @@ public class CapabilitiesClient {
     @WorkerThread
     @Nullable
     public static String getDisplayName(@NonNull Context context, @NonNull SingleSignOnAccount ssoAccount, @NonNull ApiProvider apiProvider) {
+        if (AccountSyncUtil.isLocalAccount(ssoAccount)) {
+            return ssoAccount.name;
+        }
+
         final var ocsAPI = apiProvider.getOcsAPI(context, ssoAccount);
         try {
             final var userResponse = ocsAPI.getUser(SSOUtil.sanitizeUserId(ssoAccount.userId)).execute();

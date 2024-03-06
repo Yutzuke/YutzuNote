@@ -3,9 +3,6 @@ package it.niedermann.owncloud.notes.importaccount;
 import android.accounts.NetworkErrorException;
 import android.content.Intent;
 import android.os.Bundle;
-
-import it.niedermann.owncloud.notes.main.MainActivity;
-import trikita.log.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
@@ -33,12 +30,16 @@ import it.niedermann.owncloud.notes.branding.BrandingUtil;
 import it.niedermann.owncloud.notes.databinding.ActivityImportAccountBinding;
 import it.niedermann.owncloud.notes.exception.ExceptionDialogFragment;
 import it.niedermann.owncloud.notes.exception.ExceptionHandler;
+import it.niedermann.owncloud.notes.main.MainActivity;
 import it.niedermann.owncloud.notes.persistence.ApiProvider;
 import it.niedermann.owncloud.notes.persistence.CapabilitiesClient;
 import it.niedermann.owncloud.notes.persistence.SyncWorker;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
-import it.niedermann.owncloud.notes.shared.model.Capabilities;
+import it.niedermann.owncloud.notes.shared.account.ImportMurenaAccountViewModel;
+import it.niedermann.owncloud.notes.shared.account.LocalAccountBundle;
+import it.niedermann.owncloud.notes.shared.account.LocalAccountViewModel;
 import it.niedermann.owncloud.notes.shared.model.IResponseCallback;
+import trikita.log.Log;
 
 public class ImportAccountActivity extends AppCompatActivity {
 
@@ -49,6 +50,8 @@ public class ImportAccountActivity extends AppCompatActivity {
 
     private ImportAccountViewModel importAccountViewModel;
     private ImportMurenaAccountViewModel importMurenaAccountViewModel;
+
+    private LocalAccountViewModel localAccountViewModel;
 
     private ActivityImportAccountBinding binding;
 
@@ -61,13 +64,20 @@ public class ImportAccountActivity extends AppCompatActivity {
         binding = ActivityImportAccountBinding.inflate(getLayoutInflater());
         importAccountViewModel = new ViewModelProvider(this).get(ImportAccountViewModel.class);
         importMurenaAccountViewModel = new ViewModelProvider(this).get(ImportMurenaAccountViewModel.class);
+        localAccountViewModel = new ViewModelProvider(this).get(LocalAccountViewModel.class);
 
         setContentView(binding.getRoot());
 
         binding.welcomeText.setText(getString(R.string.welcome_text, getString(R.string.app_name)));
+        handleAddButtonClickListener();
+        handleLocalAccount();
+
+        handleAutoMurenaAccountSetup();
+    }
+
+    private void handleAddButtonClickListener() {
         binding.addButton.setOnClickListener((v) -> {
-            binding.addButton.setEnabled(false);
-            binding.addButton.setVisibility(View.INVISIBLE);
+            setAddButtonVisibility(false);
             binding.status.setVisibility(View.GONE);
             try {
                 AccountImporter.pickNewAccount(this);
@@ -75,15 +85,24 @@ public class ImportAccountActivity extends AppCompatActivity {
                 UiExceptionManager.showDialogForException(this, e);
                 Log.w(TAG, "=============================================================");
                 Log.w(TAG, "Nextcloud app is not installed. Cannot choose account");
-                e.printStackTrace();
+                Log.e(TAG, e.getMessage());
             } catch (AndroidGetAccountsPermissionNotGranted e) {
-                binding.addButton.setEnabled(true);
-                binding.addButton.setVisibility(View.VISIBLE);
+                setAddButtonVisibility(true);
                 AccountImporter.requestAndroidAccountPermissionsAndPickAccount(this);
             }
         });
+    }
 
-        handleAutoMurenaAccountSetup();
+    private void setAddButtonVisibility(boolean enabled) {
+        int visibility = enabled ? View.VISIBLE : View.INVISIBLE;
+
+        binding.addButton.setEnabled(enabled);
+        binding.addButton.setVisibility(visibility);
+
+        binding.addLocalButton.setEnabled(enabled);
+        binding.addLocalButton.setVisibility(visibility);
+
+        binding.textOr.setVisibility(visibility);
     }
 
     @Override
@@ -119,11 +138,7 @@ public class ImportAccountActivity extends AppCompatActivity {
                                 runOnUiThread(() -> {
                                     Log.i(TAG, capabilities.toString());
                                     BrandingUtil.saveBrandColors(ImportAccountActivity.this, capabilities.getColor(), capabilities.getTextColor());
-                                    setResult(RESULT_OK);
-                                    Intent intent = new Intent(ImportAccountActivity.this, MainActivity.class);
-                                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-                                    startActivity(intent);
-                                    finish();
+                                    finishActivity();
                                 });
                                 SyncWorker.update(ImportAccountActivity.this, PreferenceManager.getDefaultSharedPreferences(ImportAccountActivity.this)
                                         .getBoolean(getString(R.string.pref_key_background_sync), true));
@@ -140,7 +155,7 @@ public class ImportAccountActivity extends AppCompatActivity {
                         runOnUiThread(() -> status$.observe(ImportAccountActivity.this, (status) -> {
                             binding.progressText.setVisibility(View.VISIBLE);
                             Log.v(TAG, "Status: " + status.count + " of " + status.total);
-                            if(status.count > 0) {
+                            if (status.count > 0) {
                                 binding.progressCircular.setIndeterminate(false);
                             }
                             binding.progressText.setText(getString(R.string.progress_import, status.count + 1, status.total));
@@ -176,6 +191,14 @@ public class ImportAccountActivity extends AppCompatActivity {
         }
     }
 
+    private void finishActivity() {
+        setResult(RESULT_OK);
+        Intent intent = new Intent(ImportAccountActivity.this, MainActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+        finish();
+    }
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
@@ -184,8 +207,7 @@ public class ImportAccountActivity extends AppCompatActivity {
 
     private void restoreCleanState() {
         runOnUiThread(() -> {
-            binding.addButton.setEnabled(true);
-            binding.addButton.setVisibility(View.VISIBLE);
+            setAddButtonVisibility(true);
             binding.progressCircular.setVisibility(View.GONE);
             binding.progressText.setVisibility(View.GONE);
         });
@@ -193,8 +215,7 @@ public class ImportAccountActivity extends AppCompatActivity {
 
     private void handleAutoMurenaAccountSetup() {
         if (importMurenaAccountViewModel.isMurenaAccountPresent()) {
-            binding.addButton.setEnabled(false);
-            binding.addButton.setVisibility(View.INVISIBLE);
+            setAddButtonVisibility(false);
             binding.status.setVisibility(View.GONE);
 
             pickMurenaAccount();
@@ -212,9 +233,46 @@ public class ImportAccountActivity extends AppCompatActivity {
             e.printStackTrace();
         } catch (AndroidGetAccountsPermissionNotGranted |
                  NextcloudFilesAppAccountPermissionNotGrantedException e) {
-            binding.addButton.setEnabled(true);
-            binding.addButton.setVisibility(View.VISIBLE);
+            setAddButtonVisibility(true);
             AccountImporter.requestAndroidAccountPermissionsAndPickAccount(this);
         }
+    }
+
+
+    private void handleLocalAccount() {
+        binding.addLocalButton.setOnClickListener(view -> {
+            localAccountViewModel.logInToLocalAccount(getAddLocalAccountCallback());
+        });
+    }
+
+    @NonNull
+    private IResponseCallback<LocalAccountBundle> getAddLocalAccountCallback() {
+        return new IResponseCallback<>() {
+            @Override
+            public void onSuccess(@NonNull LocalAccountBundle result) {
+                onSuccessfullyAddedLocalAccount(result);
+            }
+
+            @Override
+            public void onError(@NonNull Throwable throwable) {
+                errorOnAddingNewAccount(throwable);
+            }
+        };
+    }
+
+    private void errorOnAddingNewAccount(@NonNull Throwable throwable) {
+        runOnUiThread(() -> {
+            restoreCleanState();
+            ExceptionDialogFragment.newInstance(throwable).show(getSupportFragmentManager(), ExceptionDialogFragment.class.getSimpleName());
+        });
+    }
+
+    private void onSuccessfullyAddedLocalAccount(@NonNull LocalAccountBundle result) {
+        runOnUiThread(() -> {
+            SingleAccountHelper.setCurrentAccount(getApplicationContext(), result.getSingleSignOnAccount().name);
+
+            BrandingUtil.saveBrandColors(ImportAccountActivity.this, result.getCapabilities().getColor(), result.getCapabilities().getTextColor());
+            finishActivity();
+        });
     }
 }
