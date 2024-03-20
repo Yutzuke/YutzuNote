@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">ノート</string>
     <string name="app_name_long">Nextcloud ノート</string>
     <string name="label_all_notes">すべてのノート</string>
@@ -16,7 +15,7 @@
     <string name="simple_edit">編集</string>
     <string name="simple_remove">削除</string>
     <string name="action_edit_save">保存</string>
-    <string name="simple_about">バージョン情報</string>
+    <string name="simple_about">概要</string>
     <string name="simple_link">リンク</string>
     <string name="action_note_deleted">%1$sを削除しました</string>
     <string name="action_note_restored">%1$s を復元しました</string>
@@ -27,19 +26,15 @@
     <string name="menu_favorite">お気に入り</string>
     <string name="menu_preview">プレビュー</string>
     <string name="menu_share">共有</string>
-
     <string name="search_in_category">%1$sを検索</string>
     <string name="search_in_all">全てのノートを検索</string>
-
     <string name="change_category_title">カテゴリを選択</string>
-
     <string name="listview_updated_today">今日</string>
     <string name="listview_updated_yesterday">昨日</string>
     <string name="listview_updated_this_week">今週</string>
     <string name="listview_updated_last_week">先週</string>
     <string name="listview_updated_this_month">今月</string>
     <string name="listview_updated_last_month">先月</string>
-
     <string name="settings_note_mode">ノートの表示モード</string>
     <string name="settings_theme_title">テーマ</string>
     <string name="settings_font_title">モノスペースフォント</string>
@@ -55,7 +50,6 @@
     <string name="error_no_network">ネットワークに接続されていません</string>
     <string name="error_maintenance_mode">サーバーはメンテナンスモードです</string>
     <string name="error_unknown">不明なエラーが発生しました</string>
-
     <string name="about_version_title">バージョン</string>
     <string name="about_version">現在%1$sを使用しています</string>
     <string name="about_maintainer_title">管理者</string>
@@ -79,22 +73,17 @@
     <string name="about_credits_tab_title">クレジット</string>
     <string name="about_contribution_tab_title">貢献</string>
     <string name="about_license_tab_title">利用許諾</string>
-
     <string name="widget_note_list_title">ノート一覧</string>
     <string name="widget_note_list_placeholder">ノートがありません</string>
     <string name="widget_single_note_title">一つのノート</string>
     <string name="widget_single_note_placeholder_tv">ノートが見つかりません</string>
     <string name="widget_not_logged_in">このウィジェットを使用する前に、ノートにログインしてください</string>
     <string name="widget_entry_fav_contentDescription">星印は、アイテムをお気に入りとして示すために使用されます</string>
-
     <string name="activity_select_single_note">ノートを選択</string>
-
     <string name="shortcut_create_long">新しいノートを作成</string>
-
     <string name="pref_value_font_normal">ノーマル</string>
     <string name="pref_value_wifi_and_mobile">Wi-Fiおよびモバイル接続時に同期する</string>
     <string name="pref_value_lock">パスワード保護</string>
-
     <string name="simple_error">エラー</string>
     <string name="simple_close">閉じる</string>
     <string name="simple_copy">コピー</string>
@@ -102,7 +91,6 @@
     <string name="pin_to_homescreen">ホームスクリーンにピン留めする</string>
     <string name="note_has_been_deleted">ノートが削除されました</string>
     <string name="add_account">アカウントを追加</string>
-
     <string name="category_music">音楽</string>
     <string name="category_movies">動画</string>
     <string name="category_movie">ムービー</string>
@@ -134,7 +122,6 @@
     <string name="category_present">プレゼント</string>
     <!-- Like a gift -->
     <string name="category_presents">プレゼント</string>
-
     <string name="account_already_imported">アカウントはすでにインポートされています</string>
     <string name="no_notes_yet">まだノートはありません</string>
     <string name="no_notes_yet_description">+ ボタンを押して新しいノートを作成</string>
@@ -173,25 +160,21 @@
     <string name="simple_synchronization">同期</string>
     <string name="manage_accounts">アカウント管理</string>
     <string name="action_formatting_help">フォーマット</string>
-
     <string-array name="noteMode_entries">
         <item>編集モードで開く</item>
         <item>プレビューモードで開く</item>
         <item>最後に使用したモードで開く</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>小</item>
         <item>中</item>
         <item>大</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>明るい</item>
         <item>暗い</item>
         <item>システムのデフォルト</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="other">%d 選択済</item>
     </plurals>
@@ -204,7 +187,6 @@
     <plurals name="share_multiple">
         <item quantity="other"> %1$dノートの内容を共有</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -214,10 +196,8 @@
     <string name="formatting_help_cbf_title">コンテキストに基づいた書式設定 </string>
     <string name="formatting_help_cbf_body_1">Notesアプリの重要な設計目標は、注意力を阻害しないツールを提供することです。その為にMarkdownを使ってテキストを修飾できるようにしました。以下は、コードを入力することなくショートカットを使ってメモを書式設定する例です。</string>
     <string name="formatting_help_cbf_body_2">テキストの範囲を選択するか、カーソルを任意の位置でタップすると、デフォルトのエントリ%1$s、%2$s、%3$sや%4$s、%5$sなどのエントリの横にあるポップアップメニューが表示されます。</string>
-
     <string name="formatting_help_text_title">テキスト</string>
     <string name="formatting_help_text_body">マークダウンで単語を %1$s太字%1$s にしたり、%2$s斜体%2$s するのは簡単です。 その他、単語を%3$s打ち消し %3$s たり、[Nextcloudへリンク](https://nextcloud.com)することもできます。</string>
-
     <string name="formatting_help_lists_title">リスト</string>
     <string name="formatting_help_lists_body_1">番号付きのリストにしたい場合には:</string>
     <string name="formatting_help_lists_body_2">一つ目</string>
@@ -228,12 +208,10 @@
     <string name="formatting_help_lists_body_7">また、小項目がある場合は、ダッシュや星の前にスペースを2つ入れます:</string>
     <string name="formatting_help_lists_body_8">このように</string>
     <string name="formatting_help_lists_body_9">そしてこれ</string>
-
     <string name="formatting_help_checkboxes_title">チェックボックス</string>
     <string name="formatting_help_checkboxes_body_1">チェックボックスを作成するには、リストの後に角括弧を使用します</string>
     <string name="formatting_help_checkboxes_body_2">アイテム1</string>
     <string name="formatting_help_checkboxes_body_3">アイテム2</string>
-
     <string name="formatting_help_structured_documents_title">構造化ドキュメント</string>
     <string name="formatting_help_structured_documents_body_1">文書を構造化するために、さまざまなレベルの見出しがあると便利なことがあります。見出しを作るには、行頭から%1$sで書き始めて見出しを作成します。複数の%2$sを使うと見出しのサイズが小さくなります。</string>
     <string name="formatting_help_structured_documents_body_2">これは見出し3です</string>
@@ -241,23 +219,19 @@
     <string name="formatting_help_structured_documents_body_4">なにかを引用したい場合は、行頭に%1$s文字を使用します:</string>
     <string name="formatting_help_structured_documents_body_5">知識より想像力が重要です。知識は限られていますが、想像力は世界を駆け巡ります。</string>
     <string name="formatting_help_structured_documents_body_6">- アルバート・アインシュタイン</string>
-
     <string name="formatting_help_code_title">コード</string>
     <string name="formatting_help_code_body_1">Markdownのコード書式にはさまざまな方法があります。インラインのコードブロックにする場合は、バッククオートでくくります:</string>
     <string name="formatting_help_code_body_2">Markdownは、コードフェンシングと呼ばれるものもサポートしています。これにより、インデントなしで複数行に適用できます:</string>
     <string name="formatting_help_code_body_3">言語毎の構文の強調表示を使用する場合は、言語指定します:</string>
-
     <string name="formatting_help_tables_title">テーブル</string>
     <!-- Column header of a sample table -->
     <string name="formatting_help_tables_column">カラム %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">値 %1d</string>
-
     <string name="formatting_help_images_body_1">リンクは、プロトコルとドメインから始まる完全URLか%1$sから始まる絶対パスである必要があります。</string>
     <string name="formatting_help_images_body_2">マークダウン形式に準拠するには、画像URL内にエスケープ文字を使用してください。これは例えば、URL内の%1$sをスペースで置き換えるなどが該当します。</string>
     <string name="formatting_help_images_title">画像</string>
     <string name="formatting_help_images_alt">ファンシー画像</string>
-
     <string name="simple_other">その他</string>
     <string name="sort_last_modified">更新日付でソート</string>
     <string name="sort_alphabetically">アルファベット順にソート</string>
@@ -273,10 +247,8 @@
         <item quantity="other">アカウント「%1$s」を削除すると、同期されていない%2$d件の変更も削除され、復元が出来なくなります。</item>
     </plurals>
     <string name="remove_account">%1$sを削除</string>
-
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">アカウントの追加にはインターネットへの接続が必要です</string>
     <string name="settings_notes_path">フォルダーを設定</string>
-
     <string name="simple_next">次へ</string>
     <string name="simple_prev">前へ</string>
     <string name="simple_backup">バックアップ</string>
