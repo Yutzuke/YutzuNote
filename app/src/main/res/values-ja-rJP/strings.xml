@@ -49,7 +49,7 @@
     <string name="error_synchronization">同期に失敗</string>
     <string name="error_no_network">ネットワークに接続されていません</string>
     <string name="error_maintenance_mode">サーバーはメンテナンスモードです</string>
-    <string name="error_unknown">不明なエラーが発生しました</string>
+    <string name="error_unknown">不明なエラーが発生しました。</string>
     <string name="about_version_title">バージョン</string>
     <string name="about_version">現在%1$sを使用しています</string>
     <string name="about_maintainer_title">管理者</string>
@@ -266,4 +266,5 @@
     <string name="progress_import_indeterminate">ノートを導入しています…</string>
     <string name="progress_import">%2$d中%1$dのノートをインポート中...</string>
     <string name="account_imported">アカウントを導入しました。</string>
+    <string name="preferences_authors">作者</string>
 </resources>
