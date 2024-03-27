@@ -267,4 +267,10 @@
     <string name="progress_import">%2$d中%1$dのノートをインポート中...</string>
     <string name="account_imported">アカウントを導入しました。</string>
     <string name="preferences_authors">作者</string>
+    <string name="preferences_app_info_title">ノートの情報</string>
+    <string name="settings_keep_screen_on_summary">ノートの閲覧中または編集中</string>
+    <string name="preferences_about_app">NotesはNextcloud Notesのフォークです</string>
+    <string name="preferences_privacy_policy">プライバシーポリシー</string>
+    <string name="preferences_service_terms">利用規約</string>
+    <string name="conflict_note_detected"># ノートの競合が発生しました。適切な方を選択してください。</string>
 </resources>
