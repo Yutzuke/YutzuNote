@@ -141,7 +141,7 @@
     <string name="error_dialog_tip_files_delete_storage">強制終了で改善されない場合は、両方のアプリのストレージをクリアしてみてください。</string>
     <string name="error_dialog_timeout_instance">一定時間内にサーバーからの反応がありませんでした。サーバーが正常に動いているか確認してください。</string>
     <string name="error_dialog_timeout_toggle">ネットワーク接続を確認してください。モバイルデータやWi-Fiのオフ/オンを繰り返してみるとうまくいく場合があります。</string>
-    <string name="error_dialog_check_server">サーバーからの反応が不正です。Webインターフェースからnotesにアクセス出来るか確認してください。</string>
+    <string name="error_dialog_check_server">サーバーからの反応が不正です。Webインターフェースからnotesにアクセスできるか確認してください。</string>
     <string name="error_dialog_check_server_logs">Nextcloudのセットアップに問題があります。サーバーのログファイルを確認してください。</string>
     <string name="error_dialog_check_maintenance">Nextcloudサーバーがメンテナンスモード中かどうか確認してください。</string>
     <string name="error_dialog_insufficient_storage">Nextcloudサーバーのストレージに空き容量がありません。ローカルの変更をクラウドに同期するには一部のファイルを削除してください。</string>
@@ -244,7 +244,7 @@
     <string name="choose_account">アカウントを選択</string>
     <string name="context_based_formatting">コンテキストに基づいた書式設定</string>
     <plurals name="remove_account_message">
-        <item quantity="other">アカウント「%1$s」を削除すると、同期されていない%2$d件の変更も削除され、復元が出来なくなります。</item>
+        <item quantity="other">アカウント「%1$s」を削除すると、同期されていない%2$d件の変更も削除され、復元ができなくなります。</item>
     </plurals>
     <string name="remove_account">%1$sを削除</string>
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">アカウントの追加にはインターネットへの接続が必要です</string>
