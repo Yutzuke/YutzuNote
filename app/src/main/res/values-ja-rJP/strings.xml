@@ -147,7 +147,7 @@
     <string name="error_dialog_insufficient_storage">Nextcloudサーバーのストレージに空き容量がありません。ローカルの変更をクラウドに同期するには一部のファイルを削除してください。</string>
     <string name="error_dialog_we_need_info">サポートには下記技術情報が必要です：</string>
     <string name="error_dialog_server_app_enabled">ご利用のサーバーに ”Notes” プラグインアプリがインストールされ、有効になっていることを確認してください。</string>
-    <string name="error_dialog_redirect">サーバーがHTTPステータスコード 302を返しました。これはNotesアプリがインストールされていないか、構成が誤っていることを意味します。.htaccessファイルのカスタムオーバーライドやOIDクライアントのようなNextcloudアプリが原因の可能性があります。</string>
+    <string name="error_dialog_redirect">サーバーがHTTPステータスコード 302を返しました。Notesアプリがインストールされていないか、構成が誤っています。.htaccessファイルに関するユーザー定義の設定、あるいは、OIDクライアントのようなNextcloudアプリが原因の可能性があります。</string>
     <string name="error_dialog_tip_disable_battery_optimizations">NextcloudとNotesアプリに対してバッテリー最適化をすべて無効にしてください。</string>
     <string name="error_dialog_min_version">ノート Androidアプリは、Nextcloud Androidアプリのバージョン3.18以上が必要です。</string>
     <string name="added_content">\"%1$s\"に追加</string>
