@@ -263,8 +263,8 @@
     <string name="settings_file_suffix_description">Nextcloud内の新しいノートのファイル拡張子</string>
     <string name="settings_file_suffix_success">新規ファイル接尾辞: %1$s</string>
     <string name="http_status_code">HTTPステータスコード: %1$d</string>
-    <string name="progress_import_indeterminate">ノートを導入しています…</string>
-    <string name="progress_import">%2$d中%1$dのノートをインポート中...</string>
+    <string name="progress_import_indeterminate">ノートをインポートしています…</string>
+    <string name="progress_import">%2$d中%1$dのノートをインポートしています…</string>
     <string name="account_imported">アカウントを導入しました。</string>
     <string name="preferences_authors">作者</string>
     <string name="preferences_app_info_title">ノートの情報</string>
@@ -273,4 +273,5 @@
     <string name="preferences_privacy_policy">プライバシーポリシー</string>
     <string name="preferences_service_terms">利用規約</string>
     <string name="conflict_note_detected"># ノートの競合が発生しました。適切な方を選択してください。</string>
+    <string name="settings_keep_screen_on">画面を常時点灯</string>
 </resources>
