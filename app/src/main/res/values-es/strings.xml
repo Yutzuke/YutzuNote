@@ -279,7 +279,7 @@
     <string name="progress_import">Importando nota %1$d de %2$d…</string>
     <string name="account_imported">Cuenta importada.</string>
     <string name="preferences_service_terms">Condiciones de servicio</string>
-    <string name="preferences_privacy_policy">Politica de privacidad</string>
+    <string name="preferences_privacy_policy">Política de privacidad</string>
     <string name="preferences_authors">Autores</string>
     <string name="preferences_about_app">Notas es una bifurcación de Nextcloud Notes</string>
     <string name="preferences_app_info">-Listar, crear, editar, compartir, buscar y borrar notas
