@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Notas</string>
-    <string name="app_name_long">Nextcloud Notas</string>
+    <string name="app_name_long">Notas de Nextcloud</string>
     <string name="label_all_notes">Todas las notas</string>
     <string name="label_favorites">Favoritos</string>
     <string name="action_create">Nueva nota</string>
@@ -37,23 +37,23 @@
     <string name="listview_updated_last_month">El mes pasado</string>
     <string name="settings_note_mode">Modo de visualización para notas</string>
     <string name="settings_theme_title">Tema</string>
-    <string name="settings_font_title">Tipo de letra monoespaciado</string>
+    <string name="settings_font_title">Fuente de letra monospace</string>
     <string name="settings_font_size">Tamaño de fuente</string>
     <string name="settings_wifi_only">Sincronizar solo sobre Wi-Fi</string>
     <string name="settings_lock">Bloqueo de App (Beta)</string>
     <string name="settings_lock_summary">Credenciales del dispositivo</string>
     <string name="settings_background_sync">Sincronización en segundo plano</string>
-    <string name="settings_prevent_screen_capture">Evitar la captura de pantalla</string>
+    <string name="settings_prevent_screen_capture">Evitar captura de pantalla</string>
     <string name="settings_gridview">Vista en cuadrícula</string>
     <string name="settings_keep_screen_on">Mantener la pantalla encendida</string>
     <string name="settings_keep_screen_on_summary">Al ver o editar una nota</string>
-    <string name="error_synchronization">Fallo en la sincronización</string>
-    <string name="error_maintenance_mode">El servidor está en modo mantenimiento</string>
+    <string name="error_synchronization">Fallo en sincronización</string>
+    <string name="error_maintenance_mode">El servidor está en mantenimiento</string>
     <string name="error_unknown">Ha ocurrido un error desconocido.</string>
-    <string name="error_sync">Fallo en la sincronización: %1$s</string>
+    <string name="error_sync">Fallo en sincronización: %1$s</string>
     <string name="error_no_network">no hay conexión a la red</string>
     <string name="about_version_title">Versión</string>
-    <string name="about_version">Esta actualmente usando &lt;strong&gt;%1$s&lt;/strong&gt;</string>
+    <string name="about_version">Estas utilizando <strong>%1$s</strong></string>
     <string name="about_maintainer_title">Mantenedor</string>
     <string name="about_developers_title">Desarrolladores</string>
     <string name="about_translators_title">Traductores</string>
@@ -62,15 +62,15 @@
     <string name="about_source_title">Código fuente</string>
     <string name="about_source">Este proyecto está alojado en GitHub: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_issues_title">Problemas</string>
-    <string name="about_issues">Puede informar de fallos, proponer mejoras y solicitar características en el sistema de seguimiento de incidencias de GitHub: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues">Puedes reportar fallos, proponer mejoras y solicitar funciones en el sistema en el gestor de problemas de GitHub: <a href="%1$s">%1$s</a></string>
     <string name="about_translate_title">Traducir</string>
-    <string name="about_translate">Únase al equipo de Nextcloud en Transifex y ayúdenos a traducir esta aplicación: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate">Únete al equipo de Nextcloud en Transifex y ayúdanos a traducir esta aplicación: <a href="%1$s">%1$s</a></string>
     <string name="about_app_license_title">Licencia de la aplicación</string>
     <string name="about_app_license">Esta aplicación está bajo la Licencia Pública General GNU v3+.</string>
     <string name="about_app_license_button">Ver licencia</string>
     <string name="about_icons_disclaimer_title">Iconos</string>
-    <string name="about_icons_disclaimer_app_icon">Mire %1$spara ver el icono original.</string>
-    <string name="about_icons_disclaimer_mdi_icons">Todos los demás iconos utilizados por esta aplicación %1$s están hechos por Google Inc. y tienen licencia de Apache 2.0.</string>
+    <string name="about_icons_disclaimer_app_icon">Para ver el icono original, consulta %1$s.</string>
+    <string name="about_icons_disclaimer_mdi_icons">Todos los demás iconos utilizados por esta aplicación %1$s están hechos por Google Inc. y están licenciados bajo la Licencia Apache 2.0.</string>
     <string name="about_icons_disclaimer_mdi">Iconos Material Design</string>
     <string name="about_credits_tab_title">Créditos</string>
     <string name="about_contribution_tab_title">Contribuir</string>
@@ -80,7 +80,7 @@
     <string name="widget_single_note_title">Nota única</string>
     <string name="widget_single_note_placeholder_tv">Nota no encontrada</string>
     <string name="widget_not_logged_in">Por favor, inicia sesión en Notas antes de usar este widget</string>
-    <string name="widget_entry_fav_contentDescription">El icono de estrella se usa para indicar que el elemento es un favorito</string>
+    <string name="widget_entry_fav_contentDescription">La estrella se usa para marcar un elemento como favorito</string>
     <string name="pref_value_theme_light">Claro</string>
     <string name="pref_value_theme_dark">Oscuro</string>
     <string name="pref_value_font_normal">Normal</string>
@@ -90,8 +90,8 @@
     <string name="simple_close">Cerrar</string>
     <string name="simple_copy">Copiar</string>
     <string name="simple_exception">Excepción</string>
-    <string name="pin_to_homescreen">Acoplar a la pantalla de inicio</string>
-    <string name="note_has_been_deleted">Esta nota ha sido borrada</string>
+    <string name="pin_to_homescreen">Agregar a la pantalla de inicio</string>
+    <string name="note_has_been_deleted">Esta nota fue borrada</string>
     <string name="add_account">Agregar cuenta</string>
     <string name="category_music">Música</string>
     <string name="category_movies">Películas</string>
@@ -289,7 +289,7 @@
 \n -Renderizar MarkDown
 \n -Traducido a varios idiomas</string>
     <string name="preferences_app_info_title">Notas de información</string>
-    <string name="shortcut_create_long">Crear una nota nueva</string>
+    <string name="shortcut_create_long">Crear nueva nota</string>
     <string name="activity_select_single_note">Seleccionar nota</string>
 
     <string name="use_local_notes">UTILIZAR NOTAS LOCALES</string>
