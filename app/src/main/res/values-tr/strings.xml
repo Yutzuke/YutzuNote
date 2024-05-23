@@ -1,64 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Notlar</string>
-    <string name="app_name_long">Nextcloud Notes</string>
-    <string name="label_all_notes">Tum notlar</string>
+    <string name="app_name_long">Nextcloud Notlar</string>
+    <string name="label_all_notes">Tüm notlar</string>
     <string name="label_favorites">Sık kullanılanlar</string>
-    <string name="action_create">Not ekle</string>
+    <string name="action_create">Yeni not</string>
     <string name="welcome_text">%1$s uygulamasına hoş geldiniz</string>
     <string name="action_settings">Ayarlar</string>
     <string name="action_trashbin">Silinmiş notlar</string>
-    <string name="action_search">Arama</string>
+    <string name="action_search">Ara</string>
     <string name="action_sorting_method">Sıralama yöntemi</string>
     <string name="simple_cancel">İptal</string>
     <string name="simple_switch">Değiştir</string>
     <string name="simple_edit">Düzenle</string>
-    <string name="simple_remove">Sil</string>
+    <string name="simple_remove">Kaldır</string>
     <string name="action_edit_save">Kaydet</string>
     <string name="simple_about">Hakkında</string>
     <string name="simple_link">Bağlantı</string>
     <string name="action_note_deleted">%1$s silindi</string>
     <string name="action_note_restored">%1$s geri yüklendi</string>
     <string name="action_undo">Geri al</string>
-    <string name="action_uncategorized">Kategorisiz</string>
+    <string name="action_uncategorized">Genel</string>
     <string name="menu_delete">Sil</string>
     <string name="menu_change_category">Kategori</string>
     <string name="menu_favorite">Sık kullanılanlara ekle</string>
-    <string name="menu_preview">Ön izleme</string>
+    <string name="menu_preview">Ön izle</string>
     <string name="menu_share">Paylaş</string>
-
-    <string name="search_in_category">%1$s içinde arama</string>
-    <string name="search_in_all">Tüm notlarda arama</string>
-
+    <string name="search_in_category">%1$s içinde ara</string>
+    <string name="search_in_all">Tüm notlarda ara</string>
     <string name="change_category_title">Bir kategori seçin</string>
-
     <string name="listview_updated_today">Bugün</string>
     <string name="listview_updated_yesterday">Dün</string>
     <string name="listview_updated_this_week">Bu hafta</string>
     <string name="listview_updated_last_week">Geçen hafta</string>
     <string name="listview_updated_this_month">Bu ay</string>
     <string name="listview_updated_last_month">Geçen ay</string>
-
-    <string name="settings_note_mode">Notların görüntülenme kipi</string>
+    <string name="settings_note_mode">Notların görüntülenme modu</string>
     <string name="settings_theme_title">Tema</string>
     <string name="settings_font_title">Sabit aralıklı yazı türü</string>
     <string name="settings_font_size">Yazı boyutu</string>
-    <string name="settings_wifi_only">Yalnızca Wi-Fi ile eşitlensin</string>
+    <string name="settings_wifi_only">Yalnızca Wi-Fi ile eşitle</string>
     <string name="settings_lock">Uygulama kilidi (Beta)</string>
     <string name="settings_lock_summary">Aygıt kimlik doğrulama bilgileri</string>
     <string name="settings_background_sync">Arka planda eşitleme</string>
-    <string name="settings_prevent_screen_capture">Ekran görüntüsü alınamasın</string>
+    <string name="settings_prevent_screen_capture">Ekran görüntüsü alınmasını engelle</string>
     <string name="settings_gridview">Tablo görünümü</string>
-    <string name="settings_keep_screen_on">Ekran açık kalsın</string>
+    <string name="settings_keep_screen_on">Ekranı açık tut</string>
     <string name="settings_keep_screen_on_summary">Bir notu görüntüler ya da düzenlerken</string>
-
-    <string name="error_sync">Eşitlenemedi: %1$s</string>
-    <string name="error_synchronization">Eşitlenemedi</string>
+    <string name="error_sync">%1$s eşitlenemedi</string>
+    <string name="error_synchronization">Eşitleme başarısız</string>
     <string name="error_no_network">Ağ bağlantısı yok</string>
-    <string name="error_maintenance_mode">Sunucu bakım kipinde</string>
-    <string name="error_unknown">Bilinmeyen bir sorun çıktı.</string>
-
+    <string name="error_maintenance_mode">Sunucu bakım modunda</string>
+    <string name="error_unknown">Bilinmeyen bir sorun oluştu.</string>
     <string name="about_version_title">Sürüm</string>
     <string name="about_version">Şu anda %1$s kullanıyorsunuz</string>
     <string name="about_maintainer_title">Sorumlu</string>
@@ -82,22 +75,17 @@
     <string name="about_credits_tab_title">Emeği geçenler</string>
     <string name="about_contribution_tab_title">Katkı</string>
     <string name="about_license_tab_title">Lisans</string>
-
     <string name="widget_note_list_title">Not listesi</string>
     <string name="widget_note_list_placeholder">Herhangi bir not yok</string>
     <string name="widget_single_note_title">Tek not</string>
     <string name="widget_single_note_placeholder_tv">Not bulunamadı</string>
     <string name="widget_not_logged_in">Bu pano bileşenini kullanabilmek için lütfen Notlar üzerinde oturum açın</string>
     <string name="widget_entry_fav_contentDescription">Sık kullanılan ögeler için kullanılacak yıldız simgesi</string>
-
     <string name="activity_select_single_note">Not seçin</string>
-
     <string name="shortcut_create_long">Not ekle</string>
-
     <string name="pref_value_font_normal">Normal</string>
     <string name="pref_value_wifi_and_mobile">Wi-Fi ve mobil veri ile eşitlensin</string>
     <string name="pref_value_lock">Parola koruması</string>
-
     <string name="simple_error">Hata</string>
     <string name="simple_close">Kapat</string>
     <string name="simple_copy">Kopyala</string>
@@ -105,7 +93,6 @@
     <string name="pin_to_homescreen">Ana sayfaya sabitle</string>
     <string name="note_has_been_deleted">Bu not silinmiş</string>
     <string name="add_account">Hesap ekle</string>
-
     <string name="category_music">Müzik</string>
     <string name="category_movies">Filmler</string>
     <string name="category_movie">Film</string>
@@ -137,7 +124,6 @@
     <string name="category_present">Armağan</string>
     <!-- Like a gift -->
     <string name="category_presents">Armağanlar</string>
-
     <string name="account_already_imported">Hesap zaten içe aktarılmış</string>
     <string name="no_notes_yet">Henüz bir not yok</string>
     <string name="no_notes_yet_description">Yeni bir not eklemek için + tuşuna basın</string>
@@ -176,25 +162,21 @@
     <string name="simple_synchronization">Eşitleme</string>
     <string name="manage_accounts">Hesap yönetimi</string>
     <string name="action_formatting_help">Biçimlendirme</string>
-
     <string-array name="noteMode_entries">
         <item>Düzenleme kipinde aç</item>
         <item>Ön izleme kipinde aç</item>
         <item>Son seçimim hatırlansın</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Küçük</item>
         <item>Orta</item>
         <item>Büyük</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Açık</item>
         <item>Koyu</item>
         <item>Sistem varsayılanı</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d seçilmiş</item>
         <item quantity="other">%d seçilmiş</item>
@@ -211,7 +193,6 @@
         <item quantity="one">%1$d notun içeriğini paylaş</item>
         <item quantity="other">%1$d notun içeriğini paylaş</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -221,10 +202,8 @@
     <string name="formatting_help_cbf_title">Bağlama göre biçimlendirme</string>
     <string name="formatting_help_cbf_body_1">Notlar uygulamasının önemli bir tasarım amacı, dikkat dağıtmayan bir araç sağlamaktır. Yine de metinlerinizi Markdown kullanarak biçimlendirebilirsiniz. Aşağıdaki örneklerden bazılarında kısayol tuşlarını kullanarak notlarınızı aşağıdaki kodları yazmadan biçimlendirebilirsiniz.</string>
     <string name="formatting_help_cbf_body_2">Yalnızca bir metin bölümü seçerek ya da herhangi bir konumda imlece dokunarak varsayılan kayıtların yanında açılan menüden %1$s, %2$s, %3$s, %4$s gibi kayıtlar ya da %5$s seçenekleri kullanabilirsiniz.</string>
-
     <string name="formatting_help_text_title">Metin</string>
     <string name="formatting_help_text_body">Markdown ile bazı sözcükleri %1$skalın%1$s ya da %2$syatık%2$s yapmak çok kolaydır. Bazı sözcüklerin %3$süzerini çizebilir%3$s ve [Nextcloud bağlantısı](https://nextcloud.com) gibi bağlantı verebilirsiniz.</string>
-
     <string name="formatting_help_lists_title">Listeler</string>
     <string name="formatting_help_lists_body_1">Bazen listelerin numaralı olmasını istersiniz:</string>
     <string name="formatting_help_lists_body_2">Bir</string>
@@ -235,12 +214,10 @@
     <string name="formatting_help_lists_body_7">Alt imler için tire ya da yıldız önüne iki boşluk ekleyin:</string>
     <string name="formatting_help_lists_body_8">Bunun gibi</string>
     <string name="formatting_help_lists_body_9">Ve bunun gibi</string>
-
     <string name="formatting_help_checkboxes_title">İşaret kutuları</string>
     <string name="formatting_help_checkboxes_body_1">Bir işaret kutusu eklemek için köşeli parantezler ile biten bir liste kullanın</string>
     <string name="formatting_help_checkboxes_body_2">1. öge</string>
     <string name="formatting_help_checkboxes_body_3">2. öge</string>
-
     <string name="formatting_help_structured_documents_title">Yapılandırılmış belgeler</string>
     <string name="formatting_help_structured_documents_body_1">Bazen belgelerinizi yapılandırmak için farklı düzeylerde başlıklar kullanmak yararlı olabilir. Başlık oluşturmak için satırlara %1$s ile başlayın. Bir satırda %2$s gibi birden çok simge kullanılması başlık düzeyini ve boyutunu azaltır.</string>
     <string name="formatting_help_structured_documents_body_2">Bu üçüncü düzey bir başlık</string>
@@ -248,23 +225,19 @@
     <string name="formatting_help_structured_documents_body_4">Birinden alıntı yapmak isterseniz satırdan önce %1$s karakterini kullanın:</string>
     <string name="formatting_help_structured_documents_body_5">Hayal gücü bilgiden daha önemlidir. Bilgi sınırlıyken, hayal gücü tüm dünyayı kapsar.</string>
     <string name="formatting_help_structured_documents_body_6">- Albert Einstein</string>
-
     <string name="formatting_help_code_title">Kod</string>
     <string name="formatting_help_code_body_1">Markdown ile kod yazmanın birçok farklı yolu vardır. Satır arası kod bloklarınız varsa, bunları ters tırnaklar arasında yazın:</string>
     <string name="formatting_help_code_body_2">Markdown ayrıca kod çiti olarak adlandırılan ve girinti olmadan birden fazla satıra izin veren bir şeyi destekler:</string>
     <string name="formatting_help_code_body_3">Ve söz dizimi vurgulamasını kullanmak istiyorsanız, dili ekleyin:</string>
-
     <string name="formatting_help_tables_title">Tablolar</string>
     <!-- Column header of a sample table -->
     <string name="formatting_help_tables_column">Sütun: %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">Değer: %1d</string>
-
     <string name="formatting_help_images_body_1">Bağlantılar, bir iletişim kuralı ve etki alanı ile başlayan tam adresler ya da %1$s karakteriyle başlayan mutlak yollar olmalıdır.</string>
     <string name="formatting_help_images_body_2">Markdown biçimine uymak için lütfen görsel adresinde kaçış karakterlerini kullanın. Örneğin görsel adresindeki boşlukları %1$s ile değiştirmelisiniz.</string>
     <string name="formatting_help_images_title">Görseller</string>
     <string name="formatting_help_images_alt">Süslü görsel</string>
-
     <string name="simple_other">Diğer</string>
     <string name="sort_last_modified">Değişiklik tarihine göre sırala</string>
     <string name="sort_alphabetically">Alfabeye göre sırala</string>
@@ -281,10 +254,8 @@
         <item quantity="other">%1$s hesabı silindiğinde %2$d eşitlenmemiş değişiklik de geri alınamayacak şekilde silinecek.</item>
     </plurals>
     <string name="remove_account">%1$s sil</string>
-
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Bir hesap ekleyebilmeniz için çalışan bir İnternet bağlantınız olmalı.</string>
     <string name="settings_notes_path">Klasörü ayarla</string>
-
     <string name="simple_next">Sonraki</string>
     <string name="simple_prev">Önceki</string>
     <string name="simple_backup">Yedekle</string>
@@ -302,4 +273,14 @@
     <string name="progress_import_indeterminate">Notlar içe aktarılıyor…</string>
     <string name="progress_import">Not %1$d / %2$d içe aktarılıyor…</string>
     <string name="account_imported">Hesap içe aktarıldı.</string>
+    <string name="preferences_app_info_title">Notlar Hakkında</string>
+    <string name="preferences_about_app">Notlar uygulaması Nextcloud Notlar üzerine yazılmıştır</string>
+    <string name="preferences_privacy_policy">Gizlilik politikası</string>
+    <string name="preferences_service_terms">Kullanım koşulları</string>
+    <string name="preferences_authors">Yapımcılar</string>
+    <string name="conflict_note_detected"># Notlarınız arasında bir çelişki ile karşılaştık. Lütfen uygun olanı seçin.</string>
+    <string name="conflicted_note_content_title">"
+\n
+\n***Not %1$d (Son Değiştirme %2$s):***
+\n"</string>
 </resources>
