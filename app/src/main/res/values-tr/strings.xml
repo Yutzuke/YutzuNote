@@ -283,4 +283,10 @@
 \n
 \n***Not %1$d (Son Değiştirme %2$s):***
 \n"</string>
+    <string name="preferences_app_info">-Notları listeleyin, oluşturun, düzenleyin, paylaşın, arayın ve silin
+\n -Metin ve bağlantıları uygulamada yeni not olarak paylaşın
+\n -Notları favori olarak işaretle
+\n -Toplu silme
+\n -MarkDown olarak işle/renderla
+\n -Birçok dile çevrildi</string>
 </resources>
