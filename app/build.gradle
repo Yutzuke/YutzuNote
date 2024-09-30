@@ -1,5 +1,9 @@
 apply plugin: 'com.android.application'
 
+def buildDate = { ->
+    return new Date().format('yyyyMMddHHmmss')
+}
+
 android {
     compileSdkVersion 33
     buildToolsVersion '31.0.0'
@@ -36,6 +40,7 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            versionNameSuffix "-${buildDate()}"
         }
     }
 
