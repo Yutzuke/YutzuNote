@@ -291,4 +291,7 @@
 \n
 \n***Notitie %1$d (laatst gewijzigd: %2$s):***
 \n"</string>
+    <string name="use_local_notes">Gebruik noties lokaal</string>
+    <string name="or">of</string>
+    <string name="welcome_details">Kies tussen het synchroniseren van jouw notities met een bestaand Murena cloud account of notities lokaal opslaan op jouw jouw toestel (niet gesynchroniseerd).</string>
 </resources>
