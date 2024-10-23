@@ -283,4 +283,7 @@
         <item quantity="other">Om du tar bort kontot %1$s kommer %2$d osynkroniserade ändringar att oåterkalleligen raderas.</item>
     </plurals>
     <string name="formatting_help_cbf_body_2">Markera ett textområde eller tryck på markören vid valfri position och du kommer få upp en popup-meny med innehåll, intill standardposterna %1$s, %2$s, %3$s, likt posterna %4$s eller %5$s.</string>
+    <string name="welcome_details">Välj att synka dina anteckningar med ett existerande Murena cloud-konto eller lagra dina anteckningar lokalt på din enhet (synkas ej).</string>
+    <string name="use_local_notes">Använd lokala anteckningar</string>
+    <string name="or">eller</string>
 </resources>
