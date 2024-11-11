@@ -279,7 +279,7 @@
     <string name="progress_import_indeterminate">Importo le note…</string>
     <string name="progress_import">Importazione nota %1$d di %2$d …</string>
     <string name="account_imported">Account importato.</string>
-    <string name="preferences_privacy_policy">Privacy policy</string>
+    <string name="preferences_privacy_policy">Informativa sulla privacy</string>
     <string name="preferences_authors">Autori</string>
     <string name="preferences_service_terms">Termini di servizio</string>
     <string name="preferences_about_app">Notes è un fork di Nextcloud notes</string>
@@ -297,7 +297,6 @@
 \n***Nota %1$d (Ultima modifica: %2$s):***
 \n"</string>
     <string name="conflict_note_detected"># Abbiamo riscontrato un conflitto tra le tue note. Scegli quella corretta.</string>
-
     <string name="use_local_notes">USA NOTE IN LOCALE</string>
     <string name="or">o</string>
     <string name="welcome_details">Scegli se sincronizzare le note con un account Murena già esistente o conservarle in locale sul tuo device (non sincronizzate).</string>
