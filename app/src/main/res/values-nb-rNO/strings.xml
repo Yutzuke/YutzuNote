@@ -211,4 +211,6 @@
     <string name="simple_prev">Forrige</string>
     <string name="simple_backup">Sikkerhetskopi</string>
     <string name="preferences_authors">Utviklere</string>
+    <string name="preferences_privacy_policy">Personvernerklæring</string>
+    <string name="preferences_service_terms">Bruksvilkår</string>
 </resources>
