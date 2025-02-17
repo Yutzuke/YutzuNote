@@ -76,6 +76,15 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
+    signingConfigs {
+        platformConfig {
+            storeFile file("$rootDir/keystore/platform.jks")
+            storePassword 'platform'
+            keyAlias 'platform'
+            keyPassword 'platform'
+        }
+    }
+
     defaultConfig {
         applicationId "foundation.e.notes"
         minSdkVersion 24
@@ -97,11 +106,13 @@ android {
     buildTypes {
         debug {
             testCoverageEnabled true
+            signingConfig signingConfigs.platformConfig
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.platformConfig
             versionNameSuffix "-${buildDate()}"
         }
     }
