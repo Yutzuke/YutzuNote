@@ -41,6 +41,8 @@ import com.nextcloud.android.sso.exceptions.NoCurrentAccountSelectedException;
 import com.nextcloud.android.sso.helper.SingleAccountHelper;
 import com.nextcloud.android.sso.model.SingleSignOnAccount;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -1176,5 +1178,10 @@ public class NotesRepository {
         newNote.setStatus(DBStatus.LOCAL_EDITED);
         newNote.setAccountId(note.getAccountId());
         db.getNoteDao().addNote(newNote);
+    }
+
+    @NotNull
+    public List<Note> getNotesByAccountId(long accountId) {
+        return db.getNoteDao().getNotesByAccountId(accountId);
     }
 }

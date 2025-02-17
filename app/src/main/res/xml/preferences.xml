@@ -88,4 +88,17 @@
             android:title="@string/settings_prevent_screen_capture" />
     </it.niedermann.owncloud.notes.branding.BrandedPreferenceCategory>
 
+    <it.niedermann.owncloud.notes.branding.BrandedPreferenceCategory
+        android:key="@string/pref_category_export"
+        app:layout="@layout/item_preference_category"
+        app:title="@string/settings_export">
+
+        <foundation.e.notes.export.ExportPreference
+            android:key="@string/pref_export_notes"
+            android:icon="@drawable/ic_import_export_24"
+            android:title="@string/settings_export_notes_title"
+            android:positiveButtonText="@string/settings_export"
+            android:layout="@layout/item_pref" />
+    </it.niedermann.owncloud.notes.branding.BrandedPreferenceCategory>
+
 </PreferenceScreen>
