@@ -11,6 +11,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 
 import java.util.List;
 
+import foundation.e.notes.migration.Migration_23_24;
 import it.niedermann.owncloud.notes.persistence.dao.AccountDao;
 import it.niedermann.owncloud.notes.persistence.dao.CategoryOptionsDao;
 import it.niedermann.owncloud.notes.persistence.dao.NoteDao;
@@ -45,7 +46,7 @@ import trikita.log.Log;
                 CategoryOptions.class,
                 SingleNoteWidgetData.class,
                 NotesListWidgetData.class
-        }, version = 23
+        }, version = 24
 )
 @TypeConverters({Converters.class})
 public abstract class NotesDatabase extends RoomDatabase {
@@ -80,7 +81,8 @@ public abstract class NotesDatabase extends RoomDatabase {
                         new Migration_19_20(context),
                         new Migration_20_21(),
                         new Migration_21_22(context),
-                        new Migration_22_23()
+                        new Migration_22_23(),
+                        new Migration_23_24()
                 )
                 .fallbackToDestructiveMigrationOnDowngrade()
                 .fallbackToDestructiveMigration()
