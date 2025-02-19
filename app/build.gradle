@@ -1,12 +1,74 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.jetbrains.kotlin.android'
 
 def buildDate = { ->
     return new Date().format('yyyyMMddHHmmss')
 }
 
+def appMajor = 3
+def appMinor = 7
+def appPatch = 2
+def appVersionCode = 3007002
+
 android {
     compileSdkVersion 33
     buildToolsVersion '31.0.0'
+
+    def versionPropsFile = file('version.properties')
+    Properties versionProps = new Properties()
+
+    if (!versionPropsFile.exists()) {
+        versionProps['VERSION_CHANGE'] = '0'
+        versionProps['VERSION_MAJOR'] = appMajor.toString()
+        versionProps['VERSION_MINOR'] = appMinor.toString()
+        versionProps['VERSION_PATCH'] = appPatch.toString()
+        versionProps['VERSION_CODE'] = appVersionCode.toString()
+        versionProps.store(versionPropsFile.newWriter(), null)
+    }
+
+    def getVersionCode = { ->
+        if (versionPropsFile.canRead()) {
+            versionProps.load(new FileInputStream(versionPropsFile))
+            def versionChange = versionProps['VERSION_CHANGE'].toInteger() + 1
+            def versionMinor = versionProps['VERSION_MINOR'].toInteger()
+            def versionMajor = versionProps['VERSION_MAJOR'].toInteger()
+            def versionPatch = versionProps['VERSION_PATCH'].toInteger()
+            // Up version on each 100 cycles of builds
+            if (versionChange >= 100) {
+                versionPatch = versionProps['VERSION_PATCH'].toInteger() + 1
+                versionChange = 0
+            }
+            if (versionPatch == 9) {
+                versionMinor = versionProps['VERSION_MINOR'].toInteger() + 1
+                versionPatch = 0
+            }
+            if (versionMinor == 9) {
+                versionMajor = versionProps['VERSION_MAJOR'].toInteger() + 1
+                versionMinor = 0
+            }
+            def versionCode = versionProps['VERSION_CODE'].toInteger()
+
+            versionProps['VERSION_CHANGE'] = versionChange.toString()
+            versionProps['VERSION_PATCH'] = versionPatch.toString()
+            versionProps['VERSION_MINOR'] = versionMinor.toString()
+            versionProps['VERSION_MAJOR'] = versionMajor.toString()
+            versionProps['VERSION_CODE'] = (versionCode.toInteger() + 1).toString()
+            versionProps.store(versionPropsFile.newWriter(), null)
+            return versionCode
+        }
+    }
+
+    def getVersionName = { ->
+        if (versionPropsFile.canRead()) {
+            versionProps.load(new FileInputStream(versionPropsFile))
+
+            def versionMajor = versionProps['VERSION_MAJOR']
+            def versionMinor = versionProps['VERSION_MINOR']
+            def versionPatch = versionProps['VERSION_PATCH']
+
+            return "${versionMajor}.${versionMinor}.${versionPatch}"
+        }
+    }
 
     compileOptions {
         coreLibraryDesugaringEnabled true
@@ -14,12 +76,21 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
+    signingConfigs {
+        platformConfig {
+            storeFile file("$rootDir/keystore/platform.jks")
+            storePassword 'platform'
+            keyAlias 'platform'
+            keyPassword 'platform'
+        }
+    }
+
     defaultConfig {
         applicationId "foundation.e.notes"
         minSdkVersion 24
         targetSdkVersion 33
-        versionCode 3007002
-        versionName "3.7.2"
+        versionCode getVersionCode()
+        versionName getVersionName()
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
@@ -35,11 +106,13 @@ android {
     buildTypes {
         debug {
             testCoverageEnabled true
+            signingConfig signingConfigs.platformConfig
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.platformConfig
             versionNameSuffix "-${buildDate()}"
         }
     }
@@ -54,10 +127,14 @@ android {
         disable 'MissingTranslation'
     }
     namespace 'it.niedermann.owncloud.notes'
+    kotlinOptions {
+        jvmTarget = '11'
+    }
 
 }
 
 dependencies {
+    implementation 'androidx.core:core-ktx:1.10.1'
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.6'
 
     // Nextcloud SSO
