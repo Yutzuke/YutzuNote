@@ -132,6 +132,13 @@
     <string name="pref_value_wifi_and_mobile">Sync on Wi-Fi and mobile data</string>
     <string name="pref_value_lock">Password protection</string>
 
+    <string name="pref_export_notes" translatable="false">exportNotes</string>
+    <string name="pref_category_export" translatable="false">export</string>
+    <string name="settings_export_notes_title">Export notes</string>
+    <string name="settings_export">Export</string>
+    <string name="export_empty_accounts">"No accounts available"</string>
+    <string name="export_finished_message">"Exported notes to the 'Notes' folder in internal storage"</string>
+
     <string name="simple_error">Error</string>
     <string name="simple_close">Close</string>
     <string name="simple_copy">Copy</string>

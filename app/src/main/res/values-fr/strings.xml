@@ -300,4 +300,8 @@
 \n
 \n***Note %1$d (Dernière modification: %2$s) :***
 \n"</string>
+    <string name="settings_export_notes_title">Exporter les notes</string>
+    <string name="settings_export">Exporter</string>
+    <string name="export_empty_accounts">Aucun compte disponible</string>
+    <string name="export_finished_message">"Notes exportées dans le dossier 'Notes' du stockage interne"</string>
 </resources>

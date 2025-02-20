@@ -300,4 +300,8 @@
     <string name="use_local_notes">USA NOTE IN LOCALE</string>
     <string name="or">o</string>
     <string name="welcome_details">Scegli se sincronizzare le note con un account Murena già esistente o conservarle in locale sul tuo device (non sincronizzate).</string>
+    <string name="settings_export_notes_title">Esporta note</string>
+    <string name="settings_export">Esporta</string>
+    <string name="export_empty_accounts">Nessun account disponibile</string>
+    <string name="export_finished_message">"Note esportate nella cartella 'Notes' nella memoria interna"</string>
 </resources>

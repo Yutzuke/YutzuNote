@@ -295,4 +295,8 @@
     <string name="use_local_notes">LOKALE NOTIZ-SPEICHERUNG</string>
     <string name="or">oder</string>
     <string name="welcome_details">Wollen Sie Ihre Notizen mit Ihrem Murena Cloud-Konto synchronisieren, oder sie nur lokal auf Ihrem Gerät speichern (ohne Synchronisierung)?</string>
+    <string name="settings_export_notes_title">Notizen exportieren</string>
+    <string name="settings_export">Exportieren</string>
+    <string name="export_empty_accounts">Keine Konten verfügbar</string>
+    <string name="export_finished_message">"Notizen in den Ordner 'Notes' im internen Speicher exportiert"</string>
 </resources>

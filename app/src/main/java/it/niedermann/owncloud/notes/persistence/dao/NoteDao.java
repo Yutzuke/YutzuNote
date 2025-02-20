@@ -30,6 +30,7 @@ public interface NoteDao {
     int updateNote(Note newNote);
 
     String getNoteById = "SELECT * FROM NOTE WHERE id = :id";
+    String getNoteByAccountId = "SELECT * FROM NOTE WHERE status != 'LOCAL_DELETED' AND accountId = :accountId ORDER BY modified DESC";
     String count = "SELECT COUNT(*) FROM NOTE WHERE status != 'LOCAL_DELETED' AND accountId = :accountId";
     String countFavorites = "SELECT COUNT(*) FROM NOTE WHERE status != 'LOCAL_DELETED' AND accountId = :accountId AND favorite = 1";
     String searchRecentByModified = "SELECT id, remoteId, accountId, title, favorite, excerpt, modified, category, status, '' as eTag, '' as content, 0 as scrollY FROM NOTE WHERE accountId = :accountId AND status != 'LOCAL_DELETED' AND (title LIKE :query OR content LIKE :query) ORDER BY favorite DESC, modified DESC";
@@ -160,6 +161,9 @@ public interface NoteDao {
 
     @Query("SELECT * FROM NOTE WHERE status != 'LOCAL_DELETED' AND accountId = :accountId ORDER BY modified DESC LIMIT 4")
     List<Note> getRecentNotes(long accountId);
+
+    @Query(getNoteByAccountId)
+    List<Note> getNotesByAccountId(long accountId);
 
     @Query("UPDATE NOTE SET status = :status, favorite = ((favorite | 1) - (favorite & 1)) WHERE id = :id")
     void toggleFavorite(long id, DBStatus status);

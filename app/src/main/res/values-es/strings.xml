@@ -299,4 +299,8 @@
 \n
 \n↵ ***Nota %1$d (Última modificación: %2$s):***↵
 \n"</string>
+    <string name="settings_export_notes_title">Exportar notas</string>
+    <string name="settings_export">Exportar</string>
+    <string name="export_empty_accounts">No hay cuentas disponibles</string>
+    <string name="export_finished_message">"Notas exportadas a la carpeta 'Notes' en el almacenamiento interno"</string>
 </resources>
