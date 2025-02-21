@@ -2,7 +2,7 @@ image: "registry.gitlab.e.foundation/e/os/docker-android-apps-cicd:latest"
 
 variables:
   APK_PATH: "app/build/outputs/apk/release"
-  UNSIGNED_APK: "app-release-unsigned.apk"
+  UNSIGNED_APK: "app-release.apk"
   COMMUNITY_APK: "Notes_community.apk"
   OFFICIAL_APK: "Notes_official.apk"
   TEST_APK: "Notes_test.apk"
