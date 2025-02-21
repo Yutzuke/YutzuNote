@@ -263,4 +263,11 @@
     <string name="error_dialog_timeout_instance">Netþjónninn svaraði ekki innan tímamarka. Athugaðu hvort hann sé að starfa eðlilega.</string>
     <string name="error_dialog_check_server">Svarið frá netþjóninum var ekki rétt. Athugaðu hvort þú getur komist í minnispunktana þína í gegnum vefviðmótið.</string>
     <string name="error_dialog_insufficient_storage">Nextcloud-netþjónninn þinn á ekkert laust geymslupláss eftir. Eyddu einhverjum skrám til að geta samstillt breytingar á tækinu yfir í skýið.</string>
+    <string name="settings_export">Flytja út</string>
+    <string name="export_empty_accounts">Engir aðgangar tiltækir</string>
+    <string name="or">eða</string>
+    <string name="settings_export_notes_title">Flytja út minnispunkta</string>
+    <string name="use_local_notes">Nota minnispunkta á tækinu</string>
+    <string name="welcome_details">Veldu á milli þess að samstilla minnispunktana þína við fyrirliggjandi Murena-tölvuskýsaðgang eða að geyma minnispunktana þína á tækinu (ekki samstillta).</string>
+    <string name="export_finished_message">Flutti minnispunkta út í \'Notes\'-möppuna í innri gagnageymslu</string>
 </resources>
