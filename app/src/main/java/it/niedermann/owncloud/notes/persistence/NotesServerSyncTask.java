@@ -31,6 +31,7 @@ import it.niedermann.owncloud.notes.BuildConfig;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
 import it.niedermann.owncloud.notes.persistence.entity.Note;
 import it.niedermann.owncloud.notes.persistence.sync.NotesAPI;
+import it.niedermann.owncloud.notes.persistence.sync.ServiceDownException;
 import it.niedermann.owncloud.notes.shared.model.DBStatus;
 import it.niedermann.owncloud.notes.shared.model.ISyncCallback;
 import it.niedermann.owncloud.notes.shared.model.SyncResultStatus;
@@ -93,15 +94,24 @@ abstract class NotesServerSyncTask extends Thread {
         Log.i(TAG, "STARTING SYNCHRONIZATION");
 
         final var status = new SyncResultStatus();
-        pushLocalChanges(status);
+        try {
+            pushLocalChanges(status);
 
-        if (status.retrySync) {
-            retry();
-            return;
-        }
+            if (status.retrySync) {
+                retry();
+                return;
+            }
 
-        if (!onlyLocalChanges) {
-            status.pullSuccessful = pullRemoteChanges();
+            if (!onlyLocalChanges) {
+                status.pullSuccessful = pullRemoteChanges();
+            }
+
+            repo.serviceWasDown(false);
+        } catch (ServiceDownException e) {
+            exceptions.add(e);
+            status.pushSuccessful = false;
+            status.pullSuccessful = false;
+            repo.serviceWasDown(true);
         }
 
         Log.i(TAG, "SYNCHRONIZATION FINISHED");
@@ -152,6 +162,8 @@ abstract class NotesServerSyncTask extends Thread {
                                         Log.e(TAG, "   ...Tried to recreate \"" + note.getTitle() + "\" (#" + note.getId() + ") but the server response was null.");
                                         throw new Exception("Server returned null after recreating \"" + note.getTitle() + "\" (#" + note.getId() + ")");
                                     }
+                                } else if (editResponse.code() == HTTP_NOT_FOUND) {
+                                    throw new ServiceDownException("404 on POST a new note");
                                 } else {
                                     handleException(createResponse.message());
                                 }
@@ -168,6 +180,8 @@ abstract class NotesServerSyncTask extends Thread {
                                     throw new Exception("Server returned null after creating \"" + note.getTitle() + "\" (#" + note.getId() + ")");
                                 }
                                 repo.updateRemoteId(note.getId(), remoteNote.getRemoteId());
+                            } else if (createResponse.code() == HTTP_NOT_FOUND) {
+                                throw new ServiceDownException("404 on POST a new note");
                             } else {
                                 handleException(createResponse.message());
                             }
@@ -209,6 +223,8 @@ abstract class NotesServerSyncTask extends Thread {
                 if (!retrySync) {
                     exceptions.add(e);
                 }
+            } catch (ServiceDownException e) {
+                throw e;
             } catch (Exception e) {
                 if (e instanceof TokenMismatchException) {
                     apiProvider.invalidateAPICache(ssoAccount);

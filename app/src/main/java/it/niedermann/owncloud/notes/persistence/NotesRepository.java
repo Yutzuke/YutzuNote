@@ -43,6 +43,8 @@ import com.nextcloud.android.sso.model.SingleSignOnAccount;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
@@ -87,8 +89,13 @@ public class NotesRepository {
 
     private static final String PREF_KEY_MIGRATION_DONE = "old_note_migration_done";
     private static final String PREF_KEY_REMOTE_CONFLICT_RESOLVED = "remote_conflict_resolved_1";
+    private static final String PREF_KEY_LAST_SYNC_ATTEMPT = "last_synchronisation_attempt";
+    private static final String PREF_KEY_WAIT_BEFORE_NEXT_SYNC = "wait_before_next_synchronisation";
 
     private static final String TAG = NotesRepository.class.getSimpleName();
+
+    private static final long MIN_DELAY_AFTER_FAILED_SYNCHRONIZATION = 5000L;
+    private static final long MAX_DELAY_BETWEEN_SYNCHRONIZATIONS = 24 * 60 * 60 * 1000;
 
     private static NotesRepository instance;
 
@@ -239,7 +246,7 @@ public class NotesRepository {
             e.printStackTrace();
             apiProvider.invalidateAPICache();
         }
-
+        serviceWasDown(false);
         db.getAccountDao().deleteAccount(account);
         notifyWidgets();
     }
@@ -777,12 +784,49 @@ public class NotesRepository {
      * This method respects the user preference "Sync on Wi-Fi only".
      * <p>
      * NoteServerSyncHelper observes changes in the network connection.
+     *
+     * It also handle exponential back of in case of server unavailability. Return false if the
+     * synchronisation should be delayed.
      * The current state can be retrieved with this method.
      *
      * @return true if sync is possible, otherwise false.
      */
     public boolean isSyncPossible() {
-        return isSyncPossible;
+        if (isSyncPossible) {
+            final var sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+            Instant lastSync = Instant.ofEpochMilli(sharedPreferences.getLong(PREF_KEY_LAST_SYNC_ATTEMPT, 0L));
+            long waitBeforeNextAttemps = sharedPreferences.getLong(PREF_KEY_WAIT_BEFORE_NEXT_SYNC, 0L);
+            boolean cooldownTimeElapsed = lastSync.plus(waitBeforeNextAttemps, ChronoUnit.MILLIS).isBefore(Instant.now());
+            if (!cooldownTimeElapsed) {
+                Log.i(TAG, "Sync NOT possible, previous ServiceWasDown error was less than " + waitBeforeNextAttemps + " ms ago.");
+            }
+            return cooldownTimeElapsed;
+        } else {
+            return false;
+        }
+    }
+
+    public void serviceWasDown(boolean down) {
+        final var sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+        long now = Instant.now().toEpochMilli();
+        long waitBeforeNextAttempt = sharedPreferences.getLong(PREF_KEY_WAIT_BEFORE_NEXT_SYNC, 0L);
+        if (down) {
+            if (waitBeforeNextAttempt < MIN_DELAY_AFTER_FAILED_SYNCHRONIZATION) {
+                waitBeforeNextAttempt = MIN_DELAY_AFTER_FAILED_SYNCHRONIZATION;
+            } else {
+                waitBeforeNextAttempt = 2 * waitBeforeNextAttempt;
+                if (waitBeforeNextAttempt > MAX_DELAY_BETWEEN_SYNCHRONIZATIONS) {
+                    waitBeforeNextAttempt = MAX_DELAY_BETWEEN_SYNCHRONIZATIONS;
+                }
+            }
+        } else {
+            waitBeforeNextAttempt = 0L;
+        }
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putLong(PREF_KEY_LAST_SYNC_ATTEMPT, now);
+        editor.putLong(PREF_KEY_WAIT_BEFORE_NEXT_SYNC, waitBeforeNextAttempt);
+        editor.commit();
     }
 
     public boolean isNetworkConnected() {
