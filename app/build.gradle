@@ -7,8 +7,8 @@ def buildDate = { ->
 
 def appMajor = 3
 def appMinor = 7
-def appPatch = 2
-def appVersionCode = 3007002
+def appPatch = 3
+def appVersionCode = 3007003
 
 android {
     compileSdkVersion 33
