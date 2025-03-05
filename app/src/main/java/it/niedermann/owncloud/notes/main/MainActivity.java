@@ -94,6 +94,7 @@ import it.niedermann.owncloud.notes.shared.model.CategorySortingMethod;
 import it.niedermann.owncloud.notes.shared.model.IResponseCallback;
 import it.niedermann.owncloud.notes.shared.model.NavigationCategory;
 import it.niedermann.owncloud.notes.shared.model.NoteClickListener;
+import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 import it.niedermann.owncloud.notes.shared.util.CustomAppGlideModule;
 import it.niedermann.owncloud.notes.shared.util.DisplayUtils;
 import it.niedermann.owncloud.notes.shared.util.NoteUtil;
@@ -164,7 +165,16 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
         setupNotesList();
 
         mainViewModel.getAccounts$().observe(this, (accounts) -> {
-            if (accounts.isEmpty() || importMurenaAccountViewModel.shouldLoadMurenaAccount(accounts)) {
+            Intent mainIntent = getIntent();
+            boolean isLocalAccount = mainIntent != null &&
+                    mainIntent.getBooleanExtra(AccountSyncUtil.LOCAL, false);
+
+            // Import the Murena account depending on what the user pressed in ImportAccountActivity.
+            // If the user wants a local account, then avoid the loop of adding the account again.
+            boolean importMurenaAccount = !isLocalAccount &&
+                    importMurenaAccountViewModel.shouldLoadMurenaAccount(accounts);
+
+            if (accounts.isEmpty() || importMurenaAccount) {
                 Intent intent = new Intent(this, ImportAccountActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);

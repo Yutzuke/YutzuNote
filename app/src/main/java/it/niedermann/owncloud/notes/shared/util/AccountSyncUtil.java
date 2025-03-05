@@ -40,6 +40,8 @@ public final class AccountSyncUtil {
 
     private static final String TAG = AccountSyncUtil.class.getSimpleName();
 
+    public static final String LOCAL = "Local";
+
     private AccountSyncUtil() {
         throw new UnsupportedOperationException("Do not instantiate this util class.");
     }

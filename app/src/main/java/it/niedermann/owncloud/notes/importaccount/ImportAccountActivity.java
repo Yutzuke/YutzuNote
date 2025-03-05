@@ -39,6 +39,7 @@ import it.niedermann.owncloud.notes.shared.account.ImportMurenaAccountViewModel;
 import it.niedermann.owncloud.notes.shared.account.LocalAccountBundle;
 import it.niedermann.owncloud.notes.shared.account.LocalAccountViewModel;
 import it.niedermann.owncloud.notes.shared.model.IResponseCallback;
+import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
 import trikita.log.Log;
 
 public class ImportAccountActivity extends AppCompatActivity {
@@ -138,7 +139,7 @@ public class ImportAccountActivity extends AppCompatActivity {
                                 runOnUiThread(() -> {
                                     Log.i(TAG, capabilities.toString());
                                     BrandingUtil.saveBrandColors(ImportAccountActivity.this, capabilities.getColor(), capabilities.getTextColor());
-                                    finishActivity();
+                                    finishActivity(false);
                                 });
                                 SyncWorker.update(ImportAccountActivity.this, PreferenceManager.getDefaultSharedPreferences(ImportAccountActivity.this)
                                         .getBoolean(getString(R.string.pref_key_background_sync), true));
@@ -191,10 +192,11 @@ public class ImportAccountActivity extends AppCompatActivity {
         }
     }
 
-    private void finishActivity() {
+    private void finishActivity(boolean isLocal) {
         setResult(RESULT_OK);
         Intent intent = new Intent(ImportAccountActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.putExtra(AccountSyncUtil.LOCAL, isLocal);
         startActivity(intent);
         finish();
     }
@@ -272,7 +274,7 @@ public class ImportAccountActivity extends AppCompatActivity {
             SingleAccountHelper.setCurrentAccount(getApplicationContext(), result.getSingleSignOnAccount().name);
 
             BrandingUtil.saveBrandColors(ImportAccountActivity.this, result.getCapabilities().getColor(), result.getCapabilities().getTextColor());
-            finishActivity();
+            finishActivity(true);
         });
     }
 }
