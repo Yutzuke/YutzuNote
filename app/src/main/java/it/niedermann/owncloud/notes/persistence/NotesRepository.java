@@ -792,41 +792,38 @@ public class NotesRepository {
      * @return true if sync is possible, otherwise false.
      */
     public boolean isSyncPossible() {
-        if (isSyncPossible) {
-            final var sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
-            Instant lastSync = Instant.ofEpochMilli(sharedPreferences.getLong(PREF_KEY_LAST_SYNC_ATTEMPT, 0L));
-            long waitBeforeNextAttemps = sharedPreferences.getLong(PREF_KEY_WAIT_BEFORE_NEXT_SYNC, 0L);
-            boolean cooldownTimeElapsed = lastSync.plus(waitBeforeNextAttemps, ChronoUnit.MILLIS).isBefore(Instant.now());
-            if (!cooldownTimeElapsed) {
-                Log.i(TAG, "Sync NOT possible, previous ServiceWasDown error was less than " + waitBeforeNextAttemps + " ms ago.");
-            }
-            return cooldownTimeElapsed;
-        } else {
+        if (!isSyncPossible) {
             return false;
         }
+
+        final SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+        Instant lastSync = Instant.ofEpochMilli(sharedPreferences.getLong(PREF_KEY_LAST_SYNC_ATTEMPT, 0L));
+        long waitBeforeNextAttemp = sharedPreferences.getLong(PREF_KEY_WAIT_BEFORE_NEXT_SYNC, 0L);
+        boolean cooldownTimeElapsed = lastSync.plus(waitBeforeNextAttemp, ChronoUnit.MILLIS).isBefore(Instant.now());
+        if (!cooldownTimeElapsed) {
+            Log.i(TAG, "Sync NOT possible, previous ServiceWasDown error was less than " + waitBeforeNextAttemp + " ms ago.");
+        }
+        return cooldownTimeElapsed;
     }
 
     public void serviceWasDown(boolean down) {
-        final var sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(context.getApplicationContext());
         long now = Instant.now().toEpochMilli();
         long waitBeforeNextAttempt = sharedPreferences.getLong(PREF_KEY_WAIT_BEFORE_NEXT_SYNC, 0L);
+
         if (down) {
-            if (waitBeforeNextAttempt < MIN_DELAY_AFTER_FAILED_SYNCHRONIZATION) {
-                waitBeforeNextAttempt = MIN_DELAY_AFTER_FAILED_SYNCHRONIZATION;
-            } else {
-                waitBeforeNextAttempt = 2 * waitBeforeNextAttempt;
-                if (waitBeforeNextAttempt > MAX_DELAY_BETWEEN_SYNCHRONIZATIONS) {
-                    waitBeforeNextAttempt = MAX_DELAY_BETWEEN_SYNCHRONIZATIONS;
-                }
-            }
+            waitBeforeNextAttempt = Math.min(
+                    Math.max(waitBeforeNextAttempt * 2, MIN_DELAY_AFTER_FAILED_SYNCHRONIZATION),
+                    MAX_DELAY_BETWEEN_SYNCHRONIZATIONS
+            );
         } else {
             waitBeforeNextAttempt = 0L;
         }
 
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putLong(PREF_KEY_LAST_SYNC_ATTEMPT, now);
-        editor.putLong(PREF_KEY_WAIT_BEFORE_NEXT_SYNC, waitBeforeNextAttempt);
-        editor.commit();
+        sharedPreferences.edit()
+                .putLong(PREF_KEY_LAST_SYNC_ATTEMPT, now)
+                .putLong(PREF_KEY_WAIT_BEFORE_NEXT_SYNC, waitBeforeNextAttempt)
+                .apply();
     }
 
     public boolean isNetworkConnected() {
