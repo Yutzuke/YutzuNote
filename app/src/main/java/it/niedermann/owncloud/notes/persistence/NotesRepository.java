@@ -94,7 +94,9 @@ public class NotesRepository {
 
     private static final String TAG = NotesRepository.class.getSimpleName();
 
+    // Delay between first ServerDownException occurs, and next synchronisation attempt: 5seconds.
     private static final long MIN_DELAY_AFTER_FAILED_SYNCHRONIZATION = 5000L;
+    // MAX backoff delay after a ServerDownException: 24 hours
     private static final long MAX_DELAY_BETWEEN_SYNCHRONIZATIONS = 24 * 60 * 60 * 1000;
 
     private static NotesRepository instance;
