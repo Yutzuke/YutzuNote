@@ -823,7 +823,7 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
 
     @Override
     public void onAddLocalAccountButtonClick() {
-        localAccountViewModel.logInToLocalAccount(new IResponseCallback<>() {
+        localAccountViewModel.logInToLocalAccount(getApplicationContext(), new IResponseCallback<>() {
             @Override
             public void onSuccess(@NonNull LocalAccountBundle result) {
                 runOnUiThread(() -> {

@@ -19,6 +19,7 @@ import com.nextcloud.android.sso.exceptions.NextcloudFilesAppNotSupportedExcepti
 import com.nextcloud.android.sso.exceptions.NextcloudHttpRequestFailedException;
 import com.nextcloud.android.sso.exceptions.UnknownErrorException;
 import com.nextcloud.android.sso.helper.SingleAccountHelper;
+import com.nextcloud.android.sso.model.SingleSignOnAccount;
 import com.nextcloud.android.sso.ui.UiExceptionManager;
 
 import java.net.HttpURLConnection;
@@ -120,8 +121,13 @@ public class ImportAccountActivity extends AppCompatActivity {
             AccountImporter.onActivityResult(requestCode, resultCode, data, ImportAccountActivity.this, ssoAccount -> {
                 runOnUiThread(() -> binding.progressCircular.setVisibility(View.VISIBLE));
 
-                SingleAccountHelper.setCurrentAccount(getApplicationContext(), ssoAccount.name);
                 executor.submit(() -> {
+                    if (isExistingAccount(ssoAccount)) {
+                        finishActivity(false);
+                        return;
+                    }
+
+                    SingleAccountHelper.setCurrentAccount(getApplicationContext(), ssoAccount.name);
                     Log.i(TAG, "Added account: " + "name:" + ssoAccount.name + ", " + ssoAccount.url + ", userId" + ssoAccount.userId);
                     try {
                         Log.i(TAG, "Loading capabilities for " + ssoAccount.name);
@@ -192,6 +198,10 @@ public class ImportAccountActivity extends AppCompatActivity {
         }
     }
 
+    private boolean isExistingAccount(SingleSignOnAccount ssoAccount) {
+        return importAccountViewModel.isExistingAccount(ssoAccount);
+    }
+
     private void finishActivity(boolean isLocal) {
         setResult(RESULT_OK);
         Intent intent = new Intent(ImportAccountActivity.this, MainActivity.class);
@@ -243,7 +253,7 @@ public class ImportAccountActivity extends AppCompatActivity {
 
     private void handleLocalAccount() {
         binding.addLocalButton.setOnClickListener(view -> {
-            localAccountViewModel.logInToLocalAccount(getAddLocalAccountCallback());
+            localAccountViewModel.logInToLocalAccount(getApplicationContext(), getAddLocalAccountCallback());
         });
     }
 
