@@ -17,11 +17,13 @@
 package it.niedermann.owncloud.notes.shared.account;
 
 import android.app.Application;
+import android.content.Context;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
 import com.nextcloud.android.sso.AccountImporter;
+import com.nextcloud.android.sso.exceptions.NextcloudFilesAppAccountNotFoundException;
 import com.nextcloud.android.sso.model.SingleSignOnAccount;
 
 import java.util.concurrent.ExecutorService;
@@ -36,8 +38,8 @@ import trikita.log.Log;
 
 public class LocalAccountViewModel extends AndroidViewModel {
 
+    private static final String ACCOUNT_NAME_LOCAL = "Local";
     private static final String TAG = LocalAccountViewModel.class.getSimpleName();
-
     @NonNull
     private final NotesRepository notesRepository;
 
@@ -50,31 +52,72 @@ public class LocalAccountViewModel extends AndroidViewModel {
         executor = Executors.newSingleThreadExecutor();
     }
 
-    public void logInToLocalAccount(@NonNull IResponseCallback<LocalAccountBundle> callback) {
-        executor.submit(() -> {
-            SingleSignOnAccount singleSignOnAccount = AccountImporter.pickLocalAccount(getApplication());
-            Log.i(TAG, "Added local account: " + "name:" + singleSignOnAccount.name);
-            try {
-                final var capabilities = new Capabilities();
-                final String displayName = singleSignOnAccount.name;
-                notesRepository.addAccount(singleSignOnAccount.url, singleSignOnAccount.userId, singleSignOnAccount.name, capabilities, displayName, new IResponseCallback<>() {
-                    @Override
-                    public void onSuccess(Account account) {
-                        final var bundle = new LocalAccountBundle(singleSignOnAccount, account, capabilities);
-                        callback.onSuccess(bundle);
-                    }
+    private static boolean isExistingLocalAccount(@NonNull SingleSignOnAccount ssoAccount) {
+        return !ssoAccount.name.isEmpty() && !ssoAccount.userId.isEmpty() && !ssoAccount.type.isEmpty();
+    }
 
-                    @Override
-                    public void onError(@NonNull Throwable throwable) {
-                        Log.e(TAG, throwable);
-                        callback.onError(throwable);
-                    }
-                });
-            } catch (Throwable t) {
-                ApiProvider.getInstance().invalidateAPICache(singleSignOnAccount);
-                Log.e(TAG, t);
-                callback.onError(t);
+    public void logInToLocalAccount(Context context, @NonNull IResponseCallback<LocalAccountBundle> callback) {
+        executor.submit(() -> {
+            try {
+                Account account = getExistingAccount();
+                if (account != null) {
+                    handleExistingAccount(context, account, callback);
+                    return;
+                }
+            } catch (NextcloudFilesAppAccountNotFoundException accountNotFoundException) {
+                Log.e(TAG, "Failed to get SingleSignOn account: " + accountNotFoundException);
             }
+            addNewAccount(callback);
         });
+    }
+
+    private Account getExistingAccount() {
+        return notesRepository.getAccountByName(ACCOUNT_NAME_LOCAL);
+    }
+
+    private void addNewAccount(@NonNull IResponseCallback<LocalAccountBundle> callback) {
+        SingleSignOnAccount singleSignOnAccount = createSingleSignOnAccount();
+        try {
+            final var capabilities = new Capabilities();
+            final String displayName = singleSignOnAccount.name;
+
+            notesRepository.addAccount(singleSignOnAccount.url, singleSignOnAccount.userId,
+                    singleSignOnAccount.name, capabilities, displayName, new IResponseCallback<>() {
+                        @Override
+                        public void onSuccess(Account account) {
+                            final var bundle = new LocalAccountBundle(singleSignOnAccount, account, capabilities);
+                            Log.d(TAG, "onSuccess: added local account, name: " + singleSignOnAccount.name);
+                            callback.onSuccess(bundle);
+                        }
+
+                        @Override
+                        public void onError(@NonNull Throwable throwable) {
+                            Log.e(TAG, "onError: couldn't add local account, error: " + throwable);
+                            callback.onError(throwable);
+                        }
+                    });
+        } catch (Throwable throwable) {
+            ApiProvider.getInstance().invalidateAPICache(singleSignOnAccount);
+            Log.e(TAG, throwable);
+            callback.onError(throwable);
+        }
+    }
+
+    private void handleExistingAccount(Context context, @NonNull Account account, IResponseCallback<LocalAccountBundle> callback)
+            throws NextcloudFilesAppAccountNotFoundException {
+        final SingleSignOnAccount ssoAccount = AccountImporter.getSingleSignOnAccount(context, ACCOUNT_NAME_LOCAL);
+        if (isExistingLocalAccount(ssoAccount)) {
+            Log.i(TAG, "Local account already exists, reusing it; account name: " + ssoAccount.name);
+            final Capabilities capabilities = new Capabilities();
+            final LocalAccountBundle bundle = new LocalAccountBundle(ssoAccount, account, capabilities);
+            callback.onSuccess(bundle);
+        }
+    }
+
+    @NonNull
+    private SingleSignOnAccount createSingleSignOnAccount() {
+        SingleSignOnAccount singleSignOnAccount = AccountImporter.pickLocalAccount(getApplication());
+        Log.i(TAG, "New local account created; account name: " + singleSignOnAccount.name);
+        return singleSignOnAccount;
     }
 }

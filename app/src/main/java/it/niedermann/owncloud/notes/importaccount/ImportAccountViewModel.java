@@ -7,6 +7,8 @@ import androidx.annotation.Nullable;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.nextcloud.android.sso.model.SingleSignOnAccount;
+
 import it.niedermann.owncloud.notes.persistence.NotesRepository;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
 import it.niedermann.owncloud.notes.shared.model.Capabilities;
@@ -25,5 +27,15 @@ public class ImportAccountViewModel extends AndroidViewModel {
 
     public LiveData<ImportStatus> addAccount(@NonNull String url, @NonNull String username, @NonNull String accountName, @NonNull Capabilities capabilities, @Nullable String displayName, @NonNull IResponseCallback<Account> callback) {
         return repo.addAccount(url, username, accountName, capabilities, displayName, callback);
+    }
+
+    protected boolean isExistingAccount(@NonNull SingleSignOnAccount ssoAccount) {
+        Account account = repo.getAccountByName(ssoAccount.name);
+
+        if (account == null) {
+            return false;
+        }
+
+        return account.getUrl().equals(ssoAccount.url);
     }
 }
