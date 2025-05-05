@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Notas</string>
     <string name="app_name_long">Notas Nextcloud</string>
     <string name="label_all_notes">Todas as notas</string>
@@ -27,19 +26,15 @@
     <string name="menu_favorite">Favorita</string>
     <string name="menu_preview">Prever</string>
     <string name="menu_share">Compartilhar</string>
-
     <string name="search_in_category">Pesquisar em %1$s</string>
     <string name="search_in_all">Pesquisar todas as notas</string>
-
     <string name="change_category_title">Escolha uma categoria</string>
-
     <string name="listview_updated_today">Hoje</string>
     <string name="listview_updated_yesterday">Ontem</string>
     <string name="listview_updated_this_week">Esta semanna</string>
     <string name="listview_updated_last_week">Última semana</string>
     <string name="listview_updated_this_month">Este mês</string>
     <string name="listview_updated_last_month">Último mês</string>
-
     <string name="settings_note_mode">Modo de exibição de notas</string>
     <string name="settings_theme_title">Tema</string>
     <string name="settings_font_title"> Fonte monospaçada</string>
@@ -52,13 +47,11 @@
     <string name="settings_gridview">Visualização em grade</string>
     <string name="settings_keep_screen_on">Mantenha a tela ligada</string>
     <string name="settings_keep_screen_on_summary">Ao visualizar ou editar uma nota</string>
-
     <string name="error_sync">A sincronização falhou: %1$s</string>
     <string name="error_synchronization">A sincronização falhou</string>
     <string name="error_no_network">Sem conexão de rede</string>
     <string name="error_maintenance_mode">O servidor está em modo de manutenção </string>
     <string name="error_unknown">Ocorreu um erro desconhecido.</string>
-
     <string name="about_version_title">Versão</string>
     <string name="about_version">Você  está atualmente usando %1$s</string>
     <string name="about_maintainer_title">Mantenedor</string>
@@ -82,22 +75,17 @@
     <string name="about_credits_tab_title">Créditos</string>
     <string name="about_contribution_tab_title">Contribuição</string>
     <string name="about_license_tab_title">Licença</string>
-
     <string name="widget_note_list_title">Lista de notas</string>
     <string name="widget_note_list_placeholder">Sem anotações</string>
     <string name="widget_single_note_title">Anotação simples</string>
     <string name="widget_single_note_placeholder_tv">Anotação não encontrada</string>
     <string name="widget_not_logged_in">Faça login no Notes antes de usar este widget</string>
     <string name="widget_entry_fav_contentDescription">O ícone de estrela é usado para denotar um item como favorito </string>
-
     <string name="activity_select_single_note">Selecionar anotação</string>
-
     <string name="shortcut_create_long">Criar uma nova anotação</string>
-
     <string name="pref_value_font_normal">Normal</string>
     <string name="pref_value_wifi_and_mobile">Sincronizar por Wi-Fi e dados móveis</string>
     <string name="pref_value_lock">Proteção com senha</string>
-
     <string name="simple_error">Erro</string>
     <string name="simple_close">Fechar</string>
     <string name="simple_copy">Copiar</string>
@@ -105,7 +93,6 @@
     <string name="pin_to_homescreen">Fixar na tela inicial</string>
     <string name="note_has_been_deleted">A anotação foi excluída</string>
     <string name="add_account">Adicionar conta</string>
-
     <string name="category_music">Música</string>
     <string name="category_movies">Filmes</string>
     <string name="category_movie">Filme</string>
@@ -137,7 +124,6 @@
     <string name="category_present">Presente</string>
     <!-- Like a gift -->
     <string name="category_presents">Presentes</string>
-
     <string name="account_already_imported">Conta já foi importada</string>
     <string name="no_notes_yet">Nenhuma anotação ainda</string>
     <string name="no_notes_yet_description">Pressione o botão + para criar uma nova nota</string>
@@ -176,25 +162,21 @@
     <string name="simple_synchronization">Sincronização</string>
     <string name="manage_accounts">Gerenciar contas</string>
     <string name="action_formatting_help">Formatação</string>
-
     <string-array name="noteMode_entries">
         <item>Abrir em modo de edição</item>
         <item>Abrir em modo de visualização</item>
         <item>Lembrar minha última escolha</item>
     </string-array>
-
     <string-array name="fontSize_entries">
         <item>Pequena</item>
         <item>Média</item>
         <item>Grande</item>
     </string-array>
-
     <string-array name="darkmode_entries">
         <item>Claro</item>
         <item>Escuro</item>
         <item>Padrão do Sistema</item>
     </string-array>
-
     <plurals name="ab_selected">
         <item quantity="one">%d selecionado</item>
         <item quantity="many">%d selecionados</item>
@@ -215,7 +197,6 @@
         <item quantity="many">Compartilhar conteúdo de %1$d notas</item>
         <item quantity="other">Compartilhar conteúdo de %1$d notas</item>
     </plurals>
-
     <string name="formatting_help_divider" translateable="false">---</string>
     <string name="formatting_help_codefence_inline" translateable="false">`%1$s`</string>
     <string name="formatting_help_codefence_inline_escaped" translateable="false">\\`%1$s\\`</string>
@@ -225,10 +206,8 @@
     <string name="formatting_help_cbf_title">Formatação baseada em contexto</string>
     <string name="formatting_help_cbf_body_1">Um dos principais objetivos de design do aplicativo Notes é fornecer uma ferramenta sem distrações. Então você pode formatar seus textos com o Markdown. Para vários dos exemplos mencionados abaixo, você pode usar atalhos para formatar suas anotações sem digitar os códigos abaixo.</string>
     <string name="formatting_help_cbf_body_2">Basta selecionar um intervalo de texto ou tocar no cursor em qualquer posição e você obterá um menu pop-up que contém ao lado das entradas padrão %1$s, %2$s, %3$s entradas como %4$s ou %5$s.</string>
-
     <string name="formatting_help_text_title">Texto</string>
     <string name="formatting_help_text_body">É muito fácil fazer algumas palavras %1$snegritas%1$s e outras %2$sitálicas%2$s com Markdown. Você pode %3$sriscar%3$s algumas palavras e até [linkar para o Nextcloud](https://nextcloud.com).</string>
-
     <string name="formatting_help_lists_title">Listas</string>
     <string name="formatting_help_lists_body_1">Às vezes você deseja listas numeradas:</string>
     <string name="formatting_help_lists_body_2">Um</string>
@@ -239,12 +218,10 @@
     <string name="formatting_help_lists_body_7">E se você tiver subpontos, coloque dois espaços antes do traço ou estrela:</string>
     <string name="formatting_help_lists_body_8">Como isso</string>
     <string name="formatting_help_lists_body_9">E isso</string>
-
     <string name="formatting_help_checkboxes_title">Caixas de seleção</string>
     <string name="formatting_help_checkboxes_body_1">Para criar uma caixa de seleção, use uma lista seguida por colchetes</string>
     <string name="formatting_help_checkboxes_body_2">Item 1</string>
     <string name="formatting_help_checkboxes_body_3">Item 2</string>
-
     <string name="formatting_help_structured_documents_title">Documentos estruturados</string>
     <string name="formatting_help_structured_documents_body_1">Às vezes, é útil ter diferentes níveis de títulos para estruturar seus documentos. Iniciar linhas com um %1$s para criar cabeçalhos. Vários %2$s em sequência indicam tamanhos de cabeçalho menores. </string>
     <string name="formatting_help_structured_documents_body_2">Este é um cabeçalho de terceira camada</string>
@@ -252,23 +229,19 @@
     <string name="formatting_help_structured_documents_body_4">Se você quiser citar alguém, use o caractere %1$s antes da linha:</string>
     <string name="formatting_help_structured_documents_body_5">Imaginação é mais importante que conhecimento. O conhecimento é limitado. A imaginação dá voltas no mundo.</string>
     <string name="formatting_help_structured_documents_body_6">- Albert Einstein</string>
-
     <string name="formatting_help_code_title">Código</string>
     <string name="formatting_help_code_body_1">Existem muitas maneiras diferentes de estilizar o código com o Markdown. Se você tiver blocos de códigos embutidos, envolva-os em barras de proteção:</string>
     <string name="formatting_help_code_body_2">O Markdown também suporta algo chamado código de cercas, que permite várias linhas sem recuo:</string>
     <string name="formatting_help_code_body_3">E se você quiser destacar a sintaxe, inclua a linguagem:</string>
-
     <string name="formatting_help_tables_title">Tabelas</string>
     <!-- Column header of a sample table -->
     <string name="formatting_help_tables_column">Coluna %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">Valor %1d</string>
-
     <string name="formatting_help_images_body_1">Os links devem ser URLs completos, começando com um protocolo e domínio, ou caminhos absolutos, começando com um caractere %1$s.</string>
     <string name="formatting_help_images_body_2">Para estar em conformidade com o formato Markdown, use caracteres de escape no URL da imagem. Isso significa, por exemplo, substituir espaços por  %1$s no endereço URL.</string>
     <string name="formatting_help_images_title">Imagens</string>
     <string name="formatting_help_images_alt">Imagem bonita</string>
-
     <string name="simple_other">Outro</string>
     <string name="sort_last_modified">Ordenar por data de modificação</string>
     <string name="sort_alphabetically">Ordenar alfabeticamente</string>
@@ -286,10 +259,8 @@
         <item quantity="other">Removendo a conta  %1$s também irá deletar irrecuperávelmente %2$d mudanças não sincronizadas. </item>
     </plurals>
     <string name="remove_account">Remover %1$s</string>
-
     <string name="you_have_to_be_connected_to_the_internet_in_order_to_add_an_account">Você deve estar conectado à Internet para adicionar uma conta. </string>
     <string name="settings_notes_path">Definir a pasta</string>
-
     <string name="simple_next">Próximo</string>
     <string name="simple_prev">Anterior</string>
     <string name="simple_backup">Backup</string>
@@ -307,4 +278,13 @@
     <string name="progress_import_indeterminate">Importando notas… </string>
     <string name="progress_import">Importando notas %1$d de %2$d…</string>
     <string name="account_imported">Conta importada.</string>
+    <string name="settings_export">Exportar</string>
+    <string name="export_empty_accounts">Nenhuma conta disponível</string>
+    <string name="settings_export_notes_title">Exportar notas</string>
+    <string name="preferences_privacy_policy">Política de privacidade</string>
+    <string name="export_finished_message">Notas exportadas para a pasta \'Notas\' no armazenamento interno</string>
+    <string name="preferences_service_terms">Termos de serviço</string>
+    <string name="preferences_authors">Autores</string>
+    <string name="or">ou</string>
+    <string name="conflict_note_detected"># Encontramos um conflito entre suas notas. Por favor, escolha a correta.</string>
 </resources>
