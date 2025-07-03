@@ -289,4 +289,16 @@
     <string name="conflict_note_detected"># Encontramos um conflito entre suas notas. Por favor, escolha a correta.</string>
     <string name="preferences_about_app">Notas foi bifurcado do Nextcloud Notas</string>
     <string name="use_local_notes">Usar notas locais</string>
+    <string name="preferences_app_info_title">Informações sobre Notas</string>
+    <string name="preferences_app_info">-Liste, crie, edite, compartilhe, pesquise e exclua notas
+\n -Compartilhe texto e links como uma nova nota no aplicativo
+\n -Marque notas como favoritas
+\n -Exclusão em massa
+\n -Renderização de MarkDown
+\n -Traduzido em vários idiomas</string>
+    <string name="welcome_details">Escolha entre sincronizar suas notas com uma conta de nuvem Murena existente ou armazenar suas notas localmente em seu dispositivo (não sincronizadas).</string>
+    <string name="conflicted_note_content_title">"
+\n
+\n***Nota %1$d (Última modificação: %2$s):***
+\n"</string>
 </resources>
