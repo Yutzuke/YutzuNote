@@ -296,4 +296,6 @@
     <string name="welcome_details">Kies tussen het synchroniseren van jouw notities met een bestaand Murena cloud account of notities lokaal opslaan op jouw jouw toestel (niet gesynchroniseerd).</string>
     <string name="settings_export">Exporteren</string>
     <string name="settings_export_notes_title">Notities exporteren</string>
+    <string name="export_empty_accounts">Geen accounts beschikbaar</string>
+    <string name="export_finished_message">Notities geëxporteerd naar de \'Notities\' map in interne opslag</string>
 </resources>
