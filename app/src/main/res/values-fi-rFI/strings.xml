@@ -286,4 +286,7 @@
     <string name="category_credentials">Valtuus</string>
     <string name="settings_keep_screen_on_summary">Kun katsot tai muokkaat muistiinpanoa</string>
     <string name="settings_keep_screen_on">Pidä näyttö päällä</string>
+    <string name="settings_export">Vie</string>
+    <string name="settings_export_notes_title">Vie muistiot</string>
+    <string name="export_empty_accounts">Ei tilejä käytettävissä</string>
 </resources>
