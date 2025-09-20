@@ -289,4 +289,13 @@
     <string name="settings_export">Vie</string>
     <string name="settings_export_notes_title">Vie muistiot</string>
     <string name="export_empty_accounts">Ei tilejä käytettävissä</string>
+    <string name="export_finished_message">Vietiin muistiot kansioon \'Notes\' sisäisessä tallennustilassa</string>
+    <string name="or">tai</string>
+    <string name="welcome_details">Valitse synkronoidaanko muistiinpanosi olemassa olevaan Murena-pilvitiliin vai tallennetaanko ne paikallisesti laitteellesi (ei synkronoitu).</string>
+    <string name="use_local_notes">Käytä paikallisia muistiinpanoja</string>
+    <string name="conflict_note_detected"># Havaittiin ristiriita muistiinpanojesi välillä. Valitse oikea.</string>
+    <string name="conflicted_note_content_title">"
+\n
+\n***Muistiinpano %1$d (Muokattu viimeksi: %2$s):***
+\n"</string>
 </resources>
