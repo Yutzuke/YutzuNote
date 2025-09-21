@@ -273,7 +273,7 @@
     <string name="preferences_authors">Tekijät</string>
     <string name="preferences_service_terms">Käyttöehdot</string>
     <string name="preferences_privacy_policy">Tietosuojakäytäntö</string>
-    <string name="preferences_about_app">Muistiinpanot on haarautunut Nextcloud Notesista</string>
+    <string name="preferences_about_app">Muistiinpanot on haarautettu Nextcloud Notesista</string>
     <string name="preferences_app_info">-Luetteloi, luo, muokkaa, jaa, etsi ja poista muistiinpanoja
 \n -Jaa tekstiä ja linkkejä uutena muistiinpanona sovellukseen
 \n -Merkitse muistiinpanoja suosikeiksi
