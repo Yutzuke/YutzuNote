@@ -280,7 +280,7 @@
 \n -Joukkopoista
 \n -Renderöi MarkDown
 \n -Käännetty monille kielille</string>
-    <string name="preferences_app_info_title">Muistiinpanot tietoja</string>
+    <string name="preferences_app_info_title">Muistiinpanot - tietoja sovelluksesta</string>
     <string name="formatting_help_images_alt">Hieno kuva</string>
     <string name="formatting_help_images_body_2">Markdown formaatin noudattamiseksi, käytä kuvan URL osoitteessa escape merkkejä. Tämä tarkoittaa esimerkiksi sitä, että korvaa URL-osoitteessa välilyönnit %1$s :llä.</string>
     <string name="category_credentials">Valtuus</string>
