@@ -184,12 +184,12 @@
     </plurals>
     <plurals name="bulk_notes_deleted">
         <item quantity="one">Uma nota excluída</item>
-        <item quantity="many">%1$d notas excluídas</item>
+        <item quantity="many">%1$d de notas excluídas</item>
         <item quantity="other">%1$d notas excluídas</item>
     </plurals>
     <plurals name="bulk_notes_restored">
         <item quantity="one">Uma nota restaurada</item>
-        <item quantity="many">%1$d notas restauradas</item>
+        <item quantity="many">%1$d de notas restauradas</item>
         <item quantity="other">%1$d notas restauradas</item>
     </plurals>
     <plurals name="share_multiple">
