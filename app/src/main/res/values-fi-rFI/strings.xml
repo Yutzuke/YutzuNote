@@ -43,7 +43,7 @@
     <string name="settings_lock">Sovelluksen lukitus (Beta)</string>
     <string name="settings_lock_summary">Laitteen valtuudet</string>
     <string name="settings_background_sync">Taustasynkronointi</string>
-    <string name="settings_prevent_screen_capture">Estä ruudunkaappaus</string>
+    <string name="settings_prevent_screen_capture">Estä kuvakaappaus</string>
     <string name="settings_gridview">Ruudukkonäkymä</string>
     <string name="error_synchronization">Synkronointi epäonnistui</string>
     <string name="error_maintenance_mode">Palvelin on huoltotilassa</string>
