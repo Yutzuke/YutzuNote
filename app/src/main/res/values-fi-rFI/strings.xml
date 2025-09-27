@@ -8,7 +8,7 @@
     <string name="welcome_text">Tervetuloa, tämä on %1$s</string>
     <string name="action_settings">Asetukset</string>
     <string name="action_trashbin">Poistetut muistiinpanot</string>
-    <string name="action_search">Etsi</string>
+    <string name="action_search">Hae</string>
     <string name="action_sorting_method">Järjestämistapa</string>
     <string name="simple_cancel">Peruuta</string>
     <string name="simple_switch">Kytkin</string>
@@ -26,8 +26,8 @@
     <string name="menu_favorite">Suosikki</string>
     <string name="menu_preview">Esikatselu</string>
     <string name="menu_share">Jaa</string>
-    <string name="search_in_category">Etsi luokasta %1$s</string>
-    <string name="search_in_all">Etsi kaikista muistiinpanoista</string>
+    <string name="search_in_category">Hae luokasta %1$s</string>
+    <string name="search_in_all">Hae kaikista muistiinpanoista</string>
     <string name="change_category_title">Valitse luokka</string>
     <string name="listview_updated_today">Tänään</string>
     <string name="listview_updated_yesterday">Eilen</string>
@@ -37,8 +37,8 @@
     <string name="listview_updated_last_month">Viime kuukausi</string>
     <string name="settings_note_mode">Muistiinpanojen esitystapa</string>
     <string name="settings_theme_title">Teema</string>
-    <string name="settings_font_title">Tasalevyinen fontti</string>
-    <string name="settings_font_size">Fonttikoko</string>
+    <string name="settings_font_title">Tasalevyinen kirjasin</string>
+    <string name="settings_font_size">Tekstin koko</string>
     <string name="settings_wifi_only">Synkronoi vain wifi-yhteydellä</string>
     <string name="settings_lock">Sovelluksen lukitus (Beta)</string>
     <string name="settings_lock_summary">Laitteen valtuudet</string>
@@ -49,10 +49,10 @@
     <string name="error_maintenance_mode">Palvelin on huoltotilassa</string>
     <string name="error_unknown">Tapahtui tuntematon virhe.</string>
     <string name="error_sync">Synkronointi epäonnistui: %1$s</string>
-    <string name="error_no_network">ei verkkoyhteyttä</string>
+    <string name="error_no_network">Ei verkkoyhteyttä</string>
     <string name="about_version_title">Versio</string>
-    <string name="about_version">Käytössäsi on nyt &lt;strong&gt;%1$s&lt;/strong&gt;</string>
-    <string name="about_maintainer_title">Ylläpitäjät</string>
+    <string name="about_version">Käytössäsi on nyt <strong>%1$s</strong></string>
+    <string name="about_maintainer_title">Ylläpitäjä</string>
     <string name="about_developers_title">Kehittäjät</string>
     <string name="about_translators_title">Kääntäjät</string>
     <string name="about_translators_transifex">Nextcloud-yhteisö &lt;a href=\"%1$s\"&gt;Transifex-palvelussa&lt;/a&gt;</string>
@@ -60,16 +60,16 @@
     <string name="about_source_title">Lähdekoodi</string>
     <string name="about_source">Tämä projekti toimii GitHubissa: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
     <string name="about_issues_title">Ongelmat</string>
-    <string name="about_issues">Voit raportoida virheitä ja ehdottaa parannuksia ja uusia tomintoja GitHub:n ongelmien seuraaja toiminnolla: %1$s</string>
+    <string name="about_issues">Voit raportoida virheitä ja ehdottaa parannuksia ja uusia tomintoja GitHub:n ongelmien seurain -toiminnolla: %1$s</string>
     <string name="about_translate_title">Käännä</string>
-    <string name="about_translate">Liity Nextcloud-yhteisöön Transifex-palvelussa ja auta meitä kääntämään tämä sovellus: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate">Liity Nextcloud-yhteisöön Transifex-palvelussa ja auta meitä kääntämään tämä sovellus: %1$s</string>
     <string name="about_app_license_title">Sovelluslisenssi</string>
     <string name="about_app_license">Tämä sovellus on GNU GENERAL PUBLIC LICENSE v3+ -lisensoitu.</string>
     <string name="about_app_license_button">Näytä lisenssi</string>
     <string name="about_icons_disclaimer_title">Kuvakkeet</string>
     <string name="about_icons_disclaimer_app_icon">Katso alkuperäinen kuvake %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Kaikki muut tämän sovelluksen kuvakkeet on %1$s tehnyt Google Inc. ja ne on lisensoitu Apache 2.0 lisenssillä.</string>
-    <string name="about_icons_disclaimer_mdi">Material Design-kuvakkeet</string>
+    <string name="about_icons_disclaimer_mdi">Material Design -kuvakkeet</string>
     <string name="about_credits_tab_title">Tekijät</string>
     <string name="about_contribution_tab_title">Osallistuminen</string>
     <string name="about_license_tab_title">Lisenssi</string>
@@ -77,7 +77,7 @@
     <string name="widget_note_list_placeholder">Ei muistiinpanoja</string>
     <string name="widget_single_note_title">Yksittäinen muistiinpano</string>
     <string name="widget_single_note_placeholder_tv">Muistiinpanoa ei löytynyt</string>
-    <string name="widget_not_logged_in">Kirjaudu sisään Muistiinpanoihin ennen tämän widgetin käyttöä</string>
+    <string name="widget_not_logged_in">Kirjaudu sisään Muistiinpanoihin ennen tämän pienoisohjelman käyttöä</string>
     <string name="widget_entry_fav_contentDescription">Tähtikuvaketta käytetään suosikin ilmaisemiseen</string>
     <string name="activity_select_single_note">Valitse muistiinpano</string>
     <string name="pref_value_font_normal">Normaali</string>
@@ -97,9 +97,9 @@
     <string name="category_movies">Elokuvat</string>
     <string name="category_movie">Elokuva</string>
     <string name="category_work">Työ</string>
-    <string name="category_todo">ToD</string>
-    <string name="category_todos">ToDo:t</string>
-    <string name="category_checklists">Tsekkilistat</string>
+    <string name="category_todo">Tehtävää</string>
+    <string name="category_todos">Tehtävät</string>
+    <string name="category_checklists">Tarkistuslistat</string>
     <string name="category_tasks">Tehtävät</string>
     <string name="category_recipe">Resepti</string>
     <string name="category_recipes">Reseptit</string>
@@ -117,14 +117,14 @@
     <string name="category_games">Pelit</string>
     <!-- This is a noun, analogue to "game", like "theatre" or "drama" -->
     <string name="category_play">Esitys</string>
-    <string name="category_gift">Lahja</string>
-    <string name="category_gifts">Lahjat</string>
+    <string name="category_gift">Lahjoitus</string>
+    <string name="category_gifts">Lahjoitukset</string>
     <!-- Like a gift -->
     <string name="category_present">Lahja</string>
     <!-- Like a gift -->
     <string name="category_presents">Lahjat</string>
     <string name="account_already_imported">Tili on jo tuotu</string>
-    <string name="no_notes_yet">Ei muistiinpanoja</string>
+    <string name="no_notes_yet">Ei muistiinpanoja vielä</string>
     <string name="no_notes_yet_description">Paina + luodaksesi uuden muistiinpanon</string>
     <string name="simple_more">Lisää</string>
     <string name="simple_move">Siirrä</string>
@@ -135,19 +135,19 @@
     <string name="unlock_notes">Avaa muistiinpanojen lukitus</string>
     <string name="error_dialog_title">Voi ei - Mitä nyt? 🙁</string>
     <string name="error_dialog_tip_token_mismatch_retry">Yritä pakottaa sovelluksen sulkeminen ja käynnistä se uudelleen. Nextcloud-sovellukseen on saattanut olla virheellinen yhteys.</string>
-    <string name="error_dialog_tip_token_mismatch_clear_storage">Jos ongelma jatkuu, yritä tyhjentää sekä Nextcloud- että Nextcloud Notes-sovellusten tallennustilat ratkaistaksesi ongelman.</string>
-    <string name="error_dialog_tip_clear_storage">Voit tyhjentää tallennustilan avaamalla sovelluksen tiedot ja valitsemalla Tallennustila → Tyhjennä tallennustila. Tämä poistaa kaikki synkronoimattomat muistiinpanot!</string>
-    <string name="error_dialog_tip_files_outdated">Nextcloud-sovelluksesi on vanhentunut. Lataa uusin version Play Storesta tai F-Droidista.</string>
-    <string name="error_dialog_tip_files_force_stop">Nextcloud-sovelluksessasi vaikuttaa olevan jokin ongelma. Yritä pakottaa sekä Nextcloud- että Nextcloud Notes-sovelluksen lopetus.</string>
-    <string name="error_dialog_tip_files_delete_storage">Jos pakotettu lopettaminen ei auta, voit yrittää tyhjentää sovelluksien tallennustilan.</string>
+    <string name="error_dialog_tip_token_mismatch_clear_storage">Jos ongelma jatkuu, yritä tyhjentää sekä Nextcloud- että Muistiinpanot-sovellusten tallennustilat ratkaistaksesi ongelman.</string>
+    <string name="error_dialog_tip_clear_storage">Voit tyhjentää tallennustilan avaamalla sovelluksen tiedot ja valitsemalla Tallennustila → Tyhjennä tallennustila. ⚠️Varo: Tämä poistaa kaikki synkronoimattomat muistiinpanot!</string>
+    <string name="error_dialog_tip_files_outdated">Nextcloud-sovelluksesi on vanhentunut. Lataa uusin versio sovelluskaupasta, kuten AppLoungesta, F-Droidista tai Play Storesta.</string>
+    <string name="error_dialog_tip_files_force_stop">Nextcloud-sovelluksessasi vaikuttaa olevan jokin ongelma. Yritä pakottaa sekä Nextcloud- että Muistiinpanot-sovellusten lopetus.</string>
+    <string name="error_dialog_tip_files_delete_storage">Jos pakotettu lopettaminen ei auta, voit kokeilla tyhjentää kummankin sovelluksen tallennustilan.</string>
     <string name="error_dialog_timeout_instance">Palvelimen aikakatkaisu. Varmista, että se on toiminnassa.</string>
-    <string name="error_dialog_timeout_toggle">Tarkista verkkoyhteytesi. Joskus mobiilidatan ja Wi-Fin välillä vaihtaminen saattaa auttaa. </string>
+    <string name="error_dialog_timeout_toggle">Tarkista verkkoyhteytesi. Joskus mobiilidatan ja Wi-Fi:n pois ja päälle kytkeminen saattaa auttaa.</string>
     <string name="error_dialog_check_server">Palvelimesi vastaus oli virheellinen. Tarkista, onnistuuko muistiinpanojen käyttäminen verkkokäyttöliittymän kautta.</string>
-    <string name="error_dialog_check_server_logs">Nextcloud-asennuksessasi on ongelma. Katso lisätietoja palvelimen lokitiedostoista.</string>
+    <string name="error_dialog_check_server_logs">Nextcloud-asetuksissasi on ongelma. Katso lisätietoja palvelimen lokitiedostoista.</string>
     <string name="error_dialog_check_maintenance">Varmista, ettei Nextcloud-palvelin ole ylläpitotilassa.</string>
     <string name="error_dialog_insufficient_storage">Nextcloud-palvelimellasi ei ole vapaata tallennustilaa. Poista tiedostoja, jotta paikallisten muutosten synkronointi pilveen onnistuu.</string>
     <string name="error_dialog_we_need_info">Tarvitsemme seuraavat tekniset tiedot auttaaksemme sinua:</string>
-    <string name="error_dialog_server_app_enabled">Varmista, että olet asentanut \"Notes\"-sovelluksen palvelimellasi.</string>
+    <string name="error_dialog_server_app_enabled">Varmista, että olet asentanut ja ottanut käyttöön \"Notes\"-sovelluksen palvelimellasi.</string>
     <string name="error_dialog_redirect">Palvelimesi vastasi HTTP 302-tilakoodilla, joka viittaa siihen, että sinulla ei ole Notes-sovellusta asennettuna palvelimellesi tai jokin asetus on väärin. Tämä saattaa johtua mukautetusta .htaccess-tiedostosta tai Nextcloud-sovelluksista, kuten OID-Clientistä.</string>
     <string name="error_dialog_tip_disable_battery_optimizations">Poista käytöstä akun optimointi Nextcloud- ja Muistiinpanot-sovelluksilta.</string>
     <string name="error_dialog_min_version">Muistiinpanosovellus vaatii Nextcloud-sovelluksen version 3.18 tai uudemman.</string>
@@ -287,7 +287,7 @@
     <string name="settings_keep_screen_on_summary">Kun katsot tai muokkaat muistiinpanoa</string>
     <string name="settings_keep_screen_on">Pidä näyttö päällä</string>
     <string name="settings_export">Vie</string>
-    <string name="settings_export_notes_title">Vie muistiot</string>
+    <string name="settings_export_notes_title">Vie muistiinpanot</string>
     <string name="export_empty_accounts">Ei tilejä käytettävissä</string>
     <string name="export_finished_message">Vietiin muistiot kansioon \'Notes\' sisäisessä tallennustilassa</string>
     <string name="or">tai</string>
