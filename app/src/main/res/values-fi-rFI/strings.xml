@@ -150,8 +150,8 @@
     <string name="error_dialog_server_app_enabled">Varmista, että olet asentanut ja ottanut käyttöön \"Notes\"-sovelluksen palvelimellasi.</string>
     <string name="error_dialog_redirect">Palvelimesi vastasi HTTP 302-tilakoodilla, joka viittaa siihen, että sinulla ei ole Notes-sovellusta asennettuna palvelimellesi tai jokin asetus on väärin. Tämä saattaa johtua mukautetusta .htaccess-tiedostosta tai Nextcloud-sovelluksista, kuten OID-Clientistä.</string>
     <string name="error_dialog_tip_disable_battery_optimizations">Poista käytöstä akun optimointi Nextcloud- ja Muistiinpanot-sovelluksilta.</string>
-    <string name="error_dialog_min_version">Muistiinpanosovellus vaatii Nextcloud-sovelluksen version 3.18 tai uudemman.</string>
-    <string name="added_content">Lisätty \"%1$s\"</string>
+    <string name="error_dialog_min_version">Muistiinpanot-sovellus vaatii Nextcloud-sovelluksen version 3.18 tai uudemman.</string>
+    <string name="added_content">Lisätty %1$s</string>
     <string name="shared_text_empty">Jaettu teksti oli tyhjä</string>
     <string name="append_to_note">Lisää muistiinpanoon</string>
     <string name="change_note_title">Muuta muistinpanon otsikkoa</string>
@@ -178,10 +178,10 @@
     </string-array>
     <plurals name="ab_selected">
         <item quantity="one">%d valittu</item>
-        <item quantity="other">%d valitut</item>
+        <item quantity="other">%d valittua</item>
     </plurals>
     <plurals name="bulk_notes_deleted">
-        <item quantity="one">Poistettu muistiinpano</item>
+        <item quantity="one">Poistettu yksi muistiinpano</item>
         <item quantity="other">Poistettu %1$d muistiinpanoa</item>
     </plurals>
     <plurals name="bulk_notes_restored">
@@ -199,8 +199,8 @@
     <string name="formatting_help_codefence_outer" translateable="false">````</string>
     <string name="formatting_help_codefence_javascript" translateable="false">```javascript</string>
     <string name="formatting_help_cbf_title">Kontekstiin perustuva muotoilu</string>
-    <string name="formatting_help_cbf_body_1">Muistiinpanosovelluksen päätavoitteena on tarjota häiriötön työkalu. Voit silti muotoilla tekstiä Markdown-syntaksilla. Moniin alla mainittuihin esimerkkeihin on pikanäppäimet, jotta voit kirjoittaa muistiinpanoja ilman muotoilumerkkien kirjoittamista.</string>
-    <string name="formatting_help_cbf_body_2">Valitse vain teksti tai näpäytä mitä tahansa kohtaa ruudulta ja ponnahdusvalikko aukeaa. Valikossa on oletusvalintojen %1$s, %2$sja %3$s lisäksi pikavalintoja kuten %4$s ja %5$s.</string>
+    <string name="formatting_help_cbf_body_1">Muistiinpanot-sovelluksen tavoitteena on häiriötekijättömyys. Voit silti muotoilla tekstiä Markdown-syntaksilla. Moniin alla mainittuihin esimerkkeihin on pikanäppäimet, jotta voit muotoilla muistiinpanoja ilman muotoilumerkkien kirjoittamista.</string>
+    <string name="formatting_help_cbf_body_2">Valitse tekstiä tai näpäytä kohdistinta missä tahansa ja saat ponnahdusvalikon, jossa on oletusvalintojen %1$s, %2$sja %3$s lisäksi pikavalintoja kuten %4$s ja %5$s.</string>
     <string name="formatting_help_text_title">Teksti</string>
     <string name="formatting_help_text_body">On todella helppoa %1$slihavoida%1$s ja %2$skursivoida%2$s sanoja Markdownilla. Voit %3$syliviivata%3$s sanoja ja jopa [linkata Nextcloudiin](https://nextcloud.com).</string>
     <string name="formatting_help_lists_title">Luettelot</string>
@@ -210,7 +210,7 @@
     <string name="formatting_help_lists_body_4">Kolme</string>
     <string name="formatting_help_lists_body_5">Toisinaan saatat haluta luettelomerkit:</string>
     <string name="formatting_help_lists_body_6">Aloita rivi viivalla</string>
-    <string name="formatting_help_lists_body_7">Ja jos haluat alakohtia, lisää kaksi välilyöntiä ennen viivaa tai tähteä:</string>
+    <string name="formatting_help_lists_body_7">Ja jos haluat alikohtia, lisää kaksi välilyöntiä ennen viivaa tai tähteä:</string>
     <string name="formatting_help_lists_body_8">Kuten näin</string>
     <string name="formatting_help_lists_body_9">Tai näin</string>
     <string name="formatting_help_checkboxes_title">Valintaruudut</string>
@@ -218,14 +218,14 @@
     <string name="formatting_help_checkboxes_body_2">Tietue 1</string>
     <string name="formatting_help_checkboxes_body_3">Tietue 2</string>
     <string name="formatting_help_structured_documents_title">Rakenteelliset asiakirjat</string>
-    <string name="formatting_help_structured_documents_body_1">Joskus on kätevää luoda eri tason otsikoita dokumentin rakenteen jäsentämiseen. Aloita rivit %1$s-merkillä luodaksesi otsikoita. Useampi %2$s rivillä merkitsee pienempää otsikkokokoa.</string>
+    <string name="formatting_help_structured_documents_body_1">Joskus on kätevää luoda eri tason otsikoita asiakirjan rakenteen jäsentämiseen. Aloita rivit %1$s-merkillä luodaksesi otsikoita. Useampi %2$s rivillä merkitsee pienempää otsikkokokoa.</string>
     <string name="formatting_help_structured_documents_body_2">Tämä on kolmannen tason otsikko</string>
-    <string name="formatting_help_structured_documents_body_3">Voit käyttää otsikoiden kokoja yhdestä%1$s-merkistä kuuteen %2$s-merkkiin asti.</string>
-    <string name="formatting_help_structured_documents_body_4">Jos haluat lisätä lainauksen, käytä %1$s-merkkiä rivin alussa ennen riviä:</string>
-    <string name="formatting_help_structured_documents_body_5">Mielikuvitus on tärkeämpää kuin tieto. Tieto on rajallista. Mielikuvitus ympäröi maailman.</string>
+    <string name="formatting_help_structured_documents_body_3">Voit käyttää otsikoiden kokoja yhdestä %1$s-merkistä kuuteen %2$s-merkkiin asti.</string>
+    <string name="formatting_help_structured_documents_body_4">Jos haluat lisätä lainauksen, käytä %1$s-merkkiä rivin alussa:</string>
+    <string name="formatting_help_structured_documents_body_5">Mielikuvitus on tärkeämpää kuin tieto. Tieto on rajallista. Mielikuvitus ympäröi maailman.</string>
     <string name="formatting_help_structured_documents_body_6">- Albert Einstein</string>
     <string name="formatting_help_code_title">Koodi</string>
-    <string name="formatting_help_code_body_1">Markdownilla voit muotoilla koodia monella eri tavalla. Rivillä olevan koodin voi sisällyttää gravis-merkkien väliin:</string>
+    <string name="formatting_help_code_body_1">Markdownilla voit muotoilla koodia monella eri tavalla. Sisällytä koodilohko gravis-merkkien väliin:</string>
     <string name="formatting_help_code_body_2">Markdown tukee myös koodin aitaamista, jolla useamman rivin koodi näytetään sisentämättömänä:</string>
     <string name="formatting_help_code_body_3">Ja jos haluat käyttää syntaksin korostusta, sisällytä ohjelmointikieli:</string>
     <string name="formatting_help_tables_title">Taulukot</string>
@@ -233,11 +233,11 @@
     <string name="formatting_help_tables_column">Sarake %1d</string>
     <!-- Table cell value of a sample table -->
     <string name="formatting_help_tables_value">Arvo %1d</string>
-    <string name="formatting_help_images_body_1">Linkkien tulee olla joko kokonaisia, protokollalla ja domainilla alkavia URL-osotteita tai absoluuttisia polkuja alkaen %1$s-merkillä.</string>
+    <string name="formatting_help_images_body_1">Linkkien tulee olla joko kokonaisia, protokollalla ja verkkotunnuksella alkavia URL-osoitteita tai absoluuttisia polkuja alkaen %1$s-merkillä.</string>
     <string name="formatting_help_images_title">Kuvat</string>
     <string name="simple_other">Muu</string>
-    <string name="sort_last_modified">Järjestä muokkauspäiväyksen mukaan</string>
-    <string name="sort_alphabetically">Järjestä aakkosjärjestyksen mukaan</string>
+    <string name="sort_last_modified">Järjestä muokkauspäivän mukaan</string>
+    <string name="sort_alphabetically">Järjestä aakkosjärjestykseen</string>
     <string name="error_action_open_battery_settings">Akkuasetukset</string>
     <string name="error_action_open_deck_info">Avaa sovelluksen tiedot</string>
     <string name="error_action_open_network">Verkkoasetukset</string>
@@ -282,7 +282,7 @@
 \n -Käännetty monille kielille</string>
     <string name="preferences_app_info_title">Muistiinpanot - tietoja sovelluksesta</string>
     <string name="formatting_help_images_alt">Hieno kuva</string>
-    <string name="formatting_help_images_body_2">Markdown formaatin noudattamiseksi, käytä kuvan URL osoitteessa escape merkkejä. Tämä tarkoittaa esimerkiksi sitä, että korvaa URL-osoitteessa välilyönnit %1$s :llä.</string>
+    <string name="formatting_help_images_body_2">Markdown formaatin noudattamiseksi, käytä kuvan URL-osoitteessa escape-merkkejä. Tämä tarkoittaa esimerkiksi sitä, että korvaa URL-osoitteessa välilyönnit %1$s :llä.</string>
     <string name="category_credentials">Valtuus</string>
     <string name="settings_keep_screen_on_summary">Kun katsot tai muokkaat muistiinpanoa</string>
     <string name="settings_keep_screen_on">Pidä näyttö päällä</string>
