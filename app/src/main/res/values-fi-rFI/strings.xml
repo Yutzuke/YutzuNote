@@ -58,7 +58,7 @@
     <string name="about_translators_transifex">Nextcloud-yhteisö &lt;a href=\"%1$s\"&gt;Transifex-palvelussa&lt;/a&gt;</string>
     <string name="about_testers_title">Testaajat</string>
     <string name="about_source_title">Lähdekoodi</string>
-    <string name="about_source">Tämä projekti toimii GitHubissa: &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_source">Tätä projektia pidetään GitHubissa: <a href="%1$s">%1$s</a></string>
     <string name="about_issues_title">Ongelmat</string>
     <string name="about_issues">Voit raportoida virheitä ja ehdottaa parannuksia ja uusia tomintoja GitHub:n ongelmien seurain -toiminnolla: %1$s</string>
     <string name="about_translate_title">Käännä</string>
@@ -200,7 +200,7 @@
     <string name="formatting_help_codefence_javascript" translateable="false">```javascript</string>
     <string name="formatting_help_cbf_title">Kontekstiin perustuva muotoilu</string>
     <string name="formatting_help_cbf_body_1">Muistiinpanot-sovelluksen tavoitteena on häiriötekijättömyys. Voit silti muotoilla tekstiä Markdown-syntaksilla. Moniin alla mainittuihin esimerkkeihin on pikanäppäimet, jotta voit muotoilla muistiinpanoja ilman muotoilumerkkien kirjoittamista.</string>
-    <string name="formatting_help_cbf_body_2">Valitse tekstiä tai näpäytä kohdistinta missä tahansa ja saat ponnahdusvalikon, jossa on oletusvalintojen %1$s, %2$sja %3$s lisäksi pikavalintoja kuten %4$s ja %5$s.</string>
+    <string name="formatting_help_cbf_body_2">Valitse tekstiä tai napauta kohdistinta missä tahansa ja saat ponnahdusvalikon, jossa on oletusvalintojen %1$s, %2$sja %3$s lisäksi pikavalintoja kuten %4$s ja %5$s.</string>
     <string name="formatting_help_text_title">Teksti</string>
     <string name="formatting_help_text_body">On todella helppoa %1$slihavoida%1$s ja %2$skursivoida%2$s sanoja Markdownilla. Voit %3$syliviivata%3$s sanoja ja jopa [linkata Nextcloudiin](https://nextcloud.com).</string>
     <string name="formatting_help_lists_title">Luettelot</string>
@@ -214,7 +214,7 @@
     <string name="formatting_help_lists_body_8">Kuten näin</string>
     <string name="formatting_help_lists_body_9">Tai näin</string>
     <string name="formatting_help_checkboxes_title">Valintaruudut</string>
-    <string name="formatting_help_checkboxes_body_1">Luodaksesi valintaruudun, käytä listaa hakasuluilla</string>
+    <string name="formatting_help_checkboxes_body_1">Luodaksesi valintaruudun, käytä listaa ja sitten hakasulkuja</string>
     <string name="formatting_help_checkboxes_body_2">Tietue 1</string>
     <string name="formatting_help_checkboxes_body_3">Tietue 2</string>
     <string name="formatting_help_structured_documents_title">Rakenteelliset asiakirjat</string>
@@ -256,13 +256,13 @@
     <string name="simple_next">Seuraava</string>
     <string name="simple_prev">Edellinen</string>
     <string name="simple_backup">Varmuuskopioi</string>
-    <string name="backup">Havaitsimme virheellisen sovelluksen tilan, jota ei voida palauttaa. Varmuuskopioi synkronoimattomat muutokset ja tyhjennä muistiinpanosovelluksen tallennustila.</string>
-    <string name="settings_notes_path_description">Hakemisto, johon muistiinpanot tallennetaan Nextcloudissa</string>
+    <string name="backup">Havaitsimme virheellisen sovelluksen tilan, jota ei voida palauttaa. Varmuuskopioi synkronoimattomat muutokset ja tyhjennä Muistiinpanot-sovelluksen tallennustila.</string>
+    <string name="settings_notes_path_description">Kansio, johon muistiinpanot tallennetaan Nextcloudissa</string>
     <string-array name="settings_file_suffixes">
         <item translatable="false">.txt</item>
         <item translatable="false">.md</item>
     </string-array>
-    <string name="settings_notes_path_success">Uusi muistiinpanojen hakemisto: %1$s</string>
+    <string name="settings_notes_path_success">Uusi muistiinpanojen kansio: %1$s</string>
     <string name="settings_file_suffix">Tiedostopääte</string>
     <string name="settings_file_suffix_description">Tiedostopääte uusille Nextcloud-muistiinpanoille</string>
     <string name="settings_file_suffix_success">Uuden tiedoston pääte: %1$s</string>
@@ -274,7 +274,7 @@
     <string name="preferences_service_terms">Käyttöehdot</string>
     <string name="preferences_privacy_policy">Tietosuojakäytäntö</string>
     <string name="preferences_about_app">Muistiinpanot on haarautettu Nextcloud Notesista</string>
-    <string name="preferences_app_info">-Luetteloi, luo, muokkaa, jaa, etsi ja poista muistiinpanoja
+    <string name="preferences_app_info">-Luetteloi, luo, muokkaa, jaa, hae ja poista muistiinpanoja
 \n -Jaa tekstiä ja linkkejä uutena muistiinpanona sovellukseen
 \n -Merkitse muistiinpanoja suosikeiksi
 \n -Joukkopoista
