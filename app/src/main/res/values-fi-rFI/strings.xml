@@ -90,7 +90,7 @@
     <string name="simple_close">Sulje</string>
     <string name="simple_copy">Kopioi</string>
     <string name="simple_exception">Poikkeus</string>
-    <string name="pin_to_homescreen">Kiinnitä aloitusnäytölle</string>
+    <string name="pin_to_homescreen">Kiinnitä aloitusnäyttöön</string>
     <string name="note_has_been_deleted">Tämä muistiinpano on poistettu</string>
     <string name="add_account">Lisää tili</string>
     <string name="category_music">Musiikki</string>
