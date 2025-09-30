@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
     <uses-permission android:name="android.permission.READ_SYNC_SETTINGS"/>
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="foundation.e.accountmanager.permission.ACCOUNT_EVENTS"/>
 
     <queries>
         <package android:name="com.nextcloud.client" />
@@ -183,11 +184,13 @@
             android:enabled="true"
             android:exported="true"/>
 
-        <receiver android:name=".receiver.AccountRemoveReceiver"
+        <receiver
+            android:name=".receiver.AccountRemoveReceiver"
+            android:exported="true"
             android:enabled="true"
-            android:exported="true">
+            android:permission="foundation.e.accountmanager.permission.ACCOUNT_EVENTS">
             <intent-filter>
-                <action android:name="android.accounts.action.ACCOUNT_REMOVED"/>
+                <action android:name="foundation.e.accountmanager.action.ACCOUNT_REMOVED"/>
             </intent-filter>
         </receiver>
 

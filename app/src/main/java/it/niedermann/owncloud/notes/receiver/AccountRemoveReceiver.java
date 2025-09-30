@@ -39,13 +39,13 @@ public class AccountRemoveReceiver extends BroadcastReceiver {
 
     private static final String TAG = AccountRemoveReceiver.class.getSimpleName();
     private static final String[] SUPPORTED_ACCOUNT_TYPES = {"e.foundation.webdav.eelo"};
-    private static final String ACTION_ACCOUNT_REMOVE = "android.accounts.action.ACCOUNT_REMOVED";
+    private static final String ACTION_ACCOUNT_REMOVED = "foundation.e.accountmanager.action.ACCOUNT_REMOVED";
 
     private final ExecutorService executor = Executors.newCachedThreadPool();
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        if (!ACTION_ACCOUNT_REMOVE.equals(intent.getAction())) {
+        if (!ACTION_ACCOUNT_REMOVED.equals(intent.getAction())) {
             return;
         }
 
