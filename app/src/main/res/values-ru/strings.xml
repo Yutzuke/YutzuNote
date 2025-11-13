@@ -60,7 +60,7 @@
     <string name="about_source_title">Исходный код</string>
     <string name="about_source">Этот проект размещён на GitHub: %1$s</string>
     <string name="about_issues_title">Проблемы</string>
-    <string name="about_issues">Вы можете сообщить об ошибках, внести предложения об улучшениях и пожеланиях в системе тикетов GitHub: <a href="%1$s">%1$s</a></string>
+    <string name="about_issues">Вы можете сообщить об ошибках, внести предложения об улучшениях и пожеланиях в системе тикетов GitHub: %1$s</string>
     <string name="about_translate_title">Перевести</string>
     <string name="about_translate">Включайтесь в команду Nextcloud на сайте Transifex и помогайте переводить это приложение: %1$s</string>
     <string name="about_app_license_title">Лицензия приложения</string>
@@ -253,7 +253,7 @@
     <string name="error_action_open_network">Параметры сети</string>
     <string name="error_action_update_files_app">Обновить</string>
     <string name="no_account_configured_yet">Учётная запись пока не настроена</string>
-    <string name="no_other_accounts">Вы еще не настроили ни одной учётной записи</string>
+    <string name="no_other_accounts">Вы еще не настроили ни одной учётной записи.</string>
     <string name="choose_account">Выбрать учётную запись</string>
     <string name="context_based_formatting">Всплывающее окно контекстного форматирования</string>
     <plurals name="remove_account_message">
@@ -296,8 +296,12 @@
 \n - Рендеринг MarkDown
 \n - Переведено на многие языки</string>
     <string name="conflict_note_detected"># У нас возник конфликт между вашими заметками. Пожалуйста, выберите правильную.</string>
-    <string name="conflicted_note_content_title">"
-\n
-\n***Заметка %1$d (Последнее изменение: %2$s):***
-\n"</string>
+    <string name="conflicted_note_content_title">\n\n***Заметка %1$d (Последнее изменение: %2$s):***\n</string>
+    <string name="or">или</string>
+    <string name="settings_export_notes_title">Экспорт заметок</string>
+    <string name="settings_export">Экспорт</string>
+    <string name="export_empty_accounts">Нет доступных учетных записей</string>
+    <string name="export_finished_message">Заметки экспортированы в папку \"Заметки\" во внутренней памяти</string>
+    <string name="use_local_notes">Использовать локальные заметки</string>
+    <string name="welcome_details">Выберите, синхронизировать ли заметки с существующей облачной учетной записью Murena или хранить их локально на устройстве (без синхронизации).</string>
 </resources>
