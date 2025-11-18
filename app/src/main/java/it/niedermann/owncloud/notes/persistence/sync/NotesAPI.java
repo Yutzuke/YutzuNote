@@ -10,8 +10,10 @@ import com.google.gson.annotations.Expose;
 import com.nextcloud.android.sso.api.NextcloudAPI;
 import com.nextcloud.android.sso.api.ParsedResponse;
 
+import java.util.AbstractMap;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 import io.reactivex.Observable;
@@ -70,11 +72,17 @@ public class NotesAPI {
         }
     }
 
-    public Observable<List<Long>> getNotesIDs() {
+    public Observable<AbstractMap.SimpleEntry<Map<String, String>, List<Long>>> getNotesIDs() {
         if (ApiVersion.API_VERSION_1_0.equals(usedApiVersion)) {
-            return notesAPI_1_0.getNotesIDs().map(response -> response.getResponse().stream().map(Note::getRemoteId).collect(Collectors.toList()));
+            return notesAPI_1_0.getNotesIDs().map(response -> new AbstractMap.SimpleEntry(
+                    response.getHeaders(),
+                    response.getResponse().stream().map(Note::getRemoteId).collect(Collectors.toList())
+            ));
         } else if (ApiVersion.API_VERSION_0_2.equals(usedApiVersion)) {
-            return notesAPI_0_2.getNotesIDs().map(response -> response.getResponse().stream().map(Note::getRemoteId).collect(Collectors.toList()));
+            return notesAPI_0_2.getNotesIDs().map(response -> new AbstractMap.SimpleEntry(
+                    response.getHeaders(),
+                    response.getResponse().stream().map(Note::getRemoteId).collect(Collectors.toList())
+            ));
         } else {
             throw new UnsupportedOperationException("Used API version " + usedApiVersion + " does not support getNotesIDs().");
         }

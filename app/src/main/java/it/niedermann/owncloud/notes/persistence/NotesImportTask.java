@@ -1,6 +1,11 @@
 package it.niedermann.owncloud.notes.persistence;
 
+import static it.niedermann.owncloud.notes.persistence.NotesServerSyncTask.HEADER_KEY_ETAG;
+import static it.niedermann.owncloud.notes.persistence.NotesServerSyncTask.HEADER_KEY_LAST_MODIFIED;
+
 import android.content.Context;
+
+import it.niedermann.owncloud.notes.shared.util.ResponseUtil;
 import trikita.log.Log;
 
 import androidx.annotation.NonNull;
@@ -10,6 +15,8 @@ import androidx.lifecycle.MutableLiveData;
 import com.nextcloud.android.sso.AccountImporter;
 import com.nextcloud.android.sso.exceptions.NextcloudFilesAppAccountNotFoundException;
 
+import java.util.Calendar;
+import java.util.Date;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -54,7 +61,9 @@ public class NotesImportTask {
             Log.i(TAG, "… Fetching notes IDs");
             final var status = new ImportStatus();
             try {
-                final var remoteIds = notesAPI.getNotesIDs().blockingSingle();
+                final var response = notesAPI.getNotesIDs().blockingSingle();
+                final var cleanedHeaders = ResponseUtil.getLowerCaseHeaders(response.getKey());
+                final var remoteIds = response.getValue();
                 status.total = remoteIds.size();
                 status$.postValue(status);
                 Log.i(TAG, "… Total count: " + remoteIds.size());
@@ -74,6 +83,24 @@ public class NotesImportTask {
                 }
                 try {
                     latch.await();
+
+                    // update ETag and Last-Modified in order to reduce size of next response
+                    localAccount.setETag(cleanedHeaders.get(HEADER_KEY_ETAG));
+
+                    final var lastModified = Calendar.getInstance();
+                    lastModified.setTimeInMillis(0);
+                    final String lastModifiedHeader = cleanedHeaders.get(HEADER_KEY_LAST_MODIFIED);
+                    if (lastModifiedHeader != null) {
+                        lastModified.setTimeInMillis(Date.parse(lastModifiedHeader));
+                    }
+
+                    Log.d(TAG, "ETag: " + cleanedHeaders.get(HEADER_KEY_ETAG) + "; Last-Modified: " + lastModified + " (" + lastModified + ")");
+
+                    localAccount.setModified(lastModified);
+
+                    repo.updateETag(localAccount.getId(), localAccount.getETag());
+                    repo.updateModified(localAccount.getId(), localAccount.getModified().getTimeInMillis());
+
                     Log.i(TAG, "IMPORT FINISHED");
                     callback.onSuccess(null);
                 } catch (InterruptedException e) {
