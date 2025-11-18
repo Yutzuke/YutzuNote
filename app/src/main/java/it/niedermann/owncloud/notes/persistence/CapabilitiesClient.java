@@ -10,6 +10,7 @@ import com.nextcloud.android.sso.model.SingleSignOnAccount;
 
 import it.niedermann.owncloud.notes.shared.model.Capabilities;
 import it.niedermann.owncloud.notes.shared.util.AccountSyncUtil;
+import it.niedermann.owncloud.notes.shared.util.ResponseUtil;
 import it.niedermann.owncloud.notes.shared.util.SSOUtil;
 import trikita.log.Log;
 
@@ -18,7 +19,7 @@ public class CapabilitiesClient {
 
     private static final String TAG = CapabilitiesClient.class.getSimpleName();
 
-    private static final String HEADER_KEY_ETAG = "ETag";
+    private static final String HEADER_KEY_ETAG = "etag";
 
     @WorkerThread
     public static Capabilities getCapabilities(@NonNull Context context, @NonNull SingleSignOnAccount ssoAccount, @Nullable String lastETag, @NonNull ApiProvider apiProvider) throws Throwable {
@@ -30,8 +31,8 @@ public class CapabilitiesClient {
         try {
             final var response = ocsAPI.getCapabilities(lastETag).blockingSingle();
             final var capabilities = response.getResponse().ocs.data;
-            final var headers = response.getHeaders();
-            if (headers != null) {
+            final var headers = ResponseUtil.getLowerCaseHeaders(response);
+            if (!headers.isEmpty()) {
                 capabilities.setETag(headers.get(HEADER_KEY_ETAG));
             } else {
                 Log.w(TAG, "Response headers of capabilities are null");

@@ -36,6 +36,7 @@ import it.niedermann.owncloud.notes.shared.model.DBStatus;
 import it.niedermann.owncloud.notes.shared.model.ISyncCallback;
 import it.niedermann.owncloud.notes.shared.model.SyncResultStatus;
 import it.niedermann.owncloud.notes.shared.util.ApiVersionUtil;
+import it.niedermann.owncloud.notes.shared.util.ResponseUtil;
 import trikita.log.Log;
 
 
@@ -47,9 +48,9 @@ abstract class NotesServerSyncTask extends Thread {
 
     private static final String TAG = NotesServerSyncTask.class.getSimpleName();
 
-    private static final String HEADER_KEY_X_NOTES_API_VERSIONS = "X-Notes-API-Versions";
-    private static final String HEADER_KEY_ETAG = "ETag";
-    private static final String HEADER_KEY_LAST_MODIFIED = "Last-Modified";
+    static final String HEADER_KEY_ETAG = "etag";
+    static final String HEADER_KEY_LAST_MODIFIED = "last-modified";
+    private static final String HEADER_KEY_X_NOTES_API_VERSIONS = "x-notes-api-versions";
 
     private NotesAPI notesAPI;
     @NonNull
@@ -307,21 +308,22 @@ abstract class NotesServerSyncTask extends Thread {
             }
 
             // update ETag and Last-Modified in order to reduce size of next response
-            localAccount.setETag(fetchResponse.getHeaders().get(HEADER_KEY_ETAG));
+            final var cleanedHeaders = ResponseUtil.getLowerCaseHeaders(fetchResponse);
+            localAccount.setETag(cleanedHeaders.get(HEADER_KEY_ETAG));
 
             final var lastModified = Calendar.getInstance();
             lastModified.setTimeInMillis(0);
-            final String lastModifiedHeader = fetchResponse.getHeaders().get(HEADER_KEY_LAST_MODIFIED);
+            final String lastModifiedHeader = cleanedHeaders.get(HEADER_KEY_LAST_MODIFIED);
             if (lastModifiedHeader != null)
                 lastModified.setTimeInMillis(Date.parse(lastModifiedHeader));
-            Log.d(TAG, "ETag: " + fetchResponse.getHeaders().get(HEADER_KEY_ETAG) + "; Last-Modified: " + lastModified + " (" + lastModified + ")");
+            Log.d(TAG, "ETag: " + cleanedHeaders.get(HEADER_KEY_ETAG) + "; Last-Modified: " + lastModified + " (" + lastModified + ")");
 
             localAccount.setModified(lastModified);
 
             repo.updateETag(localAccount.getId(), localAccount.getETag());
             repo.updateModified(localAccount.getId(), localAccount.getModified().getTimeInMillis());
 
-            final String newApiVersion = ApiVersionUtil.sanitize(fetchResponse.getHeaders().get(HEADER_KEY_X_NOTES_API_VERSIONS));
+            final String newApiVersion = ApiVersionUtil.sanitize(cleanedHeaders.get(HEADER_KEY_X_NOTES_API_VERSIONS));
             localAccount.setApiVersion(newApiVersion);
             repo.updateApiVersion(localAccount.getId(), newApiVersion);
             Log.d(TAG, "ApiVersion: " + newApiVersion);
