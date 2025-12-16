@@ -287,13 +287,10 @@
 \n- Vertaald in vele talen</string>
     <string name="preferences_app_info_title">Informatie over Notities</string>
     <string name="conflict_note_detected"># Er is een conflict tussen jouw notities. Kies de juiste a.u.b.</string>
-    <string name="conflicted_note_content_title">"
-\n
-\n***Notitie %1$d (laatst gewijzigd: %2$s):***
-\n"</string>
+    <string name="conflicted_note_content_title">\n\n***Notitie %1$d (laatst gewijzigd: %2$s):***\n</string>
     <string name="use_local_notes">Gebruik noties lokaal</string>
     <string name="or">of</string>
-    <string name="welcome_details">Kies tussen het synchroniseren van jouw notities met een bestaand Murena cloud account of notities lokaal opslaan op jouw jouw toestel (niet gesynchroniseerd).</string>
+    <string name="welcome_details">Kies tussen het synchroniseren van jouw notities met een bestaand Murena cloudaccount of notities lokaal opslaan op jouw toestel (niet gesynchroniseerd).</string>
     <string name="settings_export">Exporteren</string>
     <string name="settings_export_notes_title">Notities exporteren</string>
     <string name="export_empty_accounts">Geen accounts beschikbaar</string>
