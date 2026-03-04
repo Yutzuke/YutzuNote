@@ -279,10 +279,7 @@
     <string name="preferences_service_terms">Kullanım koşulları</string>
     <string name="preferences_authors">Yapımcılar</string>
     <string name="conflict_note_detected"># Notlarınız arasında bir çelişki ile karşılaştık. Lütfen uygun olanı seçin.</string>
-    <string name="conflicted_note_content_title">"
-\n
-\n***Not %1$d (Son Değiştirme %2$s):***
-\n"</string>
+    <string name="conflicted_note_content_title">\n\n***Not %1$d (Son düzenleme: %2$s):***\n</string>
     <string name="preferences_app_info">-Notları listeleyin, oluşturun, düzenleyin, paylaşın, arayın ve silin
 \n -Metin ve bağlantıları uygulamada yeni not olarak paylaşın
 \n -Notları favori olarak işaretle
