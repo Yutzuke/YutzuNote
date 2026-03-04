@@ -47,7 +47,7 @@
     <string name="settings_gridview">Tablo görünümü</string>
     <string name="settings_keep_screen_on">Ekranı açık tut</string>
     <string name="settings_keep_screen_on_summary">Bir notu görüntüler ya da düzenlerken</string>
-    <string name="error_sync">%1$s eşitlenemedi</string>
+    <string name="error_sync">Eşitlenemedi: %1$s</string>
     <string name="error_synchronization">Eşitleme başarısız</string>
     <string name="error_no_network">Ağ bağlantısı yok</string>
     <string name="error_maintenance_mode">Sunucu bakım modunda</string>
@@ -85,7 +85,7 @@
     <string name="shortcut_create_long">Not ekle</string>
     <string name="pref_value_font_normal">Normal</string>
     <string name="pref_value_wifi_and_mobile">Wi-Fi ve mobil veri ile eşitlensin</string>
-    <string name="pref_value_lock">Parola koruması</string>
+    <string name="pref_value_lock">Şifre koruması</string>
     <string name="simple_error">Hata</string>
     <string name="simple_close">Kapat</string>
     <string name="simple_copy">Kopyala</string>
@@ -111,8 +111,8 @@
     <string name="category_key">Anahtar</string>
     <!-- This represents a category where one can place passwords and credentials -->
     <string name="category_keys">Anahtarlar</string>
-    <string name="category_password">Parola</string>
-    <string name="category_passwords">Parolalar</string>
+    <string name="category_password">Şifre</string>
+    <string name="category_passwords">Şifreler</string>
     <string name="category_credentials">Kimlik doğrulama bilgisi</string>
     <string name="category_game">Oyun</string>
     <string name="category_games">Oyunlar</string>
