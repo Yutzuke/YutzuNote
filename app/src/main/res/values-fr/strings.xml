@@ -63,11 +63,11 @@
     <string name="about_translators_transifex">Communauté Nextcloud sur &lt;a href=\"%1$s\"&gt;Transifex&lt;/a&gt;</string>
     <string name="about_testers_title">Testeurs</string>
     <string name="about_source_title">Code source</string>
-    <string name="about_source">Ce projet est hébergé sur GitHub : &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_source">Ce projet est hébergé sur GitHub : %1$s</string>
     <string name="about_issues_title">Problèmes</string>
-    <string name="about_issues">Vous pouvez signaler les bugs ainsi que vos propositions ou demandes d\'amélioration dans le gestionnaire de bugs de GitHub : &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_issues">"Vous pouvez signaler les bugs, propositions  d\'amélioration et demandes de fonctionnalités dans le gestionnaire de bugs de GitHub : %1$s"</string>
     <string name="about_translate_title">Traduire</string>
-    <string name="about_translate">Rejoignez l\'équipe Nextcloud sur Transifex et aidez-nous à traduire cette application : &lt;a href=\"%1$s\"&gt;%1$s&lt;/a&gt;</string>
+    <string name="about_translate">Rejoignez l\'équipe Nextcloud sur Transifex et aidez-nous à traduire cette application : %1$s</string>
     <string name="about_app_license_title">Licence de l\'App</string>
     <string name="about_app_license">Cette application est licenciée selon les termes de la GNU GENERAL PUBLIC LICENSE v3+.</string>
     <string name="about_app_license_button">Voir la licence</string>
