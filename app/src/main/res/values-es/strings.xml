@@ -205,7 +205,7 @@
     <string name="formatting_help_codefence_javascript" translateable="false">```javascript</string>
     <string name="formatting_help_cbf_title">Formato basado en contexto</string>
     <string name="formatting_help_cbf_body_1">Un objetivo principal del diseño de Notas es ofrecer una herramienta libre de distracciones. Aunque podrás editar tus textos con Markdown. Para varios de los ejemplos mencionados debajo, puedes usar atajos para editar las notas sin escribir los códigos.</string>
-    <string name="formatting_help_cbf_body_2">Simplemente selecciona texto o pulsa en el cursor en cualquier posición y aparecerá un menú que contiene aparte de las opciones estándar %1$s, %2$s, %3$s otras como %4$s o %5$s,</string>
+    <string name="formatting_help_cbf_body_2">Simplemente selecciona texto o pulsa en el cursor en cualquier posición y aparecerá un menú con detalles aparte de las opciones estándar %1$s, %2$s, %3$s otras como %4$s o %5$s,</string>
     <string name="formatting_help_text_title">Texto</string>
     <string name="formatting_help_text_body">Es muy sencillo poner palabras en %1$snegrita%1$s y otras en %2$scursiva%2$s con Markdown. Puedes %3$stachar%3$s algunas palabras e incluso [enlace a Nextcloud](https://nextcloud.com).</string>
     <string name="formatting_help_lists_title">Listas</string>
