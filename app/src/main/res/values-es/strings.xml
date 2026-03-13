@@ -295,10 +295,7 @@
     <string name="or">o</string>
     <string name="welcome_details">Elige entre sincronizar tus notas con una cuenta existente en la nube o almacenarlas localmente en tu dispositivo (sin sincronizar).</string>
     <string name="conflict_note_detected"># Encontramos un conflicto entre tus notas. Por favor, elije la correcta.</string>
-    <string name="conflicted_note_content_title">"
-\n
-\n↵ ***Nota %1$d (Última modificación: %2$s):***↵
-\n"</string>
+    <string name="conflicted_note_content_title">\n\n↵ ***Nota %1$d (Última modificación: %2$s):***\n</string>
     <string name="settings_export_notes_title">Exportar notas</string>
     <string name="settings_export">Exportar</string>
     <string name="export_empty_accounts">No hay cuentas disponibles</string>
