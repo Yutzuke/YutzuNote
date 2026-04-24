@@ -15,7 +15,7 @@
         android:contentDescription="@null"
         android:background="@drawable/bg_rounded_corner"
         android:clipToOutline="true"
-        android:src="@drawable/ic_launcher_foreground_full"
+        android:src="@drawable/ic_launcher_background"
         tools:targetApi="s" />
 
     <TextView

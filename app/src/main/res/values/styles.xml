@@ -108,7 +108,7 @@
 
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/e_background</item>
-        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground_full</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_background</item>
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>
 
