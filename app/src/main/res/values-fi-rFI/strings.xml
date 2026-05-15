@@ -72,7 +72,7 @@
     <string name="about_icons_disclaimer_mdi">Material Design -kuvakkeet</string>
     <string name="about_credits_tab_title">Tekijät</string>
     <string name="about_contribution_tab_title">Osallistuminen</string>
-    <string name="about_license_tab_title">LIsenssi</string>
+    <string name="about_license_tab_title">Lisenssi</string>
     <string name="widget_note_list_title">Muistiinpanolista</string>
     <string name="widget_note_list_placeholder">Ei muistiinpanoja</string>
     <string name="widget_single_note_title">Yksittäinen muistiinpano</string>
