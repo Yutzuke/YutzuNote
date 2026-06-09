@@ -43,6 +43,7 @@
     <string name="error_synchronization">Sincronizzazione non riuscita</string>
     <string name="error_maintenance_mode">Il server è in modalità manutenzione</string>
     <string name="error_unknown">Si è verificato un errore sconosciuto.</string>
+    <string name="error_two_factor_app_password">L\'autenticazione a due fattori è abilitata per questo account. Accedi una volta per abilitare Notes.</string>
     <string name="about_icons_disclaimer_app_icon">Per l\'icona originale, vedi %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Tutte le altre icone utilizzate da questa app sono %1$s realizzate da Google Inc. e rilasciate su licenza Apache 2.0.</string>
     <string name="about_icons_disclaimer_mdi">Icone Material Design</string>

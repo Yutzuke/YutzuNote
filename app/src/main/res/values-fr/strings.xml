@@ -51,6 +51,7 @@
     <string name="error_no_network">Aucune connexion réseau</string>
     <string name="error_maintenance_mode">Le serveur est en mode maintenance</string>
     <string name="error_unknown">Une erreur inconnue est survenue.</string>
+    <string name="error_two_factor_app_password">L\'authentification à deux facteurs est activée pour ce compte. Connectez-vous une fois pour activer Notes.</string>
     <string name="error_sync">Échec de synchronisation : %1$s</string>
     <string name="about_version_title">Version</string>
     <string name="about_version">Vous utilisez actuellement la %1$s</string>
