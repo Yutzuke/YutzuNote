@@ -34,11 +34,12 @@ import java.util.concurrent.Executors;
 
 import it.niedermann.owncloud.notes.persistence.NotesRepository;
 import it.niedermann.owncloud.notes.persistence.entity.Account;
+import it.niedermann.owncloud.notes.shared.constant.MurenaAccountConstants;
 
 public class AccountRemoveReceiver extends BroadcastReceiver {
 
     private static final String TAG = AccountRemoveReceiver.class.getSimpleName();
-    private static final String[] SUPPORTED_ACCOUNT_TYPES = {"e.foundation.webdav.eelo"};
+    private static final String[] SUPPORTED_ACCOUNT_TYPES = {MurenaAccountConstants.MURENA_ACCOUNT_TYPE};
     private static final String ACTION_ACCOUNT_REMOVED = "foundation.e.accountmanager.action.ACCOUNT_REMOVED";
 
     private final ExecutorService executor = Executors.newCachedThreadPool();

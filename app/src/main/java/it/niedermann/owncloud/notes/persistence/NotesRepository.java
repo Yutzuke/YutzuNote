@@ -21,6 +21,7 @@ import android.content.pm.ShortcutInfo;
 import android.content.pm.ShortcutManager;
 import android.graphics.drawable.Icon;
 import android.net.ConnectivityManager;
+import android.net.NetworkCapabilities;
 import android.text.TextUtils;
 
 import trikita.log.Log;
@@ -46,6 +47,7 @@ import org.jetbrains.annotations.NotNull;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.HashSet;
@@ -986,26 +988,31 @@ public class NotesRepository {
     }
 
     public void updateNetworkStatus() {
+        final var connMgr = (ConnectivityManager) this.context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (connMgr == null) {
+            networkConnected = false;
+            isSyncPossible = false;
+            Log.i(TAG, "Could not determine network status: ConnectivityManager is null");
+            return;
+        }
+
         try {
-            final var connMgr = (ConnectivityManager) this.context.getSystemService(Context.CONNECTIVITY_SERVICE);
-            if (connMgr == null) {
-                throw new NetworkErrorException("ConnectivityManager is null");
-            }
+            // Modern NetworkCapabilities API: the deprecated getNetworkInfo(TYPE_WIFI) returned null on
+            // non-Wi-Fi transports, marking sync impossible even with syncOnlyOnWifi off and a live connection.
+            final var activeNetwork = connMgr.getActiveNetwork();
+            final var capabilities = activeNetwork == null ? null : connMgr.getNetworkCapabilities(activeNetwork);
+            final boolean hasInternet = capabilities != null
+                    && capabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET);
 
-            final var activeInfo = connMgr.getActiveNetworkInfo();
-            if (activeInfo == null) {
-                throw new NetworkErrorException("NetworkInfo is null");
-            }
-
-            if (activeInfo.isConnected()) {
+            if (hasInternet) {
                 networkConnected = true;
 
-                final var networkInfo = connMgr.getNetworkInfo((ConnectivityManager.TYPE_WIFI));
-                if (networkInfo == null) {
-                    throw new NetworkErrorException("connMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI) is null");
-                }
-
-                isSyncPossible = !syncOnlyOnWifi || networkInfo.isConnected();
+                boolean onWifi = capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)
+                        || Arrays.stream(connMgr.getAllNetworks())
+                        .map(connMgr::getNetworkCapabilities)
+                        .filter(Objects::nonNull)
+                        .anyMatch(caps -> caps.hasTransport(NetworkCapabilities.TRANSPORT_WIFI));
+                isSyncPossible = !syncOnlyOnWifi || onWifi;
 
                 if (isSyncPossible) {
                     Log.d(TAG, "Network connection established.");
@@ -1017,8 +1024,8 @@ public class NotesRepository {
                 isSyncPossible = false;
                 Log.d(TAG, "No network connection.");
             }
-        } catch (NetworkErrorException e) {
-            Log.i(TAG, e.getMessage());
+        } catch (SecurityException e) {
+            Log.i(TAG, "Could not determine network status: " + e.getMessage());
             networkConnected = false;
             isSyncPossible = false;
         }

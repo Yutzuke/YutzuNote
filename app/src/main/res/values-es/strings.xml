@@ -50,6 +50,7 @@
     <string name="error_synchronization">Fallo en sincronización</string>
     <string name="error_maintenance_mode">El servidor está en mantenimiento</string>
     <string name="error_unknown">Ocurrió un error desconocido.</string>
+    <string name="error_two_factor_app_password">Esta cuenta tiene la autenticación en dos pasos activada. Inicia sesión una vez para activar Notes.</string>
     <string name="error_sync">Fallo en sincronización: %1$s</string>
     <string name="error_no_network">No hay conexión a la red</string>
     <string name="about_version_title">Versión</string>
