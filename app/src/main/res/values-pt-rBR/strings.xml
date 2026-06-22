@@ -301,4 +301,5 @@
 \n
 \n***Nota %1$d (Última modificação: %2$s):***
 \n"</string>
+    <string name="error_two_factor_app_password">A autenticação de dois fatores está ativada nesta conta. Faça login uma vez para ativar o Notas nessa conta.</string>
 </resources>
