@@ -50,7 +50,7 @@
     <string name="error_synchronization">Synchronisierung fehlgeschlagen</string>
     <string name="error_maintenance_mode">Server befindet sich im Wartungsmodus</string>
     <string name="error_unknown">Es ist ein unbekannter Fehler aufgetreten.</string>
-    <string name="error_two_factor_app_password">Für dieses Konto ist die Zwei-Faktor-Authentifizierung aktiviert. Melden Sie sich einmal an, um Notes zu aktivieren.</string>
+    <string name="error_two_factor_app_password">Für dieses Konto ist die Zwei-Faktor-Authentifizierung aktiviert. Melden Sie sich einmal an, um Notizen zu aktivieren.</string>
     <string name="about_icons_disclaimer_app_icon">Für das ursprüngliche Symbol siehe %1$s.</string>
     <string name="about_icons_disclaimer_mdi_icons">Alle weiteren Symbole dieser App sind %1$s, erstellt von Google Inc. und unter der Apache 2.0-Lizenz lizenziert.</string>
     <string name="about_icons_disclaimer_mdi">Material Design Icons</string>
