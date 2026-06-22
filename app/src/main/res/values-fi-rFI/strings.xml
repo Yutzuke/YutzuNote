@@ -298,4 +298,5 @@
 \n
 \n***Muistiinpano %1$d (Muokattu viimeksi: %2$s):***
 \n"</string>
+    <string name="error_two_factor_app_password">Tällä tilillä on käytössä kaksivaiheinen tunnistautuminen. Kirjaudu sisään kerran käyttääksesi Muistiinpanoja tällä tilillä.</string>
 </resources>
