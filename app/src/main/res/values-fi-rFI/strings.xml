@@ -274,12 +274,7 @@
     <string name="preferences_service_terms">Palveluehdot</string>
     <string name="preferences_privacy_policy">Tietosuojakäytäntö</string>
     <string name="preferences_about_app">Muistiinpanot on haarautettu Nextcloud Notesista</string>
-    <string name="preferences_app_info">-Luetteloi, luo, muokkaa, jaa, hae ja poista muistiinpanoja
-\n -Jaa tekstiä ja linkkejä uutena muistiinpanona sovellukseen
-\n -Merkitse muistiinpanoja suosikeiksi
-\n -Joukkopoista
-\n -Renderöi MarkDown
-\n -Käännetty monille kielille</string>
+    <string name="preferences_app_info">-Luetteloi, luo, muokkaa, jaa, hae ja poista muistiinpanoja \n -Jaa tekstiä ja linkkejä uutena muistiinpanona sovellukseen \n -Merkitse muistiinpanoja suosikeiksi \n -Joukkopoista \n -Renderöi MarkDown \n -Käännetty monille kielille</string>
     <string name="preferences_app_info_title">Muistiinpanot - tietoja sovelluksesta</string>
     <string name="formatting_help_images_alt">Hieno kuva</string>
     <string name="formatting_help_images_body_2">Markdown formaatin noudattamiseksi, käytä kuvan URL-osoitteessa escape-merkkejä. Tämä tarkoittaa esimerkiksi sitä, että korvaa URL-osoitteessa välilyönnit %1$s :llä.</string>
@@ -294,9 +289,6 @@
     <string name="welcome_details">Valitse synkronoidaanko muistiinpanosi olemassa olevaan Murena-pilvitiliin vai tallennetaanko ne paikallisesti laitteellesi (ei synkronoitu).</string>
     <string name="use_local_notes">Käytä paikallisia muistiinpanoja</string>
     <string name="conflict_note_detected"># Havaittiin ristiriita muistiinpanojesi välillä. Valitse oikea.</string>
-    <string name="conflicted_note_content_title">"
-\n
-\n***Muistiinpano %1$d (Muokattu viimeksi: %2$s):***
-\n"</string>
+    <string name="conflicted_note_content_title">\n\n***Muistiinpano %1$d (Muokattu viimeksi: %2$s):***\n</string>
     <string name="error_two_factor_app_password">Tällä tilillä on käytössä kaksivaiheinen tunnistautuminen. Kirjaudu sisään kerran käyttääksesi Muistiinpanoja tällä tilillä.</string>
 </resources>
