@@ -250,7 +250,7 @@
     <string name="settings_file_suffix_description">Filändelse för nya anteckningar i Nextcloud</string>
     <string name="progress_import_indeterminate">Importerar anteckningar …</string>
     <string name="progress_import">Importerar anteckning %1$d av %2$d …</string>
-    <string name="preferences_about_app">Anteckningar är avgrenad från Nexcloud Anteckningar</string>
+    <string name="preferences_about_app">Anteckningar är avgrenad från Nextcloud Anteckningar</string>
     <string name="conflict_note_detected"># Vi upptäckte en konflikt mellan dina anteckningar. Välj den korrekta.</string>
     <string name="conflicted_note_content_title">"
 \n
