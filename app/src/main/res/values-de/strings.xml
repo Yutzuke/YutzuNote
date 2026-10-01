@@ -289,7 +289,7 @@
 \n- In viele Sprachen übersetzt</string>
     <string name="conflicted_note_content_title">\n\n***Notiz %1$d (Zuletzt verändert: %2$s):***\n</string>
     <string name="conflict_note_detected"># Es gibt einen Konflikt zwischen Ihren bestehenden Notizen. Bitte wählen Sie die richtige aus.</string>
-    <string name="use_local_notes">LOKALE NOTIZ-SPEICHERUNG</string>
+    <string name="use_local_notes">Notizen lokal speichern</string>
     <string name="or">oder</string>
     <string name="welcome_details">Wollen Sie Ihre Notizen mit Ihrem Murena Cloud-Konto synchronisieren, oder sie nur lokal auf Ihrem Gerät speichern (ohne Synchronisierung)?</string>
     <string name="settings_export_notes_title">Notizen exportieren</string>
