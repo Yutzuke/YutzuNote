@@ -9,7 +9,7 @@
     <string name="action_settings">Beállítások</string>
     <string name="action_trashbin">Törölt jegyzetek</string>
     <string name="action_search">Keresés</string>
-    <string name="action_sorting_method">Rendezési mód</string>
+    <string name="action_sorting_method">Rendezési módszer</string>
     <string name="simple_cancel">Mégse</string>
     <string name="simple_switch">Kapcsoló</string>
     <string name="simple_edit">Szerkesztés</string>
