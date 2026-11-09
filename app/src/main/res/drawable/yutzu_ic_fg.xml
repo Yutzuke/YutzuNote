@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <!-- sombra -->
+    <path android:fillColor="#40000000"
+        android:pathData="M39,31h26l10,10v38a4,4 0,0 1,-4 4h-32a4,4 0,0 1,-4 -4v-44a4,4 0,0 1,4 -4z" />
+    <!-- hoja -->
+    <path android:pathData="M38,28h26l10,10v38a4,4 0,0 1,-4 4h-32a4,4 0,0 1,-4 -4v-44a4,4 0,0 1,4 -4z">
+        <aapt:attr name="android:fillColor">
+            <gradient android:type="linear"
+                android:startX="34" android:startY="28" android:endX="74" android:endY="80">
+                <item android:offset="0" android:color="#FFFFFFFF" />
+                <item android:offset="1" android:color="#FFEDE9FE" />
+            </gradient>
+        </aapt:attr>
+    </path>
+    <!-- esquina doblada -->
+    <path android:fillColor="#FFC4B5FD" android:pathData="M64,28v6a4,4 0,0 0,4 4h6z" />
+    <!-- monograma Y -->
+    <path android:strokeColor="#FF5B21B6" android:strokeWidth="5"
+        android:strokeLineCap="round" android:strokeLineJoin="round"
+        android:pathData="M45,43L54,54L63,43M54,54L54,65" />
+    <path android:strokeColor="#FFA78BFA" android:strokeWidth="2.6"
+        android:strokeLineCap="round" android:pathData="M45,72H63" />
+</vector>

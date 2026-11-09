@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="432" height="432" viewBox="0 0 108 108">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7C3AED"/><stop offset="0.55" stop-color="#4C1D95"/><stop offset="1" stop-color="#1E1B4B"/>
+    </linearGradient>
+    <linearGradient id="pg" x1="34" y1="28" x2="74" y2="80" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EDE9FE"/>
+    </linearGradient>
+    <clipPath id="c"><circle cx="54" cy="54" r="54"/></clipPath>
+  </defs>
+  <g clip-path="url(#c)">
+    <rect width="108" height="108" fill="url(#bg)"/>
+    <circle cx="86" cy="22" r="30" fill="#A78BFA" fill-opacity="0.18"/>
+    <!-- sombra -->
+    <path d="M39,31 h26 l10,10 v38 a4,4 0 0 1 -4,4 h-32 a4,4 0 0 1 -4,-4 v-44 a4,4 0 0 1 4,-4 z" fill="#000" fill-opacity="0.25"/>
+    <!-- hoja -->
+    <path d="M38,28 h26 l10,10 v38 a4,4 0 0 1 -4,4 h-32 a4,4 0 0 1 -4,-4 v-44 a4,4 0 0 1 4,-4 z" fill="url(#pg)"/>
+    <path d="M64,28 v6 a4,4 0 0 0 4,4 h6 z" fill="#C4B5FD"/>
+    <!-- Y -->
+    <path d="M45,43 L54,54 L63,43 M54,54 L54,65" fill="none" stroke="#5B21B6" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M45,72 H63" stroke="#A78BFA" stroke-width="2.6" stroke-linecap="round"/>
+  </g>
+</svg>
