@@ -182,7 +182,7 @@
 
 
         <provider
-            android:authorities="foundation.e.notes.android.providers.AppContentProvider"
+            android:authorities="${applicationId}.providers.AppContentProvider"
             android:name=".providers.AppContentProvider"
             android:enabled="true"
             android:exported="true"/>
@@ -197,5 +197,14 @@
             </intent-filter>
         </receiver>
 
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.yutzu.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/yutzu_file_paths" />
+        </provider>
     </application>
 </manifest>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">筆記</string>
-    <string name="app_name_long">Nextcloud 筆記</string>
+    <string name="app_name">YutzuNote</string>
+    <string name="app_name_long">YutzuNote</string>
     <string name="label_all_notes">所有筆記</string>
     <string name="label_favorites">我的最愛</string>
     <string name="action_create">新筆記</string>

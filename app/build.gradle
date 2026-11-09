@@ -76,7 +76,17 @@ android {
         targetCompatibility JavaVersion.VERSION_11
     }
 
+    def yutzuKeyProps = new Properties()
+    def yutzuKeyFile = rootProject.file('keystore.properties')
+    if (yutzuKeyFile.exists()) { yutzuKeyProps.load(new FileInputStream(yutzuKeyFile)) }
+
     signingConfigs {
+        yutzu {
+            storeFile rootProject.file(yutzuKeyProps['storeFile'] ?: 'keystore/yutzunote.jks')
+            storePassword yutzuKeyProps['storePassword']
+            keyAlias yutzuKeyProps['keyAlias']
+            keyPassword yutzuKeyProps['keyPassword']
+        }
         platformConfig {
             storeFile file("$rootDir/keystore/platform.jks")
             storePassword 'platform'
@@ -86,7 +96,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "foundation.e.notes"
+        applicationId "app.yutzunote"
         minSdkVersion 24
         targetSdkVersion 33
         versionCode getVersionCode()
@@ -105,14 +115,13 @@ android {
 
     buildTypes {
         debug {
-            testCoverageEnabled true
-            signingConfig signingConfigs.platformConfig
+            signingConfig signingConfigs.yutzu
         }
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.platformConfig
+            signingConfig signingConfigs.yutzu
             versionNameSuffix "-${buildDate()}"
         }
     }

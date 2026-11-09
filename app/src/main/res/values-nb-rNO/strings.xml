@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Notater</string>
-    <string name="app_name_long">Nextcloud Notes</string>
+    <string name="app_name">YutzuNote</string>
+    <string name="app_name_long">YutzuNote</string>
     <string name="label_all_notes">Alle notater</string>
     <string name="label_favorites">Favoritter</string>
     <string name="action_create">Nytt notat</string>

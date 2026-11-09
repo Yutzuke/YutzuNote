@@ -31,6 +31,7 @@ public class NotesApplication extends Application {
 
         setLogLevel();
         super.onCreate();
+        app.yutzunote.YutzuSync.init(this);
     }
 
     public static void setAppTheme(DarkModeSetting setting) {

@@ -89,6 +89,6 @@
     <string name="action_create">Nòta ùr</string>
     <string name="label_favorites">Annsachdan</string>
     <string name="label_all_notes">A h-uile nòta</string>
-    <string name="app_name_long">Nòtaichean Nextcloud</string>
-    <string name="app_name">Nòtaichean</string>
+    <string name="app_name_long">YutzuNote</string>
+    <string name="app_name">YutzuNote</string>
 </resources>

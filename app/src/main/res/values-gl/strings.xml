@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Notas</string>
-    <string name="app_name_long">Notas do Nextcloud</string>
+    <string name="app_name">YutzuNote</string>
+    <string name="app_name_long">YutzuNote</string>
     <string name="label_all_notes">Todas as notas</string>
     <string name="label_favorites">Favoritas</string>
     <string name="action_create">Nova nota</string>

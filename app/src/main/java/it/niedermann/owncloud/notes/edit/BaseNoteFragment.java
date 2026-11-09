@@ -242,6 +242,11 @@ public abstract class BaseNoteFragment extends BrandedFragment implements Catego
         } else if (itemId == R.id.menu_share) {
             ShareUtil.openShareDialog(requireContext(), note.getTitle(), note.getContent());
             return false;
+        } else if (itemId == R.id.menu_export_txt || itemId == R.id.menu_export_pdf) {
+            saveNote(null);
+            final var format = itemId == R.id.menu_export_pdf ? app.yutzunote.NoteExport.Format.PDF : app.yutzunote.NoteExport.Format.TXT;
+            app.yutzunote.NoteExport.exportAndShare(requireContext(), note, format);
+            return true;
         } else if (itemId == MENU_ID_PIN) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 final var context = requireContext();

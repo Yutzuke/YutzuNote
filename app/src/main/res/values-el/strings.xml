@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Σημειώσεις</string>
-    <string name="app_name_long">Nextcloud Σημειώσεις</string>
+    <string name="app_name">YutzuNote</string>
+    <string name="app_name_long">YutzuNote</string>
     <string name="label_all_notes">Όλες οι σημειώσεις</string>
     <string name="label_favorites">Αγαπημένα</string>
     <string name="action_create">Νέα σημείωση</string>

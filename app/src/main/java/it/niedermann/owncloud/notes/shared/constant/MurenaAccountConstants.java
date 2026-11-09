@@ -19,6 +19,6 @@ package it.niedermann.owncloud.notes.shared.constant;
 public final class MurenaAccountConstants {
 
     public static final String MURENA_ACCOUNT_TYPE = "e.foundation.webdav.eelo";
-    public static final String NOTES_CONTENT_AUTHORITY = "foundation.e.notes.android.providers.AppContentProvider";
+    public static final String NOTES_CONTENT_AUTHORITY = it.niedermann.owncloud.notes.BuildConfig.APPLICATION_ID + ".providers.AppContentProvider";
     public static final String ACCOUNT_MANAGER_PACKAGE = "foundation.e.accountmanager";
 }

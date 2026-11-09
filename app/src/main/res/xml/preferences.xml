@@ -3,6 +3,78 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <it.niedermann.owncloud.notes.branding.BrandedPreferenceCategory
+        android:key="yutzu_category"
+        app:layout="@layout/item_preference_category"
+        app:title="YutzuNote · carpeta local">
+
+        <Preference
+            android:icon="@drawable/ic_lock_grey600_24dp"
+            android:key="yutzu_permission"
+            android:layout="@layout/item_pref"
+            android:summary="Necesario para guardar en la microSD. Toca para concederlo."
+            android:title="⚠ Falta permiso de archivos" />
+
+        <it.niedermann.owncloud.notes.branding.BrandedSwitchPreference
+            android:defaultValue="false"
+            android:icon="@drawable/ic_sync_black_24dp"
+            android:key="yutzu_enabled"
+            android:layout="@layout/item_pref"
+            android:summary="Cada nota se guarda como archivo .md y se sincroniza en ambos sentidos"
+            android:title="Guardar notas en carpeta" />
+
+        <Preference
+            android:icon="@drawable/ic_folder_open_grey600_24dp"
+            android:key="yutzu_folder"
+            android:layout="@layout/item_pref"
+            android:title="Carpeta de notas" />
+
+        <Preference
+            android:dependency="yutzu_enabled"
+            android:icon="@drawable/ic_sync_black_24dp"
+            android:key="yutzu_sync_now"
+            android:layout="@layout/item_pref"
+            android:title="Sincronizar ahora" />
+
+        <it.niedermann.owncloud.notes.branding.BrandedSwitchPreference
+            android:defaultValue="true"
+            android:icon="@drawable/ic_import_export_24"
+            android:key="yutzu_auto_backup"
+            android:layout="@layout/item_pref"
+            android:summary="Una copia ZIP al día (se guardan las últimas)"
+            android:title="Copia de seguridad automática" />
+
+        <ListPreference
+            android:defaultValue="10"
+            android:entries="@array/yutzu_keep_entries"
+            android:entryValues="@array/yutzu_keep_values"
+            android:icon="@drawable/ic_folder_grey600_24dp"
+            android:key="yutzu_backup_keep"
+            android:layout="@layout/item_pref"
+            android:summary="%s"
+            android:title="Copias a conservar" />
+
+        <Preference
+            android:icon="@drawable/ic_import_export_24"
+            android:key="yutzu_backup_now"
+            android:layout="@layout/item_pref"
+            android:title="Crear copia ZIP ahora" />
+
+        <Preference
+            android:icon="@drawable/ic_import_export_24"
+            android:key="yutzu_restore_zip"
+            android:layout="@layout/item_pref"
+            android:summary="Recupera notas desde un ZIP (no duplica las que ya tienes)"
+            android:title="Restaurar copia ZIP" />
+
+        <Preference
+            android:icon="@drawable/ic_create_new_folder_grey600_24dp"
+            android:key="yutzu_import_folder"
+            android:layout="@layout/item_pref"
+            android:summary="Trae archivos .md/.txt, p. ej. las notas exportadas desde la app Notas"
+            android:title="Importar notas desde carpeta" />
+    </it.niedermann.owncloud.notes.branding.BrandedPreferenceCategory>
+
+    <it.niedermann.owncloud.notes.branding.BrandedPreferenceCategory
         app:layout="@layout/item_preference_category"
         app:title="@string/simple_synchronization">
 

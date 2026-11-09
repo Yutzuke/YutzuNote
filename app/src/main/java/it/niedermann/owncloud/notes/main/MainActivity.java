@@ -376,6 +376,7 @@ public class MainActivity extends LockedActivity implements NoteClickListener, A
 
     @Override
     protected void onResume() {
+        app.yutzunote.YutzuSync.requestSync(this);
         final var accountLiveData = mainViewModel.getCurrentAccount();
         accountLiveData.observe(this, (currentAccount) -> {
             accountLiveData.removeObservers(this);

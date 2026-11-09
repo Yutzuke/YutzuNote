@@ -35,6 +35,16 @@
         android:title="@string/menu_share"
         app:showAsAction="never" />
     <item
+        android:id="@+id/menu_export_txt"
+        android:orderInCategory="101"
+        android:title="Exportar como TXT"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_export_pdf"
+        android:orderInCategory="102"
+        android:title="Exportar como PDF"
+        app:showAsAction="never" />
+    <item
         android:id="@+id/menu_move"
         android:icon="@drawable/ic_send_grey600_24dp"
         android:orderInCategory="120"

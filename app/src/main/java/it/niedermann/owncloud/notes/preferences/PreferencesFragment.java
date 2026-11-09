@@ -30,6 +30,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Bra
     private BrandedSwitchPreference preventScreenCapturePref;
     private BrandedSwitchPreference backgroundSyncPref;
     private BrandedSwitchPreference keepScreenOnPref;
+    private app.yutzunote.YutzuSettings yutzuSettings;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -95,6 +96,7 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Bra
             SyncWorker.update(requireContext(), (Boolean) newValue);
             return true;
         });
+            yutzuSettings = app.yutzunote.YutzuSettings.attach(this);
     }
 
 
@@ -124,5 +126,13 @@ public class PreferencesFragment extends PreferenceFragmentCompat implements Bra
         preventScreenCapturePref.applyBrand(mainColor, textColor);
         backgroundSyncPref.applyBrand(mainColor, textColor);
         keepScreenOnPref.applyBrand(mainColor, textColor);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (yutzuSettings != null) {
+            yutzuSettings.refreshSummaries();
+        }
     }
 }

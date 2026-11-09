@@ -14,8 +14,8 @@
     <string name="formatting_help_images_title">Myndir</string>
     <string name="simple_other">Annað</string>
     <string name="formatting_help_code_title">Kóði</string>
-    <string name="app_name">Minnispunktar</string>
-    <string name="app_name_long">Nextcloud-minnispunktar</string>
+    <string name="app_name">YutzuNote</string>
+    <string name="app_name_long">YutzuNote</string>
     <string name="label_all_notes">Allir minnispunktar</string>
     <string name="label_favorites">Eftirlæti</string>
     <string name="action_create">Nýr minnispunktur</string>

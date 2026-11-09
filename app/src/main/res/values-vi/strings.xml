@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Ghi chú</string>
-    <string name="app_name_long">Nextcloud Ghi chú</string>
+    <string name="app_name">YutzuNote</string>
+    <string name="app_name_long">YutzuNote</string>
     <string name="label_all_notes">Tất cả ghi chú</string>
     <string name="label_favorites">Ưa thích</string>
     <string name="action_create">Ghi chú mới</string>

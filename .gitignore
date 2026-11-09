@@ -6,3 +6,8 @@
 /.idea/
 *.iml
 /projectFilesBackup/
+
+# YutzuNote: clave de firma privada
+/keystore.properties
+/keystore/yutzunote.jks
+/app/version.properties

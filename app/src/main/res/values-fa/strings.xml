@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">یادداشت‌ها</string>
-    <string name="app_name_long">یادداشت‌های نکست کلود</string>
+    <string name="app_name">YutzuNote</string>
+    <string name="app_name_long">YutzuNote</string>
     <string name="label_all_notes">همه یادداشت‌ها</string>
     <string name="label_favorites">مورد علاقه‌ها</string>
     <string name="action_create">یادداشت جدید</string>
