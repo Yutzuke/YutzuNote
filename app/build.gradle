@@ -167,7 +167,7 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
 
     // Android X
-    implementation 'androidx.appcompat:appcompat:1.5.1'
+    implementation 'androidx.appcompat:appcompat:1.8.0'
     implementation 'androidx.core:core-splashscreen:1.0.0'
     implementation 'androidx.fragment:fragment:1.5.4'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1'
